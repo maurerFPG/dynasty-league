@@ -5,6 +5,8 @@
   const CARD_H_KEY = "nasty-ui-card-h-v1";
   const POLL_MS = 30000;
   const ROB_USER = "469299052404535296";
+  const DRAFT_END = 300;
+  const UNDRAFTED = 301;
 
   const TEAM_NAMES = {
     ARI: ["arizona", "cardinals", "arizona cardinals"],
@@ -198,6 +200,42 @@
   function remaining(p) {
     return !p.id || !state.draftedIds.has(String(p.id));
   }
+
+  function stealQueryOn() {
+    const q = state.search.trim().toLowerCase();
+    return q === "steal" || q === "steals";
+  }
+  function stealScore(p) {
+    if (p.fo_rank == null || p.fp_rank == null) return null;
+    const fp_rank = Number(p.fp_rank);
+    const fo_rank = Number(p.fo_rank);
+    if (!Number.isFinite(fp_rank) || !Number.isFinite(fo_rank)) return null;
+    const sl_eff = Math.min(fo_rank, UNDRAFTED);
+    const fp_round = (fp_rank - 1) / 12 + 1;
+    const sl_round = (sl_eff - 1) / 12 + 1;
+    const score = (sl_round - fp_round) / Math.sqrt(fp_round);
+    return Number.isFinite(score) ? score : null;
+  }
+  function stealQualifies(p) {
+    const score = stealScore(p);
+    if (score == null) return false;
+    const sl_eff = Math.min(Number(p.fo_rank), UNDRAFTED);
+    return sl_eff > Number(p.fp_rank) && Number(p.fp_rank) <= 324 && score >= 0.35;
+  }
+  function stealTip(p) {
+    const score = stealScore(p);
+    if (score == null) return "";
+    return ` title="steal ${score.toFixed(2)}"`;
+  }
+  function cmpSteal(a, b) {
+    const sa = stealScore(a);
+    const sb = stealScore(b);
+    const da = sa == null ? -Infinity : sa;
+    const db = sb == null ? -Infinity : sb;
+    if (db !== da) return db - da;
+    return (a.fp_rank || 9999) - (b.fp_rank || 9999);
+  }
+
   function matchesFilter(p) {
     if (!remaining(p)) return false;
     if (state.filterPos.size && !state.filterPos.has(p.pos)) return false;
@@ -206,6 +244,7 @@
     if (state.filterYoung && !(p.age != null && Number(p.age) <= 25)) return false;
     const q = state.search.trim().toLowerCase();
     if (!q) return true;
+    if (q === "steal" || q === "steals") return stealQualifies(p);
     if ((p.name || "").toLowerCase().includes(q)) return true;
     if ((p.pos || "").toLowerCase() === q) return true;
     const abbr = String(p.team || p.team_abbr || "").trim();
@@ -501,21 +540,22 @@
     const foPending = state.match && state.match.fo_file_present === false;
     const fo = $("list-fo");
     const fp = $("list-fp");
+    const stealOn = stealQueryOn();
     if (foPending) {
       fo.innerHTML = `<div class="empty-col"><strong>Sleeper board pending</strong>Drop <code>sleeper_board.json</code> into <code>/workspace/ff-dynasty/data/</code> and run <code>python3 dashboard/build_data.py</code>. Left column stays empty until then — no invented ADP.</div>`;
       $("count-fo").textContent = "0";
     } else {
       const foRows = state.players
         .filter((p) => p.fo_adp != null && matchesFilter(p))
-        .sort((a, b) => (a.fo_rank || 9999) - (b.fo_rank || 9999) || a.fo_adp - b.fo_adp);
+        .sort(stealOn ? cmpSteal : (a, b) => (a.fo_rank || 9999) - (b.fo_rank || 9999) || a.fo_adp - b.fo_adp);
       fo.replaceChildren(...listNodes(foRows, "fo"));
-      $("count-fo").textContent = `${foRows.length} left`;
+      $("count-fo").textContent = stealOn ? `${foRows.length} steals` : `${foRows.length} left`;
     }
     const fpRows = state.players
       .filter((p) => p.fp_rank != null && matchesFilter(p))
-      .sort((a, b) => a.fp_rank - b.fp_rank);
+      .sort(stealOn ? cmpSteal : (a, b) => a.fp_rank - b.fp_rank);
     fp.replaceChildren(...listNodes(fpRows, "fp"));
-    $("count-fp").textContent = `${fpRows.length} left`;
+    $("count-fp").textContent = stealOn ? `${fpRows.length} steals` : `${fpRows.length} left`;
   }
 
   function rowEl(p, side) {
@@ -540,7 +580,7 @@
       <span class="c-age" title="Age">${esc(fmtAge(p.age))}</span>
       <span class="c-pts" title="${esc(side === "fo" ? (state.sources.sleeper_pts_label || "Sleeper 2026 regular season (half-PPR)") : (state.sources.fp_pts_label || "FantasyPros 2026 season (half-PPR)"))}">${esc(fmtPts(side === "fo" ? p.sleeper_pts : p.fp_pts))}</span>
       <span class="c-pos ${esc(p.pos || "")}">${esc(p.pos || "")}</span>
-      <span class="c-gap ${gapClass(p.gap)}">${esc(gapLabel(p.gap))}</span>
+      <span class="c-gap ${gapClass(p.gap)}"${stealTip(p)}>${esc(gapLabel(p.gap))}</span>
     `;
     return el;
   }
