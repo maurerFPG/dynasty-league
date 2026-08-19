@@ -78,14 +78,16 @@ body.resizing-v { cursor: ew-resize; user-select: none; }
 }
 /* Mild blur only on compact chrome. Large scrolling columns stay opaque —
    backdrop-filter on those lists is the Safari stutter. */
-.topbar, .board-pane, .card-pane, .midbar, .col { position: relative; }
+.topbar, .board-pane, .card-pane, .toolbar, .mypicks, .col { position: relative; }
 .topbar.glass,
-.midbar.glass {
+.toolbar.glass,
+.mypicks.glass {
   isolation: isolate;
   background: var(--glass);
 }
 .topbar.glass::before,
-.midbar.glass::before {
+.toolbar.glass::before,
+.mypicks.glass::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -344,21 +346,14 @@ body.resizing-v { cursor: ew-resize; user-select: none; }
 .splitter:hover::after,
 .splitter.dragging::after { background: rgba(180, 210, 255, 0.45); }
 
-/* ——— my picks + filters: one glass panel, two interior zones ——— */
+/* ——— midbar: two navy glass cards, filters left / my picks right ——— */
 .midbar {
-  display: grid;
-  grid-template-columns: minmax(280px, 1fr) max-content;
-  align-items: start;
-  column-gap: 16px;
-  row-gap: 8px;
-  padding: 10px 12px;
-  margin-bottom: 8px;
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+  margin: 8px 0 6px;
   flex: 0 0 auto;
   min-width: 0;
-}
-.midbar .mypicks,
-.midbar .toolbar {
-  margin: 0;
 }
 .midbar .legend { display: none; }
 .midbar .mp-row {
@@ -366,49 +361,68 @@ body.resizing-v { cursor: ew-resize; user-select: none; }
   overflow-x: auto;
 }
 
-/* ——— find: toggles, then a compact search ——— */
+/* Left card hugs the compact filter pad. Search stays short. */
 .toolbar {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 8px;
-  padding: 0;
+  padding: 8px 10px;
   margin: 0;
   width: max-content;
   max-width: 100%;
   min-width: 0;
+  flex: 0 0 auto;
 }
 .legend {
   font-size: 10px;
   color: var(--muted);
   white-space: nowrap;
 }
-.pos-tabs { display: flex; flex-wrap: nowrap; gap: 6px; }
+.pos-pad {
+  display: grid;
+  grid-template-columns: 3.6rem 2.35rem 2.35rem 4.4rem;
+  grid-template-rows: 26px 26px;
+  grid-template-areas:
+    "all qb wr targets"
+    "all rb te targets";
+  gap: 5px;
+}
 .pos {
   appearance: none;
   border: 1px solid var(--line);
   background: rgba(8, 18, 34, 0.45);
   color: var(--muted);
   font-family: inherit;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 600;
   letter-spacing: 0.04em;
-  padding: 5px 10px;
+  padding: 0;
   border-radius: 8px;
   cursor: pointer;
-  line-height: 1.2;
+  line-height: 1.1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
 }
+.pos-all { grid-area: all; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; }
+.pos-qb { grid-area: qb; }
+.pos-wr { grid-area: wr; }
+.pos-rb { grid-area: rb; }
+.pos-te { grid-area: te; }
+.pos-star { grid-area: targets; font-size: 10px; letter-spacing: 0.05em; }
 .pos.on { color: var(--text); border-color: var(--line-2); background: rgba(255, 255, 255, 0.06); }
 .pos-qb.on { color: var(--qb); border-color: rgba(184, 164, 232, 0.4); }
 .pos-rb.on { color: var(--rb); border-color: rgba(126, 175, 216, 0.4); }
 .pos-wr.on { color: var(--wr); border-color: rgba(212, 190, 134, 0.4); }
 .pos-te.on { color: var(--te); border-color: rgba(124, 191, 160, 0.4); }
 .pos-star.on { color: var(--steal); border-color: rgba(126, 201, 187, 0.4); }
-.search { display: block; margin: 0; width: auto; min-width: 0; }
+.search { display: block; margin: 0; width: auto; min-width: 0; flex: 0 0 auto; }
 .search input {
-  width: 20ch;
+  width: 16ch;
   min-width: 15ch;
-  max-width: 22ch;
+  max-width: 20ch;
   background: rgba(8, 18, 34, 0.55);
   border: 1px solid var(--line);
   color: var(--text);
@@ -699,46 +713,61 @@ body.resizing-v { cursor: ew-resize; user-select: none; }
   font-size: 14px;
 }
 
-/* ——— my picks zone (left of the shared midbar) ——— */
+/* ——— my picks card (right): leftover width, 2x2 counts match the filter pad ——— */
 .mypicks {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: stretch;
   gap: 8px;
-  padding: 0;
+  padding: 8px 10px;
   margin: 0;
   min-width: 0;
+  flex: 1 1 auto;
 }
-.mp-head {
+.mp-pad {
   display: flex;
-  align-items: center;
-  gap: 10px;
-  min-width: 0;
+  align-items: stretch;
+  gap: 5px;
+  width: max-content;
+  max-width: 100%;
 }
 .mp-label {
-  font-size: 10px;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  color: var(--accent);
-  flex: 0 0 auto;
-  white-space: nowrap;
-}
-.mp-counts {
   display: flex;
   align-items: center;
-  gap: 6px;
-  min-width: 0;
+  justify-content: center;
+  width: 3.6rem;
+  min-height: 57px;
+  padding: 0 6px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--accent);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.03);
+  flex: 0 0 auto;
+}
+.mp-counts {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: 26px 26px;
+  gap: 5px;
 }
 .mp-pill {
-  display: inline-flex;
-  align-items: baseline;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 5px;
-  padding: 5px 10px 5px 8px;
+  min-width: 3.4rem;
+  padding: 0 8px;
   border: 1px solid var(--line);
-  border-radius: 999px;
+  border-radius: 8px;
   background: rgba(255, 255, 255, 0.04);
-  line-height: 1.2;
+  line-height: 1.1;
 }
 .mp-pill .c-pos {
   font-size: 10px;
@@ -956,8 +985,8 @@ body.resizing-v { cursor: ew-resize; user-select: none; }
   body { font-size: 12px; }
   .app { padding: 8px 10px 8px; }
   .topbar { gap: 16px; padding: 8px 14px; }
-  .toolbar { gap: 8px; }
-  .search input { width: 20ch; min-width: 15ch; padding: 5px 8px; font-size: 12px; }
+  .toolbar { gap: 7px; }
+  .search input { width: 16ch; min-width: 15ch; max-width: 20ch; padding: 5px 8px; font-size: 12px; }
   .col-head { padding: 8px 10px 6px; gap: 8px; }
   .col-head h2 { font-size: 12px; }
   .col-head p { font-size: 10px; }
@@ -981,9 +1010,8 @@ body.resizing-v { cursor: ew-resize; user-select: none; }
 
 @media (max-width: 900px) {
   .topbar { gap: 14px; padding: 8px 12px; }
-  .toolbar { gap: 8px; }
-  .search input { width: 18ch; min-width: 15ch; }
-  .pos { padding: 5px 10px; }
+  .toolbar { gap: 7px; }
+  .search input { width: 15ch; min-width: 15ch; max-width: 18ch; }
   .cols { grid-template-columns: var(--col-left) 6px var(--col-right); }
   .splitter.v { width: 6px; }
 }
@@ -1007,8 +1035,9 @@ body.resizing-v { cursor: ew-resize; user-select: none; }
   }
   .mypicks { flex-wrap: nowrap; }
   .midbar {
-    grid-template-columns: 1fr;
-    align-items: start;
+    flex-direction: column;
+    align-items: stretch;
   }
   .toolbar { width: max-content; max-width: 100%; }
+  .mypicks { width: 100%; }
 }

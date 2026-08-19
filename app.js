@@ -54,7 +54,8 @@
     pickByOverall: new Map(),
     robTaken: [],
     selectedId: null,
-    filterPos: "ALL",
+    filterPos: new Set(),
+    filterTargets: false,
     search: "",
     targets: new Set(),
     lastPoll: null,
@@ -127,9 +128,9 @@
     }
 
     bind(hs, "h", (e) => {
-      const top = pane.getBoundingClientRect().top;
+      const bot = pane.getBoundingClientRect().bottom;
       const max = Math.floor(window.innerHeight * 0.7);
-      const hgt = Math.min(Math.max(e.clientY - top, 120), max);
+      const hgt = Math.min(Math.max(bot - e.clientY, 120), max);
       document.documentElement.style.setProperty("--board-h", hgt + "px");
     }, () => {
       const raw = getComputedStyle(document.documentElement).getPropertyValue("--board-h").trim();
@@ -219,11 +220,8 @@
   }
   function matchesFilter(p) {
     if (!remaining(p)) return false;
-    if (state.filterPos === "TARGETS") {
-      if (!p.id || !state.targets.has(String(p.id))) return false;
-    } else if (state.filterPos !== "ALL" && p.pos !== state.filterPos) {
-      return false;
-    }
+    if (state.filterPos.size && !state.filterPos.has(p.pos)) return false;
+    if (state.filterTargets && (!p.id || !state.targets.has(String(p.id)))) return false;
     const q = state.search.trim().toLowerCase();
     if (!q) return true;
     if ((p.name || "").toLowerCase().includes(q)) return true;
@@ -468,10 +466,10 @@
     const listEl = $("mypicks-list");
     if (!countsEl || !listEl) return;
     const counts = robPosCounts();
-    countsEl.innerHTML = ["QB", "RB", "WR", "TE"]
+    countsEl.innerHTML = ["QB", "WR", "RB", "TE"]
       .map((pos) => {
         const n = counts[pos];
-        return `<span class="mp-pill" title="${pos} ${n}"><span class="c-pos ${pos}">${pos}</span><span class="mp-n">${n}</span></span>`;
+        return `<span class="mp-pill mp-${pos.toLowerCase()}" title="${pos} ${n}"><span class="c-pos ${pos}">${pos}</span><span class="mp-n">${n}</span></span>`;
       })
       .join("");
     const taken = state.robTaken;
@@ -587,7 +585,7 @@
         star.textContent = on ? "★" : "☆";
       }
     });
-    if (state.filterPos === "TARGETS") renderLists();
+    if (state.filterTargets) renderLists();
     renderCard();
   }
 
@@ -1160,12 +1158,29 @@
     btn.classList.remove("busy");
   }
 
+  function syncFilterUi() {
+    document.querySelectorAll("#filters .pos").forEach((b) => {
+      const pos = b.getAttribute("data-pos");
+      if (pos === "ALL") b.classList.toggle("on", state.filterPos.size === 0);
+      else if (pos === "TARGETS") b.classList.toggle("on", state.filterTargets);
+      else b.classList.toggle("on", state.filterPos.has(pos));
+    });
+  }
+
   function bind() {
     $("btn-refresh").addEventListener("click", () => pollPicks(true));
-    document.querySelectorAll(".pos-tabs .pos").forEach((btn) => {
+    document.querySelectorAll("#filters .pos").forEach((btn) => {
       btn.addEventListener("click", () => {
-        state.filterPos = btn.getAttribute("data-pos");
-        document.querySelectorAll(".pos-tabs .pos").forEach((b) => b.classList.toggle("on", b === btn));
+        const pos = btn.getAttribute("data-pos");
+        if (pos === "ALL") {
+          state.filterPos.clear();
+        } else if (pos === "TARGETS") {
+          state.filterTargets = !state.filterTargets;
+        } else if (pos) {
+          if (state.filterPos.has(pos)) state.filterPos.delete(pos);
+          else state.filterPos.add(pos);
+        }
+        syncFilterUi();
         renderLists();
       });
     });
