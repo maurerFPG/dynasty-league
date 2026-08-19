@@ -343,10 +343,10 @@ body.resizing-v { cursor: ew-resize; user-select: none; }
 .splitter:hover::after,
 .splitter.dragging::after { background: rgba(180, 210, 255, 0.45); }
 
-/* ——— my picks + filters on one row ——— */
+/* ——— my picks + two-row filters ——— */
 .midbar {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   gap: 8px;
   margin-bottom: 8px;
   flex: 0 0 auto;
@@ -362,23 +362,23 @@ body.resizing-v { cursor: ew-resize; user-select: none; }
   overflow-x: auto;
 }
 
-/* ——— slim filter bar ——— */
+/* ——— slim filter bar: toggles, then search ——— */
 .toolbar {
   display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 4px 10px;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 4px;
+  padding: 5px 10px;
   margin-bottom: 0;
-  flex: 1 1 52%;
+  flex: 1 1 58%;
   min-width: 0;
-  flex-wrap: nowrap;
 }
 .legend {
   font-size: 10px;
   color: var(--muted);
   white-space: nowrap;
 }
-.pos-tabs { display: flex; gap: 6px; }
+.pos-tabs { display: flex; flex-wrap: nowrap; gap: 6px; }
 .pos {
   appearance: none;
   border: 1px solid var(--line);
@@ -398,7 +398,7 @@ body.resizing-v { cursor: ew-resize; user-select: none; }
 .pos-wr.on { color: var(--wr); border-color: rgba(212, 190, 134, 0.4); }
 .pos-te.on { color: var(--te); border-color: rgba(124, 191, 160, 0.4); }
 .pos-star.on { color: var(--steal); border-color: rgba(126, 201, 187, 0.4); }
-.search { margin-left: auto; flex: 0 1 180px; min-width: 120px; }
+.search { display: block; margin: 0; width: 100%; min-width: 0; }
 .search input {
   width: 100%;
   background: rgba(8, 18, 34, 0.55);
@@ -694,13 +694,19 @@ body.resizing-v { cursor: ew-resize; user-select: none; }
 /* ——— my picks strip ——— */
 .mypicks {
   display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 4px;
+  padding: 5px 10px;
+  margin: 0;
+  flex: 1 1 42%;
+  min-width: 0;
+}
+.mp-head {
+  display: flex;
   align-items: center;
   gap: 8px;
-  padding: 4px 10px;
-  margin: 0;
-  flex: 1 1 48%;
   min-width: 0;
-  min-height: 32px;
 }
 .mp-label {
   font-size: 10px;
@@ -710,19 +716,48 @@ body.resizing-v { cursor: ew-resize; user-select: none; }
   flex: 0 0 auto;
   white-space: nowrap;
 }
+.mp-counts {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+}
+.mp-pill {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+  padding: 1px 6px 1px 5px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.035);
+  line-height: 1.25;
+}
+.mp-pill .c-pos {
+  font-size: 9px;
+  letter-spacing: 0.05em;
+}
+.mp-n {
+  font-size: 11px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+  color: var(--text);
+  min-width: 1.1ch;
+  text-align: center;
+}
 .mp-row {
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+  flex-wrap: nowrap;
+  gap: 6px;
   align-items: center;
   min-width: 0;
 }
-.mp-empty { color: var(--muted); font-size: 12px; }
+.mp-row[hidden] { display: none; }
 .mp-chip {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 3px 8px 3px 4px;
+  padding: 2px 7px 2px 3px;
   border: 1px solid var(--line);
   border-radius: 999px;
   background: rgba(155, 184, 232, 0.08);
@@ -917,8 +952,8 @@ body.resizing-v { cursor: ew-resize; user-select: none; }
   .rob-chip { min-width: 132px; padding: 5px 10px 6px; }
   .rob-name { font-size: 13px; }
   .countdown { font-size: 16px; }
-  .toolbar { gap: 10px; padding: 5px 10px; }
-  .search input { width: 170px; padding: 5px 8px; font-size: 12px; }
+  .toolbar { gap: 4px; padding: 5px 10px; }
+  .search input { width: 100%; padding: 5px 8px; font-size: 12px; }
   .col-head { padding: 8px 10px 6px; gap: 8px; }
   .col-head h2 { font-size: 12px; }
   .col-head p { font-size: 10px; }
@@ -942,8 +977,8 @@ body.resizing-v { cursor: ew-resize; user-select: none; }
 
 @media (max-width: 900px) {
   .topbar { gap: 8px; padding: 7px 10px; }
-  .toolbar { gap: 8px; }
-  .search input { width: 140px; }
+  .toolbar { gap: 4px; }
+  .search input { width: 100%; }
   .pos { padding: 3px 8px; }
   .cols { grid-template-columns: var(--col-left) 6px var(--col-right); }
   .splitter.v { width: 6px; }
@@ -966,8 +1001,8 @@ body.resizing-v { cursor: ew-resize; user-select: none; }
       "ecr gap"
       "ops ops";
   }
-  .mypicks { flex-wrap: wrap; }
+  .mypicks { flex-wrap: nowrap; }
   .midbar { flex-direction: column; align-items: stretch; }
   .midbar .mypicks, .midbar .toolbar { flex: 1 1 auto; }
-  .toolbar { flex-wrap: wrap; }
+  .toolbar { flex-wrap: nowrap; }
 }

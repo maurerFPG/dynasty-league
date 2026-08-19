@@ -437,15 +437,50 @@
     board.replaceChildren(frag);
   }
 
+  function bucketPos(raw, playerId) {
+    const tryOne = (s) => {
+      const t = String(s || "").toUpperCase().trim();
+      if (!t) return null;
+      if (t === "DST" || t === "DEF" || t === "K" || t === "PK") return null;
+      const m = t.match(/\b(QB|RB|WR|TE)\b/);
+      return m ? m[1] : null;
+    };
+    const direct = tryOne(raw);
+    if (direct) return direct;
+    if (playerId && state.byId.has(String(playerId))) {
+      return tryOne(state.byId.get(String(playerId)).pos);
+    }
+    return null;
+  }
+
+  function robPosCounts() {
+    const counts = { QB: 0, RB: 0, WR: 0, TE: 0 };
+    for (const p of state.robTaken) {
+      const bucket = bucketPos(p.position || p.pos, p.player_id);
+      if (bucket) counts[bucket] += 1;
+    }
+    return counts;
+  }
+
   function renderMyPicks() {
-    const el = $("mypicks-list");
-    if (!el) return;
+    const countsEl = $("mypicks-counts");
+    const listEl = $("mypicks-list");
+    if (!countsEl || !listEl) return;
+    const counts = robPosCounts();
+    countsEl.innerHTML = ["QB", "RB", "WR", "TE"]
+      .map((pos) => {
+        const n = counts[pos];
+        return `<span class="mp-pill" title="${pos} ${n}"><span class="c-pos ${pos}">${pos}</span><span class="mp-n">${n}</span></span>`;
+      })
+      .join("");
     const taken = state.robTaken;
     if (!taken.length) {
-      el.innerHTML = `<span class="mp-empty">No picks yet</span>`;
+      listEl.replaceChildren();
+      listEl.hidden = true;
       return;
     }
-    el.innerHTML = taken
+    listEl.hidden = false;
+    listEl.innerHTML = taken
       .map((p) => {
         return `<span class="mp-chip">${logoHtml(p.team)}<span class="mp-name">${esc(p.name)}</span><span class="c-pos ${esc(p.position || "")}">${esc(p.position || "")}</span></span>`;
       })
