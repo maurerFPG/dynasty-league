@@ -7,7 +7,14 @@ Sleeper ids via the same conservative matcher as `tools/ingest_cheatsheet.py`.
 - FO rows: **300**
 - Matched to a Sleeper player: **300**
 - Unmatched: **0**
-- FP-ranked players on board: **499**
+- FP-ranked players on board: **543**
+
+### FantasyPros dynasty Superflex ECR
+
+Source: `data/fp_dynasty_op_dk.json` (FantasyPros API snapshot, not Draft Wizard).
+- Snapshot rows: **547** (Dynasty / OP / PPR, updated 8/18)
+- Matched: **544**
+- Unmatched: **3**
 
 ### Match methods
 
@@ -18,8 +25,8 @@ Sleeper ids via the same conservative matcher as `tools/ingest_cheatsheet.py`.
 - Draft CSV rows: **257**
 - Conservative name matches to Sleeper: **257**
 - Unmatched / ambiguous (left blank): **0**
-- Rookies on the dashboard board: **303**
-- Board players with a draft round: **81**
+- Rookies on the dashboard board: **100**
+- Board players with a draft round: **73**
 
 ### Fire / ice
 
