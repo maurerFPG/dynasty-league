@@ -36,29 +36,28 @@
     </section>
     <div class="splitter h" id="split-h-card" role="separator" aria-orientation="horizontal" aria-label="Resize player card"></div>
 
-    <div class="midbar" id="midbar">
-    <section class="mypicks glass" id="mypicks">
-      <div class="mp-head">
-        <div class="mp-label">My picks</div>
-        <div class="mp-counts" id="mypicks-counts" aria-label="My roster by position"></div>
+    <div class="midbar glass" id="midbar">
+      <section class="mypicks" id="mypicks">
+        <div class="mp-head">
+          <div class="mp-label">My picks</div>
+          <div class="mp-counts" id="mypicks-counts" aria-label="My roster by position"></div>
+        </div>
+        <div class="mp-row" id="mypicks-list"></div>
+      </section>
+      <div class="toolbar" id="filters">
+        <div class="pos-tabs" role="tablist">
+          <button type="button" class="pos on" data-pos="ALL">All</button>
+          <button type="button" class="pos pos-qb" data-pos="QB">QB</button>
+          <button type="button" class="pos pos-rb" data-pos="RB">RB</button>
+          <button type="button" class="pos pos-wr" data-pos="WR">WR</button>
+          <button type="button" class="pos pos-te" data-pos="TE">TE</button>
+          <button type="button" class="pos pos-star" data-pos="TARGETS">Targets</button>
+        </div>
+        <span class="legend" title="Official Sleeper trending (48h) plus public news / r/DynastyFF full-name buzz. Not Twitter/X.">🔥 trending add or rising news/r/DynastyFF buzz · 🧊 trending drop (48h)</span>
+        <label class="search">
+          <input type="search" id="search" placeholder="Find name or team…" autocomplete="off" />
+        </label>
       </div>
-      <div class="mp-row" id="mypicks-list"></div>
-    </section>
-
-    <div class="toolbar glass" id="filters">
-      <div class="pos-tabs" role="tablist">
-        <button type="button" class="pos on" data-pos="ALL">All</button>
-        <button type="button" class="pos pos-qb" data-pos="QB">QB</button>
-        <button type="button" class="pos pos-rb" data-pos="RB">RB</button>
-        <button type="button" class="pos pos-wr" data-pos="WR">WR</button>
-        <button type="button" class="pos pos-te" data-pos="TE">TE</button>
-        <button type="button" class="pos pos-star" data-pos="TARGETS">Targets</button>
-      </div>
-      <span class="legend" title="Official Sleeper trending (48h) plus public news / r/DynastyFF full-name buzz. Not Twitter/X.">🔥 trending add or rising news/r/DynastyFF buzz · 🧊 trending drop (48h)</span>
-      <label class="search">
-        <input type="search" id="search" placeholder="Find name or team…" autocomplete="off" />
-      </label>
-    </div>
     </div>
 
     <section class="cols" id="cols">

@@ -78,16 +78,14 @@ body.resizing-v { cursor: ew-resize; user-select: none; }
 }
 /* Mild blur only on compact chrome. Large scrolling columns stay opaque —
    backdrop-filter on those lists is the Safari stutter. */
-.topbar, .board-pane, .card-pane, .mypicks, .toolbar, .col { position: relative; }
+.topbar, .board-pane, .card-pane, .midbar, .col { position: relative; }
 .topbar.glass,
-.toolbar.glass,
-.mypicks.glass {
+.midbar.glass {
   isolation: isolate;
   background: var(--glass);
 }
 .topbar.glass::before,
-.toolbar.glass::before,
-.mypicks.glass::before {
+.midbar.glass::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -346,11 +344,14 @@ body.resizing-v { cursor: ew-resize; user-select: none; }
 .splitter:hover::after,
 .splitter.dragging::after { background: rgba(180, 210, 255, 0.45); }
 
-/* ——— my picks + two-row filters ——— */
+/* ——— my picks + filters: one glass panel, two interior zones ——— */
 .midbar {
-  display: flex;
-  align-items: stretch;
-  gap: 8px;
+  display: grid;
+  grid-template-columns: minmax(280px, 1fr) max-content;
+  align-items: start;
+  column-gap: 16px;
+  row-gap: 8px;
+  padding: 10px 12px;
   margin-bottom: 8px;
   flex: 0 0 auto;
   min-width: 0;
@@ -365,15 +366,16 @@ body.resizing-v { cursor: ew-resize; user-select: none; }
   overflow-x: auto;
 }
 
-/* ——— slim filter bar: toggles, then search ——— */
+/* ——— find: toggles, then a compact search ——— */
 .toolbar {
   display: flex;
   flex-direction: column;
-  align-items: stretch;
-  gap: 4px;
-  padding: 5px 10px;
-  margin-bottom: 0;
-  flex: 1 1 58%;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 0;
+  margin: 0;
+  width: max-content;
+  max-width: 100%;
   min-width: 0;
 }
 .legend {
@@ -391,9 +393,10 @@ body.resizing-v { cursor: ew-resize; user-select: none; }
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.04em;
-  padding: 4px 10px;
+  padding: 5px 10px;
   border-radius: 8px;
   cursor: pointer;
+  line-height: 1.2;
 }
 .pos.on { color: var(--text); border-color: var(--line-2); background: rgba(255, 255, 255, 0.06); }
 .pos-qb.on { color: var(--qb); border-color: rgba(184, 164, 232, 0.4); }
@@ -401,15 +404,17 @@ body.resizing-v { cursor: ew-resize; user-select: none; }
 .pos-wr.on { color: var(--wr); border-color: rgba(212, 190, 134, 0.4); }
 .pos-te.on { color: var(--te); border-color: rgba(124, 191, 160, 0.4); }
 .pos-star.on { color: var(--steal); border-color: rgba(126, 201, 187, 0.4); }
-.search { display: block; margin: 0; width: 100%; min-width: 0; }
+.search { display: block; margin: 0; width: auto; min-width: 0; }
 .search input {
-  width: 100%;
+  width: 20ch;
+  min-width: 15ch;
+  max-width: 22ch;
   background: rgba(8, 18, 34, 0.55);
   border: 1px solid var(--line);
   color: var(--text);
   font-family: inherit;
   font-size: 12px;
-  padding: 4px 8px;
+  padding: 5px 8px;
   border-radius: 8px;
   outline: none;
 }
@@ -694,21 +699,21 @@ body.resizing-v { cursor: ew-resize; user-select: none; }
   font-size: 14px;
 }
 
-/* ——— my picks strip ——— */
+/* ——— my picks zone (left of the shared midbar) ——— */
 .mypicks {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 4px;
-  padding: 5px 10px;
+  align-items: stretch;
+  gap: 8px;
+  padding: 0;
   margin: 0;
-  flex: 1 1 42%;
   min-width: 0;
 }
 .mp-head {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   min-width: 0;
 }
 .mp-label {
@@ -722,30 +727,30 @@ body.resizing-v { cursor: ew-resize; user-select: none; }
 .mp-counts {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
   min-width: 0;
 }
 .mp-pill {
   display: inline-flex;
   align-items: baseline;
-  gap: 4px;
-  padding: 1px 6px 1px 5px;
+  gap: 5px;
+  padding: 5px 10px 5px 8px;
   border: 1px solid var(--line);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.035);
-  line-height: 1.25;
+  background: rgba(255, 255, 255, 0.04);
+  line-height: 1.2;
 }
 .mp-pill .c-pos {
-  font-size: 9px;
-  letter-spacing: 0.05em;
+  font-size: 10px;
+  letter-spacing: 0.04em;
 }
 .mp-n {
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 600;
   font-variant-numeric: tabular-nums;
   font-feature-settings: "tnum";
   color: var(--text);
-  min-width: 1.1ch;
+  min-width: 1.25ch;
   text-align: center;
 }
 .mp-row {
@@ -951,8 +956,8 @@ body.resizing-v { cursor: ew-resize; user-select: none; }
   body { font-size: 12px; }
   .app { padding: 8px 10px 8px; }
   .topbar { gap: 16px; padding: 8px 14px; }
-  .toolbar { gap: 4px; padding: 5px 10px; }
-  .search input { width: 100%; padding: 5px 8px; font-size: 12px; }
+  .toolbar { gap: 8px; }
+  .search input { width: 20ch; min-width: 15ch; padding: 5px 8px; font-size: 12px; }
   .col-head { padding: 8px 10px 6px; gap: 8px; }
   .col-head h2 { font-size: 12px; }
   .col-head p { font-size: 10px; }
@@ -976,9 +981,9 @@ body.resizing-v { cursor: ew-resize; user-select: none; }
 
 @media (max-width: 900px) {
   .topbar { gap: 14px; padding: 8px 12px; }
-  .toolbar { gap: 4px; }
-  .search input { width: 100%; }
-  .pos { padding: 3px 8px; }
+  .toolbar { gap: 8px; }
+  .search input { width: 18ch; min-width: 15ch; }
+  .pos { padding: 5px 10px; }
   .cols { grid-template-columns: var(--col-left) 6px var(--col-right); }
   .splitter.v { width: 6px; }
 }
@@ -1001,7 +1006,9 @@ body.resizing-v { cursor: ew-resize; user-select: none; }
       "ops ops";
   }
   .mypicks { flex-wrap: nowrap; }
-  .midbar { flex-direction: column; align-items: stretch; }
-  .midbar .mypicks, .midbar .toolbar { flex: 1 1 auto; }
-  .toolbar { flex-wrap: nowrap; }
+  .midbar {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+  .toolbar { width: max-content; max-width: 100%; }
 }
