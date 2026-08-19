@@ -457,7 +457,7 @@
       .join("");
     if (leftEl) {
       const n = robRemainingPicks().length;
-      leftEl.innerHTML = `<span class="n">${n}</span> left`;
+      leftEl.innerHTML = `<span class="n">${n}</span><span class="mp-left-lab">left</span>`;
     }
     const taken = state.robTaken;
     if (!taken.length) {
