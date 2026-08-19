@@ -72,24 +72,31 @@ body.resizing-v { cursor: ew-resize; user-select: none; }
 }
 
 .glass {
-  background: var(--glass);
+  background: rgba(11, 22, 42, 0.96);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  isolation: isolate;
 }
-/* Blur on a non-interactive layer so backdrop-filter cannot steal hits from row divs.
-   Buttons (Target stars) still received clicks; plain .rowp clicks did not. */
-.glass::before {
+/* Mild blur only on compact chrome. Large scrolling columns stay opaque —
+   backdrop-filter on those lists is the Safari stutter. */
+.topbar, .board-pane, .card-pane, .mypicks, .toolbar, .col { position: relative; }
+.topbar.glass,
+.toolbar.glass,
+.mypicks.glass {
+  isolation: isolate;
+  background: var(--glass);
+}
+.topbar.glass::before,
+.toolbar.glass::before,
+.mypicks.glass::before {
   content: "";
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  backdrop-filter: blur(18px) saturate(1.2);
-  -webkit-backdrop-filter: blur(18px) saturate(1.2);
+  backdrop-filter: blur(10px) saturate(1.1);
+  -webkit-backdrop-filter: blur(10px) saturate(1.1);
   pointer-events: none;
   z-index: -1;
 }
-.topbar, .board-pane, .card-pane, .mypicks, .toolbar, .col { position: relative; }
 
 /* ——— top bar ——— */
 .topbar {
@@ -436,6 +443,8 @@ body.resizing-v { cursor: ew-resize; user-select: none; }
   position: relative;
   z-index: 1;
   pointer-events: auto;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 30px;
 }
 .rowp.fo {
   grid-template-columns: 28px 3ch 4.5ch 22px minmax(0, 1fr) 4.5ch 3ch 5.5ch;
@@ -842,6 +851,7 @@ body.resizing-v { cursor: ew-resize; user-select: none; }
     gap: 6px;
     height: 26px;
     padding: 0 6px;
+    contain-intrinsic-size: auto 26px;
   }
   .rowp.fo { grid-template-columns: 28px 3ch 4.5ch 22px minmax(0, 1fr) 4.5ch 3ch 5.5ch; }
   .rowp.fp { grid-template-columns: 28px 4ch 22px minmax(0, 1fr) 4.5ch 3ch 5.5ch; }

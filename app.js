@@ -25,6 +25,7 @@
     pollError: null,
     draftStatus: "pre_draft",
     research: { key: null, status: "idle", headlines: [], error: null },
+    altsCache: { key: null, list: [] },
   };
 
   const $ = (id) => document.getElementById(id);
@@ -396,40 +397,75 @@
       <span class="c-pos ${esc(p.pos || "")}">${esc(p.pos || "")}</span>
       <span class="c-gap ${gapClass(p.gap)}">${esc(gapLabel(p.gap))}</span>
     `;
-    el.addEventListener("click", (ev) => {
-      const t = ev.target instanceof Element ? ev.target : ev.target && ev.target.parentElement;
-      if (t && t.closest && t.closest("[data-star], .star")) return;
-      selectPlayer(key);
-    });
-    const star = el.querySelector("[data-star]");
-    if (star) {
-      star.addEventListener("click", (ev) => {
-        ev.stopPropagation();
-        if (!p.id) return;
-        toggleTarget(String(p.id));
-      });
-    }
     return el;
+  }
+
+  function rowsByKey(key) {
+    const want = key == null ? null : String(key);
+    const out = [];
+    document.querySelectorAll(".rowp").forEach((el) => {
+      if (want != null && el.dataset.key === want) out.push(el);
+    });
+    return out;
+  }
+
+  function highlightSelected(key) {
+    const want = key == null ? null : String(key);
+    document.querySelectorAll(".rowp").forEach((el) => {
+      el.classList.toggle("sel", want != null && el.dataset.key === want);
+    });
+  }
+
+  function rowVisibleInList(row, list) {
+    const lr = list.getBoundingClientRect();
+    const rr = row.getBoundingClientRect();
+    return rr.top >= lr.top && rr.bottom <= lr.bottom;
+  }
+
+  function scrollRowInList(list, key) {
+    if (!list || key == null) return;
+    const want = String(key);
+    const row = [...list.querySelectorAll(".rowp")].find((el) => el.dataset.key === want);
+    if (!row) return;
+    if (!rowVisibleInList(row, list)) row.scrollIntoView({ block: "nearest" });
+  }
+
+  function clearSelectionUi() {
+    state.selectedId = null;
+    state.research = { key: null, status: "idle", headlines: [], error: null };
+    state.altsCache = { key: null, list: [] };
+    highlightSelected(null);
+    renderCard();
   }
 
   function toggleTarget(id) {
     if (state.targets.has(id)) state.targets.delete(id);
     else state.targets.add(id);
     saveTargets();
-    renderLists();
+    const on = state.targets.has(id);
+    rowsByKey(id).forEach((row) => {
+      row.classList.toggle("tgt", on);
+      const star = row.querySelector("[data-star]");
+      if (star) {
+        star.classList.toggle("on", on);
+        star.textContent = on ? "★" : "☆";
+      }
+    });
+    if (state.filterPos === "TARGETS") renderLists();
     renderCard();
   }
 
-  function selectPlayer(key) {
-    if (state.selectedId && String(state.selectedId) !== String(key)) {
-      state.research = { key: null, status: "idle", headlines: [], error: null };
+  function selectPlayer(key, fromList) {
+    const same = state.selectedId != null && String(state.selectedId) === String(key);
+    if (!same) {
+      if (state.selectedId) {
+        state.research = { key: null, status: "idle", headlines: [], error: null };
+      }
+      state.selectedId = key;
+      highlightSelected(key);
+      renderCard();
     }
-    state.selectedId = key;
-    renderLists();
-    renderCard();
-    document.querySelectorAll(".rowp.sel").forEach((el) => {
-      el.scrollIntoView({ block: "nearest" });
-    });
+    if (fromList) scrollRowInList(fromList, key);
   }
 
   function findPlayer(key) {
@@ -439,7 +475,11 @@
   }
 
   function alternates(p) {
-    const pool = state.players.filter((o) => remaining(o) && playerKey(o) !== playerKey(p));
+    const key = playerKey(p);
+    if (state.altsCache && state.altsCache.key === key && Array.isArray(state.altsCache.list)) {
+      return state.altsCache.list;
+    }
+    const pool = state.players.filter((o) => remaining(o) && playerKey(o) !== key);
     const scored = [];
     for (const o of pool) {
       let score = 0;
@@ -468,7 +508,9 @@
       out.push(o);
       if (out.length >= 5) break;
     }
-    return out.slice(0, Math.max(3, Math.min(5, out.length)));
+    const list = out.slice(0, Math.max(3, Math.min(5, out.length)));
+    state.altsCache = { key, list };
+    return list;
   }
 
   function trimHeadline(title) {
@@ -663,10 +705,7 @@
     });
     $("btn-research").addEventListener("click", () => fetchResearch(p, alts));
     $("btn-close").addEventListener("click", () => {
-      state.selectedId = null;
-      state.research = { key: null, status: "idle", headlines: [], error: null };
-      renderLists();
-      renderCard();
+      clearSelectionUi();
     });
     card.querySelectorAll("[data-alt]").forEach((btn) => {
       btn.addEventListener("click", () => selectPlayer(btn.getAttribute("data-alt")));
@@ -808,6 +847,7 @@
   async function pollPicks(manual) {
     const btn = $("btn-refresh");
     if (manual) btn.classList.add("busy");
+    const prevDrafted = new Set(state.draftedIds);
     try {
       const [pRes, dRes] = await Promise.all([
         fetch(state.draft.picks_api, { cache: "no-store" }),
@@ -830,7 +870,13 @@
     }
     renderBoard();
     renderMyPicks();
-    renderLists();
+    const draftedChanged =
+      prevDrafted.size !== state.draftedIds.size ||
+      [...state.draftedIds].some((id) => !prevDrafted.has(id));
+    if (draftedChanged) {
+      state.altsCache = { key: null, list: [] };
+      renderLists();
+    }
     renderCard();
     renderChrome();
     btn.classList.remove("busy");
@@ -851,10 +897,7 @@
     });
     document.addEventListener("keydown", (ev) => {
       if (ev.key === "Escape") {
-        state.selectedId = null;
-        state.research = { key: null, status: "idle", headlines: [], error: null };
-        renderLists();
-        renderCard();
+        clearSelectionUi();
       }
       if (ev.key === "/" && ev.target.tagName !== "INPUT") {
         ev.preventDefault();
@@ -865,30 +908,21 @@
     bindListClicks();
   }
 
-  function eventEl(ev) {
-    const t = ev && ev.target;
-    if (t instanceof Element) return t;
-    return t && t.parentElement ? t.parentElement : null;
-  }
-
-  function rowFromPoint(x, y) {
-    const rows = document.querySelectorAll(".rowp");
-    for (const row of rows) {
-      const r = row.getBoundingClientRect();
-      if (x >= r.left && x <= r.right && y >= r.top && y <= r.bottom) return row;
-    }
-    return null;
-  }
-
   function bindListClicks() {
-    document.addEventListener("click", (ev) => {
-      const el = eventEl(ev);
-      if (el && el.closest && el.closest(".card-pane, .card-scroll, .star, [data-star], .btn, .toggle, .pos, .search, input, textarea, button, a, .topbar, .board-pane, .toolbar, .mypicks")) {
+    function onListClick(ev) {
+      const t = ev.target instanceof Element ? ev.target : ev.target && ev.target.parentElement;
+      if (!t || !t.closest) return;
+      const star = t.closest("[data-star], .star");
+      if (star) {
+        const id = star.getAttribute("data-star");
+        if (id) toggleTarget(String(id));
         return;
       }
-      const row = (el && el.closest && el.closest(".rowp")) || rowFromPoint(ev.clientX, ev.clientY);
-      if (row && row.dataset.key) selectPlayer(row.dataset.key);
-    });
+      const row = t.closest(".rowp");
+      if (row && row.dataset.key) selectPlayer(row.dataset.key, ev.currentTarget);
+    }
+    $("list-fo").addEventListener("click", onListClick);
+    $("list-fp").addEventListener("click", onListClick);
   }
 
   function esc(s) {
