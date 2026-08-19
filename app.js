@@ -250,7 +250,7 @@
   function headshotHtml(id) {
     if (!id) return `<span class="headshot ph" aria-hidden="true"></span>`;
     const url = `https://sleepercdn.com/content/nfl/players/thumb/${id}.jpg`;
-    return `<img class="headshot" src="${esc(url)}" alt="" onerror="this.style.display='none'" />`;
+    return `<img class="headshot" src="${esc(url)}" alt="" onerror="this.onerror=null;this.classList.add('ph');this.removeAttribute('src')" />`;
   }
 
   function heatMark(p) {
@@ -758,19 +758,19 @@
           <div class="meta"><span class="c-pos ${esc(p.pos || "")}">${esc(p.pos || "")}</span> · ${esc(p.team || "FA")}${age}${exp}${p.is_rookie && p.years_exp !== 0 ? rook : ""}</div>
           ${injuryLine(p)}
         </div>
-        <div class="stat">
+        <div class="stat s-rank">
           <div class="k">Rank</div>
           <div class="v">${esc(fmtFoRank(p.fo_rank))}</div>
         </div>
-        <div class="stat">
+        <div class="stat s-adp">
           <div class="k">ADP</div>
           <div class="v">${esc(fmtAdp(p.fo_adp))}</div>
         </div>
-        <div class="stat">
+        <div class="stat s-ecr">
           <div class="k">ECR</div>
           <div class="v">${esc(fmtRank(p.fp_rank))}</div>
         </div>
-        <div class="stat">
+        <div class="stat s-gap">
           <div class="k">Gap</div>
           <div class="v ${gapClass(p.gap)}">${esc(gapLabel(p.gap))}</div>
         </div>

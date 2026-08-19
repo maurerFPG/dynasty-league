@@ -730,20 +730,27 @@ body.resizing-v { cursor: ew-resize; user-select: none; }
 .mp-name { font-weight: 500; font-size: 12px; }
 .card-top {
   display: grid;
-  grid-template-columns: 40px minmax(0, 1.2fr) auto auto auto auto;
+  grid-template-columns: 40px minmax(180px, 1.4fr) repeat(4, minmax(56px, auto)) auto;
+  grid-template-areas: "shot id rank adp ecr gap ops";
   gap: 12px;
   align-items: center;
 }
 .headshot {
+  grid-area: shot;
   width: 40px;
   height: 40px;
   border-radius: 10px;
   object-fit: cover;
   background: rgba(255, 255, 255, 0.05);
+  justify-self: start;
 }
 .headshot.ph {
   display: block;
   background: rgba(255, 255, 255, 0.05);
+}
+.card-id {
+  grid-area: id;
+  min-width: 0;
 }
 .card-id .who {
   display: flex;
@@ -755,7 +762,7 @@ body.resizing-v { cursor: ew-resize; user-select: none; }
   letter-spacing: -0.015em;
   line-height: 1.15;
 }
-.card-id .meta { color: var(--muted); margin-top: 3px; font-size: 11px; }
+.card-id .meta { color: var(--muted); margin-top: 3px; font-size: 11px; white-space: normal; }
 .stat {
   min-width: 64px;
 }
@@ -774,7 +781,12 @@ body.resizing-v { cursor: ew-resize; user-select: none; }
 .stat .v.steal { color: var(--steal); }
 .stat .v.reach { color: var(--reach); }
 .stat .v.flat { color: var(--muted); }
+.s-rank { grid-area: rank; }
+.s-adp { grid-area: adp; }
+.s-ecr { grid-area: ecr; }
+.s-gap { grid-area: gap; }
 .card-ops {
+  grid-area: ops;
   display: flex;
   gap: 6px;
   align-items: center;
@@ -946,7 +958,14 @@ body.resizing-v { cursor: ew-resize; user-select: none; }
   .splitter.v { display: none; }
   .board-pane { max-height: 320px; }
   .list { max-height: 420px; }
-  .card-top { grid-template-columns: 40px 1fr; }
+  .card-top {
+    grid-template-columns: 40px minmax(0, 1fr);
+    grid-template-areas:
+      "shot id"
+      "rank adp"
+      "ecr gap"
+      "ops ops";
+  }
   .mypicks { flex-wrap: wrap; }
   .midbar { flex-direction: column; align-items: stretch; }
   .midbar .mypicks, .midbar .toolbar { flex: 1 1 auto; }
