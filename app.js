@@ -195,7 +195,7 @@
   function logoHtml(team) {
     const url = teamLogoUrl(team);
     if (!url) return `<span class="logo ph" aria-hidden="true"></span>`;
-    return `<img class="logo" src="${esc(url)}" alt="" onerror="this.style.display='none'" />`;
+    return `<img class="logo" src="${esc(url)}" alt="" loading="lazy" decoding="async" onerror="this.style.display='none'" />`;
   }
   function headshotHtml(id) {
     if (!id) return `<span class="headshot ph" aria-hidden="true"></span>`;

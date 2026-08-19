@@ -28,7 +28,7 @@
   --card-h: 148px;
   --col-left: 1fr;
   --col-right: 1fr;
-  --sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 * { box-sizing: border-box; }
