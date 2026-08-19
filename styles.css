@@ -62,7 +62,7 @@ body.resizing-h { cursor: ns-resize; user-select: none; }
   display: flex;
   flex-direction: column;
   padding: 12px 14px 10px;
-  gap: 0;
+  gap: 8px;
   min-height: 0;
 }
 
@@ -336,7 +336,7 @@ body.resizing-h { cursor: ns-resize; user-select: none; }
 .splitter.h {
   height: 8px;
   cursor: ns-resize;
-  margin: 1px 0;
+  margin: -8px 0;
 }
 .splitter::after {
   content: "";

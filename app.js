@@ -132,9 +132,9 @@
     });
 
     bind(hsc, (e) => {
-      const top = cardPane.getBoundingClientRect().top;
+      const bot = cardPane.getBoundingClientRect().bottom;
       const max = Math.floor(window.innerHeight * 0.55);
-      const hgt = Math.min(Math.max(e.clientY - top, 88), max);
+      const hgt = Math.min(Math.max(bot - e.clientY, 88), max);
       document.documentElement.style.setProperty("--card-h", hgt + "px");
     }, () => {
       const raw = getComputedStyle(document.documentElement).getPropertyValue("--card-h").trim();
