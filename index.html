@@ -36,27 +36,23 @@
           <button type="button" class="pos pos-qb" data-pos="QB">QB</button>
           <button type="button" class="pos pos-wr" data-pos="WR">WR</button>
           <button type="button" class="pos pos-star" data-pos="TARGETS">Targets</button>
+          <button type="button" class="pos pos-rook" data-pos="ROOKIES">Rookies</button>
           <button type="button" class="pos pos-rb" data-pos="RB">RB</button>
           <button type="button" class="pos pos-te" data-pos="TE">TE</button>
-        </div>
-        <div class="filter-row">
-          <label class="search">
-            <input type="search" id="search" placeholder="Find name…" autocomplete="off" />
-          </label>
-          <button type="button" class="pos pos-rook" data-pos="ROOKIES">Rookies</button>
           <button type="button" class="pos pos-young" data-pos="YOUNG">&le;25</button>
         </div>
+        <label class="search">
+          <input type="search" id="search" placeholder="Find name…" autocomplete="off" />
+        </label>
       </div>
 
       <section class="mypicks glass" id="mypicks">
         <div class="mp-pad">
-          <div class="mp-label">My<br>Picks</div>
+          <div class="mp-label">My Picks</div>
           <div class="mp-counts" id="mypicks-counts" aria-label="My roster by position"></div>
-        </div>
-        <div class="mp-extra">
           <div class="mp-left" id="mypicks-left" aria-label="Remaining picks"></div>
-          <div class="mp-row" id="mypicks-list" hidden></div>
         </div>
+        <div class="mp-row" id="mypicks-list" hidden></div>
       </section>
     </div>
 
