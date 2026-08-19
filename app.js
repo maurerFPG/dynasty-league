@@ -7,6 +7,42 @@
   const POLL_MS = 30000;
   const ROB_USER = "469299052404535296";
 
+  const TEAM_NAMES = {
+    ARI: ["arizona", "cardinals", "arizona cardinals"],
+    ATL: ["atlanta", "falcons", "atlanta falcons"],
+    BAL: ["baltimore", "ravens", "baltimore ravens"],
+    BUF: ["buffalo", "bills", "buffalo bills"],
+    CAR: ["carolina", "panthers", "carolina panthers"],
+    CHI: ["chicago", "bears", "chicago bears"],
+    CIN: ["cincinnati", "bengals", "cincinnati bengals"],
+    CLE: ["cleveland", "browns", "cleveland browns"],
+    DAL: ["dallas", "cowboys", "dallas cowboys"],
+    DEN: ["denver", "broncos", "denver broncos"],
+    DET: ["detroit", "lions", "detroit lions"],
+    GB: ["green bay", "packers", "green bay packers"],
+    HOU: ["houston", "texans", "houston texans"],
+    IND: ["indianapolis", "colts", "indianapolis colts"],
+    JAX: ["jacksonville", "jaguars", "jacksonville jaguars"],
+    JAC: ["jacksonville", "jaguars", "jacksonville jaguars"],
+    KC: ["kansas city", "chiefs", "kansas city chiefs"],
+    LV: ["las vegas", "raiders", "las vegas raiders"],
+    LAC: ["los angeles", "chargers", "los angeles chargers"],
+    LAR: ["los angeles", "rams", "los angeles rams"],
+    MIA: ["miami", "dolphins", "miami dolphins"],
+    MIN: ["minnesota", "vikings", "minnesota vikings"],
+    NE: ["new england", "patriots", "new england patriots"],
+    NO: ["new orleans", "saints", "new orleans saints"],
+    NYG: ["new york", "giants", "new york giants"],
+    NYJ: ["new york", "jets", "new york jets"],
+    PHI: ["philadelphia", "eagles", "philadelphia eagles"],
+    PIT: ["pittsburgh", "steelers", "pittsburgh steelers"],
+    SEA: ["seattle", "seahawks", "seattle seahawks"],
+    SF: ["san francisco", "49ers", "san francisco 49ers"],
+    TB: ["tampa", "tampa bay", "buccaneers", "tampa bay buccaneers"],
+    TEN: ["tennessee", "titans", "tennessee titans"],
+    WAS: ["washington", "commanders", "washington commanders"],
+  };
+
   const state = {
     players: [],
     byId: new Map(),
@@ -154,18 +190,25 @@
     return `#${v}`;
   }
   function gapClass(gap) {
-    if (gap == null) return "flat";
-    if (gap >= 8) return "steal";
-    if (gap <= -8) return "reach";
+    if (gap == null || Number.isNaN(Number(gap))) return "flat";
+    const n = Math.round(Number(gap));
+    if (n >= 8) return "steal";
+    if (n <= -8) return "reach";
     return "flat";
   }
   function gapLabel(gap) {
-    if (gap == null) return "—";
-    const n = Number(gap);
-    const sign = n > 0 ? "+" : "";
-    if (n >= 8) return `+${n}`;
-    if (n <= -8) return `${n}`;
-    return `${sign}${n}`;
+    if (gap == null || Number.isNaN(Number(gap))) return "—";
+    const n = Math.round(Number(gap));
+    if (n === 0) return "0";
+    return n > 0 ? `+${n}` : `${n}`;
+  }
+  function fmtPts(v) {
+    if (v == null || Number.isNaN(Number(v))) return "—";
+    return String(Math.round(Number(v)));
+  }
+  function fmtAge(v) {
+    if (v == null || Number.isNaN(Number(v))) return "—";
+    return String(Math.round(Number(v)));
   }
   function playerKey(p) {
     return p.id != null ? String(p.id) : `name:${p.name}`;
@@ -182,11 +225,17 @@
     }
     const q = state.search.trim().toLowerCase();
     if (!q) return true;
-    return (
-      (p.name || "").toLowerCase().includes(q) ||
-      (p.team || "").toLowerCase().includes(q) ||
-      (p.pos || "").toLowerCase() === q
-    );
+    if ((p.name || "").toLowerCase().includes(q)) return true;
+    if ((p.pos || "").toLowerCase() === q) return true;
+    const abbr = String(p.team || p.team_abbr || "").trim();
+    const abbrL = abbr.toLowerCase();
+    if (abbrL && (abbrL === q || abbrL.includes(q))) return true;
+    if (p.team_abbr && String(p.team_abbr).toLowerCase().includes(q)) return true;
+    const aliases = TEAM_NAMES[abbr.toUpperCase()] || [];
+    for (const a of aliases) {
+      if (a === q || a.includes(q) || q.includes(a)) return true;
+    }
+    return false;
   }
 
   function teamLogoUrl(team) {
@@ -260,7 +309,7 @@
   }
   function nameCell(p) {
     const rook = p.is_rookie ? " rookie" : "";
-    return `<span class="c-who">${heatMark(p)}<span class="c-name${rook}">${esc(p.name)}</span>${injuryBadge(p)}</span>`;
+    return `<span class="c-who"><span class="c-name${rook}">${esc(p.name)}</span>${heatMark(p)}${injuryBadge(p)}</span>`;
   }
 
   function nextEmptyPick() {
@@ -276,6 +325,55 @@
       if (cell.is_rob && !state.pickByOverall.has(cell.overall)) return cell;
     }
     return null;
+  }
+
+  function currentOverall() {
+    let max = 0;
+    for (const pk of state.picks) {
+      const n = Number(pk.pick_no || pk.pickNo);
+      if (Number.isFinite(n) && n > max) max = n;
+    }
+    return max > 0 ? max + 1 : 1;
+  }
+
+  function robRemainingPicks() {
+    const map = state.draft?.pick_map || [];
+    return map.filter((c) => c.is_rob && !state.pickByOverall.has(c.overall));
+  }
+
+  function pickLineMarks() {
+    const rob = robRemainingPicks();
+    const current = currentOverall();
+    const marks = [];
+    let cum = 0;
+    for (let i = 0; i < rob.length; i++) {
+      const n = i === 0 ? rob[i].overall - current : rob[i].overall - rob[i - 1].overall - 1;
+      if (n <= 0) continue;
+      cum += n;
+      marks.push({ after: cum, label: "before " + rob[i].label });
+    }
+    return marks;
+  }
+
+  function pickLineEl(label) {
+    const el = document.createElement("div");
+    el.className = "pick-line";
+    el.setAttribute("role", "separator");
+    el.setAttribute("aria-hidden", "true");
+    el.innerHTML = `<span class="pick-line-lab">${esc(label)}</span>`;
+    return el;
+  }
+
+  function listNodes(rows, side) {
+    const marks = pickLineMarks();
+    const byAfter = new Map(marks.map((m) => [m.after, m]));
+    const nodes = [];
+    rows.forEach((p, i) => {
+      nodes.push(rowEl(p, side));
+      const m = byAfter.get(i + 1);
+      if (m) nodes.push(pickLineEl(m.label));
+    });
+    return nodes;
   }
 
   function isRobPick(pk) {
@@ -365,13 +463,13 @@
       const foRows = state.players
         .filter((p) => p.fo_adp != null && matchesFilter(p))
         .sort((a, b) => (a.fo_rank || 9999) - (b.fo_rank || 9999) || a.fo_adp - b.fo_adp);
-      fo.replaceChildren(...foRows.map((p) => rowEl(p, "fo")));
+      fo.replaceChildren(...listNodes(foRows, "fo"));
       $("count-fo").textContent = `${foRows.length} left`;
     }
     const fpRows = state.players
       .filter((p) => p.fp_rank != null && matchesFilter(p))
       .sort((a, b) => a.fp_rank - b.fp_rank);
-    fp.replaceChildren(...fpRows.map((p) => rowEl(p, "fp")));
+    fp.replaceChildren(...listNodes(fpRows, "fp"));
     $("count-fp").textContent = `${fpRows.length} left`;
   }
 
@@ -394,6 +492,8 @@
       ${logoHtml(p.team)}
       ${nameCell(p)}
       ${rookieCell(p)}
+      <span class="c-age" title="Age">${esc(fmtAge(p.age))}</span>
+      <span class="c-pts" title="${esc(side === "fo" ? (state.sources.sleeper_pts_label || "Sleeper 2026 regular season (half-PPR)") : (state.sources.fp_pts_label || "FantasyPros 2026 season (half-PPR)"))}">${esc(fmtPts(side === "fo" ? p.sleeper_pts : p.fp_pts))}</span>
       <span class="c-pos ${esc(p.pos || "")}">${esc(p.pos || "")}</span>
       <span class="c-gap ${gapClass(p.gap)}">${esc(gapLabel(p.gap))}</span>
     `;

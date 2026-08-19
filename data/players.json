@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-18T08:29:24Z",
+  "generated_at": "2026-08-19T03:19:24Z",
   "sources": {
     "fp": "board/remaining_board.csv",
     "fp_label": "FantasyPros Superflex dynasty ECR (Nasty Dynasty SF)",
@@ -12,7 +12,13 @@
     "nfl_draft": "data/nfl_draft_2026.csv",
     "nfl_draft_note": "One-time public 2026 NFL draft (Wikipedia NFLDraft-row). Conservative name match; unmatched rounds stay blank.",
     "buzz": "data/buzz_snapshot.json",
-    "buzz_note": "Public r/DynastyFF RSS + Google News RSS full-name mention counts. Not Twitter/X. Not a sentiment score."
+    "buzz_note": "Public r/DynastyFF RSS + Google News RSS full-name mention counts. Not Twitter/X. Not a sentiment score.",
+    "sleeper_pts": "data/sleeper_projections_2026.json",
+    "sleeper_pts_label": "Sleeper 2026 regular season (half-PPR)",
+    "sleeper_pts_note": "Official public GET api.sleeper.app/projections/nfl/2026?season_type=regular \u00b7 pts_half_ppr.",
+    "fp_pts": "data/fp_projections_2026.json",
+    "fp_pts_label": "FantasyPros 2026 season (half-PPR)",
+    "fp_pts_note": "One-time public partners.fantasypros.com consensus projections JSON (points_half). Not an HTML table scrape."
   },
   "match": {
     "fo_file_present": true,
@@ -30,7 +36,12 @@
     "trending_drop": 25,
     "hot": 33,
     "cold": 21,
-    "injured": 98
+    "injured": 98,
+    "age": 497,
+    "sleeper_pts": 459,
+    "fp_pts": 420,
+    "fp_pts_matched": 520,
+    "fp_pts_unmatched": 7
   },
   "players": [
     {
@@ -53,7 +64,9 @@
       "age": 30,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 361.5,
+      "fp_pts": 372.46
     },
     {
       "id": "9509",
@@ -75,7 +88,9 @@
       "age": 24,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 292.9,
+      "fp_pts": 329.88
     },
     {
       "id": "9221",
@@ -97,7 +112,9 @@
       "age": 24,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 299.9,
+      "fp_pts": 337.28
     },
     {
       "id": "7564",
@@ -119,7 +136,9 @@
       "age": 26,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 256.6,
+      "fp_pts": 275.42
     },
     {
       "id": "9488",
@@ -141,7 +160,9 @@
       "age": 24,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 235.1,
+      "fp_pts": 268.69
     },
     {
       "id": "9493",
@@ -163,7 +184,9 @@
       "age": 25,
       "injury_status": "Questionable",
       "injury_body_part": "Undisclosed",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 259.0,
+      "fp_pts": 281.3
     },
     {
       "id": "7547",
@@ -185,7 +208,9 @@
       "age": 26,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 227.5,
+      "fp_pts": 261.16
     },
     {
       "id": "12527",
@@ -207,7 +232,9 @@
       "age": 22,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 234.5,
+      "fp_pts": 247.34
     },
     {
       "id": "11564",
@@ -229,7 +256,9 @@
       "age": 23,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 320.76,
+      "fp_pts": 322.96
     },
     {
       "id": "13287",
@@ -251,7 +280,9 @@
       "age": 21,
       "injury_status": "Questionable",
       "injury_body_part": "Ankle",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 188.3,
+      "fp_pts": 228.03
     },
     {
       "id": "11604",
@@ -273,7 +304,9 @@
       "age": 23,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 202.5,
+      "fp_pts": 195.77
     },
     {
       "id": "11566",
@@ -295,7 +328,9 @@
       "age": 25,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 308.72,
+      "fp_pts": 322.56
     },
     {
       "id": "4881",
@@ -317,7 +352,9 @@
       "age": 29,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 326.0,
+      "fp_pts": 324.91
     },
     {
       "id": "6770",
@@ -339,7 +376,9 @@
       "age": 29,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 306.12,
+      "fp_pts": 310.9
     },
     {
       "id": "8130",
@@ -361,7 +400,9 @@
       "age": 26,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 186.9,
+      "fp_pts": 199.81
     },
     {
       "id": "11560",
@@ -383,7 +424,9 @@
       "age": 24,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 299.34,
+      "fp_pts": 301.44
     },
     {
       "id": "6797",
@@ -405,7 +448,9 @@
       "age": 28,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 295.48,
+      "fp_pts": 299.64
     },
     {
       "id": "9226",
@@ -427,7 +472,9 @@
       "age": 24,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 229.9,
+      "fp_pts": 259.73
     },
     {
       "id": "4046",
@@ -449,7 +496,9 @@
       "age": 30,
       "injury_status": "Questionable",
       "injury_body_part": "Knee - ACL",
-      "injury_notes": "Surgery"
+      "injury_notes": "Surgery",
+      "sleeper_pts": 286.68,
+      "fp_pts": 304.32
     },
     {
       "id": "6904",
@@ -471,7 +520,9 @@
       "age": 28,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 310.54,
+      "fp_pts": 320.47
     },
     {
       "id": "7523",
@@ -493,7 +544,9 @@
       "age": 26,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 303.42,
+      "fp_pts": 306.2
     },
     {
       "id": "8183",
@@ -515,7 +568,9 @@
       "age": 26,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 303.2,
+      "fp_pts": 307.5
     },
     {
       "id": "12507",
@@ -537,7 +592,9 @@
       "age": 23,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 218.9,
+      "fp_pts": 229.1
     },
     {
       "id": "12508",
@@ -559,7 +616,9 @@
       "age": 23,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 296.54,
+      "fp_pts": 310.02
     },
     {
       "id": "6794",
@@ -581,7 +640,9 @@
       "age": 27,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 205.4,
+      "fp_pts": 223.36
     },
     {
       "id": "8138",
@@ -603,7 +664,9 @@
       "age": 26,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 245.3,
+      "fp_pts": 253.93
     },
     {
       "id": "11563",
@@ -625,7 +688,9 @@
       "age": 26,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 295.72,
+      "fp_pts": 298.19
     },
     {
       "id": "3294",
@@ -647,7 +712,9 @@
       "age": 33,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 303.88,
+      "fp_pts": 306.18
     },
     {
       "id": "6813",
@@ -669,7 +736,9 @@
       "age": 27,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 254.3,
+      "fp_pts": 288.69
     },
     {
       "id": "8151",
@@ -691,7 +760,9 @@
       "age": 25,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 225.5,
+      "fp_pts": 235.09
     },
     {
       "id": "8155",
@@ -713,7 +784,9 @@
       "age": 25,
       "injury_status": "Questionable",
       "injury_body_part": "Thigh",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 192.5,
+      "fp_pts": 222.22
     },
     {
       "id": "6804",
@@ -735,7 +808,9 @@
       "age": 27,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 278.52,
+      "fp_pts": 267.67
     },
     {
       "id": "6786",
@@ -757,7 +832,9 @@
       "age": 27,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 222.5,
+      "fp_pts": 224.26
     },
     {
       "id": "11632",
@@ -779,7 +856,9 @@
       "age": 23,
       "injury_status": "Questionable",
       "injury_body_part": "Knee - ACL",
-      "injury_notes": "Surgery"
+      "injury_notes": "Surgery",
+      "sleeper_pts": 186.3,
+      "fp_pts": 199.78
     },
     {
       "id": "9224",
@@ -801,7 +880,9 @@
       "age": 26,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 226.7,
+      "fp_pts": 246.64
     },
     {
       "id": "8112",
@@ -823,7 +904,9 @@
       "age": 25,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 205.2,
+      "fp_pts": 236.24
     },
     {
       "id": "3163",
@@ -845,7 +928,9 @@
       "age": 31,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 283.46,
+      "fp_pts": 287.8
     },
     {
       "id": "12529",
@@ -867,7 +952,9 @@
       "age": 23,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 153.5,
+      "fp_pts": 175.3
     },
     {
       "id": "12512",
@@ -889,7 +976,9 @@
       "age": 22,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 180.0,
+      "fp_pts": 198.43
     },
     {
       "id": "4866",
@@ -911,7 +1000,9 @@
       "age": 29,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 228.2,
+      "fp_pts": 243.8
     },
     {
       "id": "4034",
@@ -933,7 +1024,9 @@
       "age": 30,
       "injury_status": "Questionable",
       "injury_body_part": "Undisclosed",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 256.0,
+      "fp_pts": 295.61
     },
     {
       "id": "13269",
@@ -955,7 +1048,9 @@
       "age": 22,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 212.16,
+      "fp_pts": 192.9
     },
     {
       "id": "4892",
@@ -977,7 +1072,9 @@
       "age": 31,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 274.88,
+      "fp_pts": 281.87
     },
     {
       "id": "12526",
@@ -999,7 +1096,9 @@
       "age": 23,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 184.5,
+      "fp_pts": 193.14
     },
     {
       "id": "7569",
@@ -1021,7 +1120,9 @@
       "age": 27,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 210.5,
+      "fp_pts": 207.11
     },
     {
       "id": "8137",
@@ -1043,7 +1144,9 @@
       "age": 25,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 205.7,
+      "fp_pts": 210.74
     },
     {
       "id": "12514",
@@ -1065,7 +1168,9 @@
       "age": 23,
       "injury_status": "Questionable",
       "injury_body_part": "Undisclosed",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 185.5,
+      "fp_pts": 191.72
     },
     {
       "id": "8150",
@@ -1087,7 +1192,9 @@
       "age": 25,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 192.0,
+      "fp_pts": 223.25
     },
     {
       "id": "7543",
@@ -1109,7 +1216,9 @@
       "age": 27,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 189.7,
+      "fp_pts": 210.21
     },
     {
       "id": "11584",
@@ -1131,7 +1240,9 @@
       "age": 23,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 179.3,
+      "fp_pts": 203.76
     },
     {
       "id": "12522",
@@ -1153,7 +1264,9 @@
       "age": 24,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 227.84,
+      "fp_pts": 232.42
     },
     {
       "id": "8144",
@@ -1175,7 +1288,9 @@
       "age": 26,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 194.9,
+      "fp_pts": 212.25
     },
     {
       "id": "12517",
@@ -1197,7 +1312,9 @@
       "age": 22,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 173.4,
+      "fp_pts": 171.86
     },
     {
       "id": "7588",
@@ -1219,7 +1336,9 @@
       "age": 26,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 188.8,
+      "fp_pts": 217.61
     },
     {
       "id": "9758",
@@ -1241,7 +1360,9 @@
       "age": 24,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 238.2,
+      "fp_pts": 260.86
     },
     {
       "id": "8146",
@@ -1263,7 +1384,9 @@
       "age": 26,
       "injury_status": "Questionable",
       "injury_body_part": "Illness",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 183.4,
+      "fp_pts": 194.77
     },
     {
       "id": "13279",
@@ -1285,7 +1408,9 @@
       "age": 21,
       "injury_status": "Questionable",
       "injury_body_part": "Undisclosed",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 144.8,
+      "fp_pts": 145.85
     },
     {
       "id": "13286",
@@ -1307,7 +1432,9 @@
       "age": 22,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 160.5,
+      "fp_pts": 176.63
     },
     {
       "id": "12481",
@@ -1329,7 +1456,9 @@
       "age": 24,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 180.2,
+      "fp_pts": 217.25
     },
     {
       "id": "12545",
@@ -1351,7 +1480,9 @@
       "age": 26,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 270.94,
+      "fp_pts": 286.74
     },
     {
       "id": "5849",
@@ -1373,7 +1504,9 @@
       "age": 29,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 265.2,
+      "fp_pts": 280.23
     },
     {
       "id": "4943",
@@ -1395,7 +1528,9 @@
       "age": 29,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 262.74,
+      "fp_pts": 266.56
     },
     {
       "id": "11635",
@@ -1417,7 +1552,9 @@
       "age": 24,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 187.7,
+      "fp_pts": 180.67
     },
     {
       "id": "9997",
@@ -1439,7 +1576,9 @@
       "age": 25,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 187.7,
+      "fp_pts": 201.15
     },
     {
       "id": "7525",
@@ -1461,7 +1600,9 @@
       "age": 27,
       "injury_status": "Questionable",
       "injury_body_part": "Hamstring",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 189.2,
+      "fp_pts": 192.95
     },
     {
       "id": "12518",
@@ -1483,7 +1624,9 @@
       "age": 24,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 159.6,
+      "fp_pts": 159.71
     },
     {
       "id": "3198",
@@ -1505,7 +1648,9 @@
       "age": 32,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 238.4,
+      "fp_pts": 264.67
     },
     {
       "id": "8161",
@@ -1527,7 +1672,9 @@
       "age": 27,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 270.12,
+      "fp_pts": 271.52
     },
     {
       "id": "5859",
@@ -1549,7 +1696,9 @@
       "age": 29,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 207.7,
+      "fp_pts": 211.34
     },
     {
       "id": "12519",
@@ -1571,7 +1720,9 @@
       "age": 22,
       "injury_status": "Questionable",
       "injury_body_part": "Lower Body",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 173.0,
+      "fp_pts": 171.72
     },
     {
       "id": "9484",
@@ -1593,7 +1744,9 @@
       "age": 25,
       "injury_status": "Questionable",
       "injury_body_part": "Knee - ACL",
-      "injury_notes": "Surgery"
+      "injury_notes": "Surgery",
+      "sleeper_pts": 140.9,
+      "fp_pts": 147.66
     },
     {
       "id": "12490",
@@ -1615,7 +1768,9 @@
       "age": 23,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 158.8,
+      "fp_pts": 192.69
     },
     {
       "id": "13281",
@@ -1637,7 +1792,9 @@
       "age": 22,
       "injury_status": "Doubtful",
       "injury_body_part": "Hamstring",
-      "injury_notes": "Strain"
+      "injury_notes": "Strain",
+      "sleeper_pts": 90.5,
+      "fp_pts": 102.41
     },
     {
       "id": "421",
@@ -1659,7 +1816,9 @@
       "age": 38,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 280.22,
+      "fp_pts": 293.97
     },
     {
       "id": "6801",
@@ -1681,7 +1840,9 @@
       "age": 27,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 186.9,
+      "fp_pts": 186.33
     },
     {
       "id": "10229",
@@ -1703,7 +1864,9 @@
       "age": 26,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 185.3,
+      "fp_pts": 224.52
     },
     {
       "id": "12506",
@@ -1725,7 +1888,9 @@
       "age": 22,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 143.4,
+      "fp_pts": 151.81
     },
     {
       "id": "5850",
@@ -1747,7 +1912,9 @@
       "age": 28,
       "injury_status": "Questionable",
       "injury_body_part": "Groin",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 186.1,
+      "fp_pts": 230.96
     },
     {
       "id": "13294",
@@ -1769,7 +1936,9 @@
       "age": 22,
       "injury_status": "Questionable",
       "injury_body_part": "Undisclosed",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 138.5,
+      "fp_pts": 124.47
     },
     {
       "id": "7526",
@@ -1791,7 +1960,9 @@
       "age": 27,
       "injury_status": "Questionable",
       "injury_body_part": "Undisclosed",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 182.5,
+      "fp_pts": 173.13
     },
     {
       "id": "6790",
@@ -1813,7 +1984,9 @@
       "age": 27,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 189.5,
+      "fp_pts": 205.84
     },
     {
       "id": "5892",
@@ -1835,7 +2008,9 @@
       "age": 29,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 190.1,
+      "fp_pts": 180.52
     },
     {
       "id": "11620",
@@ -1857,7 +2032,9 @@
       "age": 24,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 173.9,
+      "fp_pts": 173.92
     },
     {
       "id": "8148",
@@ -1879,7 +2056,9 @@
       "age": 25,
       "injury_status": "Questionable",
       "injury_body_part": "Shoulder",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 176.2,
+      "fp_pts": 185.1
     },
     {
       "id": "11628",
@@ -1901,7 +2080,9 @@
       "age": 24,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 155.2,
+      "fp_pts": 163.61
     },
     {
       "id": "11631",
@@ -1923,7 +2104,9 @@
       "age": 23,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 164.4,
+      "fp_pts": 152.14
     },
     {
       "id": "12489",
@@ -1945,7 +2128,9 @@
       "age": 25,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 125.6,
+      "fp_pts": 144.48
     },
     {
       "id": "8228",
@@ -1967,7 +2152,9 @@
       "age": 27,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 152.6,
+      "fp_pts": 176.05
     },
     {
       "id": "5870",
@@ -1989,7 +2176,9 @@
       "age": 29,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 223.54,
+      "fp_pts": 274.56
     },
     {
       "id": "8167",
@@ -2011,7 +2200,9 @@
       "age": 27,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 176.1,
+      "fp_pts": 166.44
     },
     {
       "id": "10859",
@@ -2033,7 +2224,9 @@
       "age": 25,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 158.5,
+      "fp_pts": 148.93
     },
     {
       "id": "13298",
@@ -2055,7 +2248,9 @@
       "age": 21,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 127.4,
+      "fp_pts": 129.61
     },
     {
       "id": "5927",
@@ -2077,7 +2272,9 @@
       "age": 30,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 176.8,
+      "fp_pts": 175.37
     },
     {
       "id": "9228",
@@ -2099,7 +2296,9 @@
       "age": 25,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 235.58,
+      "fp_pts": 254.38
     },
     {
       "id": "12534",
@@ -2121,7 +2320,9 @@
       "age": 24,
       "injury_status": "Questionable",
       "injury_body_part": "Knee",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 143.1,
+      "fp_pts": 144.73
     },
     {
       "id": "11586",
@@ -2143,7 +2344,9 @@
       "age": 25,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 127.8,
+      "fp_pts": 132.61
     },
     {
       "id": "9753",
@@ -2165,7 +2368,9 @@
       "age": 25,
       "injury_status": "PUP",
       "injury_body_part": "Knee - ACL",
-      "injury_notes": "Surgery"
+      "injury_notes": "Surgery",
+      "sleeper_pts": 61.7,
+      "fp_pts": 113.19
     },
     {
       "id": "7553",
@@ -2187,7 +2392,9 @@
       "age": 25,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 138.6,
+      "fp_pts": 155.91
     },
     {
       "id": "13275",
@@ -2209,7 +2416,9 @@
       "age": 23,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 13.62,
+      "fp_pts": 23.37
     },
     {
       "id": "13330",
@@ -2231,7 +2440,9 @@
       "age": 21,
       "injury_status": "Questionable",
       "injury_body_part": "Abdomen",
-      "injury_notes": "Surgery"
+      "injury_notes": "Surgery",
+      "sleeper_pts": 80.2,
+      "fp_pts": 102.42
     },
     {
       "id": "4983",
@@ -2253,7 +2464,9 @@
       "age": 29,
       "injury_status": "Questionable",
       "injury_body_part": "Lower Body",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 147.5,
+      "fp_pts": 173.76
     },
     {
       "id": "13349",
@@ -2275,7 +2488,9 @@
       "age": 23,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 65.9,
+      "fp_pts": 39.13
     },
     {
       "id": "11583",
@@ -2297,7 +2512,9 @@
       "age": 23,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 137.9,
+      "fp_pts": 143.66
     },
     {
       "id": "10236",
@@ -2319,7 +2536,9 @@
       "age": 26,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 130.6,
+      "fp_pts": 131.64
     },
     {
       "id": "11559",
@@ -2341,7 +2560,9 @@
       "age": 26,
       "injury_status": "Questionable",
       "injury_body_part": "Knee - ACL",
-      "injury_notes": "Surgery"
+      "injury_notes": "Surgery",
+      "sleeper_pts": 108.38,
+      "fp_pts": 83.47
     },
     {
       "id": "8142",
@@ -2363,7 +2584,9 @@
       "age": 26,
       "injury_status": "PUP",
       "injury_body_part": "Ankle",
-      "injury_notes": "Surgery"
+      "injury_notes": "Surgery",
+      "sleeper_pts": 150.9,
+      "fp_pts": 168.32
     },
     {
       "id": "9756",
@@ -2385,7 +2608,9 @@
       "age": 24,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 141.7,
+      "fp_pts": 141.3
     },
     {
       "id": "7611",
@@ -2407,7 +2632,9 @@
       "age": 28,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 154.5,
+      "fp_pts": 168.59
     },
     {
       "id": "5846",
@@ -2429,7 +2656,9 @@
       "age": 28,
       "injury_status": "Questionable",
       "injury_body_part": "Undisclosed",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 152.3,
+      "fp_pts": 163.09
     },
     {
       "id": "8131",
@@ -2451,7 +2680,9 @@
       "age": 26,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 126.3,
+      "fp_pts": 133.59
     },
     {
       "id": "9487",
@@ -2473,7 +2704,9 @@
       "age": 24,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 176.4,
+      "fp_pts": 153.02
     },
     {
       "id": "12493",
@@ -2495,7 +2728,9 @@
       "age": 23,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 113.8,
+      "fp_pts": 88.96
     },
     {
       "id": "7594",
@@ -2517,7 +2752,9 @@
       "age": 27,
       "injury_status": "Questionable",
       "injury_body_part": "Hamstring",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 136.9,
+      "fp_pts": 158.47
     },
     {
       "id": "7021",
@@ -2539,7 +2776,9 @@
       "age": 28,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 142.1,
+      "fp_pts": 164.35
     },
     {
       "id": "13345",
@@ -2561,7 +2800,9 @@
       "age": 22,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 58.9,
+      "fp_pts": 44.3
     },
     {
       "id": "5967",
@@ -2583,7 +2824,9 @@
       "age": 29,
       "injury_status": "Questionable",
       "injury_body_part": "Undisclosed",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 146.1,
+      "fp_pts": 171.82
     },
     {
       "id": "7567",
@@ -2605,7 +2848,9 @@
       "age": 27,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 128.8,
+      "fp_pts": 143.3
     },
     {
       "id": "6806",
@@ -2627,7 +2872,9 @@
       "age": 27,
       "injury_status": "Questionable",
       "injury_body_part": "Undisclosed",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 147.2,
+      "fp_pts": 166.33
     },
     {
       "id": "8136",
@@ -2649,7 +2896,9 @@
       "age": 27,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 111.1,
+      "fp_pts": 145.38
     },
     {
       "id": "10232",
@@ -2671,7 +2920,9 @@
       "age": 26,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 136.5,
+      "fp_pts": 142.84
     },
     {
       "id": "8126",
@@ -2693,7 +2944,9 @@
       "age": 25,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 135.2,
+      "fp_pts": 141.15
     },
     {
       "id": "12484",
@@ -2715,7 +2968,9 @@
       "age": 23,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 136.9,
+      "fp_pts": 120.2
     },
     {
       "id": "4217",
@@ -2737,7 +2992,9 @@
       "age": 32,
       "injury_status": "PUP",
       "injury_body_part": "Achilles",
-      "injury_notes": "Surgery"
+      "injury_notes": "Surgery",
+      "sleeper_pts": 138.3,
+      "fp_pts": 142.53
     },
     {
       "id": "2133",
@@ -2759,7 +3016,9 @@
       "age": 33,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 161.0,
+      "fp_pts": 187.86
     },
     {
       "id": "13346",
@@ -2781,7 +3040,9 @@
       "age": 22,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 108.2,
+      "fp_pts": 121.72
     },
     {
       "id": "9500",
@@ -2803,7 +3064,9 @@
       "age": 25,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 137.3,
+      "fp_pts": 133.33
     },
     {
       "id": "13276",
@@ -2825,7 +3088,9 @@
       "age": 22,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 104.6,
+      "fp_pts": 75.84
     },
     {
       "id": "2216",
@@ -2847,7 +3112,9 @@
       "age": 32,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 187.2,
+      "fp_pts": 170.14
     },
     {
       "id": "6819",
@@ -2869,7 +3136,9 @@
       "age": 28,
       "injury_status": "Questionable",
       "injury_body_part": "Leg",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 136.4,
+      "fp_pts": 150.06
     },
     {
       "id": "12533",
@@ -2891,7 +3160,9 @@
       "age": 25,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 118.4,
+      "fp_pts": 139.82
     },
     {
       "id": "8110",
@@ -2913,7 +3184,9 @@
       "age": 27,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 124.8,
+      "fp_pts": 130.46
     },
     {
       "id": "5045",
@@ -2935,7 +3208,9 @@
       "age": 30,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 144.8,
+      "fp_pts": 164.91
     },
     {
       "id": "11624",
@@ -2957,7 +3232,9 @@
       "age": 23,
       "injury_status": "Questionable",
       "injury_body_part": "Shoulder",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 134.0,
+      "fp_pts": 139.95
     },
     {
       "id": "9754",
@@ -2979,7 +3256,9 @@
       "age": 24,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 134.9,
+      "fp_pts": 143.13
     },
     {
       "id": "9480",
@@ -3001,7 +3280,9 @@
       "age": 25,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 129.5,
+      "fp_pts": 121.74
     },
     {
       "id": "6768",
@@ -3023,7 +3304,9 @@
       "age": 28,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 137.94,
+      "fp_pts": 164.47
     },
     {
       "id": "11655",
@@ -3045,7 +3328,9 @@
       "age": 26,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 100.8,
+      "fp_pts": 106.4
     },
     {
       "id": "10222",
@@ -3067,7 +3352,9 @@
       "age": 26,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 162.6,
+      "fp_pts": 144.8
     },
     {
       "id": "5012",
@@ -3089,7 +3376,9 @@
       "age": 30,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 132.5,
+      "fp_pts": 137.35
     },
     {
       "id": "5947",
@@ -3111,7 +3400,9 @@
       "age": 29,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 137.3,
+      "fp_pts": 144.56
     },
     {
       "id": "12501",
@@ -3133,7 +3424,9 @@
       "age": 23,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 141.1,
+      "fp_pts": 137.05
     },
     {
       "id": "8132",
@@ -3155,7 +3448,9 @@
       "age": 26,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 65.4,
+      "fp_pts": 86.71
     },
     {
       "id": "12474",
@@ -3177,7 +3472,9 @@
       "age": 25,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 74.3,
+      "fp_pts": 112.34
     },
     {
       "id": "8408",
@@ -3199,7 +3496,9 @@
       "age": 27,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 143.7,
+      "fp_pts": 137.92
     },
     {
       "id": "4037",
@@ -3221,7 +3520,9 @@
       "age": 30,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 139.6,
+      "fp_pts": 141.84
     },
     {
       "id": "11638",
@@ -3243,7 +3544,9 @@
       "age": 25,
       "injury_status": "IR",
       "injury_body_part": "Knee - PCL",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": null,
+      "fp_pts": null
     },
     {
       "id": "11646",
@@ -3265,7 +3568,9 @@
       "age": 24,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 135.9,
+      "fp_pts": 127.36
     },
     {
       "id": "8121",
@@ -3287,7 +3592,9 @@
       "age": 26,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 132.7,
+      "fp_pts": 128.86
     },
     {
       "id": "12530",
@@ -3309,7 +3616,9 @@
       "age": 23,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 83.1,
+      "fp_pts": 91.0
     },
     {
       "id": "8134",
@@ -3331,7 +3640,9 @@
       "age": 26,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 135.2,
+      "fp_pts": 130.07
     },
     {
       "id": "13288",
@@ -3353,7 +3664,9 @@
       "age": 22,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 57.7,
+      "fp_pts": 17.59
     },
     {
       "id": "5022",
@@ -3375,7 +3688,9 @@
       "age": 31,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 109.5,
+      "fp_pts": 146.65
     },
     {
       "id": "13337",
@@ -3397,7 +3712,9 @@
       "age": 22,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 59.2,
+      "fp_pts": 32.28
     },
     {
       "id": "8210",
@@ -3419,7 +3736,9 @@
       "age": 26,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 113.6,
+      "fp_pts": 99.8
     },
     {
       "id": "13301",
@@ -3441,7 +3760,9 @@
       "age": 22,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 61.2,
+      "fp_pts": 86.43
     },
     {
       "id": "13417",
@@ -3463,7 +3784,9 @@
       "age": 23,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 105.4,
+      "fp_pts": 125.79
     },
     {
       "id": "12487",
@@ -3485,7 +3808,9 @@
       "age": 23,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 82.8,
+      "fp_pts": 98.77
     },
     {
       "id": "12469",
@@ -3507,7 +3832,9 @@
       "age": 21,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 77.2,
+      "fp_pts": 90.0
     },
     {
       "id": "10219",
@@ -3529,7 +3856,9 @@
       "age": 26,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 125.0,
+      "fp_pts": 92.91
     },
     {
       "id": "12509",
@@ -3551,7 +3880,9 @@
       "age": 24,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 93.4,
+      "fp_pts": 72.49
     },
     {
       "id": "4199",
@@ -3573,7 +3904,9 @@
       "age": 31,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 120.1,
+      "fp_pts": 140.78
     },
     {
       "id": "11618",
@@ -3595,7 +3928,9 @@
       "age": 24,
       "injury_status": "Questionable",
       "injury_body_part": "Calf",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 105.4,
+      "fp_pts": 110.52
     },
     {
       "id": "13274",
@@ -3617,7 +3952,9 @@
       "age": 22,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 80.9,
+      "fp_pts": 88.58
     },
     {
       "id": "13311",
@@ -3639,7 +3976,9 @@
       "age": 22,
       "injury_status": "Questionable",
       "injury_body_part": "Knee - ACL",
-      "injury_notes": "Surgery"
+      "injury_notes": "Surgery",
+      "sleeper_pts": 54.7,
+      "fp_pts": 77.08
     },
     {
       "id": "9508",
@@ -3661,7 +4000,9 @@
       "age": 25,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 97.1,
+      "fp_pts": 115.16
     },
     {
       "id": "11603",
@@ -3683,7 +4024,9 @@
       "age": 24,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 113.4,
+      "fp_pts": 100.1
     },
     {
       "id": "1466",
@@ -3705,7 +4048,9 @@
       "age": 36,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 136.4,
+      "fp_pts": 144.59
     },
     {
       "id": "8676",
@@ -3727,7 +4072,9 @@
       "age": 27,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 115.6,
+      "fp_pts": 131.79
     },
     {
       "id": "7002",
@@ -3749,7 +4096,9 @@
       "age": 29,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 112.9,
+      "fp_pts": 122.39
     },
     {
       "id": "13405",
@@ -3771,7 +4120,9 @@
       "age": 23,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 41.9,
+      "fp_pts": 19.96
     },
     {
       "id": "2449",
@@ -3793,7 +4144,9 @@
       "age": 32,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 125.3,
+      "fp_pts": 132.75
     },
     {
       "id": "7049",
@@ -3815,7 +4168,9 @@
       "age": 29,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 86.2,
+      "fp_pts": 109.7
     },
     {
       "id": "12524",
@@ -3837,7 +4192,9 @@
       "age": 24,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 97.12,
+      "fp_pts": 90.7
     },
     {
       "id": "8205",
@@ -3859,7 +4216,9 @@
       "age": 27,
       "injury_status": "Questionable",
       "injury_body_part": "Knee - MCL",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 48.6,
+      "fp_pts": 105.44
     },
     {
       "id": "9225",
@@ -3881,7 +4240,9 @@
       "age": 23,
       "injury_status": "Questionable",
       "injury_body_part": "Toe",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 61.2,
+      "fp_pts": 80.26
     },
     {
       "id": "5844",
@@ -3903,7 +4264,9 @@
       "age": 29,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 122.0,
+      "fp_pts": 108.7
     },
     {
       "id": "11576",
@@ -3925,7 +4288,9 @@
       "age": 22,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 47.2,
+      "fp_pts": 89.55
     },
     {
       "id": "9511",
@@ -3947,7 +4312,9 @@
       "age": 24,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 87.9,
+      "fp_pts": 76.63
     },
     {
       "id": "3214",
@@ -3969,7 +4336,9 @@
       "age": 31,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 124.5,
+      "fp_pts": 122.55
     },
     {
       "id": "12536",
@@ -3991,7 +4360,9 @@
       "age": 23,
       "injury_status": "Questionable",
       "injury_body_part": "Hamstring",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 67.4,
+      "fp_pts": 59.99
     },
     {
       "id": "12502",
@@ -4013,7 +4384,9 @@
       "age": 23,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 101.8,
+      "fp_pts": 87.12
     },
     {
       "id": "13305",
@@ -4035,7 +4408,9 @@
       "age": 23,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 57.5,
+      "fp_pts": 75.66
     },
     {
       "id": "8154",
@@ -4057,7 +4432,9 @@
       "age": 27,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 63.4,
+      "fp_pts": 89.59
     },
     {
       "id": "13347",
@@ -4079,7 +4456,9 @@
       "age": 22,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 22.8,
+      "fp_pts": 18.42
     },
     {
       "id": "4035",
@@ -4101,7 +4480,9 @@
       "age": 31,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 53.0,
+      "fp_pts": 114.16
     },
     {
       "id": "12504",
@@ -4123,7 +4504,9 @@
       "age": 23,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 29.5,
+      "fp_pts": 4.85
     },
     {
       "id": "12495",
@@ -4145,7 +4528,9 @@
       "age": 22,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 21.7,
+      "fp_pts": 32.85
     },
     {
       "id": "12498",
@@ -4167,7 +4552,9 @@
       "age": 22,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 76.4,
+      "fp_pts": 77.72
     },
     {
       "id": "13268",
@@ -4189,7 +4576,9 @@
       "age": 23,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 50.4,
+      "fp_pts": 27.99
     },
     {
       "id": "11625",
@@ -4211,7 +4600,9 @@
       "age": 23,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 80.8,
+      "fp_pts": 94.01
     },
     {
       "id": "13319",
@@ -4233,7 +4624,9 @@
       "age": 23,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 30.9,
+      "fp_pts": 14.09
     },
     {
       "id": "12492",
@@ -4255,7 +4648,9 @@
       "age": 23,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 78.9,
+      "fp_pts": 58.39
     },
     {
       "id": "11627",
@@ -4277,7 +4672,9 @@
       "age": 23,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 54.1,
+      "fp_pts": 82.06
     },
     {
       "id": "13278",
@@ -4299,7 +4696,9 @@
       "age": 23,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 45.1,
+      "fp_pts": 16.31
     },
     {
       "id": "13320",
@@ -4321,7 +4720,9 @@
       "age": 22,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 63.5,
+      "fp_pts": 64.57
     },
     {
       "id": "13293",
@@ -4343,7 +4744,9 @@
       "age": 22,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 87.4,
+      "fp_pts": 106.79
     },
     {
       "id": "11647",
@@ -4365,7 +4768,9 @@
       "age": 24,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 53.0,
+      "fp_pts": 53.08
     },
     {
       "id": "6783",
@@ -4387,7 +4792,9 @@
       "age": 27,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 98.1,
+      "fp_pts": 118.08
     },
     {
       "id": "11575",
@@ -4409,7 +4816,9 @@
       "age": 26,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 60.6,
+      "fp_pts": 31.98
     },
     {
       "id": "9506",
@@ -4431,7 +4840,9 @@
       "age": 24,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 48.5,
+      "fp_pts": 31.37
     },
     {
       "id": "11589",
@@ -4453,7 +4864,9 @@
       "age": 24,
       "injury_status": "Questionable",
       "injury_body_part": "Knee",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 25.7,
+      "fp_pts": 0.0
     },
     {
       "id": "11435",
@@ -4475,7 +4888,9 @@
       "age": 27,
       "injury_status": "Questionable",
       "injury_body_part": "Hamstring",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 51.0,
+      "fp_pts": 47.43
     },
     {
       "id": "4137",
@@ -4497,7 +4912,9 @@
       "age": 31,
       "injury_status": "Questionable",
       "injury_body_part": "Foot",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 51.7,
+      "fp_pts": 52.5
     },
     {
       "id": "12535",
@@ -4519,7 +4936,9 @@
       "age": 24,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 73.1,
+      "fp_pts": 72.38
     },
     {
       "id": "9504",
@@ -4541,7 +4960,9 @@
       "age": 24,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 79.1,
+      "fp_pts": 92.51
     },
     {
       "id": "5001",
@@ -4563,7 +4984,9 @@
       "age": 30,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 110.2,
+      "fp_pts": 115.65
     },
     {
       "id": "12476",
@@ -4585,7 +5008,9 @@
       "age": 23,
       "injury_status": "Questionable",
       "injury_body_part": "Hamstring",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 28.4,
+      "fp_pts": 18.0
     },
     {
       "id": "12457",
@@ -4607,7 +5032,9 @@
       "age": 22,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 52.1,
+      "fp_pts": 50.23
     },
     {
       "id": "11581",
@@ -4629,7 +5056,9 @@
       "age": 25,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 48.3,
+      "fp_pts": 49.73
     },
     {
       "id": "11643",
@@ -4651,7 +5080,9 @@
       "age": 23,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 41.1,
+      "fp_pts": 47.13
     },
     {
       "id": "11565",
@@ -4673,7 +5104,9 @@
       "age": 23,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 19.62,
+      "fp_pts": 22.47
     },
     {
       "id": "13302",
@@ -4695,7 +5128,9 @@
       "age": 22,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 26.1,
+      "fp_pts": 61.56
     },
     {
       "id": "96",
@@ -4717,7 +5152,9 @@
       "age": 42,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 177.0,
+      "fp_pts": 223.47
     },
     {
       "id": "5872",
@@ -4739,7 +5176,9 @@
       "age": 30,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 127.7,
+      "fp_pts": 139.64
     },
     {
       "id": "8111",
@@ -4761,7 +5200,9 @@
       "age": 27,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 95.8,
+      "fp_pts": 101.49
     },
     {
       "id": "1373",
@@ -4783,7 +5224,9 @@
       "age": 35,
       "injury_status": "Questionable",
       "injury_body_part": "Ankle",
-      "injury_notes": "Soreness"
+      "injury_notes": "Soreness",
+      "sleeper_pts": 222.48,
+      "fp_pts": 234.86
     },
     {
       "id": "3257",
@@ -4805,7 +5248,9 @@
       "age": 33,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 160.0,
+      "fp_pts": 232.19
     },
     {
       "id": "12483",
@@ -4827,7 +5272,9 @@
       "age": 23,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 62.9,
+      "fp_pts": 51.95
     },
     {
       "id": "12455",
@@ -4849,7 +5296,9 @@
       "age": 23,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 17.9,
+      "fp_pts": 27.25
     },
     {
       "id": "13414",
@@ -4871,7 +5320,9 @@
       "age": 24,
       "injury_status": "Questionable",
       "injury_body_part": "Thigh",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 39.3,
+      "fp_pts": 68.64
     },
     {
       "id": "12471",
@@ -4893,7 +5344,9 @@
       "age": 22,
       "injury_status": "Questionable",
       "injury_body_part": "Hamstring",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 27.0,
+      "fp_pts": 31.62
     },
     {
       "id": "13285",
@@ -4915,7 +5368,9 @@
       "age": 22,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 75.0,
+      "fp_pts": 48.21
     },
     {
       "id": "11569",
@@ -4937,7 +5392,9 @@
       "age": 23,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 8.6,
+      "fp_pts": null
     },
     {
       "id": "11571",
@@ -4959,7 +5416,9 @@
       "age": 24,
       "injury_status": "Questionable",
       "injury_body_part": "Knee",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 54.0,
+      "fp_pts": 38.42
     },
     {
       "id": "7527",
@@ -4981,7 +5440,9 @@
       "age": 27,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 26.72,
+      "fp_pts": 10.54
     },
     {
       "id": "9502",
@@ -5003,7 +5464,9 @@
       "age": 26,
       "injury_status": "Questionable",
       "injury_body_part": "Knee - ACL + MCL",
-      "injury_notes": "Surgery"
+      "injury_notes": "Surgery",
+      "sleeper_pts": 57.4,
+      "fp_pts": 116.18
     },
     {
       "id": "13272",
@@ -5025,7 +5488,9 @@
       "age": 23,
       "injury_status": "Questionable",
       "injury_body_part": "Ribs",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 54.92,
+      "fp_pts": 23.24
     },
     {
       "id": "9229",
@@ -5047,7 +5512,9 @@
       "age": 24,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 21.32,
+      "fp_pts": 10.36
     },
     {
       "id": "4017",
@@ -5069,7 +5536,9 @@
       "age": 30,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 102.06,
+      "fp_pts": 150.71
     },
     {
       "id": "12467",
@@ -5091,7 +5560,9 @@
       "age": 22,
       "injury_status": "Questionable",
       "injury_body_part": "Ribs",
-      "injury_notes": "Fracture"
+      "injury_notes": "Fracture",
+      "sleeper_pts": 54.2,
+      "fp_pts": 83.73
     },
     {
       "id": "4033",
@@ -5113,7 +5584,9 @@
       "age": 30,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 46.5,
+      "fp_pts": 80.93
     },
     {
       "id": "7591",
@@ -5135,7 +5608,9 @@
       "age": 27,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 34.72,
+      "fp_pts": 12.06
     },
     {
       "id": "12499",
@@ -5157,7 +5632,9 @@
       "age": 23,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 46.7,
+      "fp_pts": 66.76
     },
     {
       "id": "13289",
@@ -5179,7 +5656,9 @@
       "age": 22,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 22.02,
+      "fp_pts": 9.36
     },
     {
       "id": "13402",
@@ -5201,7 +5680,9 @@
       "age": 24,
       "injury_status": "Questionable",
       "injury_body_part": "Lower Body",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 52.6,
+      "fp_pts": 23.3
     },
     {
       "id": "1166",
@@ -5223,7 +5704,9 @@
       "age": 37,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 39.16,
+      "fp_pts": 47.17
     },
     {
       "id": "12510",
@@ -5245,7 +5728,9 @@
       "age": 23,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 13.86,
+      "fp_pts": 9.1
     },
     {
       "id": "13303",
@@ -5267,7 +5752,9 @@
       "age": 22,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 24.0,
+      "fp_pts": 9.38
     },
     {
       "id": "12511",
@@ -5289,7 +5776,9 @@
       "age": 24,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 22.5,
+      "fp_pts": 6.66
     },
     {
       "id": "13424",
@@ -5311,7 +5800,9 @@
       "age": 24,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 32.8,
+      "fp_pts": 21.55
     },
     {
       "id": "7600",
@@ -5333,7 +5824,9 @@
       "age": 27,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 102.9,
+      "fp_pts": 107.64
     },
     {
       "id": "9757",
@@ -5355,7 +5848,9 @@
       "age": 24,
       "injury_status": "Questionable",
       "injury_body_part": "Back",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 4.6,
+      "fp_pts": 7.27
     },
     {
       "id": "13421",
@@ -5377,7 +5872,9 @@
       "age": 22,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 26.0,
+      "fp_pts": 36.83
     },
     {
       "id": "9486",
@@ -5399,7 +5896,9 @@
       "age": 25,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 57.4,
+      "fp_pts": 88.17
     },
     {
       "id": "11783",
@@ -5421,7 +5920,9 @@
       "age": 26,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 97.7,
+      "fp_pts": 72.27
     },
     {
       "id": "12531",
@@ -5443,7 +5944,9 @@
       "age": 22,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 32.2,
+      "fp_pts": 12.73
     },
     {
       "id": "8180",
@@ -5465,7 +5968,9 @@
       "age": 27,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 107.6,
+      "fp_pts": 108.63
     },
     {
       "id": "8172",
@@ -5487,7 +5992,9 @@
       "age": 26,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 87.4,
+      "fp_pts": 106.24
     },
     {
       "id": "12521",
@@ -5509,7 +6016,9 @@
       "age": 23,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 57.7,
+      "fp_pts": 46.61
     },
     {
       "id": "7528",
@@ -5531,7 +6040,9 @@
       "age": 27,
       "injury_status": "Questionable",
       "injury_body_part": "Achilles",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 23.8,
+      "fp_pts": 65.3
     },
     {
       "id": "13317",
@@ -5553,7 +6064,9 @@
       "age": 22,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 79.9,
+      "fp_pts": 68.5
     },
     {
       "id": "12540",
@@ -5575,7 +6088,9 @@
       "age": 24,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 70.4,
+      "fp_pts": 65.28
     },
     {
       "id": "11651",
@@ -5597,7 +6112,9 @@
       "age": 26,
       "injury_status": "PUP",
       "injury_body_part": "Pectoral",
-      "injury_notes": "Surgery"
+      "injury_notes": "Surgery",
+      "sleeper_pts": 20.2,
+      "fp_pts": 13.85
     },
     {
       "id": "11597",
@@ -5619,7 +6136,9 @@
       "age": 25,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 61.5,
+      "fp_pts": 62.14
     },
     {
       "id": "12497",
@@ -5641,7 +6160,9 @@
       "age": 23,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 76.5,
+      "fp_pts": 79.31
     },
     {
       "id": "13423",
@@ -5663,7 +6184,9 @@
       "age": 23,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": null,
+      "fp_pts": null
     },
     {
       "id": "12544",
@@ -5685,7 +6208,9 @@
       "age": 22,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 47.2,
+      "fp_pts": 36.16
     },
     {
       "id": "13353",
@@ -5707,7 +6232,9 @@
       "age": 22,
       "injury_status": "IR",
       "injury_body_part": "Knee",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": null,
+      "fp_pts": null
     },
     {
       "id": "10213",
@@ -5729,7 +6256,9 @@
       "age": 25,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 102.9,
+      "fp_pts": 117.16
     },
     {
       "id": "11637",
@@ -5751,7 +6280,9 @@
       "age": 23,
       "injury_status": "Questionable",
       "injury_body_part": "Lower Body",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 71.3,
+      "fp_pts": 62.43
     },
     {
       "id": "12543",
@@ -5773,7 +6304,9 @@
       "age": 24,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 22.9,
+      "fp_pts": 18.24
     },
     {
       "id": "7571",
@@ -5795,7 +6328,9 @@
       "age": 26,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 84.3,
+      "fp_pts": 114.85
     },
     {
       "id": "9482",
@@ -5817,7 +6352,9 @@
       "age": 25,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 63.8,
+      "fp_pts": 70.17
     },
     {
       "id": "11610",
@@ -5839,7 +6376,9 @@
       "age": 25,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 107.3,
+      "fp_pts": 89.29
     },
     {
       "id": "2307",
@@ -5861,7 +6400,9 @@
       "age": 32,
       "injury_status": "Questionable",
       "injury_body_part": "Knee",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 13.12,
+      "fp_pts": 18.01
     },
     {
       "id": "11577",
@@ -5883,7 +6424,9 @@
       "age": 23,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 28.8,
+      "fp_pts": 21.94
     },
     {
       "id": "4981",
@@ -5905,7 +6448,9 @@
       "age": 31,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 63.8,
+      "fp_pts": 124.79
     },
     {
       "id": "7090",
@@ -5927,7 +6472,9 @@
       "age": 28,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 49.1,
+      "fp_pts": 52.87
     },
     {
       "id": "13306",
@@ -5949,7 +6496,9 @@
       "age": 23,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 30.3,
+      "fp_pts": null
     },
     {
       "id": "13400",
@@ -5971,7 +6520,9 @@
       "age": 22,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 46.5,
+      "fp_pts": 7.54
     },
     {
       "id": "12547",
@@ -5993,7 +6544,9 @@
       "age": 23,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 26.2,
+      "fp_pts": 18.84
     },
     {
       "id": "11370",
@@ -6015,7 +6568,9 @@
       "age": 26,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 49.3,
+      "fp_pts": 56.49
     },
     {
       "id": "8143",
@@ -6037,7 +6592,9 @@
       "age": 26,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 23.3,
+      "fp_pts": 0.0
     },
     {
       "id": "5995",
@@ -6059,7 +6616,9 @@
       "age": 28,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 55.7,
+      "fp_pts": 95.74
     },
     {
       "id": "6130",
@@ -6081,7 +6640,9 @@
       "age": 28,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 9.8,
+      "fp_pts": 17.69
     },
     {
       "id": "12048",
@@ -6103,7 +6664,9 @@
       "age": 26,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 23.2,
+      "fp_pts": 37.12
     },
     {
       "id": "12500",
@@ -6125,7 +6688,9 @@
       "age": 23,
       "injury_status": "Questionable",
       "injury_body_part": "Groin",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 12.4,
+      "fp_pts": 11.57
     },
     {
       "id": "11579",
@@ -6147,7 +6712,9 @@
       "age": 22,
       "injury_status": "Questionable",
       "injury_body_part": "Leg",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 21.1,
+      "fp_pts": 22.1
     },
     {
       "id": "6803",
@@ -6169,7 +6736,9 @@
       "age": 28,
       "injury_status": "DNR",
       "injury_body_part": "Knee - ACL + MCL",
-      "injury_notes": "Surgery"
+      "injury_notes": "Surgery",
+      "sleeper_pts": 41.6,
+      "fp_pts": null
     },
     {
       "id": "13348",
@@ -6191,7 +6760,9 @@
       "age": 24,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 28.2,
+      "fp_pts": null
     },
     {
       "id": "13416",
@@ -6213,7 +6784,9 @@
       "age": 24,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": null,
+      "fp_pts": null
     },
     {
       "id": "3321",
@@ -6235,7 +6808,9 @@
       "age": 31,
       "injury_status": "Questionable",
       "injury_body_part": "Knee - ACL",
-      "injury_notes": "Surgery"
+      "injury_notes": "Surgery",
+      "sleeper_pts": 77.2,
+      "fp_pts": null
     },
     {
       "id": "11199",
@@ -6257,7 +6832,9 @@
       "age": 27,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 32.3,
+      "fp_pts": 74.55
     },
     {
       "id": "4066",
@@ -6279,7 +6856,9 @@
       "age": 31,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 55.2,
+      "fp_pts": 90.4
     },
     {
       "id": "9494",
@@ -6301,7 +6880,9 @@
       "age": 24,
       "injury_status": "Questionable",
       "injury_body_part": "Undisclosed",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 56.4,
+      "fp_pts": 54.77
     },
     {
       "id": "4950",
@@ -6323,7 +6904,9 @@
       "age": 29,
       "injury_status": "Questionable",
       "injury_body_part": "Undisclosed",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 36.9,
+      "fp_pts": 73.17
     },
     {
       "id": "13335",
@@ -6345,7 +6928,9 @@
       "age": 23,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": null,
+      "fp_pts": 9.2
     },
     {
       "id": "8698",
@@ -6367,7 +6952,9 @@
       "age": 27,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 55.8,
+      "fp_pts": 38.48
     },
     {
       "id": "11600",
@@ -6389,7 +6976,9 @@
       "age": 23,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 19.9,
+      "fp_pts": 35.82
     },
     {
       "id": "8800",
@@ -6411,7 +7000,9 @@
       "age": 27,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 30.7,
+      "fp_pts": 44.65
     },
     {
       "id": "2306",
@@ -6433,7 +7024,9 @@
       "age": 32,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 12.86,
+      "fp_pts": 11.71
     },
     {
       "id": "12485",
@@ -6455,7 +7048,9 @@
       "age": 24,
       "injury_status": "Questionable",
       "injury_body_part": "Groin",
-      "injury_notes": "Strain"
+      "injury_notes": "Strain",
+      "sleeper_pts": 31.4,
+      "fp_pts": 18.05
     },
     {
       "id": "13404",
@@ -6477,7 +7072,9 @@
       "age": 24,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": null,
+      "fp_pts": 9.24
     },
     {
       "id": "19",
@@ -6499,7 +7096,9 @@
       "age": 41,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 28.72,
+      "fp_pts": 10.34
     },
     {
       "id": "4993",
@@ -6521,7 +7120,9 @@
       "age": 30,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 83.9,
+      "fp_pts": 85.39
     },
     {
       "id": "11256",
@@ -6543,7 +7144,9 @@
       "age": 26,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 12.5,
+      "fp_pts": 11.48
     },
     {
       "id": "11439",
@@ -6565,7 +7168,9 @@
       "age": 25,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 6.5,
+      "fp_pts": null
     },
     {
       "id": "4147",
@@ -6587,7 +7192,9 @@
       "age": 30,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 62.8,
+      "fp_pts": 87.18
     },
     {
       "id": "13420",
@@ -6609,7 +7216,9 @@
       "age": 23,
       "injury_status": "Questionable",
       "injury_body_part": "Undisclosed",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 31.2,
+      "fp_pts": 31.92
     },
     {
       "id": "12470",
@@ -6631,7 +7240,9 @@
       "age": 23,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 12.44,
+      "fp_pts": 12.42
     },
     {
       "id": "11562",
@@ -6653,7 +7264,9 @@
       "age": 25,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 12.68,
+      "fp_pts": 10.25
     },
     {
       "id": "9479",
@@ -6675,7 +7288,9 @@
       "age": 25,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 68.6,
+      "fp_pts": 58.77
     },
     {
       "id": "11596",
@@ -6697,7 +7312,9 @@
       "age": 24,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 22.0,
+      "fp_pts": 25.32
     },
     {
       "id": "6865",
@@ -6719,7 +7336,9 @@
       "age": 27,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 61.8,
+      "fp_pts": 75.35
     },
     {
       "id": "11626",
@@ -6741,7 +7360,9 @@
       "age": 25,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 54.0,
+      "fp_pts": 75.84
     },
     {
       "id": "4039",
@@ -6763,7 +7384,9 @@
       "age": 33,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 70.4,
+      "fp_pts": 101.48
     },
     {
       "id": "6826",
@@ -6785,7 +7408,9 @@
       "age": 27,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 62.7,
+      "fp_pts": 53.73
     },
     {
       "id": "11557",
@@ -6807,7 +7432,9 @@
       "age": 26,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 12.4,
+      "fp_pts": 8.54
     },
     {
       "id": "4098",
@@ -6829,7 +7456,9 @@
       "age": 30,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 22.7,
+      "fp_pts": null
     },
     {
       "id": "9230",
@@ -6851,7 +7480,9 @@
       "age": 26,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 12.42,
+      "fp_pts": 10.32
     },
     {
       "id": "12503",
@@ -6873,7 +7504,9 @@
       "age": 22,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 51.8,
+      "fp_pts": 25.46
     },
     {
       "id": "13408",
@@ -6895,7 +7528,9 @@
       "age": 22,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 25.8,
+      "fp_pts": 14.67
     },
     {
       "id": "12486",
@@ -6917,7 +7552,9 @@
       "age": 25,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 11.86,
+      "fp_pts": null
     },
     {
       "id": "9501",
@@ -6939,7 +7576,9 @@
       "age": 25,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 56.8,
+      "fp_pts": 49.98
     },
     {
       "id": "5848",
@@ -6961,7 +7600,9 @@
       "age": 29,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 55.0,
+      "fp_pts": 66.98
     },
     {
       "id": "10444",
@@ -6983,7 +7624,9 @@
       "age": 26,
       "injury_status": "Questionable",
       "injury_body_part": "Undisclosed",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 5.1,
+      "fp_pts": 45.31
     },
     {
       "id": "11834",
@@ -7005,7 +7648,9 @@
       "age": 28,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 89.6,
+      "fp_pts": 102.15
     },
     {
       "id": "7585",
@@ -7027,7 +7672,9 @@
       "age": 27,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 12.04,
+      "fp_pts": 12.67
     },
     {
       "id": "4018",
@@ -7049,7 +7696,9 @@
       "age": 29,
       "injury_status": "Questionable",
       "injury_body_part": "Foot",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": null,
+      "fp_pts": null
     },
     {
       "id": "13296",
@@ -7071,7 +7720,9 @@
       "age": 22,
       "injury_status": "Questionable",
       "injury_body_part": "Undisclosed",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 77.8,
+      "fp_pts": 85.57
     },
     {
       "id": "1479",
@@ -7093,7 +7744,9 @@
       "age": 33,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 84.8,
+      "fp_pts": 128.5
     },
     {
       "id": "13413",
@@ -7115,7 +7768,9 @@
       "age": 23,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 77.5,
+      "fp_pts": 35.74
     },
     {
       "id": "13322",
@@ -7137,7 +7792,9 @@
       "age": 22,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 26.5,
+      "fp_pts": 14.46
     },
     {
       "id": "12505",
@@ -7159,7 +7816,9 @@
       "age": 23,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 27.4,
+      "fp_pts": 14.87
     },
     {
       "id": "13380",
@@ -7181,7 +7840,9 @@
       "age": 23,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 32.0,
+      "fp_pts": 22.69
     },
     {
       "id": "13324",
@@ -7203,7 +7864,9 @@
       "age": 24,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 25.3,
+      "fp_pts": null
     },
     {
       "id": "13307",
@@ -7225,7 +7888,9 @@
       "age": 23,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 23.5,
+      "fp_pts": 34.67
     },
     {
       "id": "13338",
@@ -7247,7 +7912,9 @@
       "age": 22,
       "injury_status": "Questionable",
       "injury_body_part": "Undisclosed",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 26.4,
+      "fp_pts": 26.06
     },
     {
       "id": "9999",
@@ -7269,7 +7936,9 @@
       "age": 27,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 12.7,
+      "fp_pts": 11.34
     },
     {
       "id": "6149",
@@ -7291,7 +7960,9 @@
       "age": 29,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 70.1,
+      "fp_pts": 82.28
     },
     {
       "id": "6011",
@@ -7313,7 +7984,9 @@
       "age": 30,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 27.96,
+      "fp_pts": 9.71
     },
     {
       "id": "13403",
@@ -7335,7 +8008,9 @@
       "age": null,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 18.9,
+      "fp_pts": 24.0
     },
     {
       "id": "6039",
@@ -7357,7 +8032,9 @@
       "age": 28,
       "injury_status": "Questionable",
       "injury_body_part": "Knee",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 47.3,
+      "fp_pts": 84.05
     },
     {
       "id": "8188",
@@ -7379,7 +8056,9 @@
       "age": 26,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 52.6,
+      "fp_pts": 80.18
     },
     {
       "id": "10226",
@@ -7401,7 +8080,9 @@
       "age": 26,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 75.3,
+      "fp_pts": 65.64
     },
     {
       "id": "7670",
@@ -7423,7 +8104,9 @@
       "age": 26,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 26.6,
+      "fp_pts": 56.76
     },
     {
       "id": "13401",
@@ -7445,7 +8128,9 @@
       "age": 24,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 26.8,
+      "fp_pts": null
     },
     {
       "id": "13418",
@@ -7467,7 +8152,9 @@
       "age": 24,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": null,
+      "fp_pts": null
     },
     {
       "id": "11650",
@@ -7489,7 +8176,9 @@
       "age": 25,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 7.3,
+      "fp_pts": 42.72
     },
     {
       "id": "8117",
@@ -7511,7 +8200,9 @@
       "age": 27,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 27.7,
+      "fp_pts": 68.52
     },
     {
       "id": "7610",
@@ -7533,7 +8224,9 @@
       "age": 26,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 14.62,
+      "fp_pts": 10.41
     },
     {
       "id": "13282",
@@ -7555,7 +8248,9 @@
       "age": 22,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 42.8,
+      "fp_pts": 24.8
     },
     {
       "id": "13270",
@@ -7577,7 +8272,9 @@
       "age": 24,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 31.8,
+      "fp_pts": 7.94
     },
     {
       "id": "7828",
@@ -7599,7 +8296,9 @@
       "age": 27,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 47.1,
+      "fp_pts": 40.43
     },
     {
       "id": "12541",
@@ -7621,7 +8320,9 @@
       "age": 23,
       "injury_status": "Questionable",
       "injury_body_part": "Undisclosed",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 3.7,
+      "fp_pts": 13.0
     },
     {
       "id": "11623",
@@ -7643,7 +8344,9 @@
       "age": 25,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 19.3,
+      "fp_pts": 25.58
     },
     {
       "id": "4988",
@@ -7665,7 +8368,9 @@
       "age": 30,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 25.4,
+      "fp_pts": null
     },
     {
       "id": "10235",
@@ -7687,7 +8392,9 @@
       "age": 25,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 6.6,
+      "fp_pts": 32.9
     },
     {
       "id": "13411",
@@ -7709,7 +8416,9 @@
       "age": 22,
       "injury_status": "Questionable",
       "injury_body_part": "Undisclosed",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 47.2,
+      "fp_pts": 28.65
     },
     {
       "id": "3271",
@@ -7731,7 +8440,9 @@
       "age": 33,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 25.9,
+      "fp_pts": 58.11
     },
     {
       "id": "8125",
@@ -7753,7 +8464,9 @@
       "age": 27,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 44.3,
+      "fp_pts": 48.98
     },
     {
       "id": "13415",
@@ -7775,7 +8488,9 @@
       "age": 25,
       "injury_status": "Questionable",
       "injury_body_part": "Hamstring",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": null,
+      "fp_pts": null
     },
     {
       "id": "5906",
@@ -7797,7 +8512,9 @@
       "age": 29,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 62.4,
+      "fp_pts": 64.89
     },
     {
       "id": "4219",
@@ -7819,7 +8536,9 @@
       "age": 30,
       "injury_status": "Questionable",
       "injury_body_part": "Quadriceps",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 7.9,
+      "fp_pts": 23.6
     },
     {
       "id": "7538",
@@ -7841,7 +8560,9 @@
       "age": 27,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": null,
+      "fp_pts": null
     },
     {
       "id": "12641",
@@ -7863,7 +8584,9 @@
       "age": 24,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 30.7,
+      "fp_pts": 28.45
     },
     {
       "id": "11588",
@@ -7885,7 +8608,9 @@
       "age": 27,
       "injury_status": "Questionable",
       "injury_body_part": "Hip",
-      "injury_notes": "Strain"
+      "injury_notes": "Strain",
+      "sleeper_pts": 24.5,
+      "fp_pts": 44.64
     },
     {
       "id": "8147",
@@ -7907,7 +8632,9 @@
       "age": 26,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 38.8,
+      "fp_pts": null
     },
     {
       "id": "8127",
@@ -7929,7 +8656,9 @@
       "age": 27,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 30.4,
+      "fp_pts": 45.3
     },
     {
       "id": "11592",
@@ -7951,7 +8680,9 @@
       "age": 25,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": null,
+      "fp_pts": 53.53
     },
     {
       "id": "12473",
@@ -7973,7 +8704,9 @@
       "age": 23,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 11.7,
+      "fp_pts": 17.15
     },
     {
       "id": "12718",
@@ -7995,7 +8728,9 @@
       "age": 23,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 33.7,
+      "fp_pts": 24.25
     },
     {
       "id": "13333",
@@ -8017,7 +8752,9 @@
       "age": 23,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 19.3,
+      "fp_pts": null
     },
     {
       "id": "13419",
@@ -8039,7 +8776,9 @@
       "age": 23,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 9.7,
+      "fp_pts": null
     },
     {
       "id": "13329",
@@ -8061,7 +8800,9 @@
       "age": 23,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 50.1,
+      "fp_pts": 67.55
     },
     {
       "id": "4972",
@@ -8083,7 +8824,9 @@
       "age": 31,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 11.68,
+      "fp_pts": 5.55
     },
     {
       "id": "6111",
@@ -8105,7 +8848,9 @@
       "age": 30,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": null,
+      "fp_pts": 11.25
     },
     {
       "id": "827",
@@ -8127,7 +8872,9 @@
       "age": 37,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 12.9,
+      "fp_pts": 10.86
     },
     {
       "id": "8122",
@@ -8149,7 +8896,9 @@
       "age": 25,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": null,
+      "fp_pts": 0.0
     },
     {
       "id": "9481",
@@ -8171,7 +8920,9 @@
       "age": 25,
       "injury_status": "PUP",
       "injury_body_part": "Undisclosed",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 32.1,
+      "fp_pts": 36.94
     },
     {
       "id": "12472",
@@ -8193,7 +8944,9 @@
       "age": 24,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 3.7,
+      "fp_pts": null
     },
     {
       "id": "11570",
@@ -8215,7 +8968,9 @@
       "age": 25,
       "injury_status": "Questionable",
       "injury_body_part": "Undisclosed",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 32.7,
+      "fp_pts": 0.0
     },
     {
       "id": "1837",
@@ -8237,7 +8992,9 @@
       "age": 34,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 12.32,
+      "fp_pts": null
     },
     {
       "id": "13435",
@@ -8259,7 +9016,9 @@
       "age": 24,
       "injury_status": "Questionable",
       "injury_body_part": "Personal",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 46.3,
+      "fp_pts": 12.45
     },
     {
       "id": "10866",
@@ -8281,7 +9040,9 @@
       "age": 27,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": null,
+      "fp_pts": 0.0
     },
     {
       "id": "5857",
@@ -8303,7 +9064,9 @@
       "age": 28,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 29.1,
+      "fp_pts": 48.57
     },
     {
       "id": "8160",
@@ -8325,7 +9088,9 @@
       "age": 28,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": null,
+      "fp_pts": 10.29
     },
     {
       "id": "8129",
@@ -8347,7 +9112,9 @@
       "age": 26,
       "injury_status": "Questionable",
       "injury_body_part": "Hamstring",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 20.3,
+      "fp_pts": 22.1
     },
     {
       "id": "12482",
@@ -8369,7 +9136,9 @@
       "age": 24,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 27.0,
+      "fp_pts": 49.52
     },
     {
       "id": "7083",
@@ -8391,7 +9160,9 @@
       "age": 28,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 12.68,
+      "fp_pts": 10.59
     },
     {
       "id": "1339",
@@ -8413,7 +9184,9 @@
       "age": 35,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 28.7,
+      "fp_pts": 20.1
     },
     {
       "id": "8119",
@@ -8435,7 +9208,9 @@
       "age": 26,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 58.2,
+      "fp_pts": 74.91
     },
     {
       "id": "7608",
@@ -8457,7 +9232,9 @@
       "age": 28,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": null,
+      "fp_pts": null
     },
     {
       "id": "12670",
@@ -8479,7 +9256,9 @@
       "age": 24,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 29.0,
+      "fp_pts": 14.55
     },
     {
       "id": "13299",
@@ -8501,7 +9280,9 @@
       "age": 24,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 21.9,
+      "fp_pts": 29.77
     },
     {
       "id": "10231",
@@ -8523,7 +9304,9 @@
       "age": 25,
       "injury_status": "Questionable",
       "injury_body_part": "Concussion",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 32.9,
+      "fp_pts": 34.47
     },
     {
       "id": "8135",
@@ -8545,7 +9328,9 @@
       "age": 26,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 28.8,
+      "fp_pts": 37.22
     },
     {
       "id": "13577",
@@ -8567,7 +9352,9 @@
       "age": 25,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": null,
+      "fp_pts": null
     },
     {
       "id": "13331",
@@ -8589,7 +9376,9 @@
       "age": 22,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": null,
+      "fp_pts": null
     },
     {
       "id": "12738",
@@ -8611,7 +9400,9 @@
       "age": 23,
       "injury_status": "Questionable",
       "injury_body_part": "Chest",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 5.7,
+      "fp_pts": 28.78
     },
     {
       "id": "13394",
@@ -8633,7 +9424,9 @@
       "age": 23,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 49.1,
+      "fp_pts": 0.0
     },
     {
       "id": "2505",
@@ -8655,7 +9448,9 @@
       "age": 33,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 99.1,
+      "fp_pts": 83.79
     },
     {
       "id": "3202",
@@ -8677,7 +9472,9 @@
       "age": 31,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 26.2,
+      "fp_pts": 44.4
     },
     {
       "id": "13533",
@@ -8699,7 +9496,9 @@
       "age": 22,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 52.0,
+      "fp_pts": 9.55
     },
     {
       "id": "2749",
@@ -8721,7 +9520,9 @@
       "age": 33,
       "injury_status": "Questionable",
       "injury_body_part": "Knee",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 10.0,
+      "fp_pts": null
     },
     {
       "id": "4177",
@@ -8743,7 +9544,9 @@
       "age": 32,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 49.4,
+      "fp_pts": 22.61
     },
     {
       "id": "4144",
@@ -8765,7 +9568,9 @@
       "age": 30,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 28.4,
+      "fp_pts": null
     },
     {
       "id": "13392",
@@ -8787,7 +9592,9 @@
       "age": 23,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": null,
+      "fp_pts": null
     },
     {
       "id": "7562",
@@ -8809,7 +9616,9 @@
       "age": 26,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 8.7,
+      "fp_pts": 46.14
     },
     {
       "id": "12496",
@@ -8831,7 +9640,9 @@
       "age": 23,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 24.2,
+      "fp_pts": 6.93
     },
     {
       "id": "13780",
@@ -8853,7 +9664,9 @@
       "age": 24,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": null,
+      "fp_pts": null
     },
     {
       "id": "5133",
@@ -8875,7 +9688,9 @@
       "age": 31,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 1.2,
+      "fp_pts": 7.07
     },
     {
       "id": "4454",
@@ -8897,7 +9712,9 @@
       "age": 31,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 61.9,
+      "fp_pts": 38.86
     },
     {
       "id": "8917",
@@ -8919,7 +9736,9 @@
       "age": 30,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 61.0,
+      "fp_pts": 54.48
     },
     {
       "id": "6945",
@@ -8941,7 +9760,9 @@
       "age": 27,
       "injury_status": "Questionable",
       "injury_body_part": "Knee - ACL",
-      "injury_notes": "Surgery"
+      "injury_notes": "Surgery",
+      "sleeper_pts": 2.9,
+      "fp_pts": null
     },
     {
       "id": "13477",
@@ -8963,7 +9784,9 @@
       "age": 24,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 25.5,
+      "fp_pts": 32.43
     },
     {
       "id": "8177",
@@ -8985,7 +9808,9 @@
       "age": 27,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 20.6,
+      "fp_pts": 23.0
     },
     {
       "id": "3976",
@@ -9007,7 +9832,9 @@
       "age": 31,
       "injury_status": "Questionable",
       "injury_body_part": "Biceps",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 11.94,
+      "fp_pts": 9.04
     },
     {
       "id": "11599",
@@ -9029,7 +9856,9 @@
       "age": 26,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 26.2,
+      "fp_pts": 25.56
     },
     {
       "id": "6136",
@@ -9051,7 +9880,9 @@
       "age": 30,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 12.22,
+      "fp_pts": 11.24
     },
     {
       "id": "13600",
@@ -9073,7 +9904,9 @@
       "age": null,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": null,
+      "fp_pts": null
     },
     {
       "id": "7587",
@@ -9095,7 +9928,9 @@
       "age": 26,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 3.9,
+      "fp_pts": 38.8
     },
     {
       "id": "829",
@@ -9117,7 +9952,9 @@
       "age": 38,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 11.82,
+      "fp_pts": 9.9
     },
     {
       "id": "12715",
@@ -9139,7 +9976,9 @@
       "age": 23,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": null,
+      "fp_pts": 21.1
     },
     {
       "id": "13412",
@@ -9161,7 +10000,9 @@
       "age": 23,
       "injury_status": "IR",
       "injury_body_part": "Knee - ACL",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": null,
+      "fp_pts": null
     },
     {
       "id": "10218",
@@ -9183,7 +10024,9 @@
       "age": 26,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 26.5,
+      "fp_pts": 27.32
     },
     {
       "id": "12462",
@@ -9205,7 +10048,9 @@
       "age": 22,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 6.5,
+      "fp_pts": null
     },
     {
       "id": "1426",
@@ -9227,7 +10072,9 @@
       "age": 33,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 2.0,
+      "fp_pts": null
     },
     {
       "id": "13422",
@@ -9249,7 +10096,9 @@
       "age": 22,
       "injury_status": "IR",
       "injury_body_part": "Pectoral",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 25.1,
+      "fp_pts": null
     },
     {
       "id": "7496",
@@ -9271,7 +10120,9 @@
       "age": 29,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 24.5,
+      "fp_pts": 14.1
     },
     {
       "id": "11629",
@@ -9293,7 +10144,9 @@
       "age": 25,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 24.9,
+      "fp_pts": 36.59
     },
     {
       "id": "13434",
@@ -9315,7 +10168,9 @@
       "age": 23,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 49.1,
+      "fp_pts": 48.56
     },
     {
       "id": "6271",
@@ -9337,7 +10192,9 @@
       "age": 29,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 60.8,
+      "fp_pts": 54.42
     },
     {
       "id": "13297",
@@ -9359,7 +10216,9 @@
       "age": 22,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 21.6,
+      "fp_pts": 6.39
     },
     {
       "id": "13316",
@@ -9381,7 +10240,9 @@
       "age": 23,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 23.9,
+      "fp_pts": null
     },
     {
       "id": "11630",
@@ -9403,7 +10264,9 @@
       "age": 25,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 22.3,
+      "fp_pts": 22.94
     },
     {
       "id": "13315",
@@ -9425,7 +10288,9 @@
       "age": 22,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 7.4,
+      "fp_pts": null
     },
     {
       "id": "12634",
@@ -9447,7 +10312,9 @@
       "age": 24,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 1.9,
+      "fp_pts": null
     },
     {
       "id": "13491",
@@ -9469,7 +10336,9 @@
       "age": 24,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 3.2,
+      "fp_pts": 1.61
     },
     {
       "id": "5970",
@@ -9491,7 +10360,9 @@
       "age": 28,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 37.6,
+      "fp_pts": 12.08
     },
     {
       "id": "13354",
@@ -9513,7 +10384,9 @@
       "age": null,
       "injury_status": "Questionable",
       "injury_body_part": "Foot",
-      "injury_notes": "Fracture"
+      "injury_notes": "Fracture",
+      "sleeper_pts": 24.6,
+      "fp_pts": null
     },
     {
       "id": "12542",
@@ -9535,7 +10408,9 @@
       "age": 24,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 3.6,
+      "fp_pts": 0.0
     },
     {
       "id": "2374",
@@ -9557,7 +10432,9 @@
       "age": 33,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 22.8,
+      "fp_pts": null
     },
     {
       "id": "12523",
@@ -9579,7 +10456,9 @@
       "age": 23,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 25.2,
+      "fp_pts": 17.81
     },
     {
       "id": "8204",
@@ -9601,7 +10480,9 @@
       "age": 27,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 7.8,
+      "fp_pts": 10.01
     },
     {
       "id": "5973",
@@ -9623,7 +10504,9 @@
       "age": 29,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 24.9,
+      "fp_pts": 42.84
     },
     {
       "id": "13150",
@@ -9645,7 +10528,9 @@
       "age": 24,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 5.2,
+      "fp_pts": 6.84
     },
     {
       "id": "13309",
@@ -9667,7 +10552,9 @@
       "age": 23,
       "injury_status": "Questionable",
       "injury_body_part": "Undisclosed",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 24.7,
+      "fp_pts": null
     },
     {
       "id": "13433",
@@ -9689,7 +10576,9 @@
       "age": 24,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 7.1,
+      "fp_pts": null
     },
     {
       "id": "6427",
@@ -9711,7 +10600,9 @@
       "age": 29,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 2.5,
+      "fp_pts": 55.33
     },
     {
       "id": "13273",
@@ -9733,7 +10624,9 @@
       "age": 22,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 22.3,
+      "fp_pts": 13.32
     },
     {
       "id": "13079",
@@ -9755,7 +10648,9 @@
       "age": 24,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 21.4,
+      "fp_pts": 48.43
     },
     {
       "id": "13580",
@@ -9777,7 +10672,9 @@
       "age": 22,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": null,
+      "fp_pts": null
     },
     {
       "id": "13410",
@@ -9799,7 +10696,9 @@
       "age": 25,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 5.1,
+      "fp_pts": null
     },
     {
       "id": "7596",
@@ -9821,7 +10720,9 @@
       "age": 26,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": null,
+      "fp_pts": null
     },
     {
       "id": "12520",
@@ -9843,7 +10744,9 @@
       "age": 24,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 3.8,
+      "fp_pts": null
     },
     {
       "id": "7340",
@@ -9865,7 +10768,9 @@
       "age": 25,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": null,
+      "fp_pts": null
     },
     {
       "id": "4082",
@@ -9887,7 +10792,9 @@
       "age": 29,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 4.3,
+      "fp_pts": null
     },
     {
       "id": "11595",
@@ -9909,7 +10816,9 @@
       "age": 25,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": null,
+      "fp_pts": 21.1
     },
     {
       "id": "3634",
@@ -9931,7 +10840,9 @@
       "age": 32,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 23.2,
+      "fp_pts": 36.81
     },
     {
       "id": "11377",
@@ -9953,7 +10864,9 @@
       "age": 27,
       "injury_status": "PUP",
       "injury_body_part": "Knee - ACL",
-      "injury_notes": "Surgery"
+      "injury_notes": "Surgery",
+      "sleeper_pts": 3.0,
+      "fp_pts": 8.89
     },
     {
       "id": "3286",
@@ -9975,7 +10888,9 @@
       "age": 31,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 31.1,
+      "fp_pts": 44.26
     },
     {
       "id": "5937",
@@ -9997,7 +10912,9 @@
       "age": 29,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": null,
+      "fp_pts": null
     },
     {
       "id": "13336",
@@ -10019,7 +10936,9 @@
       "age": 23,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 5.1,
+      "fp_pts": null
     },
     {
       "id": "6943",
@@ -10041,7 +10960,9 @@
       "age": 26,
       "injury_status": "Questionable",
       "injury_body_part": "Knee - ACL",
-      "injury_notes": "Surgery"
+      "injury_notes": "Surgery",
+      "sleeper_pts": null,
+      "fp_pts": null
     },
     {
       "id": "12860",
@@ -10063,7 +10984,9 @@
       "age": 25,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 6.9,
+      "fp_pts": 39.1
     },
     {
       "id": "13818",
@@ -10085,7 +11008,9 @@
       "age": 24,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": null,
+      "fp_pts": null
     },
     {
       "id": "11645",
@@ -10107,7 +11032,9 @@
       "age": 23,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": null,
+      "fp_pts": null
     },
     {
       "id": "5938",
@@ -10129,7 +11056,9 @@
       "age": 28,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 20.0,
+      "fp_pts": null
     },
     {
       "id": "10871",
@@ -10151,7 +11080,9 @@
       "age": 27,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 24.9,
+      "fp_pts": 24.35
     },
     {
       "id": "13670",
@@ -10173,7 +11104,9 @@
       "age": 23,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": null,
+      "fp_pts": null
     },
     {
       "id": "11640",
@@ -10195,7 +11128,9 @@
       "age": 24,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 22.0,
+      "fp_pts": null
     },
     {
       "id": "5185",
@@ -10217,7 +11152,9 @@
       "age": 30,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 4.9,
+      "fp_pts": null
     },
     {
       "id": "13327",
@@ -10239,7 +11176,9 @@
       "age": 21,
       "injury_status": "Questionable",
       "injury_body_part": "Undisclosed",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 23.3,
+      "fp_pts": null
     },
     {
       "id": "2197",
@@ -10261,7 +11200,9 @@
       "age": 32,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 23.8,
+      "fp_pts": null
     },
     {
       "id": "6151",
@@ -10283,7 +11224,9 @@
       "age": 28,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": null,
+      "fp_pts": null
     },
     {
       "id": "11617",
@@ -10305,7 +11248,9 @@
       "age": 24,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 5.8,
+      "fp_pts": 8.3
     },
     {
       "id": "12539",
@@ -10327,7 +11272,9 @@
       "age": 24,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 5.6,
+      "fp_pts": 3.49
     },
     {
       "id": "4663",
@@ -10349,7 +11296,9 @@
       "age": 30,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 28.6,
+      "fp_pts": 30.1
     },
     {
       "id": "11608",
@@ -10371,7 +11320,9 @@
       "age": 25,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 25.3,
+      "fp_pts": 33.71
     },
     {
       "id": "9497",
@@ -10393,7 +11344,9 @@
       "age": 24,
       "injury_status": "Questionable",
       "injury_body_part": "Ankle",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": null,
+      "fp_pts": null
     },
     {
       "id": "11616",
@@ -10415,7 +11368,9 @@
       "age": 25,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 1.2,
+      "fp_pts": 0.0
     },
     {
       "id": "6920",
@@ -10437,7 +11392,9 @@
       "age": 27,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 7.2,
+      "fp_pts": null
     },
     {
       "id": "6853",
@@ -10459,7 +11416,9 @@
       "age": 30,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 5.3,
+      "fp_pts": null
     },
     {
       "id": "11633",
@@ -10481,7 +11440,9 @@
       "age": 25,
       "injury_status": "IR",
       "injury_body_part": "Undisclosed",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": null,
+      "fp_pts": null
     },
     {
       "id": "11056",
@@ -10503,7 +11464,9 @@
       "age": 25,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": null,
+      "fp_pts": null
     },
     {
       "id": "8200",
@@ -10525,7 +11488,9 @@
       "age": 26,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 5.0,
+      "fp_pts": null
     },
     {
       "id": "13440",
@@ -10547,7 +11512,9 @@
       "age": 25,
       "injury_status": "Questionable",
       "injury_body_part": "Undisclosed",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": null,
+      "fp_pts": null
     },
     {
       "id": "13264",
@@ -10569,7 +11536,9 @@
       "age": 26,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": null,
+      "fp_pts": null
     },
     {
       "id": "8225",
@@ -10591,7 +11560,9 @@
       "age": 25,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 31.6,
+      "fp_pts": 42.3
     },
     {
       "id": "13429",
@@ -10613,7 +11584,9 @@
       "age": 24,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 6.0,
+      "fp_pts": 19.3
     },
     {
       "id": "4171",
@@ -10635,7 +11608,9 @@
       "age": 31,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 5.0,
+      "fp_pts": null
     },
     {
       "id": "4040",
@@ -10657,7 +11632,9 @@
       "age": 29,
       "injury_status": "Questionable",
       "injury_body_part": "Knee",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 3.1,
+      "fp_pts": null
     },
     {
       "id": "3200",
@@ -10679,7 +11656,9 @@
       "age": 33,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 0.6,
+      "fp_pts": null
     },
     {
       "id": "11371",
@@ -10701,7 +11680,9 @@
       "age": 26,
       "injury_status": "IR",
       "injury_body_part": "Knee",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 4.1,
+      "fp_pts": 0.0
     },
     {
       "id": "10867",
@@ -10723,7 +11704,9 @@
       "age": 28,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 3.2,
+      "fp_pts": null
     },
     {
       "id": "4234",
@@ -10745,7 +11728,9 @@
       "age": 30,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 7.3,
+      "fp_pts": null
     },
     {
       "id": "7694",
@@ -10767,7 +11752,9 @@
       "age": 26,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 25.3,
+      "fp_pts": 38.99
     },
     {
       "id": "8145",
@@ -10789,7 +11776,9 @@
       "age": 26,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 6.8,
+      "fp_pts": 32.06
     },
     {
       "id": "7535",
@@ -10811,7 +11800,9 @@
       "age": 27,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": null,
+      "fp_pts": 13.0
     },
     {
       "id": "6869",
@@ -10833,7 +11824,9 @@
       "age": 29,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 22.3,
+      "fp_pts": 38.27
     },
     {
       "id": "7568",
@@ -10855,7 +11848,9 @@
       "age": 26,
       "injury_status": "Questionable",
       "injury_body_part": "Undisclosed",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 4.1,
+      "fp_pts": null
     },
     {
       "id": "13342",
@@ -10877,7 +11872,9 @@
       "age": 24,
       "injury_status": "IR",
       "injury_body_part": "Knee",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 34.9,
+      "fp_pts": null
     },
     {
       "id": "10214",
@@ -10899,7 +11896,9 @@
       "age": 25,
       "injury_status": "Questionable",
       "injury_body_part": "Quadriceps",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 4.4,
+      "fp_pts": 35.36
     },
     {
       "id": "12658",
@@ -10921,7 +11920,9 @@
       "age": 25,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 25.4,
+      "fp_pts": 25.37
     },
     {
       "id": "5985",
@@ -10943,7 +11944,9 @@
       "age": 29,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 7.3,
+      "fp_pts": 22.94
     },
     {
       "id": "4381",
@@ -10965,7 +11968,9 @@
       "age": 35,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 7.5,
+      "fp_pts": null
     },
     {
       "id": "13430",
@@ -10987,7 +11992,9 @@
       "age": 22,
       "injury_status": "Questionable",
       "injury_body_part": "Hamstring",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": null,
+      "fp_pts": null
     },
     {
       "id": "5010",
@@ -11009,7 +12016,9 @@
       "age": 29,
       "injury_status": "Questionable",
       "injury_body_part": "Undisclosed",
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": 21.5,
+      "fp_pts": null
     },
     {
       "id": "10857",
@@ -11031,7 +12040,9 @@
       "age": 28,
       "injury_status": null,
       "injury_body_part": null,
-      "injury_notes": null
+      "injury_notes": null,
+      "sleeper_pts": null,
+      "fp_pts": 0.0
     }
   ]
 }
