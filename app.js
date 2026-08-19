@@ -55,6 +55,8 @@
     selectedId: null,
     filterPos: new Set(),
     filterTargets: false,
+    filterRookies: false,
+    filterYoung: false,
     search: "",
     targets: new Set(),
     lastPoll: null,
@@ -200,6 +202,8 @@
     if (!remaining(p)) return false;
     if (state.filterPos.size && !state.filterPos.has(p.pos)) return false;
     if (state.filterTargets && (!p.id || !state.targets.has(String(p.id)))) return false;
+    if (state.filterRookies && !p.is_rookie) return false;
+    if (state.filterYoung && !(p.age != null && Number(p.age) <= 25)) return false;
     const q = state.search.trim().toLowerCase();
     if (!q) return true;
     if ((p.name || "").toLowerCase().includes(q)) return true;
@@ -442,7 +446,7 @@
   function renderMyPicks() {
     const countsEl = $("mypicks-counts");
     const listEl = $("mypicks-list");
-    const slotsEl = $("mypicks-slots");
+    const leftEl = $("mypicks-left");
     if (!countsEl || !listEl) return;
     const counts = robPosCounts();
     countsEl.innerHTML = ["QB", "WR", "RB", "TE"]
@@ -451,15 +455,9 @@
         return `<span class="mp-pill mp-${pos.toLowerCase()}" title="${pos} ${n}"><span class="c-pos ${pos}">${pos}</span><span class="mp-n">${n}</span></span>`;
       })
       .join("");
-    if (slotsEl) {
-      const remaining = robRemainingPicks();
-      const next = remaining[0];
-      slotsEl.innerHTML = remaining
-        .map((c) => {
-          const on = next && c.overall === next.overall;
-          return `<span class="mp-slot${on ? " next" : ""}" title="${esc(c.label)}">${esc(c.label)}</span>`;
-        })
-        .join("");
+    if (leftEl) {
+      const n = robRemainingPicks().length;
+      leftEl.innerHTML = `<span class="n">${n}</span> left`;
     }
     const taken = state.robTaken;
     if (!taken.length) {
@@ -892,7 +890,7 @@
     const nextEl = $("rob-next");
     const untilEl = $("rob-until");
     if (robNext) {
-      nextEl.textContent = onClock ? "On the clock" : robNext.label;
+      nextEl.textContent = onClock ? "On the clock" : `next ${robNext.label}`;
       untilEl.textContent = onClock ? "You're up" : `${until} until next`;
     } else {
       nextEl.textContent = "Done";
@@ -1152,6 +1150,8 @@
       const pos = b.getAttribute("data-pos");
       if (pos === "ALL") b.classList.toggle("on", state.filterPos.size === 0);
       else if (pos === "TARGETS") b.classList.toggle("on", state.filterTargets);
+      else if (pos === "ROOKIES") b.classList.toggle("on", state.filterRookies);
+      else if (pos === "YOUNG") b.classList.toggle("on", state.filterYoung);
       else b.classList.toggle("on", state.filterPos.has(pos));
     });
   }
@@ -1165,6 +1165,10 @@
           state.filterPos.clear();
         } else if (pos === "TARGETS") {
           state.filterTargets = !state.filterTargets;
+        } else if (pos === "ROOKIES") {
+          state.filterRookies = !state.filterRookies;
+        } else if (pos === "YOUNG") {
+          state.filterYoung = !state.filterYoung;
         } else if (pos) {
           if (state.filterPos.has(pos)) state.filterPos.delete(pos);
           else state.filterPos.add(pos);

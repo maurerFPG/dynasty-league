@@ -11,23 +11,23 @@
   <div class="app">
     <div class="chrome" id="chrome">
       <header class="topbar glass">
-        <div class="hdr-stack">
-          <div class="hdr-row">
+        <div class="hdr-main">
+          <div class="hdr-hero">
             <div class="hdr-status">
               <span class="status-pill" id="draft-status">PRE-DRAFT</span>
               <span class="poll-dot" id="poll-dot" title="picks poll"></span>
             </div>
             <div class="countdown" id="countdown" title="until draft starts">—</div>
           </div>
-          <div class="hdr-row">
-            <div class="rob-name" id="rob-name">Maurer Hour</div>
-            <div class="rob-next" id="rob-next">1.03</div>
-          </div>
-          <div class="hdr-row">
-            <div class="rob-until" id="rob-until">2 until next</div>
-            <button type="button" class="btn" id="btn-refresh">Refresh</button>
+          <div class="hdr-meta">
+            <span class="rob-name" id="rob-name">Maurer Hour</span>
+            <span class="hdr-sep" aria-hidden="true">·</span>
+            <span class="rob-next" id="rob-next">1.03</span>
+            <span class="hdr-sep" aria-hidden="true">·</span>
+            <span class="rob-until" id="rob-until">2 until next</span>
           </div>
         </div>
+        <button type="button" class="btn" id="btn-refresh">Refresh</button>
       </header>
 
       <div class="toolbar glass" id="filters">
@@ -39,9 +39,13 @@
           <button type="button" class="pos pos-rb" data-pos="RB">RB</button>
           <button type="button" class="pos pos-te" data-pos="TE">TE</button>
         </div>
-        <label class="search">
-          <input type="search" id="search" placeholder="Find name…" autocomplete="off" />
-        </label>
+        <div class="filter-row">
+          <label class="search">
+            <input type="search" id="search" placeholder="Find name…" autocomplete="off" />
+          </label>
+          <button type="button" class="pos pos-rook" data-pos="ROOKIES">Rookies</button>
+          <button type="button" class="pos pos-young" data-pos="YOUNG">&le;25</button>
+        </div>
       </div>
 
       <section class="mypicks glass" id="mypicks">
@@ -50,7 +54,7 @@
           <div class="mp-counts" id="mypicks-counts" aria-label="My roster by position"></div>
         </div>
         <div class="mp-extra">
-          <div class="mp-slots" id="mypicks-slots" aria-label="Remaining pick slots"></div>
+          <div class="mp-left" id="mypicks-left" aria-label="Remaining picks"></div>
           <div class="mp-row" id="mypicks-list" hidden></div>
         </div>
       </section>
