@@ -11,25 +11,21 @@
   <div class="app">
     <div class="chrome" id="chrome">
       <header class="topbar glass">
-        <div class="hdr-row hdr-status">
-          <div class="hdr-status-l">
-            <span class="status-pill" id="draft-status">PRE-DRAFT</span>
-            <span class="poll-dot" id="poll-dot" title="picks poll"></span>
+        <div class="hdr-main">
+          <div class="hdr-status">
+            <div class="hdr-status-l">
+              <span class="status-pill" id="draft-status">PRE-DRAFT</span>
+              <span class="poll-dot" id="poll-dot" title="picks poll"></span>
+            </div>
+            <button type="button" class="btn" id="btn-refresh">Refresh</button>
           </div>
           <div class="countdown" id="countdown" title="until draft starts">—</div>
-          <button type="button" class="btn" id="btn-refresh">Refresh</button>
-        </div>
-        <div class="hdr-row hdr-tools">
-          <label class="search">
-            <input type="search" id="search" placeholder="Find name…" autocomplete="off" />
-          </label>
-          <div class="stat-chip" id="rob-next">
-            <span class="stat-v">1.03</span>
-            <span class="stat-k">Next</span>
-          </div>
-          <div class="stat-chip" id="rob-until">
-            <span class="stat-v">2</span>
-            <span class="stat-k">until</span>
+          <div class="hdr-meta">
+            <span class="rob-name" id="rob-name">Maurer Hour</span>
+            <span class="hdr-sep" aria-hidden="true">·</span>
+            <span class="rob-next" id="rob-next">1.03</span>
+            <span class="hdr-sep" aria-hidden="true">·</span>
+            <span class="rob-until" id="rob-until">2 until next</span>
           </div>
         </div>
       </header>
@@ -44,6 +40,9 @@
           <button type="button" class="pos pos-rb" data-pos="RB">RB</button>
           <button type="button" class="pos pos-te" data-pos="TE">TE</button>
           <button type="button" class="pos pos-young" data-pos="YOUNG">&le;25</button>
+          <label class="search">
+            <input type="search" id="search" placeholder="Find name…" autocomplete="off" />
+          </label>
         </div>
       </div>
 

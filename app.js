@@ -881,29 +881,24 @@
     const pill = $("draft-status");
     pill.textContent = String(status).replace(/_/g, " ").toUpperCase();
     pill.className = "status-pill" + (status === "drafting" ? " live" : status === "complete" ? " done" : "");
+    const nameEl = $("rob-name");
+    if (nameEl) nameEl.textContent = state.draft?.rob_team || "Maurer Hour";
     const robNext = nextRobPick();
     const current = currentOverall();
     const until = robNext ? robNext.overall - current : null;
     const onClock = until === 0;
     const nextEl = $("rob-next");
     const untilEl = $("rob-until");
-    function setChip(el, value, label) {
-      if (!el) return;
-      const v = el.querySelector(".stat-v");
-      const k = el.querySelector(".stat-k");
-      if (v) v.textContent = value;
-      else el.textContent = value;
-      if (k) k.textContent = label;
-    }
     if (robNext) {
-      setChip(nextEl, robNext.label, onClock ? "Clock" : "Next");
-      setChip(untilEl, String(until), "until");
+      nextEl.textContent = onClock ? "On the clock" : `next ${robNext.label}`;
+      untilEl.textContent = onClock ? "You're up" : `${until} until next`;
     } else {
-      setChip(nextEl, "—", "Done");
-      setChip(untilEl, "—", "until");
+      nextEl.textContent = "Done";
+      untilEl.textContent = "Board complete";
     }
-    if (nextEl) nextEl.classList.toggle("up", onClock);
-    if (untilEl) untilEl.classList.toggle("up", onClock);
+    if (nameEl) nameEl.classList.toggle("up", onClock);
+    nextEl.classList.toggle("up", onClock);
+    untilEl.classList.toggle("up", onClock);
     const dot = $("poll-dot");
     dot.className = "poll-dot" + (state.pollError ? " err" : state.lastPoll ? " ok" : "");
     if (state.pollError) dot.title = "Picks poll failed · " + state.pollError;
