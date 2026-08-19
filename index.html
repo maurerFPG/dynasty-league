@@ -9,18 +9,52 @@
 <body>
   <div class="bokeh" aria-hidden="true"></div>
   <div class="app">
-    <header class="topbar glass">
-      <h1 class="brand">Dynasty League</h1>
-      <div class="hdr-status">
-        <span class="status-pill" id="draft-status">PRE-DRAFT</span>
-        <span class="poll-dot" id="poll-dot" title="picks poll"></span>
+    <div class="chrome" id="chrome">
+      <header class="topbar glass">
+        <div class="hdr-stack">
+          <div class="hdr-row">
+            <div class="hdr-status">
+              <span class="status-pill" id="draft-status">PRE-DRAFT</span>
+              <span class="poll-dot" id="poll-dot" title="picks poll"></span>
+            </div>
+            <div class="countdown" id="countdown" title="until draft starts">—</div>
+          </div>
+          <div class="hdr-row">
+            <div class="rob-name" id="rob-name">Maurer Hour</div>
+            <div class="rob-next" id="rob-next">1.03</div>
+          </div>
+          <div class="hdr-row">
+            <div class="rob-until" id="rob-until">2 until next</div>
+            <button type="button" class="btn" id="btn-refresh">Refresh</button>
+          </div>
+        </div>
+      </header>
+
+      <div class="toolbar glass" id="filters">
+        <div class="pos-pad" role="group" aria-label="Position filters">
+          <button type="button" class="pos pos-all on" data-pos="ALL">All</button>
+          <button type="button" class="pos pos-qb" data-pos="QB">QB</button>
+          <button type="button" class="pos pos-wr" data-pos="WR">WR</button>
+          <button type="button" class="pos pos-star" data-pos="TARGETS">Targets</button>
+          <button type="button" class="pos pos-rb" data-pos="RB">RB</button>
+          <button type="button" class="pos pos-te" data-pos="TE">TE</button>
+        </div>
+        <label class="search">
+          <input type="search" id="search" placeholder="Find name…" autocomplete="off" />
+        </label>
       </div>
-      <div class="countdown" id="countdown" title="until draft starts">—</div>
-      <div class="rob-name" id="rob-name">Maurer Hour</div>
-      <div class="rob-next" id="rob-next">1.03</div>
-      <div class="rob-until" id="rob-until">2 until next</div>
-      <button type="button" class="btn" id="btn-refresh">Refresh</button>
-    </header>
+
+      <section class="mypicks glass" id="mypicks">
+        <div class="mp-pad">
+          <div class="mp-label">My<br>Picks</div>
+          <div class="mp-counts" id="mypicks-counts" aria-label="My roster by position"></div>
+        </div>
+        <div class="mp-extra">
+          <div class="mp-slots" id="mypicks-slots" aria-label="Remaining pick slots"></div>
+          <div class="mp-row" id="mypicks-list" hidden></div>
+        </div>
+      </section>
+    </div>
 
     <section class="cols" id="cols">
       <aside class="col glass" id="col-fo">
@@ -33,7 +67,6 @@
         </header>
         <div class="list" id="list-fo"></div>
       </aside>
-      <div class="splitter v" id="split-v" role="separator" aria-orientation="vertical" aria-label="Resize columns"></div>
       <aside class="col glass" id="col-fp">
         <header class="col-head">
           <div>
@@ -45,30 +78,6 @@
         <div class="list" id="list-fp"></div>
       </aside>
     </section>
-
-    <div class="midbar" id="midbar">
-      <div class="toolbar glass" id="filters">
-        <div class="pos-pad" role="group" aria-label="Position filters">
-          <button type="button" class="pos pos-all on" data-pos="ALL">All</button>
-          <button type="button" class="pos pos-qb" data-pos="QB">QB</button>
-          <button type="button" class="pos pos-wr" data-pos="WR">WR</button>
-          <button type="button" class="pos pos-star" data-pos="TARGETS">Targets</button>
-          <button type="button" class="pos pos-rb" data-pos="RB">RB</button>
-          <button type="button" class="pos pos-te" data-pos="TE">TE</button>
-        </div>
-        <span class="legend" title="Official Sleeper trending (48h) plus public news / r/DynastyFF full-name buzz. Not Twitter/X.">🔥 trending add or rising news/r/DynastyFF buzz · 🧊 trending drop (48h)</span>
-        <label class="search">
-          <input type="search" id="search" placeholder="Find name…" autocomplete="off" />
-        </label>
-      </div>
-      <section class="mypicks glass" id="mypicks">
-        <div class="mp-pad">
-          <div class="mp-label">My<br>Picks</div>
-          <div class="mp-counts" id="mypicks-counts" aria-label="My roster by position"></div>
-        </div>
-        <div class="mp-row" id="mypicks-list" hidden></div>
-      </section>
-    </div>
 
     <section class="card-pane glass" id="card-pane">
       <div class="card-scroll" id="player-card" aria-live="polite">

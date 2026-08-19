@@ -3,7 +3,6 @@
   const TARGETS_KEY = "nasty-draft-hq-targets-v1";
   const BOARD_H_KEY = "nasty-ui-board-h-v1";
   const CARD_H_KEY = "nasty-ui-card-h-v1";
-  const COL_L_KEY = "nasty-ui-col-left-v1";
   const POLL_MS = 30000;
   const ROB_USER = "469299052404535296";
 
@@ -83,39 +82,33 @@
   function loadLayout() {
     const h = Number(localStorage.getItem(BOARD_H_KEY));
     const ch = Number(localStorage.getItem(CARD_H_KEY));
-    const left = Number(localStorage.getItem(COL_L_KEY));
     if (Number.isFinite(h) && h >= 120) {
       document.documentElement.style.setProperty("--board-h", Math.round(h) + "px");
     }
     if (Number.isFinite(ch) && ch >= 88) {
       document.documentElement.style.setProperty("--card-h", Math.round(ch) + "px");
     }
-    if (Number.isFinite(left) && left >= 22 && left <= 78) {
-      document.documentElement.style.setProperty("--col-left", left + "fr");
-      document.documentElement.style.setProperty("--col-right", 100 - left + "fr");
-    }
   }
 
   function bindSplitters() {
     const hs = $("split-h");
     const hsc = $("split-h-card");
-    const vs = $("split-v");
     const pane = $("board-pane");
     const cardPane = $("card-pane");
-    const cols = $("cols");
 
-    function bind(el, kind, onMove, onEnd) {
+    function bind(el, onMove, onEnd) {
+      if (!el) return;
       el.addEventListener("pointerdown", (ev) => {
         if (ev.button !== 0) return;
         ev.preventDefault();
         el.setPointerCapture(ev.pointerId);
         el.classList.add("dragging");
-        document.body.classList.add(kind === "h" ? "resizing-h" : "resizing-v");
+        document.body.classList.add("resizing-h");
         const move = (e) => onMove(e);
         const up = (e) => {
           try { el.releasePointerCapture(e.pointerId); } catch { /* already released */ }
           el.classList.remove("dragging");
-          document.body.classList.remove("resizing-h", "resizing-v");
+          document.body.classList.remove("resizing-h");
           el.removeEventListener("pointermove", move);
           el.removeEventListener("pointerup", up);
           el.removeEventListener("pointercancel", up);
@@ -127,7 +120,7 @@
       });
     }
 
-    bind(hs, "h", (e) => {
+    bind(hs, (e) => {
       const bot = pane.getBoundingClientRect().bottom;
       const max = Math.floor(window.innerHeight * 0.7);
       const hgt = Math.min(Math.max(bot - e.clientY, 120), max);
@@ -138,7 +131,7 @@
       if (Number.isFinite(px)) localStorage.setItem(BOARD_H_KEY, String(Math.round(px)));
     });
 
-    bind(hsc, "h", (e) => {
+    bind(hsc, (e) => {
       const top = cardPane.getBoundingClientRect().top;
       const max = Math.floor(window.innerHeight * 0.55);
       const hgt = Math.min(Math.max(e.clientY - top, 88), max);
@@ -149,21 +142,6 @@
       if (Number.isFinite(px)) localStorage.setItem(CARD_H_KEY, String(Math.round(px)));
     });
 
-    bind(vs, "v", (e) => {
-      const box = cols.getBoundingClientRect();
-      if (box.width < 40) return;
-      const pct = ((e.clientX - box.left) / box.width) * 100;
-      const clamped = Math.min(78, Math.max(22, pct));
-      document.documentElement.style.setProperty("--col-left", clamped + "fr");
-      document.documentElement.style.setProperty("--col-right", 100 - clamped + "fr");
-    }, () => {
-      const left = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--col-left"));
-      const right = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--col-right"));
-      if (Number.isFinite(left) && Number.isFinite(right) && left + right > 0) {
-        const pct = (left / (left + right)) * 100;
-        localStorage.setItem(COL_L_KEY, String(Math.round(pct * 10) / 10));
-      }
-    });
   }
 
   function lastName(full) {
@@ -464,6 +442,7 @@
   function renderMyPicks() {
     const countsEl = $("mypicks-counts");
     const listEl = $("mypicks-list");
+    const slotsEl = $("mypicks-slots");
     if (!countsEl || !listEl) return;
     const counts = robPosCounts();
     countsEl.innerHTML = ["QB", "WR", "RB", "TE"]
@@ -472,6 +451,16 @@
         return `<span class="mp-pill mp-${pos.toLowerCase()}" title="${pos} ${n}"><span class="c-pos ${pos}">${pos}</span><span class="mp-n">${n}</span></span>`;
       })
       .join("");
+    if (slotsEl) {
+      const remaining = robRemainingPicks();
+      const next = remaining[0];
+      slotsEl.innerHTML = remaining
+        .map((c) => {
+          const on = next && c.overall === next.overall;
+          return `<span class="mp-slot${on ? " next" : ""}" title="${esc(c.label)}">${esc(c.label)}</span>`;
+        })
+        .join("");
+    }
     const taken = state.robTaken;
     if (!taken.length) {
       listEl.replaceChildren();
