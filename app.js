@@ -161,7 +161,7 @@
 
   function fmtAdp(v) {
     if (v == null || Number.isNaN(Number(v))) return "—";
-    return Number(v).toFixed(1);
+    return String(Math.round(Number(v)));
   }
   function fmtFoRank(v) {
     if (v == null) return "—";
@@ -502,7 +502,7 @@
     const fo = $("list-fo");
     const fp = $("list-fp");
     if (foPending) {
-      fo.innerHTML = `<div class="empty-col"><strong>ADP snapshot pending</strong>Drop <code>fantasy_orphans_sf_tep_adp.csv</code> into <code>/workspace/ff-dynasty/data/</code> and run <code>python3 dashboard/build_data.py</code>. Left column stays empty until then — no invented ADP.</div>`;
+      fo.innerHTML = `<div class="empty-col"><strong>Sleeper board pending</strong>Drop <code>sleeper_board.json</code> into <code>/workspace/ff-dynasty/data/</code> and run <code>python3 dashboard/build_data.py</code>. Left column stays empty until then — no invented ADP.</div>`;
       $("count-fo").textContent = "0";
     } else {
       const foRows = state.players
@@ -527,7 +527,7 @@
     el.dataset.key = key;
     const rank =
       side === "fo"
-        ? `<span class="c-rank" title="FO list order">${esc(fmtFoRank(p.fo_rank))}</span><span class="c-adp" title="${esc(p.fo_pick || "ADP")}">${esc(fmtAdp(p.fo_adp))}</span>`
+        ? `<span class="c-rank" title="Sleeper board rank">${esc(fmtFoRank(p.fo_rank))}</span><span class="c-adp" title="Sleeper board rank">${esc(fmtAdp(p.fo_adp))}</span>`
         : `<span class="c-rank">${esc(fmtRank(p.fp_rank))}</span>`;
     el.innerHTML = `
       <span class="c-mark">
@@ -734,12 +734,12 @@
    *     skip any already past
    *   next_pick = smallest Rob pick_no >= current_pick
    *   picks_until = next_pick - current_pick
-   *   Use fo_adp if present, else fp_rank as a fallback stand-in
-   *     (label says ADP-based when fo_adp exists; if only FP rank, say “ECR stand-in”)
-   *   x = (adp - next_pick) / max(3, picks_until * 0.35 + 2)
+   *   Use fo_adp (Sleeper board rank) if present, else fp_rank as a fallback
+   *     (label says board-rank when fo_adp exists; if only FP rank, say “ECR stand-in”)
+   *   x = (board_rank - next_pick) / max(3, picks_until * 0.35 + 2)
    *   P(gone) = 1 / (1 + exp(x))
-   *   ADP well before his next pick → high %; ADP after his pick → lower %;
-   *   as the room reaches a steal (ADP << current), % goes to ~100.
+   *   Board rank well before his next pick → high %; rank after his pick → lower %;
+   *   as the room reaches a steal (board rank << current), % goes to ~100.
    *   Clamp 1–99. Hide for already-drafted players.
    */
   function currentPickNo() {
@@ -778,7 +778,7 @@
     if (!g) return "";
     const cap =
       g.source === "adp"
-        ? "Est. gone before your next pick · Sleeper-sample ADP, not FantasyPros."
+        ? "Est. gone before your next pick · Sleeper board rank, not FantasyPros."
         : "Est. gone before your next pick · ECR stand-in, not FantasyPros.";
     return `<div class="gone-est"><div class="gone-num"><b>${g.pct}%</b> gone before ${esc(g.label)}</div><div class="gone-cap">${esc(cap)}</div></div>`;
   }
@@ -808,7 +808,7 @@
           <div class="v">${esc(fmtFoRank(p.fo_rank))}</div>
         </div>
         <div class="stat s-adp">
-          <div class="k">ADP</div>
+          <div class="k">RK</div>
           <div class="v">${esc(fmtAdp(p.fo_adp))}</div>
         </div>
         <div class="stat s-ecr">
@@ -834,7 +834,7 @@
               ? alts
                   .map((a) => {
                     const bits = [];
-                    if (a.fo_adp != null) bits.push("ADP " + fmtAdp(a.fo_adp));
+                    if (a.fo_adp != null) bits.push("RK " + fmtAdp(a.fo_adp));
                     if (a.fp_rank != null) bits.push("ECR #" + a.fp_rank);
                     return `<button type="button" class="alt" data-alt="${esc(playerKey(a))}"><b>${esc(a.name)}</b> ${esc(a.pos || "")} <em>${esc(bits.join(" · "))}</em></button>`;
                   })

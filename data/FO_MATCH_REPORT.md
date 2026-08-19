@@ -1,12 +1,15 @@
-# Fantasy Orphans ADP match report
+# Sleeper draft board match report
 
-Source: `data/fantasy_orphans_sf_tep_adp.csv` (12-team SF TEP snapshot).
-Sleeper ids via the same conservative matcher as `tools/ingest_cheatsheet.py`.
+Source: `data/sleeper_board.json` (in-room default order from Rob's mock).
+Join is on official Sleeper `player_id` only. No name-match when an id is present.
+Fantasy Orphans CSV is unused.
 
-- FO file present: **True**
-- FO rows: **300**
-- Matched to a Sleeper player: **300**
-- Unmatched: **0**
+- Board file present: **True**
+- Board rows: **3112**
+- Matched by player_id: **3112**
+- Unmatched (missing id): **0**
+- Draft id: **1395868564367372288**
+- Captured: **2026-08-19T21:39:29.643Z**
 - FP-ranked players on board: **543**
 
 ### FantasyPros dynasty Superflex ECR
@@ -18,15 +21,15 @@ Source: `data/fp_dynasty_op_dk.json` (FantasyPros API snapshot, not Draft Wizard
 
 ### Match methods
 
-- `name+pos+team`: 300
+- `player_id`: 3112
 
 ### 2026 NFL draft (Wikipedia, one-time)
 
 - Draft CSV rows: **257**
 - Conservative name matches to Sleeper: **257**
 - Unmatched / ambiguous (left blank): **0**
-- Rookies on the dashboard board: **100**
-- Board players with a draft round: **73**
+- Rookies on the dashboard board: **303**
+- Board players with a draft round: **81**
 
 ### Fire / ice
 
@@ -40,7 +43,7 @@ Ice is trending-drop only — a single buzz snapshot cannot show fading.
 - Tagged cold: **21**
 - Buzz-only extra fires: **8**
 
-## Unmatched FO names
+## Unmatched board rows
 
 None.
 
