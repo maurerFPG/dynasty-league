@@ -98,15 +98,17 @@
     const pane = $("board-pane");
     const cardPane = $("card-pane");
 
-    function bind(el, onMove, onEnd) {
-      if (!el) return;
+    function bind(el, paneEl, onMove, onEnd) {
+      if (!el || !paneEl) return;
       el.addEventListener("pointerdown", (ev) => {
         if (ev.button !== 0) return;
         ev.preventDefault();
         el.setPointerCapture(ev.pointerId);
         el.classList.add("dragging");
         document.body.classList.add("resizing-h");
-        const move = (e) => onMove(e);
+        const startY = ev.clientY;
+        const startH = paneEl.getBoundingClientRect().height;
+        const move = (e) => onMove(e, startY, startH);
         const up = (e) => {
           try { el.releasePointerCapture(e.pointerId); } catch { /* already released */ }
           el.classList.remove("dragging");
@@ -122,22 +124,20 @@
       });
     }
 
-    bind(hs, (e) => {
-      const bot = pane.getBoundingClientRect().bottom;
+    bind(hs, pane, (e, startY, startH) => {
       const max = Math.floor(window.innerHeight * 0.7);
-      const hgt = Math.min(Math.max(bot - e.clientY, 120), max);
-      document.documentElement.style.setProperty("--board-h", hgt + "px");
+      const newH = Math.min(Math.max(startH + (startY - e.clientY), 120), max);
+      document.documentElement.style.setProperty("--board-h", newH + "px");
     }, () => {
       const raw = getComputedStyle(document.documentElement).getPropertyValue("--board-h").trim();
       const px = raw.endsWith("px") ? parseFloat(raw) : pane.getBoundingClientRect().height;
       if (Number.isFinite(px)) localStorage.setItem(BOARD_H_KEY, String(Math.round(px)));
     });
 
-    bind(hsc, (e) => {
-      const bot = cardPane.getBoundingClientRect().bottom;
+    bind(hsc, cardPane, (e, startY, startH) => {
       const max = Math.floor(window.innerHeight * 0.55);
-      const hgt = Math.min(Math.max(bot - e.clientY, 88), max);
-      document.documentElement.style.setProperty("--card-h", hgt + "px");
+      const newH = Math.min(Math.max(startH + (startY - e.clientY), 88), max);
+      document.documentElement.style.setProperty("--card-h", newH + "px");
     }, () => {
       const raw = getComputedStyle(document.documentElement).getPropertyValue("--card-h").trim();
       const px = raw.endsWith("px") ? parseFloat(raw) : cardPane.getBoundingClientRect().height;
