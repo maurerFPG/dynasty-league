@@ -336,6 +336,17 @@
     return marks;
   }
 
+  function remainingRanked(side) {
+    if (side === "fo") {
+      return state.players
+        .filter((p) => remaining(p) && p.fo_adp != null)
+        .sort((a, b) => (a.fo_rank || 9999) - (b.fo_rank || 9999) || a.fo_adp - b.fo_adp);
+    }
+    return state.players
+      .filter((p) => remaining(p) && p.fp_rank != null)
+      .sort((a, b) => a.fp_rank - b.fp_rank);
+  }
+
   function pickLineEl(label) {
     const el = document.createElement("div");
     el.className = "pick-line";
@@ -347,12 +358,25 @@
 
   function listNodes(rows, side) {
     const marks = pickLineMarks();
-    const byAfter = new Map(marks.map((m) => [m.after, m]));
+    const ranked = remainingRanked(side);
+    const visible = new Set(rows.map((p) => playerKey(p)));
+    const byAfter = new Map();
+    for (const m of marks) {
+      const afterVisible = ranked.slice(0, m.after).filter((p) => visible.has(playerKey(p))).length;
+      if (!byAfter.has(afterVisible)) byAfter.set(afterVisible, []);
+      byAfter.get(afterVisible).push(m);
+    }
     const nodes = [];
+    const top = byAfter.get(0);
+    if (top) {
+      for (const m of top) nodes.push(pickLineEl(m.label));
+    }
     rows.forEach((p, i) => {
       nodes.push(rowEl(p, side));
-      const m = byAfter.get(i + 1);
-      if (m) nodes.push(pickLineEl(m.label));
+      const at = byAfter.get(i + 1);
+      if (at) {
+        for (const m of at) nodes.push(pickLineEl(m.label));
+      }
     });
     return nodes;
   }
