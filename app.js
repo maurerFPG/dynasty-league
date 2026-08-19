@@ -904,6 +904,20 @@
     }
     if (nextEl) nextEl.classList.toggle("up", onClock);
     if (untilEl) untilEl.classList.toggle("up", onClock);
+    const polledEl = $("hdr-polled");
+    let pollLabel = "—";
+    if (state.lastPoll) {
+      pollLabel = String(state.lastPoll)
+        .replace(/\s*CT\s*$/i, "")
+        .replace(/(\d{1,2}:\d{2}):\d{2}(\s*[AP]M)/i, "$1$2")
+        .trim() || "—";
+    }
+    setChip(polledEl, pollLabel, "Polled");
+    if (polledEl) {
+      if (state.pollError) polledEl.title = "Picks poll failed · " + state.pollError;
+      else if (state.lastPoll) polledEl.title = "Last poll " + state.lastPoll;
+      else polledEl.title = "Picks poll every 30s";
+    }
     const dot = $("poll-dot");
     dot.className = "poll-dot" + (state.pollError ? " err" : state.lastPoll ? " ok" : "");
     if (state.pollError) dot.title = "Picks poll failed · " + state.pollError;
