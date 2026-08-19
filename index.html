@@ -10,27 +10,16 @@
   <div class="bokeh" aria-hidden="true"></div>
   <div class="app">
     <header class="topbar glass">
-      <div class="brand">
-        <h1>Dynasty League</h1>
-        <p>12-team SF · snake + 3RR · slot 3</p>
+      <h1 class="brand">Dynasty League</h1>
+      <div class="hdr-status">
+        <span class="status-pill" id="draft-status">PRE-DRAFT</span>
+        <span class="poll-dot" id="poll-dot" title="picks poll"></span>
       </div>
-      <div class="clock-block">
-        <div class="status-row">
-          <span class="status-pill" id="draft-status">PRE-DRAFT</span>
-          <span class="poll-dot" id="poll-dot" title="picks poll"></span>
-        </div>
-        <div class="countdown" id="countdown">—</div>
-        <div class="start-label">Thu Aug 20 · 7:30 PM CT · 4-hour timer</div>
-      </div>
-      <div class="rob-chip" id="rob-chip">
-        <div class="rob-kicker">You · slot 3</div>
-        <div class="rob-name">Maurer Hour</div>
-        <div class="rob-next" id="rob-next">Next: 1.03</div>
-      </div>
-      <div class="top-actions">
-        <button type="button" class="btn" id="btn-refresh">Refresh</button>
-        <div class="poll-meta" id="poll-meta">Picks poll every 30s</div>
-      </div>
+      <div class="countdown" id="countdown" title="until draft starts">—</div>
+      <div class="rob-name" id="rob-name">Maurer Hour</div>
+      <div class="rob-next" id="rob-next">1.03</div>
+      <div class="rob-until" id="rob-until">2 until next</div>
+      <button type="button" class="btn" id="btn-refresh">Refresh</button>
     </header>
 
     <section class="board-pane glass" id="board-pane">

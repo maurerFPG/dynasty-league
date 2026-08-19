@@ -60,6 +60,7 @@
     lastPoll: null,
     pollError: null,
     draftStatus: "pre_draft",
+    draftLive: null,
     research: { key: null, status: "idle", headlines: [], error: null },
     altsCache: { key: null, list: [] },
   };
@@ -895,54 +896,186 @@
     const pill = $("draft-status");
     pill.textContent = String(status).replace(/_/g, " ").toUpperCase();
     pill.className = "status-pill" + (status === "drafting" ? " live" : status === "complete" ? " done" : "");
+    const nameEl = $("rob-name");
+    if (nameEl) nameEl.textContent = state.draft?.rob_team || "Maurer Hour";
     const robNext = nextRobPick();
-    const onClock = nextEmptyPick();
-    const chip = $("rob-chip");
+    const current = currentOverall();
+    const until = robNext ? robNext.overall - current : null;
+    const onClock = until === 0;
+    const nextEl = $("rob-next");
+    const untilEl = $("rob-until");
     if (robNext) {
-      $("rob-next").textContent =
-        onClock && onClock.is_rob ? `On the clock · ${robNext.label}` : `Next: ${robNext.label}`;
-      chip.classList.toggle("up", !!(onClock && onClock.is_rob));
+      nextEl.textContent = onClock ? "On the clock" : robNext.label;
+      untilEl.textContent = onClock ? "You're up" : `${until} until next`;
     } else {
-      $("rob-next").textContent = "Board complete";
-      chip.classList.remove("up");
+      nextEl.textContent = "Done";
+      untilEl.textContent = "Board complete";
     }
-    const meta = $("poll-meta");
-    if (state.pollError) meta.textContent = "Picks poll failed · " + state.pollError;
-    else if (state.lastPoll) meta.textContent = `Picks ${state.picks.length} · ${state.lastPoll}`;
-    else meta.textContent = "Picks poll every 30s";
+    if (nameEl) nameEl.classList.toggle("up", onClock);
+    nextEl.classList.toggle("up", onClock);
+    untilEl.classList.toggle("up", onClock);
     const dot = $("poll-dot");
     dot.className = "poll-dot" + (state.pollError ? " err" : state.lastPoll ? " ok" : "");
+    if (state.pollError) dot.title = "Picks poll failed · " + state.pollError;
+    else if (state.lastPoll) dot.title = "Last poll " + state.lastPoll;
+    else dot.title = "Picks poll every 30s";
   }
 
-  function tickCountdown() {
-    const el = $("countdown");
+  function toEpochMs(v) {
+    const n = Number(v);
+    if (!Number.isFinite(n) || n <= 0) return null;
+    return n < 1e12 ? n * 1000 : n;
+  }
+
+  function pickTimerSeconds() {
+    const live = state.draftLive?.pick_timer;
+    const baked = state.draft?.pick_timer_seconds;
+    const n = Number(live != null ? live : baked);
+    return Number.isFinite(n) && n > 0 ? n : null;
+  }
+
+  function draftStartMs() {
+    const live = toEpochMs(state.draftLive?.start_time);
+    if (live) return live;
     const iso = state.draft?.start_time_ct;
-    if (!iso) {
-      el.textContent = "—";
-      return;
+    if (!iso) return null;
+    const t = new Date(iso).getTime();
+    return Number.isFinite(t) ? t : null;
+  }
+
+  /* Clock start for the current pick: last_picked after a pick, else start_time. */
+  function pickClockStartMs() {
+    if (state.picks.length > 0) return toEpochMs(state.draftLive?.last_picked);
+    return draftStartMs();
+  }
+
+  /*
+   * Sleeper settings.autopause_* are minutes past midnight UTC on this draft
+   * (240 / 780 = 04:00–13:00 UTC = 11:00 PM–8:00 AM CT in August). Honor them
+   * only when enabled and both times are present — do not invent a window.
+   */
+  function autopauseWindow() {
+    const s = state.draftLive?.settings;
+    if (!s || Number(s.autopause_enabled) !== 1) return null;
+    const startMin = Number(s.autopause_start_time);
+    const endMin = Number(s.autopause_end_time);
+    if (!Number.isFinite(startMin) || !Number.isFinite(endMin)) return null;
+    if (startMin === endMin) return null;
+    return { startMin, endMin };
+  }
+
+  function utcDayStart(ms) {
+    const d = new Date(ms);
+    return Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate());
+  }
+
+  function utcMinutesOfDay(ms) {
+    return (ms - utcDayStart(ms)) / 60000;
+  }
+
+  function inAutopause(ms, win) {
+    const min = utcMinutesOfDay(ms);
+    if (win.startMin < win.endMin) return min >= win.startMin && min < win.endMin;
+    return min >= win.startMin || min < win.endMin;
+  }
+
+  function nextPauseStart(ms, win) {
+    const day0 = utcDayStart(ms);
+    const min = utcMinutesOfDay(ms);
+    if (min < win.startMin) return day0 + win.startMin * 60000;
+    return day0 + 86400000 + win.startMin * 60000;
+  }
+
+  function nextUnpause(ms, win) {
+    const day0 = utcDayStart(ms);
+    const min = utcMinutesOfDay(ms);
+    if (win.startMin < win.endMin) {
+      if (min < win.endMin) return day0 + win.endMin * 60000;
+      return day0 + 86400000 + win.endMin * 60000;
     }
-    if (state.draftStatus === "drafting") {
-      el.textContent = "LIVE";
-      return;
+    if (min >= win.startMin) return day0 + 86400000 + win.endMin * 60000;
+    return day0 + win.endMin * 60000;
+  }
+
+  /* Deadline = clock start + pick_timer, skipping official autopause windows. */
+  function pickDeadlineMs() {
+    const start = pickClockStartMs();
+    const timer = pickTimerSeconds();
+    if (start == null || timer == null) return null;
+    const win = autopauseWindow();
+    if (!win) return start + timer * 1000;
+    let t = start;
+    let remaining = timer * 1000;
+    for (let i = 0; i < 48 && remaining > 0; i++) {
+      if (inAutopause(t, win)) {
+        const resume = nextUnpause(t, win);
+        if (!(resume > t)) break;
+        t = resume;
+        continue;
+      }
+      const pauseAt = nextPauseStart(t, win);
+      const avail = pauseAt - t;
+      if (remaining <= avail) return t + remaining;
+      remaining -= avail;
+      t = pauseAt;
     }
-    if (state.draftStatus === "complete") {
-      el.textContent = "FINAL";
-      return;
-    }
-    const start = new Date(iso).getTime();
-    const now = Date.now();
-    let ms = start - now;
-    if (ms <= 0) {
-      el.textContent = "START WINDOW";
-      return;
-    }
+    return t;
+  }
+
+  function formatDuration(ms) {
+    if (ms <= 0) return "00:00:00";
     const d = Math.floor(ms / 86400000);
     ms -= d * 86400000;
     const h = Math.floor(ms / 3600000);
     ms -= h * 3600000;
     const m = Math.floor(ms / 60000);
     const s = Math.floor((ms - m * 60000) / 1000);
-    el.textContent = d > 0 ? `${d}d ${pad(h)}:${pad(m)}:${pad(s)}` : `${pad(h)}:${pad(m)}:${pad(s)}`;
+    return d > 0 ? `${d}d ${pad(h)}:${pad(m)}:${pad(s)}` : `${pad(h)}:${pad(m)}:${pad(s)}`;
+  }
+
+  function tickCountdown() {
+    const el = $("countdown");
+    const status = state.draftStatus || state.draft?.status || "pre_draft";
+    if (status === "complete") {
+      el.textContent = "FINAL";
+      el.title = "Draft complete";
+      return;
+    }
+    if (status === "paused") {
+      el.textContent = "PAUSED";
+      el.title = "Commissioner paused the draft";
+      return;
+    }
+    if (status === "drafting") {
+      const deadline = pickDeadlineMs();
+      if (deadline == null) {
+        el.textContent = "LIVE";
+        el.title = "Draft is live";
+        return;
+      }
+      const left = deadline - Date.now();
+      el.textContent = left <= 0 ? "00:00:00" : formatDuration(left);
+      const win = autopauseWindow();
+      const pausedNow = !!(win && inAutopause(Date.now(), win));
+      el.title = pausedNow
+        ? "until this pick expires (timer paused overnight)"
+        : "until this pick expires";
+      return;
+    }
+    const start = draftStartMs();
+    if (start == null) {
+      el.textContent = "—";
+      el.title = "";
+      return;
+    }
+    const ms = start - Date.now();
+    if (ms <= 0) {
+      el.textContent = "START WINDOW";
+      el.title = "until draft starts";
+      return;
+    }
+    el.textContent = formatDuration(ms);
+    el.title = "until draft starts";
   }
   function pad(n) {
     return String(n).padStart(2, "0");
@@ -994,6 +1127,15 @@
       if (dRes.ok) {
         const dj = await dRes.json();
         if (dj && dj.status) state.draftStatus = dj.status;
+        state.draftLive = dj
+          ? {
+              start_time: dj.start_time ?? null,
+              last_picked: dj.last_picked ?? null,
+              pick_timer: dj.settings && dj.settings.pick_timer != null ? dj.settings.pick_timer : null,
+              settings: dj.settings || null,
+              status: dj.status || null,
+            }
+          : null;
       }
       state.pollError = null;
       const now = new Date();
@@ -1014,6 +1156,7 @@
     }
     renderCard();
     renderChrome();
+    tickCountdown();
     btn.classList.remove("busy");
   }
 
@@ -1094,6 +1237,10 @@
   }
 
   init().catch((err) => {
-    $("poll-meta").textContent = "Failed to load local data: " + (err && err.message);
+    const dot = $("poll-dot");
+    if (dot) {
+      dot.className = "poll-dot err";
+      dot.title = "Failed to load local data: " + (err && err.message);
+    }
   });
 })();
