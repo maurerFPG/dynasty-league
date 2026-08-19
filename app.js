@@ -227,15 +227,6 @@
     if (score == null) return "";
     return ` title="steal ${score.toFixed(2)}"`;
   }
-  function cmpSteal(a, b) {
-    const sa = stealScore(a);
-    const sb = stealScore(b);
-    const da = sa == null ? -Infinity : sa;
-    const db = sb == null ? -Infinity : sb;
-    if (db !== da) return db - da;
-    return (a.fp_rank || 9999) - (b.fp_rank || 9999);
-  }
-
   function matchesFilter(p) {
     if (!remaining(p)) return false;
     if (state.filterPos.size && !state.filterPos.has(p.pos)) return false;
@@ -547,13 +538,13 @@
     } else {
       const foRows = state.players
         .filter((p) => p.fo_adp != null && matchesFilter(p))
-        .sort(stealOn ? cmpSteal : (a, b) => (a.fo_rank || 9999) - (b.fo_rank || 9999) || a.fo_adp - b.fo_adp);
+        .sort((a, b) => (a.fo_rank || 9999) - (b.fo_rank || 9999) || a.fo_adp - b.fo_adp);
       fo.replaceChildren(...listNodes(foRows, "fo"));
       $("count-fo").textContent = stealOn ? `${foRows.length} steals` : `${foRows.length} left`;
     }
     const fpRows = state.players
       .filter((p) => p.fp_rank != null && matchesFilter(p))
-      .sort(stealOn ? cmpSteal : (a, b) => a.fp_rank - b.fp_rank);
+      .sort((a, b) => a.fp_rank - b.fp_rank);
     fp.replaceChildren(...listNodes(fpRows, "fp"));
     $("count-fp").textContent = stealOn ? `${fpRows.length} steals` : `${fpRows.length} left`;
   }
