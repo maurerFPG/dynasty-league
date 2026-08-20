@@ -2,7 +2,7 @@
 (() => {
   const TARGETS_KEY = "nasty-draft-hq-targets-v1";
   const BOARD_H_KEY = "nasty-ui-board-h-v1";
-  const CARD_H_KEY = "nasty-ui-card-h-v1";
+  const CARD_H_KEY = "nasty-ui-card-h-v2";
   const POLL_MS = 30000;
   const ROB_USER = "469299052404535296";
   const DRAFT_END = 300;
@@ -853,21 +853,21 @@
           </div>
           <div class="alts">
             <div class="k">Nearby on the boards</div>
-            <div class="alt-list">
-              ${
-                alts.length
-                  ? alts
-                      .map((a) => {
-                        const bits = [];
-                        if (a.fo_rank != null) bits.push("SL " + fmtFoRank(a.fo_rank));
-                        else if (a.fo_adp != null) bits.push("SL " + fmtAdp(a.fo_adp));
-                        if (a.fp_rank != null) bits.push("ECR " + fmtRank(a.fp_rank));
-                        return `<button type="button" class="alt" data-alt="${esc(playerKey(a))}"><span><b>${esc(a.name)}</b></span><em>${esc(bits.join(" · "))}</em></button>`;
-                      })
-                      .join("")
-                  : `<span class="flash">No close neighbors on these boards.</span>`
-              }
-            </div>
+            ${
+              alts.length
+                ? `<table class="alt-table">
+                    <thead><tr><th class="n">Name</th><th>SL</th><th>ECR</th><th>+/−</th></tr></thead>
+                    <tbody>
+                      ${alts
+                        .map((a) => {
+                          const sl = a.fo_rank != null ? fmtFoRank(a.fo_rank) : a.fo_adp != null ? fmtAdp(a.fo_adp) : "—";
+                          return `<tr class="alt" data-alt="${esc(playerKey(a))}"><td class="n">${esc(a.name)}</td><td>${esc(sl)}</td><td>${esc(fmtRank(a.fp_rank))}</td><td class="${gapClass(a.gap)}">${esc(gapLabel(a.gap))}</td></tr>`;
+                        })
+                        .join("")}
+                    </tbody>
+                  </table>`
+                : `<span class="flash">No close neighbors on these boards.</span>`
+            }
           </div>
         </div>
         <div class="card-right">${researchBlock(p)}</div>

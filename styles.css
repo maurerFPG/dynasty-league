@@ -29,7 +29,7 @@
   --ctrl-gap: 6px;
   --filt: 20px;
   --board-h: 28vh;
-  --card-h: 168px;
+  --card-h: 140px;
   --sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
@@ -975,17 +975,14 @@ body.resizing-h { cursor: ns-resize; user-select: none; }
   flex-direction: column;
   min-width: 0;
   min-height: 0;
+  padding-right: 16px;
+  border-right: 1px solid var(--line);
 }
 .card-right {
   min-width: 0;
   min-height: 0;
   overflow: auto;
   padding-left: 16px;
-  border-left: 1px solid var(--line);
-}
-.card-right:empty {
-  border-left: 0;
-  padding-left: 0;
 }
 .card-idrow {
   display: grid;
@@ -1135,8 +1132,8 @@ body.resizing-h { cursor: ns-resize; user-select: none; }
 .gone-est, .gone-num, .gone-cap { display: none; }
 .alts {
   margin: 0;
-  padding-top: 6px;
-  border-top: 1px solid var(--line);
+  padding-top: 2px;
+  border-top: 0;
   min-width: 0;
   min-height: 0;
   overflow: auto;
@@ -1147,29 +1144,42 @@ body.resizing-h { cursor: ns-resize; user-select: none; }
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--faint);
-  margin-bottom: 4px;
+  margin-bottom: 3px;
 }
-.alt-list { display: flex; flex-direction: column; gap: 3px; }
-.alt {
-  appearance: none;
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 8px;
+.alt-table {
   width: 100%;
-  text-align: left;
-  border: 1px solid var(--line);
-  background: rgba(8, 18, 34, 0.5);
-  color: var(--text);
-  font-family: inherit;
+  border-collapse: collapse;
   font-size: 12px;
-  padding: 3px 8px;
-  border-radius: 8px;
-  cursor: pointer;
 }
-.alt:hover { border-color: var(--line-2); }
-.alt b { font-weight: 600; }
-.alt em { font-style: normal; color: var(--muted); font-size: 11px; margin-left: 0; white-space: nowrap; }
+.alt-table th {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--faint);
+  text-align: center;
+  padding: 0 4px 3px;
+}
+.alt-table td {
+  padding: 2px 4px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+}
+.alt-table th.n,
+.alt-table td.n {
+  text-align: left;
+  padding-left: 0;
+}
+.alt-table td.n {
+  color: var(--text);
+  font-weight: 600;
+}
+.alt-table tr.alt { cursor: pointer; }
+.alt-table tr.alt:hover td { background: rgba(255, 255, 255, 0.04); }
+.alt-table td.steal { color: var(--steal); }
+.alt-table td.reach { color: var(--reach); }
+.alt-table td.flat { color: var(--muted); }
 .flash { color: var(--steal); font-size: 11px; margin-top: 6px; }
 .flash.err { color: var(--danger); }
 .headlines { margin-top: 10px; }
