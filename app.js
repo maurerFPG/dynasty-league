@@ -74,6 +74,7 @@
     briefs: {},
     altsCache: { key: null, list: [] },
     goneModel: { key: "", byId: new Map(), availById: new Map(), label: "", thenLabel: "" },
+    recs: { pick: null, overall: null, options: [] },
     pickOverall: false,
   };
 
@@ -536,33 +537,41 @@
   }
 
   function renderMyPicks() {
-    const countsEl = $("mypicks-counts");
-    const listEl = $("mypicks-list");
-    const leftEl = $("mypicks-left");
-    if (!countsEl || !listEl) return;
-    const counts = robPosCounts();
-    countsEl.innerHTML = ["QB", "WR", "RB", "TE"]
-      .map((pos) => {
-        const n = counts[pos];
-        return `<span class="mp-pill mp-${pos.toLowerCase()}" title="${pos} ${n}"><span class="c-pos ${pos}">${pos}</span><span class="mp-n">${n}</span></span>`;
+    renderRecs();
+  }
+
+  function renderRecs() {
+    const el = $("rec-list");
+    if (!el) return;
+    const recs = state.recs && Array.isArray(state.recs.options) ? state.recs.options.slice(0, 3) : [];
+    el.innerHTML = [0, 1, 2]
+      .map((i) => {
+        const o = recs[i];
+        if (!o) {
+          return `<li class="rec-row empty"><span class="rec-n">${i + 1}.</span><span class="rec-who">—</span></li>`;
+        }
+        const p = o.id ? findPlayer(String(o.id)) : findPlayerByLooseName(o.name || "");
+        const name = p ? boardName(p.name) : o.name ? boardName(o.name) : "—";
+        const team = (p && p.team) || o.team || "";
+        const key = p ? playerKey(p) : "";
+        const alt = key ? ` data-alt="${esc(key)}"` : "";
+        return `<li class="rec-row"${alt}><span class="rec-n">${i + 1}.</span>${logoHtml(team)}<span class="rec-who">${esc(name)}</span></li>`;
       })
       .join("");
-    if (leftEl) {
-      const n = robRemainingPicks().length;
-      leftEl.innerHTML = `<span class="n">${n}</span><span class="mp-left-lab">left</span>`;
-    }
-    const taken = state.robTaken;
-    if (!taken.length) {
-      listEl.replaceChildren();
-      listEl.hidden = true;
-      return;
-    }
-    listEl.hidden = false;
-    listEl.innerHTML = taken
-      .map((p) => {
-        return `<span class="mp-chip">${logoHtml(p.team)}<span class="mp-name">${esc(p.name)}</span><span class="c-pos ${esc(p.position || "")}">${esc(p.position || "")}</span></span>`;
-      })
-      .join("");
+    el.querySelectorAll("[data-alt]").forEach((row) => {
+      row.addEventListener("click", () => selectPlayer(row.getAttribute("data-alt")));
+    });
+  }
+
+  async function refreshBaked() {
+    try {
+      const [bj, rj] = await Promise.all([
+        fetch("data/briefs.json?v=recs1", { cache: "no-store" }).then((r) => (r.ok ? r.json() : null)).catch(() => null),
+        fetch("data/recs.json", { cache: "no-store" }).then((r) => (r.ok ? r.json() : null)).catch(() => null),
+      ]);
+      if (bj && typeof bj === "object" && !Array.isArray(bj)) state.briefs = bj;
+      if (rj && typeof rj === "object") state.recs = rj;
+    } catch (e) { /* ignore */ }
   }
 
   function renderLists() {
@@ -843,6 +852,9 @@
     const lead = b.lead
       ? `<div class="baked-block"><div class="kicker">Outlook</div><p class="lead">${esc(b.lead)}</p></div>`
       : "";
+    const board = b.draft
+      ? `<div class="baked-block"><div class="kicker">Board</div><p class="note">${esc(b.draft)}</p></div>`
+      : "";
     const depth = b.depth
       ? `<div class="baked-block"><div class="kicker">Depth</div><p class="note">${esc(b.depth)}</p></div>`
       : "";
@@ -867,7 +879,7 @@
     const foot = lis
       ? `<div class="baked-foot"><div class="baked-links">${lis}</div></div>`
       : "";
-    return `<div class="baked" id="research-flash">${lead}${depth}${watch}${nearby}${foot}</div>`;
+    return `<div class="baked" id="research-flash">${lead}${board}${depth}${watch}${nearby}${foot}</div>`;
   }
 
   function researchBlock(p) {
@@ -1592,9 +1604,13 @@
     const draftedChanged =
       prevDrafted.size !== state.draftedIds.size ||
       [...state.draftedIds].some((id) => !prevDrafted.has(id));
+    await refreshBaked();
+    renderRecs();
     if (draftedChanged) {
       state.altsCache = { key: null, list: [] };
       renderLists();
+      renderCard();
+    } else if (state.selectedId) {
       renderCard();
     }
     renderChrome();
@@ -1700,17 +1716,21 @@
   async function init() {
     loadTargets();
     loadLayout();
-    const [pj, dj, bj] = await Promise.all([
+    const [pj, dj, bj, rj] = await Promise.all([
       fetch("data/players.json", { cache: "no-store" }).then((r) => r.json()),
       fetch("data/draft.json", { cache: "no-store" }).then((r) => r.json()),
-      fetch("data/briefs.json?v=near3", { cache: "no-store" })
+      fetch("data/briefs.json?v=recs1", { cache: "no-store" })
         .then((r) => (r.ok ? r.json() : {}))
         .catch(() => ({})),
+      fetch("data/recs.json", { cache: "no-store" })
+        .then((r) => (r.ok ? r.json() : null))
+        .catch(() => null),
     ]);
     state.players = pj.players || [];
     state.sources = pj.sources || {};
     state.match = pj.match || {};
     state.briefs = bj && typeof bj === "object" && !Array.isArray(bj) ? bj : {};
+    if (rj && typeof rj === "object") state.recs = rj;
     state.draft = dj;
     state.draftStatus = dj.status || "pre_draft";
     state.byId = new Map(state.players.filter((p) => p.id != null).map((p) => [String(p.id), p]));
