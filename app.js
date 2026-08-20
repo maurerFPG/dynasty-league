@@ -2,7 +2,7 @@
 (() => {
   const TARGETS_KEY = "nasty-draft-hq-targets-v1";
   const BOARD_H_KEY = "nasty-ui-board-h-v1";
-  const CARD_H_KEY = "nasty-ui-card-h-v4";
+  const CARD_H_KEY = "nasty-ui-card-h-v5";
   const POLL_MS = 30000;
   const ROB_USER = "469299052404535296";
   const DRAFT_END = 300;
@@ -857,11 +857,10 @@
             <button type="button" class="card-x" id="btn-close" title="Clear">×</button>
           </div>
           <div class="alts">
-            <div class="k">Nearby on the boards</div>
             ${
               alts.length
                 ? `<table class="alt-table">
-                    <thead><tr><th class="n">Name</th><th>SL</th><th>ECR</th><th>+/−</th></tr></thead>
+                    <thead><tr><th class="n">Nearby</th><th>SL</th><th>ECR</th><th>+/−</th></tr></thead>
                     <tbody>
                       ${alts
                         .map((a) => {
