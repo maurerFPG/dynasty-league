@@ -775,9 +775,8 @@
     const lis = links
       .map((l) => `<a href="${esc(l.url)}" target="_blank" rel="noopener noreferrer">${esc(l.label || l.url)}</a>`)
       .join("");
-    const asof = b.as_of ? `<span class="baked-asof">as of ${esc(b.as_of)}</span>` : "";
-    const foot = (lis || asof)
-      ? `<div class="baked-foot">${lis ? `<div class="baked-links">${lis}</div>` : ""}${asof}</div>`
+    const foot = lis
+      ? `<div class="baked-foot"><div class="baked-links">${lis}</div></div>`
       : "";
     return `<div class="baked" id="research-flash">${lead}${watch}${nearby}${foot}</div>`;
   }
@@ -1615,7 +1614,7 @@
     const [pj, dj, bj] = await Promise.all([
       fetch("data/players.json", { cache: "no-store" }).then((r) => r.json()),
       fetch("data/draft.json", { cache: "no-store" }).then((r) => r.json()),
-      fetch("data/briefs.json?v=brief2", { cache: "no-store" })
+      fetch("data/briefs.json?v=brief3", { cache: "no-store" })
         .then((r) => (r.ok ? r.json() : {}))
         .catch(() => ({})),
     ]);
