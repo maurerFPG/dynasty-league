@@ -540,6 +540,34 @@
   }
 
   function renderMyPicks() {
+    const countsEl = $("mypicks-counts");
+    const listEl = $("mypicks-list");
+    const leftEl = $("mypicks-left");
+    if (countsEl) {
+      const counts = robPosCounts();
+      countsEl.innerHTML = ["QB", "WR", "RB", "TE"]
+        .map((pos) => {
+          const n = counts[pos];
+          return `<span class="mp-pill mp-${pos.toLowerCase()}" title="${pos} ${n}"><span class="c-pos ${pos}">${pos}</span><span class="mp-n">${n}</span></span>`;
+        })
+        .join("");
+    }
+    if (leftEl) {
+      const n = robRemainingPicks().length;
+      leftEl.innerHTML = `<span class="n">${n}</span><span class="mp-left-lab">left</span>`;
+    }
+    if (listEl) {
+      const taken = state.robTaken;
+      if (!taken.length) {
+        listEl.replaceChildren();
+        listEl.hidden = true;
+      } else {
+        listEl.hidden = false;
+        listEl.innerHTML = taken
+          .map((p) => `<span class="mp-chip">${logoHtml(p.team)}<span class="mp-name">${esc(p.name)}</span><span class="c-pos ${esc(p.position || "")}">${esc(p.position || "")}</span></span>`)
+          .join("");
+      }
+    }
     renderRecs();
   }
 
@@ -569,7 +597,7 @@
   async function refreshBaked() {
     try {
       const [bj, rj] = await Promise.all([
-        fetch("data/briefs.json?v=recs3", { cache: "no-store" }).then((r) => (r.ok ? r.json() : null)).catch(() => null),
+        fetch("data/briefs.json?v=recs4", { cache: "no-store" }).then((r) => (r.ok ? r.json() : null)).catch(() => null),
         fetch("data/recs.json", { cache: "no-store" }).then((r) => (r.ok ? r.json() : null)).catch(() => null),
       ]);
       if (bj && typeof bj === "object" && !Array.isArray(bj)) state.briefs = bj;
@@ -1800,7 +1828,7 @@
     const [pj, dj, bj, rj] = await Promise.all([
       fetch("data/players.json", { cache: "no-store" }).then((r) => r.json()),
       fetch("data/draft.json", { cache: "no-store" }).then((r) => r.json()),
-      fetch("data/briefs.json?v=recs3", { cache: "no-store" })
+      fetch("data/briefs.json?v=recs4", { cache: "no-store" })
         .then((r) => (r.ok ? r.json() : {}))
         .catch(() => ({})),
       fetch("data/recs.json", { cache: "no-store" })

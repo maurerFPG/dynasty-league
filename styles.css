@@ -1402,50 +1402,45 @@ body.resizing-h { cursor: ns-resize; user-select: none; }
   text-decoration: underline;
 }
 
-.recs {
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  min-height: 0;
-}
 .rec-list {
+  grid-area: label;
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 2px 4px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: var(--ctrl-gap);
-  height: 100%;
+  justify-content: center;
+  gap: 1px;
+  min-width: 0;
   min-height: 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.03);
 }
 .rec-row {
   display: flex;
   align-items: center;
-  gap: 8px;
-  flex: 1 1 0;
-  min-height: 0;
-  min-width: 0;
+  gap: 4px;
   margin: 0;
-  padding: 0 10px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.04);
+  padding: 0 2px;
+  min-width: 0;
   color: var(--text);
   cursor: pointer;
+  line-height: 1.15;
 }
 .rec-row.empty { cursor: default; color: var(--faint); }
-.rec-row:not(.empty):hover { border-color: var(--line-2); background: rgba(155, 184, 232, 0.08); }
+.rec-row:not(.empty):hover .rec-who { color: var(--accent); }
 .rec-n {
-  flex: 0 0 1.6ch;
+  flex: 0 0 1.4ch;
+  font-size: 10px;
   font-weight: 650;
   font-variant-numeric: tabular-nums;
   color: var(--muted);
 }
 .rec-row .logo,
 .rec-row .logo.ph {
-  width: 16px;
-  height: 16px;
+  width: 12px;
+  height: 12px;
   flex: 0 0 auto;
 }
 .rec-who {
@@ -1454,5 +1449,5 @@ body.resizing-h { cursor: ns-resize; user-select: none; }
   white-space: nowrap;
   text-overflow: ellipsis;
   font-weight: 600;
-  font-size: 13px;
+  font-size: 11px;
 }

@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dynasty league</title>
-  <link rel="stylesheet" href="styles.css?v=recs3" />
+  <link rel="stylesheet" href="styles.css?v=recs4" />
 </head>
 <body>
   <div class="bokeh" aria-hidden="true"></div>
@@ -50,8 +50,13 @@
         </div>
       </div>
 
-      <section class="mypicks recs glass" id="mypicks" aria-label="Suggested picks">
-        <ol class="rec-list" id="rec-list"></ol>
+      <section class="mypicks glass" id="mypicks">
+        <div class="mp-pad">
+          <ol class="rec-list" id="rec-list" aria-label="Suggested picks"></ol>
+          <div class="mp-counts" id="mypicks-counts" aria-label="My roster by position"></div>
+          <div class="mp-left" id="mypicks-left" aria-label="Remaining picks"></div>
+        </div>
+        <div class="mp-row" id="mypicks-list" hidden></div>
       </section>
     </div>
 
@@ -93,6 +98,6 @@
     </section>
   </div>
 
-  <script src="app.js?v=recs3"></script>
+  <script src="app.js?v=recs4"></script>
 </body>
 </html>
