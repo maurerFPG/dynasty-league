@@ -863,7 +863,7 @@
   }
 
   function goneModelKey(win) {
-    return [win.current, state.draftedIds.size, win.then ? win.then.overall : "x", state.players.length].join(":");
+    return [win.current, state.draftedIds.size, win.then ? win.then.overall : "x", state.players.length, "gone2"].join(":");
   }
 
   function runGoneSims(win) {
@@ -895,7 +895,7 @@
     const nextAt = win.next.overall;
     const hasThen = !!win.then;
     const hits = new Map();
-    const still = new Map();
+    const hitsThen = new Map();
     for (let s = 0; s < nSims; s++) {
       const gone = new Set();
       const counts = {};
@@ -933,14 +933,9 @@
         const pick = softmaxPick(cand, scores);
         gone.add(pick.id);
         if (cell.overall < nextAt) hits.set(pick.id, (hits.get(pick.id) || 0) + 1);
+        if (hasThen) hitsThen.set(pick.id, (hitsThen.get(pick.id) || 0) + 1);
         if (c[pick.pos] != null) c[pick.pos] += 1;
         recent.push(pick.pos);
-      }
-      if (hasThen) {
-        for (let i = 0; i < short.length; i++) {
-          const id = short[i].id;
-          if (!gone.has(id)) still.set(id, (still.get(id) || 0) + 1);
-        }
       }
     }
     for (let i = 0; i < short.length; i++) {
@@ -949,9 +944,9 @@
       gone1.set(row.id, gPct);
       gone1.set(playerKey(row.p), gPct);
       if (hasThen) {
-        const aPct = Math.round(((still.get(row.id) || 0) / Math.max(1, nSims)) * 100);
-        live2.set(row.id, aPct);
-        live2.set(playerKey(row.p), aPct);
+        const tPct = Math.round(((hitsThen.get(row.id) || 0) / Math.max(1, nSims)) * 100);
+        live2.set(row.id, tPct);
+        live2.set(playerKey(row.p), tPct);
       }
     }
     return { gone1, live2 };
