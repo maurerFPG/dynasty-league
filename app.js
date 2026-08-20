@@ -288,9 +288,15 @@
   }
 
   function heatMark(p) {
+    if (p.gem) return `<span class="heat gem" title="Late-board gem">💎</span>`;
     if (p.hot) return `<span class="heat fire" title="Trending add or rising public buzz">🔥</span>`;
     if (p.cold) return `<span class="heat ice" title="Trending drop (48h)">🧊</span>`;
     return "";
+  }
+  function applyGems() {
+    (state.players || []).forEach((p) => {
+      p.gem = !!(state.briefs[String(p.id)] && state.briefs[String(p.id)].gem === true);
+    });
   }
   function rookieChip(p) {
     if (!p.is_rookie) return "";
@@ -600,12 +606,13 @@
   async function refreshBaked() {
     try {
       const [bj, rj] = await Promise.all([
-        fetch("data/briefs.json?v=b350", { cache: "no-store" }).then((r) => (r.ok ? r.json() : null)).catch(() => null),
+        fetch("data/briefs.json?v=gem1", { cache: "no-store" }).then((r) => (r.ok ? r.json() : null)).catch(() => null),
         fetch("data/recs.json", { cache: "no-store" }).then((r) => (r.ok ? r.json() : null)).catch(() => null),
       ]);
       if (bj && typeof bj === "object" && !Array.isArray(bj)) state.briefs = bj;
       if (rj && typeof rj === "object") state.recs = rj;
     } catch (e) { /* ignore */ }
+    applyGems();
   }
 
   function renderLists() {
@@ -1832,7 +1839,7 @@
     const [pj, dj, bj, rj] = await Promise.all([
       fetch("data/players.json", { cache: "no-store" }).then((r) => r.json()),
       fetch("data/draft.json", { cache: "no-store" }).then((r) => r.json()),
-      fetch("data/briefs.json?v=b350", { cache: "no-store" })
+      fetch("data/briefs.json?v=gem1", { cache: "no-store" })
         .then((r) => (r.ok ? r.json() : {}))
         .catch(() => ({})),
       fetch("data/recs.json", { cache: "no-store" })
@@ -1843,6 +1850,7 @@
     state.sources = pj.sources || {};
     state.match = pj.match || {};
     state.briefs = bj && typeof bj === "object" && !Array.isArray(bj) ? bj : {};
+    applyGems();
     if (rj && typeof rj === "object") state.recs = rj;
     state.draft = dj;
     state.draftStatus = dj.status || "pre_draft";

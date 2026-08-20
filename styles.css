@@ -712,6 +712,7 @@ body.resizing-h { cursor: ns-resize; user-select: none; }
   gap: 5px;
 }
 .heat { font-size: 12px; line-height: 1; flex: 0 0 auto; }
+.heat.gem { }
 .c-name.rookie, .who .rookie { color: #e6c36a; }
 .rchip {
   flex: 0 0 auto;
