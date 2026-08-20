@@ -694,21 +694,89 @@
     }
     const rank = p.fo_rank != null ? Number(p.fo_rank) : null;
     const pos = String(p.pos || "").trim();
-    const pool = state.players.filter((o) => {
-      if (!remaining(o) || playerKey(o) === key || o.fo_rank == null) return false;
-      if (pos && String(o.pos || "").trim() !== pos) return false;
-      return true;
-    });
+    const pool = state.players.filter((o) => remaining(o) && playerKey(o) !== key && o.fo_rank != null);
     pool.sort((a, b) => {
       const da = Math.abs(Number(a.fo_rank) - (rank ?? Number(a.fo_rank)));
       const db = Math.abs(Number(b.fo_rank) - (rank ?? Number(b.fo_rank)));
       return da - db || Number(a.fo_rank) - Number(b.fo_rank);
     });
-    const near = pool.slice(0, 5);
-    near.sort((a, b) => Number(a.fo_rank) - Number(b.fo_rank));
-    const list = near;
-    state.altsCache = { key, list };
-    return list;
+    const same = pos ? pool.filter((o) => String(o.pos || "").trim() === pos) : [];
+    const other = pos ? pool.filter((o) => String(o.pos || "").trim() !== pos) : pool;
+    const picked = [];
+    const seen = new Set();
+    const pushFrom = (arr, max) => {
+      for (const o of arr) {
+        if (picked.length >= max) break;
+        const k = playerKey(o);
+        if (seen.has(k)) continue;
+        seen.add(k);
+        picked.push(o);
+      }
+    };
+    pushFrom(same, 2);
+    pushFrom(other, 4);
+    pushFrom(pool, 4);
+    picked.sort((a, b) => Number(a.fo_rank) - Number(b.fo_rank));
+    state.altsCache = { key, list: picked };
+    return picked;
+  }
+
+  function findPlayerByLooseName(name) {
+    const q = String(name || "").trim().toLowerCase().replace(/\./g, "");
+    if (!q) return null;
+    const last = q.split(/\s+/).pop();
+    let lastHit = null;
+    for (const pl of state.players) {
+      const full = String(pl.name || "").toLowerCase();
+      const bn = boardName(pl.name).toLowerCase().replace(/\./g, "");
+      if (full === q || bn === q) return pl;
+      if (last && lastName(pl.name).toLowerCase() === last) lastHit = lastHit || pl;
+    }
+    return lastHit;
+  }
+
+  function parseNearbyTakes(raw) {
+    if (Array.isArray(raw)) {
+      return raw
+        .map((row) => {
+          if (!row) return null;
+          if (typeof row === "string") return { name: "", take: row };
+          return { id: row.id != null ? String(row.id) : "", name: row.name || "", take: row.take || row.text || "" };
+        })
+        .filter(Boolean);
+    }
+    const text = String(raw || "").trim();
+    if (!text) return [];
+    return text
+      .split(/\s*Vs\s+/i)
+      .map((s) => s.trim())
+      .filter(Boolean)
+      .map((chunk) => {
+        const m = chunk.match(/^(.+?)(?:\s*\((?:SL|ECR)\s*[^)]+\))?\s*:\s*([\s\S]+)$/i);
+        if (m) return { name: m[1].replace(/^Vs\s+/i, "").trim(), take: m[2].trim() };
+        return { name: "", take: chunk };
+      });
+  }
+
+  function nearbyRows(subject, b) {
+    const parsed = parseNearbyTakes(b && b.nearby);
+    const rows = [];
+    const seen = new Set([playerKey(subject)]);
+    for (const row of parsed) {
+      const pl = row.id ? findPlayer(row.id) : findPlayerByLooseName(row.name);
+      if (!pl || seen.has(playerKey(pl))) continue;
+      seen.add(playerKey(pl));
+      rows.push({ p: pl, take: row.take });
+    }
+    for (const a of alternates(subject)) {
+      if (rows.length >= 4) break;
+      if (seen.has(playerKey(a))) continue;
+      seen.add(playerKey(a));
+      const sl = fmtFoRank(a.fo_rank);
+      const ecr = fmtRank(a.fp_rank);
+      rows.push({ p: a, take: `${a.pos || ""} · SL ${sl} · ECR ${ecr}`.replace(/^ · /, "") });
+    }
+    return rows;
   }
 
   function trimHeadline(title) {
@@ -760,7 +828,7 @@
     return b && typeof b === "object" ? b : null;
   }
 
-  function bakedBriefHtml(b) {
+  function bakedBriefHtml(b, subject) {
     const notes = Array.isArray(b.notes) ? b.notes.filter(Boolean) : [];
     const links = Array.isArray(b.links) ? b.links.filter((l) => l && l.url) : [];
     const lead = b.lead
@@ -772,8 +840,11 @@
     const watch = notes.length
       ? `<div class="baked-block"><div class="kicker">Watch</div>${notes.map((n) => `<p class="note">${esc(n)}</p>`).join("")}</div>`
       : "";
-    const nearby = b.nearby
-      ? `<div class="baked-block"><div class="kicker">Nearby</div><p class="nearby">${esc(b.nearby)}</p></div>`
+    const rows = nearbyRows(subject, b);
+    const nearby = rows.length
+      ? `<div class="baked-block"><div class="kicker">Nearby</div><div class="near-list">${rows
+          .map(({ p: n, take }) => `<button type="button" class="near-row" data-alt="${esc(playerKey(n))}">${logoHtml(n.team)}<span class="near-body"><span class="near-name">${esc(boardName(n.name))}:</span> ${esc(take)}</span></button>`)
+          .join("")}</div></div>`
       : "";
     const lis = links
       .map((l) => `<a href="${esc(l.url)}" target="_blank" rel="noopener noreferrer">${esc(l.label || l.url)}</a>`)
@@ -786,7 +857,7 @@
 
   function researchBlock(p) {
     const baked = bakedBrief(p);
-    if (baked) return bakedBriefHtml(baked);
+    if (baked) return bakedBriefHtml(baked, p);
     const r = state.research;
     const same = r.key && r.key === playerKey(p);
     if (!same || r.status === "idle") return "";
@@ -1111,6 +1182,9 @@
       card.innerHTML = `<div class="card-empty">Click a player</div>`;
       return;
     }
+    const right = card.querySelector(".card-right");
+    const keepY = right ? right.scrollTop : 0;
+    const keepKey = String(state.selectedId || "");
     const tgt = p.id && state.targets.has(String(p.id));
     const alts = alternates(p);
     const exp = p.is_rookie || p.years_exp == null || p.years_exp === 0 ? "" : ` · ${p.years_exp} yr`;
@@ -1172,6 +1246,8 @@
     card.querySelectorAll("[data-alt]").forEach((btn) => {
       btn.addEventListener("click", () => selectPlayer(btn.getAttribute("data-alt")));
     });
+    const right2 = card.querySelector(".card-right");
+    if (right2 && String(state.selectedId || "") === keepKey) right2.scrollTop = keepY;
   }
 
   async function fetchResearch(p, alts) {
@@ -1504,8 +1580,8 @@
     if (draftedChanged) {
       state.altsCache = { key: null, list: [] };
       renderLists();
+      renderCard();
     }
-    renderCard();
     renderChrome();
     tickCountdown();
     btn.classList.remove("busy");
@@ -1612,7 +1688,7 @@
     const [pj, dj, bj] = await Promise.all([
       fetch("data/players.json", { cache: "no-store" }).then((r) => r.json()),
       fetch("data/draft.json", { cache: "no-store" }).then((r) => r.json()),
-      fetch("data/briefs.json?v=v2m", { cache: "no-store" })
+      fetch("data/briefs.json?v=near1", { cache: "no-store" })
         .then((r) => (r.ok ? r.json() : {}))
         .catch(() => ({})),
     ]);

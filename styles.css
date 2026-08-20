@@ -1348,6 +1348,37 @@ body.resizing-h { cursor: ns-resize; user-select: none; }
   font-size: 13px;
   line-height: 1.45;
 }
+.near-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.near-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--text);
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.45;
+  text-align: left;
+  cursor: pointer;
+}
+.near-row:hover .near-name { color: var(--accent); }
+.near-row .logo,
+.near-row .logo.ph {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 auto;
+  margin-top: 2px;
+}
+.near-body { min-width: 0; }
+.near-name { font-weight: 600; }
 .baked-foot {
   display: flex;
   flex-direction: column;
