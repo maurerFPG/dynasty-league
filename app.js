@@ -813,14 +813,14 @@
     };
   }
 
-  function goneBlock(p) {
+  function goneStat(p) {
     const g = goneBeforeEstimate(p);
-    if (!g) return "";
+    if (!g) return `<div class="stat"><div class="k">Gone</div><div class="v faint">—</div></div>`;
     const cap =
       g.source === "adp"
-        ? "Est. gone before your next pick · Sleeper board rank, not FantasyPros."
-        : "Est. gone before your next pick · ECR stand-in, not FantasyPros.";
-    return `<div class="gone-est" title="${esc(cap)}"><b>${g.pct}%</b> before ${esc(g.label)}</div>`;
+        ? `Est. ${g.pct}% gone before ${g.label} · Sleeper board rank, not FantasyPros.`
+        : `Est. ${g.pct}% gone before ${g.label} · ECR stand-in, not FantasyPros.`;
+    return `<div class="stat" title="${esc(cap)}"><div class="k">Gone</div><div class="v">${g.pct}%</div></div>`;
   }
 
   function renderCard() {
@@ -841,10 +841,10 @@
           <div class="card-idrow">
             ${headshotHtml(p.id)}
             <div class="card-id">
-              <div class="who">${heatMark(p)}<span class="${p.is_rookie ? "rookie" : ""}">${esc(p.name)}</span>${rookieChip(p)}${injuryBadge(p)}</div>
+              <div class="who">${heatMark(p)}<span class="${p.is_rookie ? "rookie" : ""}">${esc(p.name)}</span>${rookieChip(p)}</div>
               <div class="meta"><span class="c-pos ${esc(p.pos || "")}">${esc(p.pos || "")}</span> · ${esc(p.team || "FA")}${age}${exp}${p.is_rookie && p.years_exp !== 0 ? rook : ""}</div>
-              ${injuryLine(p)}
             </div>
+            ${injuryLine(p)}
           </div>
           <div class="card-stats">
             <div class="stat">
@@ -859,14 +859,12 @@
               <div class="k">Gap</div>
               <div class="v ${gapClass(p.gap)}">${esc(gapLabel(p.gap))}</div>
             </div>
+            ${goneStat(p)}
           </div>
-          <div class="card-toolbar">
-            <div class="card-ops">
-              <button type="button" class="toggle${tgt ? " on" : ""}" id="btn-target">${tgt ? "★ Target" : "☆ Target"}</button>
-              <button type="button" class="btn" id="btn-research">Research</button>
-              <button type="button" class="card-x" id="btn-close" title="Clear">×</button>
-            </div>
-            ${goneBlock(p)}
+          <div class="card-ops">
+            <button type="button" class="card-act${tgt ? " on" : ""}" id="btn-target">${tgt ? "★ Target" : "☆ Target"}</button>
+            <button type="button" class="card-act" id="btn-research">Research</button>
+            <button type="button" class="card-x" id="btn-close" title="Clear">×</button>
           </div>
           <div class="alts">
             <div class="k">Nearby on the boards</div>

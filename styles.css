@@ -989,8 +989,8 @@ body.resizing-h { cursor: ns-resize; user-select: none; }
 }
 .card-idrow {
   display: grid;
-  grid-template-columns: 40px minmax(0, 1fr);
-  gap: 10px;
+  grid-template-columns: 40px minmax(0, 1fr) minmax(78px, 0.85fr);
+  gap: 8px 10px;
   align-items: start;
   padding-bottom: 8px;
 }
@@ -1022,110 +1022,88 @@ body.resizing-h { cursor: ns-resize; user-select: none; }
   font-size: 11px;
   line-height: 1.3;
 }
-.card-id .inj {
-  margin-top: 2px;
+.card-idrow > .inj {
+  margin: 0;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  text-align: right;
   font-size: 11px;
   line-height: 1.3;
+  color: var(--faint);
 }
 .card-stats {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 0;
-  padding: 6px 0;
+  padding: 4px 0;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
 .stat {
   min-width: 0;
   text-align: center;
-  padding: 0 4px;
+  padding: 0 2px;
 }
 .stat + .stat { border-left: 1px solid var(--line); }
 .stat .k {
-  font-size: 9px;
-  letter-spacing: 0.08em;
+  font-size: 8px;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
   color: var(--faint);
 }
 .stat .v {
-  font-size: 18px;
+  font-size: 13px;
   font-weight: 650;
   font-variant-numeric: tabular-nums;
   margin-top: 1px;
   line-height: 1.1;
 }
+.stat .v.faint { color: var(--faint); font-weight: 500; }
 .stat .v.steal { color: var(--steal); }
 .stat .v.reach { color: var(--reach); }
 .stat .v.flat { color: var(--muted); }
-.card-toolbar {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  padding: 8px 0;
-}
 .card-ops {
   display: grid;
-  grid-template-columns: 1fr 1fr 26px;
+  grid-template-columns: 1fr 1fr 28px;
   gap: 6px;
   align-items: center;
+  padding: 8px 0;
 }
-.card-ops .toggle,
-.card-ops .btn {
-  width: 100%;
-  justify-content: center;
-  text-align: center;
-}
-.toggle {
+.card-act,
+.card-x {
   appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  height: 28px;
   border: 1px solid var(--line-2);
   background: rgba(8, 18, 34, 0.6);
   color: var(--muted);
   font-family: inherit;
   font-size: 12px;
   font-weight: 500;
-  padding: 5px 8px;
+  padding: 0 8px;
   border-radius: 8px;
   cursor: pointer;
+  line-height: 1;
 }
-.toggle.on {
+.card-act { width: 100%; }
+.card-act.on {
   color: var(--steal);
   border-color: rgba(126, 201, 187, 0.4);
   background: var(--steal-bg);
 }
 .card-x {
-  appearance: none;
-  border: 1px solid var(--line);
-  background: transparent;
-  color: var(--muted);
-  width: 26px;
-  height: 26px;
-  border-radius: 8px;
-  cursor: pointer;
+  width: 28px;
+  padding: 0;
   font-size: 14px;
-  line-height: 1;
 }
-.card-x:hover { color: var(--text); border-color: var(--line-2); }
-.gone-est {
-  display: flex;
-  align-items: baseline;
-  justify-content: center;
-  gap: 5px;
-  width: 100%;
-  margin: 0;
-  padding: 4px 8px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: rgba(155, 184, 232, 0.08);
-  font-size: 12px;
-  color: var(--muted);
-  font-variant-numeric: tabular-nums;
-}
-.gone-est b {
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--text);
-}
-.gone-num, .gone-cap { display: none; }
+.card-x:hover,
+.card-act:hover { color: var(--text); border-color: var(--line-2); }
+.gone-est, .gone-num, .gone-cap { display: none; }
 .alts {
   margin: 0;
   padding-top: 6px;
