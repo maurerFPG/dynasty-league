@@ -566,7 +566,7 @@
   async function refreshBaked() {
     try {
       const [bj, rj] = await Promise.all([
-        fetch("data/briefs.json?v=recs1", { cache: "no-store" }).then((r) => (r.ok ? r.json() : null)).catch(() => null),
+        fetch("data/briefs.json?v=recs2", { cache: "no-store" }).then((r) => (r.ok ? r.json() : null)).catch(() => null),
         fetch("data/recs.json", { cache: "no-store" }).then((r) => (r.ok ? r.json() : null)).catch(() => null),
       ]);
       if (bj && typeof bj === "object" && !Array.isArray(bj)) state.briefs = bj;
@@ -1719,7 +1719,7 @@
     const [pj, dj, bj, rj] = await Promise.all([
       fetch("data/players.json", { cache: "no-store" }).then((r) => r.json()),
       fetch("data/draft.json", { cache: "no-store" }).then((r) => r.json()),
-      fetch("data/briefs.json?v=recs1", { cache: "no-store" })
+      fetch("data/briefs.json?v=recs2", { cache: "no-store" })
         .then((r) => (r.ok ? r.json() : {}))
         .catch(() => ({})),
       fetch("data/recs.json", { cache: "no-store" })
@@ -1742,8 +1742,27 @@
     renderChrome();
     tickCountdown();
     setInterval(tickCountdown, 1000);
-    await pollPicks(false);
-    setInterval(() => pollPicks(false), POLL_MS);
+    startLivePolling();
+  }
+
+  function draftIsLive() {
+    if (state.draftStatus === "drafting" || state.draftStatus === "complete") return true;
+    const start = draftStartMs();
+    return start != null && Date.now() >= start;
+  }
+
+  function startLivePolling() {
+    const kick = () => {
+      pollPicks(false);
+      setInterval(() => pollPicks(false), POLL_MS);
+    };
+    if (draftIsLive()) {
+      kick();
+      return;
+    }
+    const start = draftStartMs();
+    if (start == null) return;
+    setTimeout(kick, Math.max(0, start - Date.now()));
   }
 
   init().catch((err) => {
