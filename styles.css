@@ -962,28 +962,43 @@ body.resizing-h { cursor: ns-resize; user-select: none; }
   background: rgba(155, 184, 232, 0.08);
 }
 .mp-name { font-weight: 500; font-size: 12px; }
-.card-top {
+.card-layout {
   display: grid;
-  grid-template-columns: 40px minmax(180px, 1.4fr) repeat(4, minmax(56px, auto)) auto;
-  grid-template-areas: "shot id rank adp ecr gap ops";
-  gap: 12px;
-  align-items: center;
+  grid-template-columns: minmax(220px, 280px) minmax(0, 1fr);
+  gap: 14px 18px;
+  align-items: start;
+  min-height: 0;
+  height: 100%;
+}
+.card-left {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+.card-right {
+  min-width: 0;
+  min-height: 0;
+  overflow: auto;
+}
+.card-idrow {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr);
+  gap: 8px;
+  align-items: start;
 }
 .headshot {
-  grid-area: shot;
   width: 40px;
   height: 40px;
   border-radius: 10px;
   object-fit: cover;
   background: rgba(255, 255, 255, 0.05);
-  justify-self: start;
 }
 .headshot.ph {
   display: block;
   background: rgba(255, 255, 255, 0.05);
 }
 .card-id {
-  grid-area: id;
   min-width: 0;
 }
 .card-id .who {
@@ -998,7 +1013,7 @@ body.resizing-h { cursor: ns-resize; user-select: none; }
 }
 .card-id .meta { color: var(--muted); margin-top: 3px; font-size: 11px; white-space: normal; }
 .stat {
-  min-width: 64px;
+  min-width: 0;
 }
 .stat .k {
   font-size: 9px;
@@ -1015,15 +1030,17 @@ body.resizing-h { cursor: ns-resize; user-select: none; }
 .stat .v.steal { color: var(--steal); }
 .stat .v.reach { color: var(--reach); }
 .stat .v.flat { color: var(--muted); }
-.s-rank { grid-area: rank; }
-.s-adp { grid-area: adp; }
-.s-ecr { grid-area: ecr; }
-.s-gap { grid-area: gap; }
+.card-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+.stat { min-width: 0; }
 .card-ops {
-  grid-area: ops;
   display: flex;
   gap: 6px;
   align-items: center;
+  flex-wrap: wrap;
 }
 .toggle {
   appearance: none;
@@ -1056,8 +1073,8 @@ body.resizing-h { cursor: ns-resize; user-select: none; }
 }
 .card-x:hover { color: var(--text); border-color: var(--line-2); }
 .alts {
-  margin-top: 10px;
-  padding-top: 8px;
+  margin-top: 2px;
+  padding-top: 6px;
   border-top: 1px solid var(--line);
 }
 .alts .k {
@@ -1067,9 +1084,15 @@ body.resizing-h { cursor: ns-resize; user-select: none; }
   color: var(--faint);
   margin-bottom: 6px;
 }
-.alt-list { display: flex; flex-wrap: wrap; gap: 6px; }
+.alt-list { display: flex; flex-direction: column; gap: 4px; }
 .alt {
   appearance: none;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+  text-align: left;
   border: 1px solid var(--line);
   background: rgba(8, 18, 34, 0.5);
   color: var(--text);
@@ -1081,7 +1104,7 @@ body.resizing-h { cursor: ns-resize; user-select: none; }
 }
 .alt:hover { border-color: var(--line-2); }
 .alt b { font-weight: 600; }
-.alt em { font-style: normal; color: var(--muted); font-size: 11px; margin-left: 6px; }
+.alt em { font-style: normal; color: var(--muted); font-size: 11px; margin-left: 0; white-space: nowrap; }
 .flash { color: var(--steal); font-size: 11px; margin-top: 6px; }
 .flash.err { color: var(--danger); }
 .headlines { margin-top: 10px; }
@@ -1117,29 +1140,25 @@ body.resizing-h { cursor: ns-resize; user-select: none; }
   line-height: 1.45;
 }
 .gone-est {
-  margin-top: 10px;
-  padding: 8px 10px;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 5px;
+  margin: 0;
+  padding: 3px 8px;
   border: 1px solid var(--line);
-  border-radius: 10px;
+  border-radius: 8px;
   background: rgba(155, 184, 232, 0.08);
-}
-.gone-num {
-  font-size: 15px;
-  font-weight: 500;
-  letter-spacing: -0.015em;
+  font-size: 12px;
+  color: var(--muted);
+  width: fit-content;
   font-variant-numeric: tabular-nums;
 }
-.gone-num b {
-  font-size: 22px;
+.gone-est b {
+  font-size: 14px;
   font-weight: 700;
-  margin-right: 4px;
+  color: var(--text);
 }
-.gone-cap {
-  margin-top: 3px;
-  font-size: 10px;
-  line-height: 1.35;
-  color: var(--muted);
-}
+.gone-num, .gone-cap { display: none; }
 
 /* Compact — keep the two remaining-name columns side by side.
    Chrome on a 1280×800 desktop is ~1042 CSS px; do not stack here. */
@@ -1187,13 +1206,6 @@ body.resizing-h { cursor: ns-resize; user-select: none; }
   .cols { grid-template-columns: 1fr; }
   .board-pane { max-height: 320px; }
   .list { max-height: 420px; }
-  .card-top {
-    grid-template-columns: 40px minmax(0, 1fr);
-    grid-template-areas:
-      "shot id"
-      "rank adp"
-      "ecr gap"
-      "ops ops";
-  }
+  .card-layout { grid-template-columns: 1fr; }
   .mypicks { width: 100%; }
 }

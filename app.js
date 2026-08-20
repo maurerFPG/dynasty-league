@@ -822,7 +822,7 @@
       g.source === "adp"
         ? "Est. gone before your next pick · Sleeper board rank, not FantasyPros."
         : "Est. gone before your next pick · ECR stand-in, not FantasyPros.";
-    return `<div class="gone-est"><div class="gone-num"><b>${g.pct}%</b> gone before ${esc(g.label)}</div><div class="gone-cap">${esc(cap)}</div></div>`;
+    return `<div class="gone-est" title="${esc(cap)}"><b>${g.pct}%</b> before ${esc(g.label)}</div>`;
   }
 
   function renderCard() {
@@ -838,53 +838,58 @@
     const rook = p.is_rookie ? " · rookie" : "";
     const age = p.age == null ? "" : ` · ${p.age}`;
     card.innerHTML = `
-      <div class="card-top">
-        ${headshotHtml(p.id)}
-        <div class="card-id">
-          <div class="who">${heatMark(p)}<span class="${p.is_rookie ? "rookie" : ""}">${esc(p.name)}</span>${rookieChip(p)}${injuryBadge(p)}</div>
-          <div class="meta"><span class="c-pos ${esc(p.pos || "")}">${esc(p.pos || "")}</span> · ${esc(p.team || "FA")}${age}${exp}${p.is_rookie && p.years_exp !== 0 ? rook : ""}</div>
-          ${injuryLine(p)}
+      <div class="card-layout">
+        <div class="card-left">
+          <div class="card-idrow">
+            ${headshotHtml(p.id)}
+            <div class="card-id">
+              <div class="who">${heatMark(p)}<span class="${p.is_rookie ? "rookie" : ""}">${esc(p.name)}</span>${rookieChip(p)}${injuryBadge(p)}</div>
+              <div class="meta"><span class="c-pos ${esc(p.pos || "")}">${esc(p.pos || "")}</span> · ${esc(p.team || "FA")}${age}${exp}${p.is_rookie && p.years_exp !== 0 ? rook : ""}</div>
+              ${injuryLine(p)}
+            </div>
+          </div>
+          <div class="card-stats">
+            <div class="stat">
+              <div class="k">Sleeper</div>
+              <div class="v">${esc(fmtFoRank(p.fo_rank))}</div>
+            </div>
+            <div class="stat">
+              <div class="k">ECR</div>
+              <div class="v">${esc(fmtRank(p.fp_rank))}</div>
+            </div>
+            <div class="stat">
+              <div class="k">Gap</div>
+              <div class="v ${gapClass(p.gap)}">${esc(gapLabel(p.gap))}</div>
+            </div>
+          </div>
+          <div class="card-ops">
+            <button type="button" class="toggle${tgt ? " on" : ""}" id="btn-target">${tgt ? "★ Target" : "☆ Target"}</button>
+            <button type="button" class="btn" id="btn-research">Research</button>
+            <button type="button" class="card-x" id="btn-close" title="Clear">×</button>
+          </div>
+          ${goneBlock(p)}
+          <div class="alts">
+            <div class="k">Nearby on the boards</div>
+            <div class="alt-list">
+              ${
+                alts.length
+                  ? alts
+                      .map((a) => {
+                        const bits = [];
+                        if (a.fo_rank != null) bits.push("SL " + fmtFoRank(a.fo_rank));
+                        else if (a.fo_adp != null) bits.push("SL " + fmtAdp(a.fo_adp));
+                        if (a.fp_rank != null) bits.push("ECR " + fmtRank(a.fp_rank));
+                        return `<button type="button" class="alt" data-alt="${esc(playerKey(a))}"><span><b>${esc(a.name)}</b> ${esc(a.pos || "")}</span><em>${esc(bits.join(" · "))}</em></button>`;
+                      })
+                      .join("")
+                  : `<span class="flash">No close neighbors on these boards.</span>`
+              }
+            </div>
+          </div>
         </div>
-        <div class="stat s-rank">
-          <div class="k">Rank</div>
-          <div class="v">${esc(fmtFoRank(p.fo_rank))}</div>
+        <div class="card-right">
+          ${researchBlock(p)}
         </div>
-        <div class="stat s-adp">
-          <div class="k">RK</div>
-          <div class="v">${esc(fmtAdp(p.fo_adp))}</div>
-        </div>
-        <div class="stat s-ecr">
-          <div class="k">ECR</div>
-          <div class="v">${esc(fmtRank(p.fp_rank))}</div>
-        </div>
-        <div class="stat s-gap">
-          <div class="k">Gap</div>
-          <div class="v ${gapClass(p.gap)}">${esc(gapLabel(p.gap))}</div>
-        </div>
-        <div class="card-ops">
-          <button type="button" class="toggle${tgt ? " on" : ""}" id="btn-target">${tgt ? "★ Target" : "☆ Target"}</button>
-          <button type="button" class="btn" id="btn-research">Research</button>
-          <button type="button" class="card-x" id="btn-close" title="Clear">×</button>
-        </div>
-      </div>
-      ${goneBlock(p)}
-      <div class="alts">
-        <div class="k">Nearby on the boards</div>
-        <div class="alt-list">
-          ${
-            alts.length
-              ? alts
-                  .map((a) => {
-                    const bits = [];
-                    if (a.fo_adp != null) bits.push("RK " + fmtAdp(a.fo_adp));
-                    if (a.fp_rank != null) bits.push("ECR #" + a.fp_rank);
-                    return `<button type="button" class="alt" data-alt="${esc(playerKey(a))}"><b>${esc(a.name)}</b> ${esc(a.pos || "")} <em>${esc(bits.join(" · "))}</em></button>`;
-                  })
-                  .join("")
-              : `<span class="flash">No close neighbors on these boards.</span>`
-          }
-        </div>
-        ${researchBlock(p)}
       </div>
     `;
     $("btn-target").addEventListener("click", () => {
