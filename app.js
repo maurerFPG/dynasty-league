@@ -722,17 +722,25 @@
   }
 
   function findPlayerByLooseName(name) {
-    const q = String(name || "").trim().toLowerCase().replace(/\./g, "");
+    const q = String(name || "").trim().toLowerCase().replace(/[.]/g, "");
     if (!q) return null;
-    const last = q.split(/\s+/).pop();
-    let lastHit = null;
+    const hits = [];
     for (const pl of state.players) {
       const full = String(pl.name || "").toLowerCase();
-      const bn = boardName(pl.name).toLowerCase().replace(/\./g, "");
-      if (full === q || bn === q) return pl;
-      if (last && lastName(pl.name).toLowerCase() === last) lastHit = lastHit || pl;
+      const parts = full.replace(/['’]/g, "").split(/[\s-]+/).filter(Boolean);
+      const last = lastName(pl.name).toLowerCase();
+      const first = parts[0] || "";
+      const bn = boardName(pl.name).toLowerCase().replace(/[.]/g, "");
+      const initials = parts.map((x) => x.charAt(0)).join("");
+      if (full === q || bn === q || last === q || first === q || initials === q) hits.push(pl);
+      else if (q.length >= 3 && (full.includes(q) || last.includes(q))) hits.push(pl);
     }
-    return lastHit;
+    if (hits.length === 1) return hits[0];
+    if (hits.length > 1) {
+      const remain = hits.filter(remaining);
+      return (remain[0] || hits[0]);
+    }
+    return null;
   }
 
   function parseNearbyTakes(raw) {
@@ -747,34 +755,35 @@
     }
     const text = String(raw || "").trim();
     if (!text) return [];
-    return text
-      .split(/\s*Vs\s+/i)
-      .map((s) => s.trim())
-      .filter(Boolean)
-      .map((chunk) => {
-        const m = chunk.match(/^(.+?)(?:\s*\((?:SL|ECR)\s*[^)]+\))?\s*:\s*([\s\S]+)$/i);
-        if (m) return { name: m[1].replace(/^Vs\s+/i, "").trim(), take: m[2].trim() };
-        return { name: "", take: chunk };
-      });
+    let chunks = text.split(/\s*Vs\s+/i).map((s) => s.trim()).filter(Boolean);
+    if (chunks.length === 1) {
+      const splitMore = text.split(/(?=(?:[A-Z][\w.'’-]+(?:\s+[A-Z][\w.'’-]+)?)\s*\((?:SL|ECR)\s*)/).map((s) => s.trim()).filter(Boolean);
+      if (splitMore.length > 1) chunks = splitMore;
+    }
+    return chunks.map((chunk) => {
+      const m = chunk.match(/^(.+?)\s*\((?:SL|ECR)\s*[^)]+\)\s*:?\s*([\s\S]+)$/i);
+      if (m) return { name: m[1].replace(/^Vs\s+/i, "").trim(), take: m[2].trim() };
+      const m2 = chunk.match(/^(.+?):\s*([\s\S]+)$/);
+      if (m2) return { name: m2[1].replace(/^Vs\s+/i, "").trim(), take: m2[2].trim() };
+      return { name: "", take: chunk };
+    });
   }
 
   function nearbyRows(subject, b) {
-    const parsed = parseNearbyTakes(b && b.nearby);
+    const raw = b && b.nearby;
+    const parsed = parseNearbyTakes(raw);
     const rows = [];
-    const seen = new Set([playerKey(subject)]);
+    const seen = new Set(subject ? [playerKey(subject)] : []);
     for (const row of parsed) {
+      const take = String(row.take || "").trim();
       const pl = row.id ? findPlayer(row.id) : findPlayerByLooseName(row.name);
-      if (!pl || seen.has(playerKey(pl))) continue;
-      seen.add(playerKey(pl));
-      rows.push({ p: pl, take: row.take });
+      if (pl && seen.has(playerKey(pl))) continue;
+      if (pl) seen.add(playerKey(pl));
+      if (!take && !pl) continue;
+      rows.push({ p: pl, name: row.name || (pl && pl.name) || "", take });
     }
-    for (const a of alternates(subject)) {
-      if (rows.length >= 4) break;
-      if (seen.has(playerKey(a))) continue;
-      seen.add(playerKey(a));
-      const sl = fmtFoRank(a.fo_rank);
-      const ecr = fmtRank(a.fp_rank);
-      rows.push({ p: a, take: `${a.pos || ""} · SL ${sl} · ECR ${ecr}`.replace(/^ · /, "") });
+    if (!rows.length && raw) {
+      rows.push({ p: null, name: "", take: String(raw).replace(/\s*Vs\s+/gi, " ").trim() });
     }
     return rows;
   }
@@ -843,7 +852,13 @@
     const rows = nearbyRows(subject, b);
     const nearby = rows.length
       ? `<div class="baked-block"><div class="kicker">Nearby</div><div class="near-list">${rows
-          .map(({ p: n, take }) => `<button type="button" class="near-row" data-alt="${esc(playerKey(n))}">${logoHtml(n.team)}<span class="near-body"><span class="near-name">${esc(boardName(n.name))}:</span> ${esc(take)}</span></button>`)
+          .map(({ p: n, name, take }) => {
+            const label = n ? boardName(n.name) : name;
+            const logo = n ? logoHtml(n.team) : `<span class="logo ph" aria-hidden="true"></span>`;
+            const alt = n ? ` data-alt="${esc(playerKey(n))}"` : "";
+            const who = label ? `<span class="near-name">${esc(label)}:</span> ` : "";
+            return `<button type="button" class="near-row"${alt}>${logo}<span class="near-body">${who}${esc(take)}</span></button>`;
+          })
           .join("")}</div></div>`
       : "";
     const lis = links
@@ -1688,7 +1703,7 @@
     const [pj, dj, bj] = await Promise.all([
       fetch("data/players.json", { cache: "no-store" }).then((r) => r.json()),
       fetch("data/draft.json", { cache: "no-store" }).then((r) => r.json()),
-      fetch("data/briefs.json?v=near1", { cache: "no-store" })
+      fetch("data/briefs.json?v=near2", { cache: "no-store" })
         .then((r) => (r.ok ? r.json() : {}))
         .catch(() => ({})),
     ]);
