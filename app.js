@@ -321,7 +321,7 @@
   }
   function injuryLine(p) {
     const st = String(p.injury_status || "").trim();
-    if (!st) return `<div class="inj none">No injury listed.</div>`;
+    if (!st) return "";
     const bits = [st];
     if (p.injury_body_part) bits.push(p.injury_body_part);
     if (p.injury_notes) bits.push(p.injury_notes);
@@ -746,9 +746,7 @@
   function researchBlock(p) {
     const r = state.research;
     const same = r.key && r.key === playerKey(p);
-    if (!same || r.status === "idle") {
-      return `<div class="flash" id="research-flash">Research fetches recent public headlines (Google News RSS). Needs internet.</div>`;
-    }
+    if (!same || r.status === "idle") return "";
     if (r.status === "loading") {
       return `<div class="flash" id="research-flash">Loading headlines…</div>`;
     }
@@ -839,7 +837,7 @@
     const age = p.age == null ? "" : ` · ${p.age}`;
     card.innerHTML = `
       <div class="card-layout">
-        <div class="card-left">
+        <div class="card-head">
           <div class="card-idrow">
             ${headshotHtml(p.id)}
             <div class="card-id">
@@ -862,12 +860,16 @@
               <div class="v ${gapClass(p.gap)}">${esc(gapLabel(p.gap))}</div>
             </div>
           </div>
-          <div class="card-ops">
-            <button type="button" class="toggle${tgt ? " on" : ""}" id="btn-target">${tgt ? "★ Target" : "☆ Target"}</button>
-            <button type="button" class="btn" id="btn-research">Research</button>
-            <button type="button" class="card-x" id="btn-close" title="Clear">×</button>
+          <div class="card-side">
+            <div class="card-ops">
+              <button type="button" class="toggle${tgt ? " on" : ""}" id="btn-target">${tgt ? "★ Target" : "☆ Target"}</button>
+              <button type="button" class="btn" id="btn-research">Research</button>
+              <button type="button" class="card-x" id="btn-close" title="Clear">×</button>
+            </div>
+            ${goneBlock(p)}
           </div>
-          ${goneBlock(p)}
+        </div>
+        <div class="card-body">
           <div class="alts">
             <div class="k">Nearby on the boards</div>
             <div class="alt-list">
@@ -886,9 +888,7 @@
               }
             </div>
           </div>
-        </div>
-        <div class="card-right">
-          ${researchBlock(p)}
+          <div class="card-right">${researchBlock(p)}</div>
         </div>
       </div>
     `;
