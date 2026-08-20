@@ -568,15 +568,14 @@
     const tgt = p.id && state.targets.has(String(p.id));
     el.className = "rowp " + (side === "fo" ? "fo" : "fp") + (sel ? " sel" : "") + (tgt ? " tgt" : "") + (remaining(p) ? "" : " gone");
     el.dataset.key = key;
-    const rank =
-      side === "fo"
-        ? `<span class="c-rank" title="Sleeper board rank">${esc(fmtFoRank(p.fo_rank))}</span>`
-        : `<span class="c-rank">${esc(fmtRank(p.fp_rank))}</span>`;
     el.innerHTML = `
       <span class="c-mark">
         <button type="button" class="star${tgt ? " on" : ""}" data-star="${esc(p.id || "")}" title="Target">${tgt ? "★" : "☆"}</button>
       </span>
-      ${rank}
+      <span class="c-ranks">
+        <span class="c-rank sl" title="Sleeper board">${esc(fmtFoRank(p.fo_rank))}</span>
+        <span class="c-rank ecr" title="FantasyPros ECR">${esc(fmtRank(p.fp_rank))}</span>
+      </span>
       ${logoHtml(p.team)}
       ${nameCell(p)}
       ${rookieCell(p)}
