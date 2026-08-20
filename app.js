@@ -2,7 +2,7 @@
 (() => {
   const TARGETS_KEY = "nasty-draft-hq-targets-v1";
   const BOARD_H_KEY = "nasty-ui-board-h-v1";
-  const CARD_H_KEY = "nasty-ui-card-h-v5";
+  const CARD_H_KEY = "nasty-ui-card-h-v6";
   const PICK_FMT_KEY = "nasty-ui-pick-fmt-v1";
   const POLL_MS = 30000;
   const ROB_USER = "469299052404535296";
@@ -1609,7 +1609,7 @@
     const [pj, dj, bj] = await Promise.all([
       fetch("data/players.json", { cache: "no-store" }).then((r) => r.json()),
       fetch("data/draft.json", { cache: "no-store" }).then((r) => r.json()),
-      fetch("data/briefs.json?v=cardstar2", { cache: "no-store" })
+      fetch("data/briefs.json?v=cardstar3", { cache: "no-store" })
         .then((r) => (r.ok ? r.json() : {}))
         .catch(() => ({})),
     ]);

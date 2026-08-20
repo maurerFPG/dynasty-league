@@ -29,7 +29,7 @@
   --ctrl-gap: 6px;
   --filt: 20px;
   --board-h: 28vh;
-  --card-h: 264px;
+  --card-h: 220px;
   --sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
@@ -1014,8 +1014,9 @@ body.resizing-h { cursor: ns-resize; user-select: none; }
 .card-corner {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: flex-end;
-  gap: 2px;
+  height: 40px;
   min-width: 22px;
 }
 .headshot {
