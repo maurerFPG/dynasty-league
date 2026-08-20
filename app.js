@@ -885,7 +885,7 @@
   }
 
   function goneModelKey(win) {
-    return [win.current, state.draftedIds.size, win.then ? win.then.overall : "x", state.players.length, "gone4"].join(":");
+    return [win.current, state.draftedIds.size, win.then ? win.then.overall : "x", state.players.length, "gone5"].join(":");
   }
 
   function runGoneSims(win) {
@@ -954,7 +954,7 @@
             u += 0.2;
           }
           if (row.pos === "TE" && row.nextSl != null && row.nextSl - row.sl >= 8) {
-            u += 0.82;
+            u += 0.28;
           }
           const dBpa = row.sl - bpaSl;
           if (dBpa === 0) u += 0.18;
