@@ -380,12 +380,10 @@
     const rob = robRemainingPicks();
     const current = currentOverall();
     const marks = [];
-    let cum = 0;
     for (let i = 0; i < rob.length; i++) {
-      const n = i === 0 ? rob[i].overall - current : rob[i].overall - rob[i - 1].overall - 1;
-      if (n <= 0) continue;
-      cum += n;
-      marks.push({ after: cum, label: "before " + fmtPick(rob[i]) });
+      const after = rob[i].overall - current;
+      if (after <= 0) continue;
+      marks.push({ after, label: "before " + fmtPick(rob[i]) });
     }
     return marks;
   }
@@ -809,8 +807,8 @@
     const wr = counts.WR || 0;
     const te = counts.TE || 0;
     if (pos === "QB") {
-      if (qb === 0) return 2.55;
-      if (qb === 1) return round <= 8 ? 1.35 : 0.7;
+      if (qb === 0) return 1.85;
+      if (qb === 1) return round <= 8 ? 1.05 : 0.7;
       if (qb === 2) return round <= 12 ? 0.22 : 0.08;
       return 0.04;
     }
@@ -829,8 +827,8 @@
       return 0.28;
     }
     if (pos === "TE") {
-      if (te === 0) return round <= 2 ? 0.32 : round <= 6 ? 0.62 : 0.85;
-      return 0.07;
+      if (te === 0) return round <= 2 ? 1.2 : round <= 6 ? 1.35 : 1.05;
+      return 0.16;
     }
     return 0.15;
   }
@@ -846,7 +844,10 @@
   function blendRank(p) {
     const sl = p.fo_rank != null && !Number.isNaN(Number(p.fo_rank)) ? Number(p.fo_rank) : null;
     const ecr = p.fp_rank != null && !Number.isNaN(Number(p.fp_rank)) ? Number(p.fp_rank) : null;
-    if (sl != null && ecr != null) return 0.7 * sl + 0.3 * ecr;
+    if (sl != null && ecr != null) {
+      if (sl <= 24) return 0.86 * sl + 0.14 * ecr;
+      return 0.74 * sl + 0.26 * ecr;
+    }
     if (sl != null) return sl;
     if (ecr != null) return ecr;
     return 999;
@@ -883,7 +884,7 @@
   }
 
   function goneModelKey(win) {
-    return [win.current, state.draftedIds.size, win.then ? win.then.overall : "x", state.players.length, "gone2"].join(":");
+    return [win.current, state.draftedIds.size, win.then ? win.then.overall : "x", state.players.length, "gone3"].join(":");
   }
 
   function runGoneSims(win) {
@@ -895,7 +896,7 @@
       .filter((p) => remaining(p) && (p.fo_rank != null || p.fp_rank != null))
       .map((p) => {
         const id = p.id != null ? String(p.id) : playerKey(p);
-        return { p, id, pos: p.pos || "", rk: blendRank(p) };
+        return { p, id, pos: p.pos || "", rk: blendRank(p), sl: Number(p.fo_rank) || 999 };
       })
       .sort((a, b) => a.rk - b.rk);
     const cap = Math.min(pool.length, 48);
@@ -903,13 +904,20 @@
     for (let i = 0; i < short.length; i++) {
       const row = short[i];
       let nextRk = null;
+      let nextSl = null;
       for (let j = i + 1; j < short.length; j++) {
         if (short[j].pos === row.pos) {
           nextRk = short[j].rk;
           break;
         }
       }
+      for (let j = 0; j < short.length; j++) {
+        if (short[j].pos === row.pos && short[j].sl > row.sl) {
+          if (nextSl == null || short[j].sl < nextSl) nextSl = short[j].sl;
+        }
+      }
       row.nextRk = nextRk;
+      row.nextSl = nextSl;
     }
     const nSims = upcoming.length <= 3 ? 500 : 180;
     const nextAt = win.next.overall;
@@ -928,6 +936,10 @@
         const cand = [];
         const scores = [];
         const tau = goneTau(round);
+        let bpaSl = Infinity;
+        for (let i = 0; i < short.length; i++) {
+          if (!gone.has(short[i].id) && short[i].sl < bpaSl) bpaSl = short[i].sl;
+        }
         for (let i = 0; i < short.length; i++) {
           const row = short[i];
           if (gone.has(row.id)) continue;
@@ -940,6 +952,15 @@
           } else {
             u += 0.2;
           }
+          if (row.pos === "TE" && row.nextSl != null && row.nextSl - row.sl >= 8) {
+            u += 0.25;
+          }
+          const dBpa = row.sl - bpaSl;
+          if (dBpa === 0) u += 0.42;
+          else if (dBpa <= 2) u += 0.23;
+          else if (dBpa <= 4) u += 0.10;
+          if (row.sl <= cell.overall) u += 0.20;
+          else if (row.sl <= cell.overall + 3) u += 0.09;
           let nRun = 0;
           for (let k = recent.length - 1; k >= Math.max(0, recent.length - 4); k--) {
             if (recent[k] === row.pos) nRun++;
