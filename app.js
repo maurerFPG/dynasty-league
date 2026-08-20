@@ -233,7 +233,6 @@
     return ` title="steal ${score.toFixed(2)}"`;
   }
   function matchesFilter(p) {
-    if (!remaining(p)) return false;
     if (state.filterPos.size && !state.filterPos.has(p.pos)) return false;
     if (state.filterTargets && (!p.id || !state.targets.has(String(p.id)))) return false;
     if (state.filterRookies && !p.is_rookie) return false;
@@ -406,9 +405,12 @@
     if (top) {
       for (const m of top) nodes.push(pickLineEl(m.label));
     }
-    rows.forEach((p, i) => {
+    let remainingSeen = 0;
+    rows.forEach((p) => {
       nodes.push(rowEl(p, side));
-      const at = byAfter.get(i + 1);
+      if (!remaining(p)) return;
+      remainingSeen += 1;
+      const at = byAfter.get(remainingSeen);
       if (at) {
         for (const m of at) nodes.push(pickLineEl(m.label));
       }
@@ -545,13 +547,13 @@
         .filter((p) => p.fo_adp != null && matchesFilter(p))
         .sort((a, b) => (a.fo_rank || 9999) - (b.fo_rank || 9999) || a.fo_adp - b.fo_adp);
       fo.replaceChildren(...listNodes(foRows, "fo"));
-      $("count-fo").textContent = stealOn ? `${foRows.length} steals` : `${foRows.length} left`;
+      $("count-fo").textContent = stealOn ? `${foRows.filter(remaining).length} steals` : `${foRows.filter(remaining).length} left`;
     }
     const fpRows = state.players
       .filter((p) => p.fp_rank != null && matchesFilter(p))
       .sort((a, b) => a.fp_rank - b.fp_rank);
     fp.replaceChildren(...listNodes(fpRows, "fp"));
-    $("count-fp").textContent = stealOn ? `${fpRows.length} steals` : `${fpRows.length} left`;
+    $("count-fp").textContent = stealOn ? `${fpRows.filter(remaining).length} steals` : `${fpRows.filter(remaining).length} left`;
   }
 
   function rowEl(p, side) {
@@ -559,7 +561,7 @@
     const key = playerKey(p);
     const sel = state.selectedId && key === String(state.selectedId);
     const tgt = p.id && state.targets.has(String(p.id));
-    el.className = "rowp " + (side === "fo" ? "fo" : "fp") + (sel ? " sel" : "") + (tgt ? " tgt" : "");
+    el.className = "rowp " + (side === "fo" ? "fo" : "fp") + (sel ? " sel" : "") + (tgt ? " tgt" : "") + (remaining(p) ? "" : " gone");
     el.dataset.key = key;
     const rank =
       side === "fo"

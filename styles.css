@@ -564,6 +564,11 @@ body.resizing-h { cursor: ns-resize; user-select: none; }
   box-shadow: inset 0 0 0 1px rgba(155, 184, 232, 0.28);
 }
 .rowp.tgt .c-name { color: #dce8ff; }
+
+.rowp.gone { opacity: 0.42; }
+.rowp.gone .c-name { text-decoration: line-through; color: var(--faint); }
+.rowp.gone.tgt .c-name,
+.rowp.gone .c-name.rookie { color: var(--faint); }
 .c-mark { display: flex; align-items: center; gap: 2px; }
 .star {
   appearance: none;
