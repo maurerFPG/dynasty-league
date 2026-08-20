@@ -330,7 +330,8 @@
     const bits = [st];
     if (p.injury_body_part) bits.push(p.injury_body_part);
     const title = p.injury_notes ? bits.concat(p.injury_notes).join(" · ") : bits.join(" · ");
-    return `<div class="inj-cell ${injuryTone(st)}" title="${esc(title)}">${esc(bits.join(" · "))}</div>`;
+    const part = p.injury_body_part ? `<span class="inj-part">${esc(p.injury_body_part)}</span>` : "";
+    return `<div class="inj-cell ${injuryTone(st)}" title="${esc(title)}">${injuryBadge(p)}${part}</div>`;
   }
   function nameCell(p) {
     const rook = p.is_rookie ? " rookie" : "";

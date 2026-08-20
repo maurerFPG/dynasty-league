@@ -1037,12 +1037,18 @@ body.resizing-h { cursor: ns-resize; user-select: none; }
   font-size: 14px;
   line-height: 1.15;
 }
+.card-id .meta .c-pos {
+  font-size: inherit;
+  font-weight: 600;
+  letter-spacing: 0;
+}
 .card-id .who .heat { font-size: 11px; }
 .inj-cell {
   margin: 0;
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  gap: 6px;
   text-align: right;
   font-size: 11px;
   line-height: 1.25;
@@ -1051,6 +1057,7 @@ body.resizing-h { cursor: ns-resize; user-select: none; }
   background: transparent;
   color: var(--faint);
 }
+.inj-cell .inj-part { font-size: 11px; }
 .inj-cell.empty { background: transparent; }
 .inj-cell.q { color: #c9a46a; }
 .inj-cell.out { color: #d08a86; }
@@ -1079,7 +1086,7 @@ body.resizing-h { cursor: ns-resize; user-select: none; }
   font-size: 13px;
   font-weight: 650;
   font-variant-numeric: tabular-nums;
-  margin-top: 1px;
+  margin-top: 3px;
   line-height: 1.1;
 }
 .stat .v.faint { color: var(--faint); font-weight: 500; }
