@@ -673,7 +673,12 @@
       return state.altsCache.list;
     }
     const rank = p.fo_rank != null ? Number(p.fo_rank) : null;
-    const pool = state.players.filter((o) => remaining(o) && playerKey(o) !== key && o.fo_rank != null);
+    const pos = String(p.pos || "").trim();
+    const pool = state.players.filter((o) => {
+      if (!remaining(o) || playerKey(o) === key || o.fo_rank == null) return false;
+      if (pos && String(o.pos || "").trim() !== pos) return false;
+      return true;
+    });
     pool.sort((a, b) => {
       const da = Math.abs(Number(a.fo_rank) - (rank ?? Number(a.fo_rank)));
       const db = Math.abs(Number(b.fo_rank) - (rank ?? Number(b.fo_rank)));
