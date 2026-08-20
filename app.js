@@ -71,6 +71,7 @@
     draftLive: null,
     research: { key: null, status: "idle", headlines: [], error: null },
     altsCache: { key: null, list: [] },
+    goneModel: { key: "", byId: new Map(), label: "", nextPick: 0 },
   };
 
   const $ = (id) => document.getElementById(id);
@@ -758,21 +759,200 @@
     return `<div class="coverage" id="research-flash"><div class="k">From recent coverage</div><p class="brief">${esc(brief)}</p><ul class="hl-list compact">${lis}</ul></div>`;
   }
 
-  /*
-   * Est. gone before Rob's next pick — OUR logistic, not FantasyPros mock odds.
-   *   current_pick = max(picks.pick_no)+1, or 1 if the board is empty
-   *   Rob remaining pick numbers come from the 3RR map (slot 3): 3, 22, 34, 39, …
-   *     skip any already past
-   *   next_pick = smallest Rob pick_no >= current_pick
-   *   picks_until = next_pick - current_pick
-   *   Use fo_adp (Sleeper board rank) if present, else fp_rank as a fallback
-   *     (label says board-rank when fo_adp exists; if only FP rank, say “ECR stand-in”)
-   *   x = (board_rank - next_pick) / max(3, picks_until * 0.35 + 2)
-   *   P(gone) = 1 / (1 + exp(x))
-   *   Board rank well before his next pick → high %; rank after his pick → lower %;
-   *   as the room reaches a steal (board rank << current), % goes to ~100.
-   *   Clamp 1–99. Hide for already-drafted players.
-   */
+
+  function emptyPosCounts() {
+    return { QB: 0, RB: 0, WR: 0, TE: 0 };
+  }
+
+  function slotOfPickRec(pk) {
+    const n = Number(pk && (pk.draft_slot != null ? pk.draft_slot : pk.slot));
+    return Number.isFinite(n) && n > 0 ? n : null;
+  }
+
+  function liveRosters() {
+    const teams = (state.draft && state.draft.teams) || 12;
+    const by = {};
+    for (let s = 1; s <= teams; s++) by[s] = emptyPosCounts();
+    for (const rec of state.pickByOverall.values()) {
+      const slot = slotOfPickRec(rec);
+      if (!slot || !by[slot]) continue;
+      const pos = String(rec.position || "").toUpperCase();
+      if (by[slot][pos] != null) by[slot][pos] += 1;
+    }
+    return by;
+  }
+
+  /* Superflex startup needs: 1 QB + SF, 2 RB, 3 WR, 1 TE, 2 FLEX. */
+  function posNeed(counts, pos, round) {
+    const qb = counts.QB || 0;
+    const rb = counts.RB || 0;
+    const wr = counts.WR || 0;
+    const te = counts.TE || 0;
+    if (pos === "QB") {
+      if (qb === 0) return 2.55;
+      if (qb === 1) return round <= 8 ? 1.35 : 0.7;
+      if (qb === 2) return round <= 12 ? 0.22 : 0.08;
+      return 0.04;
+    }
+    if (pos === "RB") {
+      if (rb === 0) return 1.8;
+      if (rb === 1) return 1.4;
+      if (rb === 2) return round <= 5 ? 0.42 : 0.55;
+      if (rb >= 3 && round <= 4) return 0.08;
+      return 0.32;
+    }
+    if (pos === "WR") {
+      if (wr === 0) return 1.65;
+      if (wr === 1) return 1.42;
+      if (wr === 2) return 1.12;
+      if (wr === 3) return round <= 6 ? 0.48 : 0.4;
+      return 0.28;
+    }
+    if (pos === "TE") {
+      if (te === 0) return round <= 2 ? 0.32 : round <= 6 ? 0.62 : 0.85;
+      return 0.07;
+    }
+    return 0.15;
+  }
+
+  function goneTau(round) {
+    if (round <= 1) return 1.6;
+    if (round <= 2) return 2.05;
+    if (round <= 4) return 2.7;
+    return 3.5;
+  }
+
+  function softmaxPick(cands, scores) {
+    let max = -Infinity;
+    for (let i = 0; i < scores.length; i++) if (scores[i] > max) max = scores[i];
+    const ex = new Array(scores.length);
+    let sum = 0;
+    for (let i = 0; i < scores.length; i++) {
+      const e = Math.exp(scores[i] - max);
+      ex[i] = e;
+      sum += e;
+    }
+    let r = Math.random() * sum;
+    for (let i = 0; i < cands.length; i++) {
+      r -= ex[i];
+      if (r <= 0) return cands[i];
+    }
+    return cands[cands.length - 1];
+  }
+
+  function goneWindow() {
+    const current = currentPickNo();
+    const map = state.draft && state.draft.pick_map ? state.draft.pick_map : [];
+    const rob = map.find((cell) => cell.is_rob && cell.overall >= current && !state.pickByOverall.has(cell.overall));
+    if (!rob) return null;
+    const upcoming = map.filter((c) => c.overall >= current && c.overall < rob.overall);
+    return { current, rob, upcoming };
+  }
+
+  function goneModelKey(win) {
+    return String(win.current) + ":" + state.draftedIds.size;
+  }
+
+  function runGoneSims(win) {
+    const byId = new Map();
+    const upcoming = win.upcoming;
+    if (!upcoming.length) return byId;
+    const rosters = liveRosters();
+    const pool = state.players
+      .filter((p) => p.fo_rank != null && remaining(p))
+      .sort((a, b) => a.fo_rank - b.fo_rank);
+    const cap = Math.min(pool.length, Math.max(36, upcoming.length * 16 + 20));
+    const short = pool.slice(0, cap);
+    const nSims = upcoming.length <= 4 ? 700 : 480;
+    const hits = new Map();
+    for (let s = 0; s < nSims; s++) {
+      const gone = new Set();
+      const counts = {};
+      for (const k of Object.keys(rosters)) counts[k] = Object.assign({}, rosters[k]);
+      const recent = [];
+      for (let pki = 0; pki < upcoming.length; pki++) {
+        const cell = upcoming[pki];
+        const round = Math.ceil(cell.overall / 12);
+        const c = counts[cell.slot] || emptyPosCounts();
+        const cand = [];
+        for (let i = 0; i < short.length; i++) {
+          const p = short[i];
+          const id = p.id != null ? String(p.id) : playerKey(p);
+          if (!gone.has(id)) cand.push(p);
+        }
+        if (!cand.length) break;
+        const byPos = {};
+        for (let i = 0; i < cand.length; i++) {
+          const p = cand[i];
+          const pos = p.pos || "";
+          if (!byPos[pos]) byPos[pos] = [];
+          byPos[pos].push(p);
+        }
+        const tau = goneTau(round);
+        const scores = new Array(cand.length);
+        for (let i = 0; i < cand.length; i++) {
+          const p = cand[i];
+          let u = -Number(p.fo_rank) / tau + 0.95 * posNeed(c, p.pos, round);
+          const same = byPos[p.pos] || [];
+          let nextRank = null;
+          for (let j = 0; j < same.length; j++) {
+            if (same[j].fo_rank > p.fo_rank) {
+              nextRank = same[j].fo_rank;
+              break;
+            }
+          }
+          if (nextRank != null) {
+            const drop = nextRank - p.fo_rank;
+            if (drop >= 15) u += 0.55;
+            else if (drop >= 10) u += 0.32;
+            else if (drop >= 6) u += 0.15;
+          } else {
+            u += 0.2;
+          }
+          let nRun = 0;
+          for (let k = recent.length - 1; k >= Math.max(0, recent.length - 4); k--) {
+            if (recent[k] === p.pos) nRun++;
+          }
+          if (nRun >= 3) u += 0.28;
+          else if (nRun >= 2) u += 0.12;
+          scores[i] = u;
+        }
+        const pick = softmaxPick(cand, scores);
+        const id = pick.id != null ? String(pick.id) : playerKey(pick);
+        gone.add(id);
+        hits.set(id, (hits.get(id) || 0) + 1);
+        if (c[pick.pos] != null) c[pick.pos] += 1;
+        recent.push(pick.pos);
+      }
+    }
+    for (let i = 0; i < short.length; i++) {
+      const p = short[i];
+      const id = p.id != null ? String(p.id) : playerKey(p);
+      const pct = Math.round(((hits.get(id) || 0) / nSims) * 100);
+      byId.set(id, pct);
+      byId.set(playerKey(p), pct);
+    }
+    return byId;
+  }
+
+  function ensureGoneModel() {
+    const win = goneWindow();
+    if (!win) {
+      state.goneModel = { key: "none", byId: new Map(), label: "", nextPick: 0 };
+      return state.goneModel;
+    }
+    const key = goneModelKey(win);
+    if (state.goneModel && state.goneModel.key === key) return state.goneModel;
+    state.goneModel = {
+      key,
+      byId: runGoneSims(win),
+      label: win.rob.label,
+      nextPick: win.rob.overall,
+    };
+    return state.goneModel;
+  }
+
+
   function currentPickNo() {
     let max = 0;
     for (const pk of state.picks) {
@@ -785,32 +965,19 @@
   function goneBeforeEstimate(p) {
     if (!p) return null;
     if (p.id && state.draftedIds.has(String(p.id))) return null;
-    const current = currentPickNo();
-    const map = state.draft?.pick_map || [];
-    const rob = map.find((cell) => cell.is_rob && cell.overall >= current && !state.pickByOverall.has(cell.overall));
-    if (!rob) return null;
-    const nextPick = rob.overall;
-    const picksUntil = nextPick - current;
-    const hasAdp = p.fo_adp != null && !Number.isNaN(Number(p.fo_adp));
-    const adp = hasAdp ? Number(p.fo_adp) : p.fp_rank != null ? Number(p.fp_rank) : null;
-    if (adp == null || Number.isNaN(adp)) return null;
-    const x = (adp - nextPick) / Math.max(3, picksUntil * 0.35 + 2);
-    const raw = 1 / (1 + Math.exp(x));
-    const pct = Math.min(99, Math.max(1, Math.round(raw * 100)));
-    return {
-      pct,
-      label: rob.label,
-      source: hasAdp ? "adp" : "ecr",
-    };
+    const model = ensureGoneModel();
+    if (!model || model.key === "none") return null;
+    const id = p.id != null ? String(p.id) : playerKey(p);
+    let pct = model.byId.get(id);
+    if (pct == null) pct = model.byId.get(playerKey(p));
+    if (pct == null) pct = 0;
+    return { pct, label: model.label, source: "model" };
   }
 
   function goneStat(p) {
     const g = goneBeforeEstimate(p);
     if (!g) return `<div class="stat"><div class="k">Gone</div><div class="v faint">—</div></div>`;
-    const cap =
-      g.source === "adp"
-        ? `Est. ${g.pct}% gone before ${g.label} · Sleeper board rank, not FantasyPros.`
-        : `Est. ${g.pct}% gone before ${g.label} · ECR stand-in, not FantasyPros.`;
+    const cap = `Est. ${g.pct}% taken by someone else before ${g.label}. Simulates each upcoming pick from that team's roster so far, Superflex starter needs, Sleeper board, and position runs / tier dropoffs.`;
     return `<div class="stat" title="${esc(cap)}"><div class="k">Gone</div><div class="v">${g.pct}%</div></div>`;
   }
 
@@ -1170,6 +1337,7 @@
       if (isRobPick(pk)) state.robTaken.push(rec);
     }
     state.robTaken.sort((a, b) => (a.overall || 0) - (b.overall || 0));
+    state.goneModel = { key: "", byId: new Map(), label: "", nextPick: 0 };
   }
 
   async function pollPicks(manual) {
