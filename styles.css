@@ -524,12 +524,12 @@ body.resizing-h { cursor: ns-resize; user-select: none; }
   font-weight: 600;
   letter-spacing: -0.01em;
 }
-.col-head p {
-  margin: 3px 0 0;
+.col-head .as-of {
+  font-weight: 400;
   color: var(--muted);
-  font-size: 11px;
-  line-height: 1.35;
+  letter-spacing: 0;
 }
+.col-head p { display: none; }
 .count {
   font-size: 11px;
   color: var(--accent);
@@ -553,7 +553,7 @@ body.resizing-h { cursor: ns-resize; user-select: none; }
   contain-intrinsic-size: auto 30px;
 }
 .rowp.fo {
-  grid-template-columns: 28px 3ch 4.5ch 22px minmax(0, 1fr) 4.5ch 3ch 4ch 3ch 5.5ch;
+  grid-template-columns: 28px 4ch 22px minmax(0, 1fr) 4.5ch 3ch 4ch 3ch 5.5ch;
 }
 .rowp.fp {
   grid-template-columns: 28px 4ch 22px minmax(0, 1fr) 4.5ch 3ch 4ch 3ch 5.5ch;
@@ -565,10 +565,27 @@ body.resizing-h { cursor: ns-resize; user-select: none; }
 }
 .rowp.tgt .c-name { color: #dce8ff; }
 
-.rowp.gone { opacity: 0.42; }
+.rowp.gone { opacity: 0.38; }
 .rowp.gone .c-name { text-decoration: line-through; color: var(--faint); }
 .rowp.gone.tgt .c-name,
 .rowp.gone .c-name.rookie { color: var(--faint); }
+.rowp.gone .c-rank,
+.rowp.gone .c-adp,
+.rowp.gone .c-age,
+.rowp.gone .c-pts,
+.rowp.gone .c-pos,
+.rowp.gone .c-gap,
+.rowp.gone .rchip,
+.rowp.gone .heat,
+.rowp.gone .star {
+  color: var(--faint);
+  background: transparent;
+  font-weight: 400;
+  border-color: transparent;
+}
+.rowp.gone .c-gap { background: transparent; }
+.rowp.gone .logo,
+.rowp.gone .logo.ph { opacity: 0.4; filter: grayscale(0.35); }
 .c-mark { display: flex; align-items: center; gap: 2px; }
 .star {
   appearance: none;
@@ -1099,7 +1116,7 @@ body.resizing-h { cursor: ns-resize; user-select: none; }
     padding: 0 6px;
     contain-intrinsic-size: auto 26px;
   }
-  .rowp.fo { grid-template-columns: 28px 3ch 4.5ch 22px minmax(0, 1fr) 4.5ch 3ch 4ch 3ch 5.5ch; }
+  .rowp.fo { grid-template-columns: 28px 4ch 22px minmax(0, 1fr) 4.5ch 3ch 4ch 3ch 5.5ch; }
   .rowp.fp { grid-template-columns: 28px 4ch 22px minmax(0, 1fr) 4.5ch 3ch 4ch 3ch 5.5ch; }
   .legend { display: none; }
   .c-name { font-size: 12px; }

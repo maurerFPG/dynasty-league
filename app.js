@@ -565,7 +565,7 @@
     el.dataset.key = key;
     const rank =
       side === "fo"
-        ? `<span class="c-rank" title="Sleeper board rank">${esc(fmtFoRank(p.fo_rank))}</span><span class="c-adp" title="Sleeper board rank">${esc(fmtAdp(p.fo_adp))}</span>`
+        ? `<span class="c-rank" title="Sleeper board rank">${esc(fmtFoRank(p.fo_rank))}</span>`
         : `<span class="c-rank">${esc(fmtRank(p.fp_rank))}</span>`;
     el.innerHTML = `
       <span class="c-mark">
