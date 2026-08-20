@@ -576,12 +576,12 @@
         <span class="c-rank sl" title="Sleeper board">${esc(fmtFoRank(p.fo_rank))}</span>
         <span class="c-rank ecr" title="FantasyPros ECR">${esc(fmtRank(p.fp_rank))}</span>
       </span>
+      <span class="c-pos ${esc(p.pos || "")}">${esc(p.pos || "")}</span>
       ${logoHtml(p.team)}
       ${nameCell(p)}
       ${rookieCell(p)}
       <span class="c-age" title="Age">${esc(fmtAge(p.age))}</span>
       <span class="c-pts" title="${esc(side === "fo" ? (state.sources.sleeper_pts_label || "Sleeper 2026 regular season (half-PPR)") : (state.sources.fp_pts_label || "FantasyPros 2026 season (half-PPR)"))}">${esc(fmtPts(side === "fo" ? p.sleeper_pts : p.fp_pts))}</span>
-      <span class="c-pos ${esc(p.pos || "")}">${esc(p.pos || "")}</span>
       <span class="c-gap ${gapClass(p.gap)}"${stealTip(p)}>${esc(gapLabel(p.gap))}</span>
     `;
     return el;
@@ -666,36 +666,16 @@
     if (state.altsCache && state.altsCache.key === key && Array.isArray(state.altsCache.list)) {
       return state.altsCache.list;
     }
-    const pool = state.players.filter((o) => remaining(o) && playerKey(o) !== key);
-    const scored = [];
-    for (const o of pool) {
-      let score = 0;
-      const samePos = o.pos && p.pos && o.pos === p.pos;
-      if (samePos) score += 30;
-      if (p.fp_rank != null && o.fp_rank != null) {
-        const d = Math.abs(o.fp_rank - p.fp_rank);
-        if (d <= 8) score += 24 - d;
-        else if (d <= 15 && samePos) score += 10;
-      }
-      if (p.fo_adp != null && o.fo_adp != null) {
-        const d = Math.abs(o.fo_adp - p.fo_adp);
-        if (d <= 8) score += 24 - d;
-        else if (d <= 15 && samePos) score += 10;
-      }
-      if (score <= 0) continue;
-      scored.push({ o, score });
-    }
-    scored.sort((a, b) => b.score - a.score);
-    const out = [];
-    const seen = new Set();
-    for (const { o } of scored) {
-      const k = playerKey(o);
-      if (seen.has(k)) continue;
-      seen.add(k);
-      out.push(o);
-      if (out.length >= 5) break;
-    }
-    const list = out.slice(0, Math.max(3, Math.min(5, out.length)));
+    const rank = p.fo_rank != null ? Number(p.fo_rank) : null;
+    const pool = state.players.filter((o) => remaining(o) && playerKey(o) !== key && o.fo_rank != null);
+    pool.sort((a, b) => {
+      const da = Math.abs(Number(a.fo_rank) - (rank ?? Number(a.fo_rank)));
+      const db = Math.abs(Number(b.fo_rank) - (rank ?? Number(b.fo_rank)));
+      return da - db || Number(a.fo_rank) - Number(b.fo_rank);
+    });
+    const near = pool.slice(0, 5);
+    near.sort((a, b) => Number(a.fo_rank) - Number(b.fo_rank));
+    const list = near;
     state.altsCache = { key, list };
     return list;
   }
