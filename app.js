@@ -822,6 +822,16 @@
     return 3.5;
   }
 
+  /* Room is a Sleeper board, but some drafters (including Rob) watch ECR. */
+  function blendRank(p) {
+    const sl = p.fo_rank != null && !Number.isNaN(Number(p.fo_rank)) ? Number(p.fo_rank) : null;
+    const ecr = p.fp_rank != null && !Number.isNaN(Number(p.fp_rank)) ? Number(p.fp_rank) : null;
+    if (sl != null && ecr != null) return 0.7 * sl + 0.3 * ecr;
+    if (sl != null) return sl;
+    if (ecr != null) return ecr;
+    return 999;
+  }
+
   function softmaxPick(cands, scores) {
     let max = -Infinity;
     for (let i = 0; i < scores.length; i++) if (scores[i] > max) max = scores[i];
@@ -859,8 +869,8 @@
     if (!upcoming.length) return byId;
     const rosters = liveRosters();
     const pool = state.players
-      .filter((p) => p.fo_rank != null && remaining(p))
-      .sort((a, b) => a.fo_rank - b.fo_rank);
+      .filter((p) => remaining(p) && (p.fo_rank != null || p.fp_rank != null))
+      .sort((a, b) => blendRank(a) - blendRank(b));
     const cap = Math.min(pool.length, Math.max(36, upcoming.length * 16 + 20));
     const short = pool.slice(0, cap);
     const nSims = upcoming.length <= 4 ? 700 : 480;
@@ -892,17 +902,18 @@
         const scores = new Array(cand.length);
         for (let i = 0; i < cand.length; i++) {
           const p = cand[i];
-          let u = -Number(p.fo_rank) / tau + 0.95 * posNeed(c, p.pos, round);
-          const same = byPos[p.pos] || [];
+          const rk = blendRank(p);
+          let u = -rk / tau + 0.95 * posNeed(c, p.pos, round);
+          const same = (byPos[p.pos] || []).slice().sort((a, b) => blendRank(a) - blendRank(b));
           let nextRank = null;
           for (let j = 0; j < same.length; j++) {
-            if (same[j].fo_rank > p.fo_rank) {
-              nextRank = same[j].fo_rank;
+            if (blendRank(same[j]) > rk) {
+              nextRank = blendRank(same[j]);
               break;
             }
           }
           if (nextRank != null) {
-            const drop = nextRank - p.fo_rank;
+            const drop = nextRank - rk;
             if (drop >= 15) u += 0.55;
             else if (drop >= 10) u += 0.32;
             else if (drop >= 6) u += 0.15;
