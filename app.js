@@ -57,6 +57,7 @@
     selectedId: null,
     filterPos: new Set(),
     filterTargets: false,
+    filterSteals: false,
     filterRookies: false,
     filterYoung: false,
     search: "",
@@ -201,10 +202,6 @@
     return !p.id || !state.draftedIds.has(String(p.id));
   }
 
-  function stealQueryOn() {
-    const q = state.search.trim().toLowerCase();
-    return q === "steal" || q === "steals";
-  }
   function stealScore(p) {
     if (p.fo_rank == null || p.fp_rank == null) return null;
     const fp_rank = Number(p.fp_rank);
@@ -233,9 +230,9 @@
     if (state.filterTargets && (!p.id || !state.targets.has(String(p.id)))) return false;
     if (state.filterRookies && !p.is_rookie) return false;
     if (state.filterYoung && !(p.age != null && Number(p.age) <= 25)) return false;
+    if (state.filterSteals && !stealQualifies(p)) return false;
     const q = state.search.trim().toLowerCase();
     if (!q) return true;
-    if (q === "steal" || q === "steals") return stealQualifies(p);
     if ((p.name || "").toLowerCase().includes(q)) return true;
     if ((p.pos || "").toLowerCase() === q) return true;
     const abbr = String(p.team || p.team_abbr || "").trim();
@@ -531,7 +528,7 @@
     const foPending = state.match && state.match.fo_file_present === false;
     const fo = $("list-fo");
     const fp = $("list-fp");
-    const stealOn = stealQueryOn();
+    const stealOn = state.filterSteals;
     if (foPending) {
       fo.innerHTML = `<div class="empty-col"><strong>Sleeper board pending</strong>Drop <code>sleeper_board.json</code> into <code>/workspace/ff-dynasty/data/</code> and run <code>python3 dashboard/build_data.py</code>. Left column stays empty until then — no invented ADP.</div>`;
       $("count-fo").textContent = "0";
@@ -1224,6 +1221,7 @@
       const pos = b.getAttribute("data-pos");
       if (pos === "ALL") b.classList.toggle("on", state.filterPos.size === 0);
       else if (pos === "TARGETS") b.classList.toggle("on", state.filterTargets);
+      else if (pos === "STEALS") b.classList.toggle("on", state.filterSteals);
       else if (pos === "ROOKIES") b.classList.toggle("on", state.filterRookies);
       else if (pos === "YOUNG") b.classList.toggle("on", state.filterYoung);
       else b.classList.toggle("on", state.filterPos.has(pos));
@@ -1239,6 +1237,8 @@
           state.filterPos.clear();
         } else if (pos === "TARGETS") {
           state.filterTargets = !state.filterTargets;
+        } else if (pos === "STEALS") {
+          state.filterSteals = !state.filterSteals;
         } else if (pos === "ROOKIES") {
           state.filterRookies = !state.filterRookies;
         } else if (pos === "YOUNG") {

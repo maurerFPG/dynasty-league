@@ -416,12 +416,12 @@ body.resizing-h { cursor: ns-resize; user-select: none; }
 }
 .pos-pad {
   display: grid;
-  grid-template-columns: 1.15fr 1fr 1fr 1.2fr 1.2fr;
+  grid-template-columns: 1fr 0.9fr 0.9fr 1.05fr 1.05fr 1.05fr;
   grid-template-rows: var(--ctrl) var(--ctrl) var(--ctrl);
   grid-template-areas:
-    "all qb wr targets rook"
-    "all rb te targets young"
-    "search search search search search";
+    "all qb wr targets steals rook"
+    "all rb te targets steals young"
+    "search search search search search search";
   gap: var(--ctrl-gap);
   width: 100%;
 }
@@ -443,12 +443,13 @@ body.resizing-h { cursor: ns-resize; user-select: none; }
   justify-content: center;
   min-width: 0;
 }
-.pos-all { grid-area: all; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; }
+.pos-all { grid-area: all; font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; }
 .pos-qb { grid-area: qb; }
 .pos-wr { grid-area: wr; }
 .pos-rb { grid-area: rb; }
 .pos-te { grid-area: te; }
 .pos-star { grid-area: targets; font-size: 9px; letter-spacing: 0.05em; }
+.pos-steal { grid-area: steals; font-size: 9px; letter-spacing: 0.05em; }
 .pos-rook { grid-area: rook; }
 .pos-young { grid-area: young; }
 .pos.on { color: var(--text); border-color: var(--line-2); background: rgba(255, 255, 255, 0.06); }
@@ -457,6 +458,7 @@ body.resizing-h { cursor: ns-resize; user-select: none; }
 .pos-wr.on { color: var(--wr); border-color: rgba(212, 190, 134, 0.4); }
 .pos-te.on { color: var(--te); border-color: rgba(124, 191, 160, 0.4); }
 .pos-star.on { color: var(--steal); border-color: rgba(126, 201, 187, 0.4); }
+.pos-steal.on { color: var(--steal); border-color: rgba(126, 201, 187, 0.4); }
 .search {
   grid-area: search;
   display: flex;
