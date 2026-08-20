@@ -1061,7 +1061,7 @@ body.resizing-h { cursor: ns-resize; user-select: none; }
 .inj-cell.other { color: var(--muted); }
 .card-stats {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(44px, 1fr));
   gap: 0;
   padding: 4px 0;
   border-top: 1px solid var(--line);

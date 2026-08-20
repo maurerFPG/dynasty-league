@@ -71,7 +71,7 @@
     draftLive: null,
     research: { key: null, status: "idle", headlines: [], error: null },
     altsCache: { key: null, list: [] },
-    goneModel: { key: "", byId: new Map(), label: "", nextPick: 0 },
+    goneModel: { key: "", byId: new Map(), availById: new Map(), label: "", thenLabel: "" },
   };
 
   const $ = (id) => document.getElementById(id);
@@ -853,28 +853,34 @@
   function goneWindow() {
     const current = currentPickNo();
     const map = state.draft && state.draft.pick_map ? state.draft.pick_map : [];
-    const rob = map.find((cell) => cell.is_rob && cell.overall >= current && !state.pickByOverall.has(cell.overall));
-    if (!rob) return null;
-    const upcoming = map.filter((c) => c.overall >= current && c.overall < rob.overall);
-    return { current, rob, upcoming };
+    const robs = map.filter((cell) => cell.is_rob && cell.overall >= current && !state.pickByOverall.has(cell.overall));
+    if (!robs.length) return null;
+    const next = robs[0];
+    const then = robs[1] || null;
+    const end = then ? then.overall : next.overall;
+    const upcoming = map.filter((c) => c.overall >= current && c.overall < end && !c.is_rob);
+    return { current, next, then, upcoming };
   }
 
   function goneModelKey(win) {
-    return String(win.current) + ":" + state.draftedIds.size;
+    return String(win.current) + ":" + state.draftedIds.size + ":" + (win.then ? win.then.overall : "x");
   }
 
   function runGoneSims(win) {
-    const byId = new Map();
+    const gone1 = new Map();
+    const live2 = new Map();
     const upcoming = win.upcoming;
-    if (!upcoming.length) return byId;
     const rosters = liveRosters();
     const pool = state.players
       .filter((p) => remaining(p) && (p.fo_rank != null || p.fp_rank != null))
       .sort((a, b) => blendRank(a) - blendRank(b));
     const cap = Math.min(pool.length, Math.max(36, upcoming.length * 16 + 20));
     const short = pool.slice(0, cap);
-    const nSims = upcoming.length <= 4 ? 700 : 480;
+    const nSims = upcoming.length <= 4 ? 700 : 400;
+    const nextAt = win.next.overall;
+    const hasThen = !!win.then;
     const hits = new Map();
+    const still = new Map();
     for (let s = 0; s < nSims; s++) {
       const gone = new Set();
       const counts = {};
@@ -931,38 +937,51 @@
         const pick = softmaxPick(cand, scores);
         const id = pick.id != null ? String(pick.id) : playerKey(pick);
         gone.add(id);
-        hits.set(id, (hits.get(id) || 0) + 1);
+        if (cell.overall < nextAt) hits.set(id, (hits.get(id) || 0) + 1);
         if (c[pick.pos] != null) c[pick.pos] += 1;
         recent.push(pick.pos);
+      }
+      if (hasThen) {
+        for (let i = 0; i < short.length; i++) {
+          const p = short[i];
+          const id = p.id != null ? String(p.id) : playerKey(p);
+          if (!gone.has(id)) still.set(id, (still.get(id) || 0) + 1);
+        }
       }
     }
     for (let i = 0; i < short.length; i++) {
       const p = short[i];
       const id = p.id != null ? String(p.id) : playerKey(p);
-      const pct = Math.round(((hits.get(id) || 0) / nSims) * 100);
-      byId.set(id, pct);
-      byId.set(playerKey(p), pct);
+      const gPct = Math.round(((hits.get(id) || 0) / nSims) * 100);
+      gone1.set(id, gPct);
+      gone1.set(playerKey(p), gPct);
+      if (hasThen) {
+        const aPct = Math.round(((still.get(id) || 0) / nSims) * 100);
+        live2.set(id, aPct);
+        live2.set(playerKey(p), aPct);
+      }
     }
-    return byId;
+    return { gone1, live2 };
   }
 
   function ensureGoneModel() {
     const win = goneWindow();
     if (!win) {
-      state.goneModel = { key: "none", byId: new Map(), label: "", nextPick: 0 };
+      state.goneModel = { key: "none", byId: new Map(), availById: new Map(), label: "", thenLabel: "" };
       return state.goneModel;
     }
     const key = goneModelKey(win);
     if (state.goneModel && state.goneModel.key === key) return state.goneModel;
+    const { gone1, live2 } = runGoneSims(win);
     state.goneModel = {
       key,
-      byId: runGoneSims(win),
-      label: win.rob.label,
-      nextPick: win.rob.overall,
+      byId: gone1,
+      availById: live2,
+      label: win.next.label,
+      thenLabel: win.then ? win.then.label : "",
     };
     return state.goneModel;
   }
-
 
   function currentPickNo() {
     let max = 0;
@@ -973,22 +992,33 @@
     return max > 0 ? max + 1 : 1;
   }
 
+  function lookupGone(map, p) {
+    if (!map) return 0;
+    const id = p.id != null ? String(p.id) : playerKey(p);
+    if (map.has(id)) return map.get(id);
+    if (map.has(playerKey(p))) return map.get(playerKey(p));
+    return 0;
+  }
+
   function goneBeforeEstimate(p) {
     if (!p) return null;
     if (p.id && state.draftedIds.has(String(p.id))) return null;
     const model = ensureGoneModel();
     if (!model || model.key === "none") return null;
-    const id = p.id != null ? String(p.id) : playerKey(p);
-    let pct = model.byId.get(id);
-    if (pct == null) pct = model.byId.get(playerKey(p));
-    if (pct == null) pct = 0;
-    return { pct, label: model.label, source: "model" };
+    return {
+      pct: lookupGone(model.byId, p),
+      avail: model.thenLabel ? lookupGone(model.availById, p) : null,
+      label: model.label,
+      thenLabel: model.thenLabel || "",
+    };
   }
 
   function goneStat(p) {
     const g = goneBeforeEstimate(p);
     if (!g) return `<div class="stat"><div class="k">Gone</div><div class="v faint">—</div></div>`;
-    return `<div class="stat"><div class="k">Gone</div><div class="v">${g.pct}%</div></div>`;
+    let html = `<div class="stat"><div class="k">Gone</div><div class="v">${g.pct}%</div></div>`;
+    if (g.thenLabel) html += `<div class="stat"><div class="k">${esc(g.thenLabel)}</div><div class="v">${g.avail}%</div></div>`;
+    return html;
   }
 
   function renderCard() {
@@ -1347,7 +1377,7 @@
       if (isRobPick(pk)) state.robTaken.push(rec);
     }
     state.robTaken.sort((a, b) => (a.overall || 0) - (b.overall || 0));
-    state.goneModel = { key: "", byId: new Map(), label: "", nextPick: 0 };
+    state.goneModel = { key: "", byId: new Map(), availById: new Map(), label: "", thenLabel: "" };
   }
 
   async function pollPicks(manual) {
