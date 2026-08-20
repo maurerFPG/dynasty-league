@@ -71,6 +71,7 @@
     draftStatus: "pre_draft",
     draftLive: null,
     research: { key: null, status: "idle", headlines: [], error: null },
+    briefs: {},
     altsCache: { key: null, list: [] },
     goneModel: { key: "", byId: new Map(), availById: new Map(), label: "", thenLabel: "" },
     pickOverall: false,
@@ -753,7 +754,37 @@
     return sentences.slice(0, 4).join(" ");
   }
 
+  function bakedBrief(p) {
+    if (!p || p.id == null || !state.briefs) return null;
+    const b = state.briefs[String(p.id)];
+    return b && typeof b === "object" ? b : null;
+  }
+
+  function bakedBriefHtml(b) {
+    const notes = Array.isArray(b.notes) ? b.notes.filter(Boolean) : [];
+    const links = Array.isArray(b.links) ? b.links.filter((l) => l && l.url) : [];
+    const lead = b.lead
+      ? `<div class="baked-block"><div class="kicker">Outlook</div><p class="lead">${esc(b.lead)}</p></div>`
+      : "";
+    const watch = notes.length
+      ? `<div class="baked-block"><div class="kicker">Watch</div>${notes.map((n) => `<p class="note">${esc(n)}</p>`).join("")}</div>`
+      : "";
+    const nearby = b.nearby
+      ? `<div class="baked-block"><div class="kicker">Nearby</div><p class="nearby">${esc(b.nearby)}</p></div>`
+      : "";
+    const lis = links
+      .map((l) => `<a href="${esc(l.url)}" target="_blank" rel="noopener noreferrer">${esc(l.label || l.url)}</a>`)
+      .join("");
+    const asof = b.as_of ? `<span class="baked-asof">as of ${esc(b.as_of)}</span>` : "";
+    const foot = (lis || asof)
+      ? `<div class="baked-foot">${lis ? `<div class="baked-links">${lis}</div>` : ""}${asof}</div>`
+      : "";
+    return `<div class="baked" id="research-flash">${lead}${watch}${nearby}${foot}</div>`;
+  }
+
   function researchBlock(p) {
+    const baked = bakedBrief(p);
+    if (baked) return bakedBriefHtml(baked);
     const r = state.research;
     const same = r.key && r.key === playerKey(p);
     if (!same || r.status === "idle") return "";
@@ -1148,6 +1179,11 @@
 
   async function fetchResearch(p, alts) {
     const key = playerKey(p);
+    if (bakedBrief(p)) {
+      state.research = { key, status: "baked", headlines: [], error: null };
+      renderCard();
+      return;
+    }
     state.research = { key, status: "loading", headlines: [], error: null };
     renderCard();
     const payload = {
@@ -1576,13 +1612,17 @@
   async function init() {
     loadTargets();
     loadLayout();
-    const [pj, dj] = await Promise.all([
+    const [pj, dj, bj] = await Promise.all([
       fetch("data/players.json", { cache: "no-store" }).then((r) => r.json()),
       fetch("data/draft.json", { cache: "no-store" }).then((r) => r.json()),
+      fetch("data/briefs.json?v=brief1", { cache: "no-store" })
+        .then((r) => (r.ok ? r.json() : {}))
+        .catch(() => ({})),
     ]);
     state.players = pj.players || [];
     state.sources = pj.sources || {};
     state.match = pj.match || {};
+    state.briefs = bj && typeof bj === "object" && !Array.isArray(bj) ? bj : {};
     state.draft = dj;
     state.draftStatus = dj.status || "pre_draft";
     state.byId = new Map(state.players.filter((p) => p.id != null).map((p) => [String(p.id), p]));
