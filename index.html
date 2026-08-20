@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dynasty league</title>
-  <link rel="stylesheet" href="styles.css?v=fade-hdr" />
+  <link rel="stylesheet" href="styles.css?v=avail-rank" />
 </head>
 <body>
   <div class="bokeh" aria-hidden="true"></div>
@@ -66,6 +66,7 @@
           <div>
             <h2>Sleeper board <span class="as-of">(Aug 19)</span></h2>
           </div>
+          <button type="button" class="avail" data-side="fo" aria-pressed="false">Available</button>
           <span class="count" id="count-fo"></span>
         </header>
         <div class="list" id="list-fo"></div>
@@ -75,6 +76,7 @@
           <div>
             <h2>FantasyPros SF ECR <span class="as-of">(Aug 19)</span></h2>
           </div>
+          <button type="button" class="avail" data-side="fp" aria-pressed="false">Available</button>
           <span class="count" id="count-fp"></span>
         </header>
         <div class="list" id="list-fp"></div>
@@ -96,6 +98,6 @@
     </section>
   </div>
 
-  <script src="app.js?v=fade-hdr"></script>
+  <script src="app.js?v=avail-rank"></script>
 </body>
 </html>

@@ -68,6 +68,8 @@
     filterSteals: false,
     filterRookies: false,
     filterYoung: false,
+    filterAvailableFo: false,
+    filterAvailableFp: false,
     search: "",
     targets: new Set(),
     lastPoll: null,
@@ -180,7 +182,7 @@
   }
   function fmtRank(v) {
     if (v == null) return "—";
-    return `#${v}`;
+    return String(v);
   }
   function gapClass(gap) {
     if (gap == null || Number.isNaN(Number(gap))) return "flat";
@@ -232,7 +234,9 @@
     if (score == null) return "";
     return ` title="steal ${score.toFixed(2)}"`;
   }
-  function matchesFilter(p) {
+  function matchesFilter(p, side) {
+    if (side === "fo" && state.filterAvailableFo && !remaining(p)) return false;
+    if (side === "fp" && state.filterAvailableFp && !remaining(p)) return false;
     if (state.filterPos.size && !state.filterPos.has(p.pos)) return false;
     if (state.filterTargets && (!p.id || !state.targets.has(String(p.id)))) return false;
     if (state.filterRookies && !p.is_rookie) return false;
@@ -544,13 +548,13 @@
       $("count-fo").textContent = "0";
     } else {
       const foRows = state.players
-        .filter((p) => p.fo_adp != null && matchesFilter(p))
+        .filter((p) => p.fo_adp != null && matchesFilter(p, "fo"))
         .sort((a, b) => (a.fo_rank || 9999) - (b.fo_rank || 9999) || a.fo_adp - b.fo_adp);
       fo.replaceChildren(...listNodes(foRows, "fo"));
       $("count-fo").textContent = stealOn ? `${foRows.filter(remaining).length} steals` : `${foRows.filter(remaining).length} left`;
     }
     const fpRows = state.players
-      .filter((p) => p.fp_rank != null && matchesFilter(p))
+      .filter((p) => p.fp_rank != null && matchesFilter(p, "fp"))
       .sort((a, b) => a.fp_rank - b.fp_rank);
     fp.replaceChildren(...listNodes(fpRows, "fp"));
     $("count-fp").textContent = stealOn ? `${fpRows.filter(remaining).length} steals` : `${fpRows.filter(remaining).length} left`;
@@ -1227,6 +1231,15 @@
     btn.classList.remove("busy");
   }
 
+  function syncAvailUi() {
+    document.querySelectorAll(".avail").forEach((b) => {
+      const side = b.getAttribute("data-side");
+      const on = side === "fo" ? state.filterAvailableFo : state.filterAvailableFp;
+      b.classList.toggle("on", on);
+      b.setAttribute("aria-pressed", on ? "true" : "false");
+    });
+  }
+
   function syncFilterUi() {
     document.querySelectorAll("#filters .pos").forEach((b) => {
       const pos = b.getAttribute("data-pos");
@@ -1259,6 +1272,15 @@
           else state.filterPos.add(pos);
         }
         syncFilterUi();
+        renderLists();
+      });
+    });
+    document.querySelectorAll(".avail").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const side = btn.getAttribute("data-side");
+        if (side === "fo") state.filterAvailableFo = !state.filterAvailableFo;
+        if (side === "fp") state.filterAvailableFp = !state.filterAvailableFp;
+        syncAvailUi();
         renderLists();
       });
     });
