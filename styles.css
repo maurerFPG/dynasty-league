@@ -964,7 +964,7 @@ body.resizing-h { cursor: ns-resize; user-select: none; }
 .mp-name { font-weight: 500; font-size: 12px; }
 .card-layout {
   display: grid;
-  grid-template-columns: minmax(240px, 272px) minmax(0, 1fr);
+  grid-template-columns: minmax(256px, 300px) minmax(0, 1fr);
   gap: 0 20px;
   align-items: stretch;
   min-height: 0;
@@ -989,9 +989,9 @@ body.resizing-h { cursor: ns-resize; user-select: none; }
 }
 .card-idrow {
   display: grid;
-  grid-template-columns: 40px minmax(0, 1fr) minmax(78px, 0.85fr);
+  grid-template-columns: 40px minmax(0, 1fr) minmax(86px, 92px);
   gap: 8px 10px;
-  align-items: start;
+  align-items: stretch;
   padding-bottom: 8px;
 }
 .headshot {
@@ -1022,16 +1022,35 @@ body.resizing-h { cursor: ns-resize; user-select: none; }
   font-size: 11px;
   line-height: 1.3;
 }
-.card-idrow > .inj {
+.card-id .who .heat { font-size: 11px; }
+.inj-cell {
   margin: 0;
-  align-self: stretch;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  text-align: right;
-  font-size: 11px;
-  line-height: 1.3;
+  justify-content: center;
+  text-align: center;
+  font-size: 10px;
+  line-height: 1.25;
+  padding: 4px 6px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
   color: var(--faint);
+  min-height: 40px;
+}
+.inj-cell.empty { background: rgba(255, 255, 255, 0.02); }
+.inj-cell.q {
+  color: #c9a46a;
+  border-color: rgba(201, 164, 106, 0.38);
+  background: rgba(201, 164, 106, 0.10);
+}
+.inj-cell.out {
+  color: #d08a86;
+  border-color: rgba(208, 138, 134, 0.48);
+  background: rgba(208, 138, 134, 0.14);
+}
+.inj-cell.other {
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.03);
 }
 .card-stats {
   display: grid;

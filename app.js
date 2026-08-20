@@ -312,7 +312,7 @@
   }
   function injuryBadge(p) {
     const st = String(p.injury_status || "").trim();
-    if (!st) return `<div class="inj none">No injury listed.</div>`;
+    if (!st) return "";
     const abbr = injuryAbbrev(st);
     if (!abbr) return "";
     const bits = [st];
@@ -321,11 +321,11 @@
   }
   function injuryLine(p) {
     const st = String(p.injury_status || "").trim();
-    if (!st) return "";
+    if (!st) return `<div class="inj-cell empty" aria-hidden="true"></div>`;
     const bits = [st];
     if (p.injury_body_part) bits.push(p.injury_body_part);
-    if (p.injury_notes) bits.push(p.injury_notes);
-    return `<div class="inj ${injuryTone(st)}">${esc(bits.join(" · "))}</div>`;
+    const title = p.injury_notes ? bits.concat(p.injury_notes).join(" · ") : bits.join(" · ");
+    return `<div class="inj-cell ${injuryTone(st)}" title="${esc(title)}">${esc(bits.join(" · "))}</div>`;
   }
   function nameCell(p) {
     const rook = p.is_rookie ? " rookie" : "";
@@ -832,8 +832,7 @@
     }
     const tgt = p.id && state.targets.has(String(p.id));
     const alts = alternates(p);
-    const exp = p.years_exp == null ? "" : p.years_exp === 0 ? " · rookie" : ` · ${p.years_exp} yr`;
-    const rook = p.is_rookie ? " · rookie" : "";
+    const exp = p.is_rookie || p.years_exp == null || p.years_exp === 0 ? "" : ` · ${p.years_exp} yr`;
     const age = p.age == null ? "" : ` · ${p.age}`;
     card.innerHTML = `
       <div class="card-layout">
@@ -841,8 +840,8 @@
           <div class="card-idrow">
             ${headshotHtml(p.id)}
             <div class="card-id">
-              <div class="who">${heatMark(p)}<span class="${p.is_rookie ? "rookie" : ""}">${esc(p.name)}</span>${rookieChip(p)}</div>
-              <div class="meta"><span class="c-pos ${esc(p.pos || "")}">${esc(p.pos || "")}</span> · ${esc(p.team || "FA")}${age}${exp}${p.is_rookie && p.years_exp !== 0 ? rook : ""}</div>
+              <div class="who"><span class="${p.is_rookie ? "rookie" : ""}">${esc(p.name)}</span>${heatMark(p)}${rookieChip(p)}</div>
+              <div class="meta"><span class="c-pos ${esc(p.pos || "")}">${esc(p.pos || "")}</span> · ${esc(p.team || "FA")}${age}${exp}</div>
             </div>
             ${injuryLine(p)}
           </div>
@@ -877,7 +876,7 @@
                         if (a.fo_rank != null) bits.push("SL " + fmtFoRank(a.fo_rank));
                         else if (a.fo_adp != null) bits.push("SL " + fmtAdp(a.fo_adp));
                         if (a.fp_rank != null) bits.push("ECR " + fmtRank(a.fp_rank));
-                        return `<button type="button" class="alt" data-alt="${esc(playerKey(a))}"><span><b>${esc(a.name)}</b> ${esc(a.pos || "")}</span><em>${esc(bits.join(" · "))}</em></button>`;
+                        return `<button type="button" class="alt" data-alt="${esc(playerKey(a))}"><span><b>${esc(a.name)}</b></span><em>${esc(bits.join(" · "))}</em></button>`;
                       })
                       .join("")
                   : `<span class="flash">No close neighbors on these boards.</span>`
