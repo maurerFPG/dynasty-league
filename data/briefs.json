@@ -12332,5 +12332,1680 @@
         "url": "https://www.cincyjungle.com/cincinnati-bengals-preseason/196162/detroit-lions-recap-final-score"
       }
     ]
+  },
+  "13300": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Moss \u2014 Dolphins reserve/retired in May after a four-day UDFA stay, so there is no 2026 job and no later job unless he un-retires.",
+    "links": [
+      {
+        "label": "PFT: MIA reserve/retired, May 12",
+        "url": "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/dolphins-put-rb-leveon-moss-on-reserve-retired-list"
+      },
+      {
+        "label": "Sporting News: signed May 8, retired four days later",
+        "url": "https://www.sportingnews.com/us/nfl/miami-dolphins/news/dolphins-leveon-moss-retires-nfl-days-after-being-signed/6efdb97aceb0a8b4f8b874ce"
+      }
+    ]
+  },
+  "13318": {
+    "as_of": "2026-08-20",
+    "heat": "neutral",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Thomas \u2014 Bengals camp WR this year behind Chase, Higgins, Iosivas, and Young, and later is a practice-squad hope.",
+    "depth": "FOX19 lists Chase/Higgins/Iosivas as the 1s and Young/Tinsley/Jones in the backup group; Thomas is still in the camp pile. One Day-2 jump ball does not open a weekly path.",
+    "links": [
+      {
+        "label": "FOX19: WR depth, Thomas in camp",
+        "url": "https://www.fox19.com/2026/08/11/bengals-depth-chart-players-watch-preseason/"
+      },
+      {
+        "label": "Cincy Jungle: Chase on the camp catch",
+        "url": "https://www.cincyjungle.com/cincinnati-bengals-training-camp/195159/noah-thomas-jamarr-chase-tee-higgins"
+      }
+    ]
+  },
+  "13277": {
+    "as_of": "2026-08-20",
+    "heat": "neutral",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Donaldson \u2014 Saints short-yardage UDFA this year behind Etienne and Kamara, and later is only if the 5/6 sticks.",
+    "depth": "Etienne is the 1, Kamara the 2. Miller, Neal, Estime, and Chandler are all in the RB3 fight; nola had Donaldson as the 6-1, 230 dirty-yard dart, not the next man up.",
+    "notes": [
+      "NBC today: Miller (back) and Neal (hamstring) both practiced; Estime is now out. The RB3 reps went to Miller, Neal, and Chandler \u2014 not the Ohio State UDFA."
+    ],
+    "links": [
+      {
+        "label": "nola: UDFA dirty yards, 6-1/230",
+        "url": "https://www.nola.com/sports/saints/saints-camp-team-my-face-some-tough-decisions-at-rb/article_b8994b8d-8e02-41dc-ae42-c55dbf8f2c36.html"
+      },
+      {
+        "label": "NBC Aug 20: Miller, Neal back; Estime out",
+        "url": "https://www.nbcsports.com/fantasy/football/player-news/2026-08-20/saints-rbs-miller-neal-practice-estime-injured"
+      }
+    ]
+  },
+  "13336": {
+    "as_of": "2026-08-20",
+    "heat": "neutral",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Key \u2014 Broncos UDFA this year fourth on Sutton's line, and later is still a practice-squad dart.",
+    "depth": "Sutton, Waddle, and Mims are the unofficial 1s. On Sutton's line it is Bryant, then Butler, then Key*. No special-teams path on the Aug 12 chart.",
+    "links": [
+      {
+        "label": "Broncos.com: unofficial chart, Key* on Sutton line",
+        "url": "https://www.denverbroncos.com/news/broncos-release-initial-unofficial-2026-depth-chart"
+      },
+      {
+        "label": "Broncos Wire: WR lines, Key behind Bryant/Butler",
+        "url": "https://broncoswire.usatoday.com/story/sports/nfl/broncos/2026/08/12/denver-broncos-first-2026-depth-chart/91235132007/"
+      }
+    ]
+  },
+  "13422": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Kanak \u2014 season-ending pec, no 2026, and later is a 7th-round Titans TE coming off IR.",
+    "notes": [
+      "Saleh Aug 15: torn pec vs the 49ers Aug 13, out for the year. Five snaps, one special-teams tackle. Titans put him on IR Aug 16 and signed Matt Lauter."
+    ],
+    "links": [
+      {
+        "label": "PFT: Saleh \u2014 pec, out for the year",
+        "url": "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/titans-te-jaren-kanak-de-jaylen-harrell-out-for-season-with-injuries"
+      },
+      {
+        "label": "Titans Wire: IR Aug 16, Lauter signed",
+        "url": "https://titanswire.usatoday.com/story/sports/nfl/titans/2026/08/16/tennessee-titans-sign-2-place-jaylen-harrell-jaren-kanak-on-injured-reserve/91331350007/"
+      }
+    ]
+  },
+  "13726": {
+    "as_of": "2026-08-20",
+    "heat": "fire",
+    "gem": false,
+    "lead": "I'd take Brown at 25.10 leftover \u2014 Cowboys UDFA fighting for the last WR this year after 3-62-2 vs Seattle, later still behind Lamb and Pickens.",
+    "depth": "Lamb, Pickens, Flournoy, and Turpin are locked. The leftover is the last WR, not a weekly path. I will not taxi that.",
+    "notes": [
+      "Cowboys.com: 3-for-3, 62 yards, two TDs (Howell, Milton) in the preseason opener. Sleeper trending add. Still a camp dart, not a taxi."
+    ],
+    "links": [
+      {
+        "label": "Cowboys.com: 3-62-2 vs SEA",
+        "url": "https://www.dallascowboys.com/news/camden-brown-steals-the-show-during-cowboys-preseason-opener-vs-seahawks"
+      }
+    ]
+  },
+  "11650": {
+    "as_of": "2026-08-20",
+    "heat": "neutral",
+    "gem": false,
+    "lead": "I'd take McCaffrey at 25.10 leftover \u2014 unofficial Commanders WR3 and KR1 this year, later is still the 3/4 behind McLaurin.",
+    "depth": "McLaurin and Diggs are the locked 1/2. Lane is the 2 on Luke's line. Quinn called the chart as useful as preseason rankings, then said Year-3 ascension is easy to see.",
+    "links": [
+      {
+        "label": "Commanders.com: unofficial WR3, KR1",
+        "url": "https://www.commanders.com/news/commanders-release-2026-unofficial-depth-chart"
+      },
+      {
+        "label": "SI: Quinn \u2014 Year 3, ascension",
+        "url": "https://www.si.com/nfl/commanders/onsi/commanders-unofficial-depth-chart-luke-mccaffrey-sonny-styles-takeaways"
+      }
+    ]
+  },
+  "8127": {
+    "as_of": "2026-08-20",
+    "heat": "neutral",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Kolar \u2014 Chargers blocking TE this year in an OR with Gadsden and Njoku, and later is already Gadsden's job.",
+    "depth": "Chargers.com Aug 17 lists Kolar OR Gadsden OR Njoku. The $24.3M deal was for the run game; +0.5 TEP does not juice a blocker.",
+    "links": [
+      {
+        "label": "Chargers.com: TE OR, Aug 17 chart",
+        "url": "https://www.chargers.com/news/depth-chart-2026-season"
+      },
+      {
+        "label": "Chargers.com: multi-year deal, blocking TE",
+        "url": "https://www.chargers.com/news/agree-to-terms-charlie-kolar-2026"
+      }
+    ]
+  },
+  "12482": {
+    "as_of": "2026-08-20",
+    "heat": "neutral",
+    "gem": false,
+    "lead": "I'd take Williams at 25.10 leftover \u2014 Packers WR4 this year if the unofficial chart holds, later is still the 4 behind Watson, Reed, and Golden.",
+    "depth": "Unofficial Aug 17: Watson's backup, KR2. CBS: favorite for the fourth spot. Melton and Moore are the other 2s. Year-2 3rd-rounder, not a taxi.",
+    "links": [
+      {
+        "label": "Packers.com: unofficial, Watson's 2, KR2",
+        "url": "https://www.packers.com/news/2026-depth-chart"
+      },
+      {
+        "label": "CBS: LaFleur good day, WR4 favorite",
+        "url": "https://www.cbssports.com/fantasy/football/news/packers-savion-williams-stands-out-at-sundays-session/"
+      }
+    ]
+  },
+  "11569": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Hunter \u2014 Rams RB4 this year with Connors coming, and later is already a healthy-scratch 4th-rounder.",
+    "depth": "Kyren and Corum are locked. Rivers is the 3. Connors just scored twice in the preseason. Path to 2026 snaps is a cut-down, not a committee.",
+    "notes": [
+      "RamsWire Aug 17: Hunter 9-35 vs KC (long 13); Connors 4-29-2 receiving. Rookie year: zero offensive snaps, healthy scratches. Next two preseason games decide the 53."
+    ],
+    "links": [
+      {
+        "label": "Rams Wire: Connors vs Hunter, Aug 17",
+        "url": "https://theramswire.usatoday.com/story/sports/nfl/rams/2026/08/17/rams-dean-connors-jarquez-hunter-running-back-preseason/91335211007/"
+      },
+      {
+        "label": "Rams Wire: unofficial RB4 behind Rivers",
+        "url": "https://theramswire.usatoday.com/story/sports/nfl/rams/2026/08/13/rams-depth-chart-takeaways-starters-backups/91284164007/"
+      }
+    ]
+  },
+  "7083": {
+    "as_of": "2026-08-20",
+    "heat": "neutral",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Huntley \u2014 Ravens 2 this year behind Lamar, and there is no later job.",
+    "links": [
+      {
+        "label": "CBS: 6-of-7 for 76 in the Eagles half",
+        "url": "https://www.cbssports.com/fantasy/football/news/ravens-tyler-huntley-crisp-performance-in-preseason-opener/"
+      },
+      {
+        "label": "Ravens.com: re-signed 2, Jackson the 1",
+        "url": "https://www.baltimoreravens.com/news/ravens-training-camp-competition-quarterback-lamar-jackson"
+      }
+    ]
+  },
+  "11562": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Rattler \u2014 Saints 2 this year only if he holds Wilson off, and there is no later job after Shough already took it.",
+    "depth": "Shough is the locked 1 (SL 80). Path to 2026 snaps is winning the 2 after 8-of-11 for 42 and a fumble; Wilson stole the half. Path to later is already gone.",
+    "links": [
+      {
+        "label": "PFT: Rattler starts the Jags half, Shough the 1",
+        "url": "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/spencer-rattler-will-start-saints-preseason-opener"
+      },
+      {
+        "label": "Deseret: Wilson stole the show, Moore noncommittal",
+        "url": "https://www.deseret.com/sports/2026/08/18/zach-wilson-eyes-new-orleans-saints-backup-quarterback-role/"
+      }
+    ]
+  },
+  "6039": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Johnson \u2014 Bills 3 this year if the knee holds, and there is no later job at 28.",
+    "depth": "Cook is the locked 1 (SL 24). Davis is the leftover 2 (SL 246). Path to 2026 snaps is a right-knee 3 with no return date since the Aug 7 scrimmage. Path to later is already gone.",
+    "links": [
+      {
+        "label": "Syracuse: right knee, trainers, Bills 3",
+        "url": "https://www.syracuse.com/buffalo-bills/2026/08/bills-ty-johnson-injury-scare-rb-leaves-red-blue-scrimmage-with-trainers.html"
+      },
+      {
+        "label": "CBS: fourth missed practice, no return date",
+        "url": "https://www.cbssports.com/fantasy/football/news/bills-ty-johnson-absent-again-thursday/"
+      }
+    ]
+  },
+  "6271": {
+    "as_of": "2026-08-20",
+    "heat": "neutral",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Zaccheaus \u2014 listed Falcons slot this year if the chart holds, and the later slot is already Branch.",
+    "links": [
+      {
+        "label": "Falcons.com: listed slot vs Colts",
+        "url": "https://www.atlantafalcons.com/news/atlanta-falcons-depth-chart-for-second-preseason-game-vs-indianapolis-colts"
+      },
+      {
+        "label": "AJC: Branch the backup slot",
+        "url": "https://www.ajc.com/sports/2026/08/3-takeaways-as-falcons-release-first-depth-chart-of-preseason/"
+      }
+    ]
+  },
+  "13297": {
+    "as_of": "2026-08-20",
+    "heat": "fire",
+    "gem": false,
+    "lead": "I'd take Virgil at 25.10 leftover \u2014 Cardinals 4 this year if the camp catches hold, and a later 3 if Bourne is only the vet.",
+    "depth": "Harrison is the locked 1 (SL 68). Wilson is the locked 2 (SL 94). Path to 2026 snaps is already the preseason tape (5-66, 2-43) behind a crowded 3. Path to later is a 22-year-old fifth-rounder (143) if Bourne is only the vet.",
+    "links": [
+      {
+        "label": "CBS: 5-66 team-high vs Panthers",
+        "url": "https://www.cbssports.com/fantasy/football/news/cardinals-reggie-virgil-team-high-catch-total-in-defeat/"
+      },
+      {
+        "label": "Arizona Sports: one-hander, TDs with Beck",
+        "url": "https://arizonasports.com/nfl/arizona-cardinals/training-camp-takeaways-reggie-virgil-makes-his-case-for-best-catch-of-cardinals-camp"
+      }
+    ]
+  },
+  "7585": {
+    "as_of": "2026-08-20",
+    "heat": "neutral",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Mills \u2014 Texans 2 this year behind Stroud, and there is no later job in Houston.",
+    "links": [
+      {
+        "label": "Yahoo / Texans Wire: 9-82-TD, Mertz ACL",
+        "url": "https://sports.yahoo.com/articles/texans-qb-davis-mills-believed-162413226.html"
+      },
+      {
+        "label": "Texans Wire: sixth year, Stroud the 1",
+        "url": "https://texanswire.usatoday.com/story/sports/nfl/texans/2026/08/14/houston-texans-qb-davis-mills-preseason-game-1-los-angeles-chargers-graham-mertz-injury/91307575007/"
+      }
+    ]
+  },
+  "8147": {
+    "as_of": "2026-08-20",
+    "heat": "neutral",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Metchie \u2014 Panthers 4 this year behind McMillan, Coker, and Legette, and there is no later job at 26.",
+    "depth": "McMillan is the locked 1 (SL 29). Coker is the locked 2 (SL 135). Legette is the leftover 3 (SL 258). Path to 2026 snaps is a listed third-stringer after a late Trask 9-yard TD. Path to later is already gone.",
+    "links": [
+      {
+        "label": "Panthers.com: late Trask TD vs Bills",
+        "url": "https://www.panthers.com/news/rapid-reactions-panthers-fall-on-the-road-to-the-bills"
+      },
+      {
+        "label": "Panthers Wire: listed third string vs Bills",
+        "url": "https://pantherswire.usatoday.com/story/sports/nfl/panthers/2026/08/15/panthers-unofficial-depth-chart-preseason-bills/91315162007/"
+      }
+    ]
+  },
+  "12718": {
+    "as_of": "2026-08-20",
+    "heat": "fire",
+    "gem": true,
+    "lead": "I'd take Mumpfield at 25.10 leftover \u2014 Rams 3 this year if the McVay praise holds, and the later 3 if Adams is only the vet.",
+    "depth": "Nacua is the locked 1 (SL 6). Adams is the locked 2 (SL 100). Path to 2026 snaps is already co-WR3 with Whittington after McVay in Nacua's absence. Path to later is a 23-year-old year-2 if Adams is only the vet.",
+    "links": [
+      {
+        "label": "Rams Wire: McVay, stepped up, love everything",
+        "url": "https://theramswire.usatoday.com/story/sports/nfl/rams/2026/08/20/rams-konata-mumpfield-wide-receiver-sean-mcvay/91392148007/"
+      },
+      {
+        "label": "Turf Show Times: held out, locked top 4",
+        "url": "https://www.turfshowtimes.com/los-angeles-rams-depth-chart/146241/rams-cj-daniels-preseason-position-battle"
+      }
+    ]
+  },
+  "7610": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Lance \u2014 Chargers 2 this year only if he holds DJ off, and there is no later job.",
+    "depth": "Herbert is the locked 1 (SL 25). Path to 2026 snaps is winning the 2 after 12-of-20 for 164 and an INT; Uiagalelei took the fourth (6-of-9, 120, TD). Path to later is already gone.",
+    "links": [
+      {
+        "label": "Chargers Wire: INT, DJ 6-9-120-TD",
+        "url": "https://chargerswire.usatoday.com/story/sports/nfl/chargers/2026/08/15/did-chargers-preseason-opener-change-the-qb2-battle/91308394007/"
+      },
+      {
+        "label": "SI: Harbaugh, pretty close",
+        "url": "https://www.si.com/nfl/chargers/onsi/chargers-backup-battle-trey-lance-dj-uiagalelei"
+      }
+    ]
+  },
+  "13435": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Royer \u2014 Browns TE3 this year if he even returns from personal leave, and there is no later job behind Fannin.",
+    "depth": "Fannin is the locked 1 (SL 55). Path to 2026 snaps is already closed \u2014 personal leave since camp opened, no timetable, Whiteheart/Bates/Ryan have the 2 reps. Path to later is a 24-year-old fifth-rounder (170) only if he makes it back.",
+    "links": [
+      {
+        "label": "CBS: missed the Bears half, no return date",
+        "url": "https://www.cbssports.com/fantasy/football/news/browns-joe-royer-misses-opener/"
+      },
+      {
+        "label": "Heavy: Berry, no timetable, 2s taken",
+        "url": "https://heavy.com/sports/nfl/cleveland-browns/bad-news-rookie-joe-royer-preseason-opener/"
+      }
+    ]
+  },
+  "12641": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Lane \u2014 Commanders PR1 this year, not a WR2, and later is still the returner behind McLaurin, Diggs, and McCaffrey.",
+    "depth": "Unofficial chart has him 2 behind McCaffrey in that WR group and first on punts. Path to 2026 snaps is returns plus a WR injury. Path to later is the same bubble, not a featured role.",
+    "links": [
+      {
+        "label": "Commanders.com: unofficial chart, PR1",
+        "url": "https://www.commanders.com/news/commanders-release-2026-unofficial-depth-chart"
+      },
+      {
+        "label": "SI: Mitchell\u2019s ST case for the 53",
+        "url": "https://www.si.com/nfl/commanders/onsi/burgundy-roundup-commanders-camp-day-12-drew-stevens-jaylin-lane-tyler-biadasz"
+      }
+    ]
+  },
+  "13292": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on McRee \u2014 Steelers UDFA TE this year behind Freiermuth and Washington, and later is a practice-squad body.",
+    "depth": "August 5 chart lists Freiermuth, Washington, then Tonyan; McRee is still on the 90 as TE5. Path to 2026 snaps is a TE injury. Path to later is the practice squad, not a +0.5 TEP starter.",
+    "links": [
+      {
+        "label": "Steelers.com: Freiermuth / Washington / Tonyan",
+        "url": "https://www.steelers.com/news/steelers-release-initial-2026-depth-chart"
+      },
+      {
+        "label": "Steelers Depot: UDFA, PS is the realistic stay",
+        "url": "https://steelersdepot.com/2026/07/90-in-30-steelers-2026-training-camp-preview-series-mason-mccormick-lake-mcree-dk-metcalf/"
+      }
+    ]
+  },
+  "13354": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on McAlister \u2014 unsigned FA this year after the Jones fracture and a Giants workout they passed on, and later only exists if a team actually signs him.",
+    "links": [
+      {
+        "label": "Star-Telegram: Giants workout, still unsigned",
+        "url": "https://www.star-telegram.com/sports/college/big-12/texas-christian-university/article316701905.html"
+      },
+      {
+        "label": "FantasyPros: passed physical, Giants did not sign",
+        "url": "https://www.fantasypros.com/nfl/news/598511/eric-mcalister-works-out-giants-.php"
+      }
+    ]
+  },
+  "13309": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Anderson \u2014 Browns already settled him off IR this month, and later is an unsigned 5-foot-8 slot looking for another camp.",
+    "links": [
+      {
+        "label": "CBS: cut from IR with injury settlement",
+        "url": "https://www.cbssports.com/fantasy/football/news/aaron-anderson-let-go-from-injured-reserve/"
+      },
+      {
+        "label": "Browns.com: May UDFA signing out of LSU",
+        "url": "https://www.clevelandbrowns.com/news/browns-sign-wr-aaron-anderson-lb-reid-carrico-and-de-markees-watts"
+      }
+    ]
+  },
+  "12118": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Warren \u2014 free agent this year after the Patriots cut and a March 2025 UFL waiver, and there is no later NFL job from here.",
+    "links": [
+      {
+        "label": "FootballDB: last move is Memphis waived 3/20/25",
+        "url": "https://www.footballdb.com/players/jacob-warren-warreja03/transactions"
+      },
+      {
+        "label": "Patriots.com: released Aug 2024",
+        "url": "https://www.patriots.com/news/patriots-release-14-players"
+      }
+    ]
+  },
+  "13743": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Manjack \u2014 Broncos UDFA this year behind Sutton, Waddle, and Mims, and later is a practice-squad longshot.",
+    "depth": "Payton\u2019s room is Sutton, Waddle, Mims, Franklin, Bryant. Path to 2026 snaps is a WR injury after 3-for-40 in the Falcons half. Path to later is the practice squad.",
+    "links": [
+      {
+        "label": "Broncos Wire: 3-for-40 vs ATL, no gloves",
+        "url": "https://broncoswire.usatoday.com/story/sports/nfl/broncos/2026/08/17/nfl-twitter-reacts-broncos-wide-receiver-no-gloves/91334913007/"
+      },
+      {
+        "label": "CBS: back issue, practiced Aug 3",
+        "url": "https://www.cbssports.com/fantasy/football/news/broncos-joseph-manjack-healthy-again/"
+      }
+    ]
+  },
+  "7576": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Surratt \u2014 free agent this year, last cut by Arizona in 2024, and later is already gone at 28 with zero NFL snaps.",
+    "links": [
+      {
+        "label": "RotoWire: waived from ARI IR, Sept 2024",
+        "url": "https://www.rotowire.com/football/player/sage-surratt-15174"
+      },
+      {
+        "label": "Spotrac: inactive, last NFL deal 2024",
+        "url": "https://www.spotrac.com/nfl/player/_/id/72682/sage-surratt"
+      }
+    ]
+  },
+  "11648": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Slovis \u2014 Cardinals 4 this year behind Brissett, Minshew, and Beck, and later is a waiver audition, not a Superflex 2.",
+    "depth": "LaFleur has him as cleanup vs Dallas this week. Path to 2026 snaps is a QB injury after 16-of-19 for 181 and a score. Path to later is getting claimed when Arizona keeps three.",
+    "links": [
+      {
+        "label": "SI: cleanup vs DAL, likely waived",
+        "url": "https://www.si.com/nfl/cardinals/onsi/arizona-cardinals-reveal-qb-plan-dallas-cowboys-carson-beck-decision-made"
+      },
+      {
+        "label": "Cards Wire: first chart lists him 4",
+        "url": "https://cardswire.usatoday.com/story/sports/nfl/cardinals/2026/08/02/arizona-cardinals-release-first-preseason-depth-chart-of-2026/91141810007/"
+      }
+    ]
+  },
+  "14029": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Pascuzzi \u2014 Chargers UDFA TE this year behind Gadsden, Kolar, and Njoku, and later is a blocker without a receiving path.",
+    "depth": "Fourteen college catches in five years. Path to 2026 snaps is special teams or a TE injury. Path to later is the practice squad, not a +0.5 TEP starter.",
+    "links": [
+      {
+        "label": "Chargers.com: signed after rookie tryout",
+        "url": "https://www.chargers.com/news/announce-roster-transactions-2026"
+      },
+      {
+        "label": "Chargers Wire: Kolar / Njoku / Gadsden are the 3",
+        "url": "https://chargerswire.usatoday.com/story/sports/nfl/chargers/2026/08/14/chargers-roster-depth-chart-projection-week-1/91299876007/"
+      }
+    ]
+  },
+  "4434": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Estime \u2014 free agent this year, last real NFL stop was a 2017 Jets Achilles, and there is no later job at 33.",
+    "links": [
+      {
+        "label": "RotoWire: waived by Jets April 2018, no 2026 outlook",
+        "url": "https://www.rotowire.com/football/player/brisly-estime-12234"
+      },
+      {
+        "label": "FootballDB: last move is CFL PS, 2018",
+        "url": "https://www.footballdb.com/players/brisly-estime-estimbr01/transactions"
+      }
+    ]
+  },
+  "8135": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover climbing Burks \u2014 Commanders WR4 this year behind McLaurin, Diggs, and Williams, and there is no later job at 26 on a one-year.",
+    "depth": "McLaurin is the locked 1 (SL 91). Diggs is the leftover 2 (SL 168). Williams is the leftover fire 3 (SL 165). Path to 2026 snaps is already the listed 2 behind Diggs if the one-year holds; path to later is gone when the deal ends.",
+    "links": [
+      {
+        "label": "Commanders: listed 2 behind Diggs",
+        "url": "https://www.commanders.com/news/commanders-release-2026-unofficial-depth-chart"
+      },
+      {
+        "label": "Banner: one-year, Diggs pushed him down",
+        "url": "https://www.thebanner.com/sports/commanders-nfl/washington-commanders-wide-receiver-room-treylon-burks-7EJVFNIQLNF6BA6AC5F2CZLVII/"
+      }
+    ]
+  },
+  "13342": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Gyllenborg \u2014 Chiefs IR this year after the July knee, and there is no later job behind Kelce and Gray.",
+    "depth": "Kelce is the locked 1 (SL 141). Gray is the leftover 2 (SL 311). Path to 2026 snaps is already IR. Path to later is a 24-year-old UDFA if the knee is only a Kelce rhyme.",
+    "links": [
+      {
+        "label": "CBS: IR with the July knee",
+        "url": "https://www.cbssports.com/fantasy/football/news/chiefs-john-michael-gyllenborg-placed-on-injured-reserve/"
+      },
+      {
+        "label": "Chiefs Wire: camp IR, local UDFA",
+        "url": "https://chiefswire.usatoday.com/story/sports/nfl/chiefs/2026/07/28/chiefs-training-camp-kc-places-top-te-prospect-on-injured-reserve/91084984007/"
+      }
+    ]
+  },
+  "9230": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on McKee \u2014 Eagles 2 this year only if he holds Dalton, and the later 2 is already Payton at 355.",
+    "depth": "Hurts is the locked 1 (SL 27). Payton is the leftover 3 (SL 355, 5th/178). Path to 2026 snaps is Hurts missing and Dalton losing the rotate after 6-of-10 for 35. Path to later is already Payton's.",
+    "links": [
+      {
+        "label": "Inquirer: 6-of-10, 35, no separation",
+        "url": "https://www.inquirer.com/eagles/2026-preseason-opener-andy-dalton-tanner-mckee-ravens-loss-20260815.html"
+      },
+      {
+        "label": "Yahoo: still rotating with Dalton",
+        "url": "https://sports.yahoo.com/articles/andy-dalton-tanner-mckee-enter-175523052.html"
+      }
+    ]
+  },
+  "13355": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Rogers \u2014 Cowboys TE5 this year behind Ferguson and Trigg, and there is no later job after the 1-2 fumble.",
+    "depth": "Ferguson is the locked 1 (SL 104). Trigg is the leftover ice 3 (SL 288). Path to 2026 snaps is already TE5 behind Spann-Ford and Schoonmaker. Path to later is a 24-year-old UDFA practice-squad dart.",
+    "links": [
+      {
+        "label": "Landry Hat: 1-2, fumble vs SEA",
+        "url": "https://thelandryhat.com/4-dallas-cowboys-who-played-themselves-off-the-roster-in-preseason-week-1"
+      },
+      {
+        "label": "Blogging The Boys: UDFA, 10% roster shot",
+        "url": "https://www.bloggingtheboys.com/dallas-cowboys-roster/206484/2026-roster-review-tight-end-dj-rogers"
+      }
+    ]
+  },
+  "13314": {
+    "as_of": "2026-08-20",
+    "heat": "fire",
+    "gem": false,
+    "lead": "I'd take Altmyer at 25.10 leftover as a taxi \u2014 Lions 3 this year if Dobbs stays the 2, and the later 2 if Dobbs is only the vet.",
+    "depth": "Goff is the locked 1 (SL 74). Dobbs is the leftover 2 (SL 643). Path to 2026 snaps is already the preseason start and the 80-yard score. Path to later is a 23-year-old UDFA if they keep a 3.",
+    "links": [
+      {
+        "label": "Lions.com: 13-of-22, 130, TD, 2 INT",
+        "url": "https://www.detroitlions.com/news/recap-lions-at-bengals-altmyer-saylors-hassanein"
+      },
+      {
+        "label": "Free Press: Campbell, Bridgewater exit",
+        "url": "https://www.freep.com/story/sports/nfl/lions/2026/08/10/nfl-preseason-lions-bengals-starting-quarterback-luke-altmyer/91239526007/"
+      }
+    ]
+  },
+  "9481": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover climbing Musgrave \u2014 Packers PUP this year after the June neck, and the later 2 is already a contract-year if-health.",
+    "depth": "Kraft is the locked 1 (SL 60). Path to 2026 snaps is a waiting-period neck and a possible regular-season PUP. Path to later is a 25-year-old 2023 second-rounder only if the neck is not long-term.",
+    "links": [
+      {
+        "label": "Packers Wire: Gutekunst, long-term neck",
+        "url": "https://packerswire.usatoday.com/story/sports/nfl/packers/2026/07/29/packers-evaluating-severity-of-neck-injury-for-te-luke-musgrave/91097856007/"
+      },
+      {
+        "label": "Packers Wire: still in the waiting period",
+        "url": "https://packerswire.usatoday.com/story/sports/nfl/packers/2026/08/06/packers-injury-updates-on-luke-musgrave-carrington-valentine-chris-brooks/91196661007/"
+      }
+    ]
+  },
+  "13316": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Rivers \u2014 Bucs WR6 this year behind Egbuka, Godwin, McMillan, and Hurst, and there is no later job after 1-12.",
+    "depth": "Egbuka is the locked 1 (SL 32). Hurst is the leftover fire 3 (SL 193). Path to 2026 snaps is already the UDFA 6. Path to later is a 23-year-old 4.35 if the room thins.",
+    "links": [
+      {
+        "label": "Bucs.com: 12-yard catch vs Jets",
+        "url": "https://www.buccaneers.com/news/bucs-jets-preseason-week-1-recap-postgame-report-2026"
+      },
+      {
+        "label": "Bucs.com: UDFA, 4.35, crowded room",
+        "url": "https://www.buccaneers.com/news/training-camp-goals-2026-buccaneers-numbers-80-89"
+      }
+    ]
+  },
+  "13323": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Faison \u2014 no NFL team this year after the Chiefs-Titans-Saints tryouts, and there is no later job.",
+    "links": [
+      {
+        "label": "On3: three minicamp invites, no deal",
+        "url": "https://www.on3.com/teams/south-carolina-gamecocks/news/former-south-carolina-running-back-receives-multiple-mini-camp-offers-following-2026-nfl-draft/"
+      },
+      {
+        "label": "FantasyPros: Chiefs, Titans, Saints",
+        "url": "https://www.fantasypros.com/nfl/news/582728/rahsul-faison-invited-to-three-rookie-minicamps.php"
+      }
+    ]
+  },
+  "13350": {
+    "as_of": "2026-08-20",
+    "heat": "fire",
+    "gem": false,
+    "lead": "I'd take Fagnano at 25.10 leftover as a taxi \u2014 Ravens 3 this year if they keep three, and the later 3 if Huntley is only the vet.",
+    "depth": "Lamar is the locked 1 (SL 10). Huntley is the leftover 2 (SL 371). Path to 2026 snaps is already the 22-of-28, 224, TD after Thompson's IR. Path to later is a 25-year-old UDFA if Baltimore keeps a 3.",
+    "links": [
+      {
+        "label": "Ravens.com: 22-of-28, 224, TD debut",
+        "url": "https://www.baltimoreravens.com/news/joe-fagnano-austin-reed-ravens-rookie-quarterbacks-special-debut-preseason"
+      },
+      {
+        "label": "Ravens Wire: leading the 3 job",
+        "url": "https://ravenswire.usatoday.com/story/sports/nfl/ravens/2026/08/16/ravens-news-joe-fagnano-third-quarterback-job/91326640007/"
+      }
+    ]
+  },
+  "13313": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Henderson \u2014 Seahawks WR6 this year if the special teams hold, and there is no later job behind JSN and Shaheed.",
+    "depth": "Smith-Njigba is the locked 1 (SL 7). Shaheed is the leftover 2 (SL 159). Path to 2026 snaps is already gunner/return 6 after a quiet Cowboys half. Path to later is a 23-year-old 199th pick if Shaheed keeps the returns.",
+    "links": [
+      {
+        "label": "Seahawks.com: 6th/199, returner",
+        "url": "https://www.seahawks.com/news/emmanuel-henderson-nfl-draft-receiver-kansas"
+      },
+      {
+        "label": "Seahawks Wire: Harbaugh on ST speed",
+        "url": "https://seahawkswire.usatoday.com/story/sports/nfl/seahawks/2026/08/05/seahawks-training-camp-jay-harbaugh-praises-rookie-emmanuel-henderson/91176448007/"
+      }
+    ]
+  },
+  "13327": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Reid \u2014 FA this year after Buffalo waived him off IR, and later is already gone if he goes back to college.",
+    "links": [
+      {
+        "label": "CBS: Bills waived him off IR June 22",
+        "url": "https://www.cbssports.com/fantasy/football/news/desmond-reid-waived-off-ir-by-buffalo/"
+      },
+      {
+        "label": "WPXI: exploring a college return",
+        "url": "https://www.wpxi.com/news/local/former-pitt-rb-desmond-reid-looking-return-college/6SRQO2QNPRGG5B3JX35OSIN7RM/"
+      }
+    ]
+  },
+  "13304": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Blake \u2014 FA this year after a Chargers minicamp tryout they did not keep, and there is no later job without a roster.",
+    "links": [
+      {
+        "label": "TST: Chargers rookie minicamp photos",
+        "url": "https://www.thesportingtribune.com/2026/05/08/tst-images-chargers-rookie-minicamp-260508"
+      },
+      {
+        "label": "Chargers.com: 18 UDFAs, Blake not among them",
+        "url": "https://www.chargers.com/news/sign-five-members-2026-draft-class-18-undrafted-free-agents-2026"
+      }
+    ]
+  },
+  "13273": {
+    "as_of": "2026-08-20",
+    "heat": "neutral",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Cuevas \u2014 Ravens TE3 this year behind Andrews and Hibner, and later is already Hibner at 301.",
+    "depth": "Andrews is the locked 1 (FO 147). Hibner is the leftover 4th-round 3 (FO 301). Path to 2026 snaps is the blocking TE (35 snaps, 1 catch vs PHI). Path to later is already Hibner.",
+    "links": [
+      {
+        "label": "SI: Cuevas 35 snaps, 1 catch vs Eagles",
+        "url": "https://www.si.com/nfl/ravens/onsi/ravens-preseason-snap-counts-who-played-the-most-01m065tcfdex"
+      },
+      {
+        "label": "SI: long way to go, 12-personnel ask",
+        "url": "https://www.si.com/nfl/ravens/onsi/ravens-rookie-tes-breakout-and-blackout-in-good-way-in-preseason-debut-01m0496xr5rs"
+      }
+    ]
+  },
+  "13290": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Moss \u2014 still on Arizona State's 2026 roster, not an NFL receiver this year or later.",
+    "links": [
+      {
+        "label": "ASU: 2026 Sun Devil WR roster",
+        "url": "https://thesundevils.com/sports/football/roster/player/jalen-moss"
+      },
+      {
+        "label": "RotoWire July 29: battling for ASU WR3",
+        "url": "https://www.rotowire.com/cfootball/headlines/jalen-moss-news-battling-for-key-depth-role-226969"
+      }
+    ]
+  },
+  "13356": {
+    "as_of": "2026-08-20",
+    "heat": "neutral",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Pena \u2014 Jaguars WR6 this year if the 43-yarder holds, and later is already a returner UDFA behind Thomas, Hunter, and Meyers.",
+    "depth": "Thomas is the locked 1 (FO 69). Hunter, Washington, and Meyers are already ahead; Cameron is the leftover drafted 6. Path to 2026 snaps is the 3s (3-58, 43-yarder vs NO). Path to later is the same bubble.",
+    "links": [
+      {
+        "label": "Jaguars.com: 43-yarder sets up the go-ahead",
+        "url": "https://www.jaguars.com/news/game-report-2026-preseason-week-1-jaguars-24-saints-20"
+      },
+      {
+        "label": "Jaguars.com box: 3-58, 1-8 vs Saints",
+        "url": "https://www.jaguars.com/game-day/2026/pre/jaguars-at-saints/box-score"
+      }
+    ]
+  },
+  "13339": {
+    "as_of": "2026-08-20",
+    "heat": "neutral",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover climbing Booth \u2014 Browns RB3 this year even after 4-53, and later is already Judkins and Sampson.",
+    "depth": "Judkins is the locked 1 (FO 48). Sampson is already the 2 (FO 171). Path to 2026 snaps is the 3s (4-53, long 28 vs CHI). Path to later is already those two.",
+    "links": [
+      {
+        "label": "Browns.com box: Booth 4-53 vs Bears",
+        "url": "https://www.clevelandbrowns.com/game-day/2026/pre/browns-at-bears/box-score"
+      },
+      {
+        "label": "Browns.com: UDFA roster page",
+        "url": "https://www.clevelandbrowns.com/team/players-roster/davon-booth/"
+      }
+    ]
+  },
+  "13308": {
+    "as_of": "2026-08-20",
+    "heat": "neutral",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Sharp \u2014 Bucs TE3/ST this year if the 2s hold, and later is already Otton in a +0.5 TEP room.",
+    "depth": "Otton is the locked 1 (FO 212). Path to 2026 snaps is special teams plus 2s (4-24, two ST tackles vs NYJ). Path to later is a sixth-round TE3 if Durham is only the vet.",
+    "links": [
+      {
+        "label": "JoeBucs: ST tackles, fighting Culp for 53",
+        "url": "https://www.joebucsfan.com/2026/08/bauer-sharp-fighting-for-a-roster-spot/"
+      },
+      {
+        "label": "ESPN box: Bucs-Jets preseason",
+        "url": "https://www.espn.com/nfl/boxscore/_/gameId/401873276"
+      }
+    ]
+  },
+  "13295": {
+    "as_of": "2026-08-20",
+    "heat": "neutral",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Morton \u2014 Patriots 3 this year behind Maye and DeVito, and there is no later job while Maye is the locked 1.",
+    "depth": "Maye is the locked 1 (FO 5). Path to 2026 snaps is the 3 after DeVito's half (7-of-13, 66 vs IND). Path to later is already gone.",
+    "links": [
+      {
+        "label": "SI: 7-of-13 for 66 in the Colts half",
+        "url": "https://www.si.com/nfl/patriots/onsi/patriots-qb-report-how-did-tommy-devito-behren-morton-perform-in-preseason-tie"
+      },
+      {
+        "label": "Patriots Wire: Vrabel, live arm, the 3",
+        "url": "https://patriotswire.usatoday.com/story/sports/nfl/patriots/2026/08/01/mike-vrabel-thinks-patriots-behren-morton-live-arm/91133037007/"
+      }
+    ]
+  },
+  "13326": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Sheffield \u2014 Jets waived/injured him this week, and there is no 2026 or later job if he reverts to IR.",
+    "links": [
+      {
+        "label": "Jets.com Aug 19: waived/injured for Bergen",
+        "url": "https://www.newyorkjets.com/news/jets-sign-wr-junior-bergen-08-19-2026"
+      },
+      {
+        "label": "CBS: clears to IR unless a settlement",
+        "url": "https://www.cbssports.com/fantasy/football/news/dt-sheffield-waivedinjured-by-new-york/"
+      }
+    ]
+  },
+  "13284": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Devezin \u2014 unsigned FA this year, and later is already gone after a Notre Dame career with no offensive touches.",
+    "links": [
+      {
+        "label": "LeagueLogs: FA as of Aug 18",
+        "url": "https://leaguelogs.com/players/dylan-devezin-rb"
+      },
+      {
+        "label": "Footballguys: holder, zero offensive touches",
+        "url": "https://www.footballguys.com/article/dylan-devezin-scouting-report-rb-notre-dame"
+      }
+    ]
+  },
+  "13357": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Mason \u2014 Steelers camp body this year after the Aug 7 waiver claim, and the later job is already Freiermuth and Washington.",
+    "depth": "Freiermuth is the locked 1. Washington is the locked 2. Tonyan and Bell sit ahead on the preseason chart. Path to 2026 snaps is a practice-squad stash if Pittsburgh keeps the Wisconsin UDFA.",
+    "links": [
+      {
+        "label": "Steelers Depot: claimed off SEA waivers, Aug 7",
+        "url": "https://steelersdepot.com/2026/08/report-steelers-claim-te-lance-mason-off-waivers/"
+      },
+      {
+        "label": "SI: practice-squad likeliest outcome",
+        "url": "https://www.si.com/nfl/steelers/onsi/pittsburgh-steelers-add-former-seahawks-lance-mason-waivers"
+      }
+    ]
+  },
+  "5257": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Boyle \u2014 no NFL roster this year after Tennessee waived him last August, and there is no later Superflex job at 31.",
+    "links": [
+      {
+        "label": "Titans.com: waived for Siemian, Aug 11 2025",
+        "url": "https://www.tennesseetitans.com/news/titans-sign-qb-trevor-siemian-waive-qb-tim-boyle-while-also-activating-c-lloyd-cushenberry-from-pup"
+      },
+      {
+        "label": "RotoWire: free agent, no 2026 job",
+        "url": "https://www.rotowire.com/football/player/tim-boyle-13109"
+      }
+    ]
+  },
+  "4931": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Appleby \u2014 Purdue offensive analyst this year, and there is no later NFL job. Dallas waived him in 2017.",
+    "links": [
+      {
+        "label": "Purdue: 2026 offensive analyst",
+        "url": "https://purduesports.com/sports/football/roster/season/2026/staff/austin-appleby"
+      },
+      {
+        "label": "Spotrac: Cowboys UDFA, waived June 2017",
+        "url": "https://www.spotrac.com/nfl/player/_/id/22554/austin-appleby"
+      }
+    ]
+  },
+  "11201": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Whiteheart \u2014 Browns blocking 2 this year if the chart holds, and there is no later pass-catch job at 26.",
+    "depth": "Fannin is the locked 1. Path to 2026 snaps is already the listed 2 and special teams. Path to later is a blocker \u2014 1-6 on 25 preseason snaps vs Chicago.",
+    "links": [
+      {
+        "label": "Browns.com: camp TD from Sanders, Day 13",
+        "url": "https://www.clevelandbrowns.com/news/browns-quarterbacks-show-off-the-deep-ball-in-two-minute-drill-on-day-13-training-camp-observations"
+      },
+      {
+        "label": "Dawgs By Nature: 25 snaps, 1-6 vs CHI",
+        "url": "https://www.dawgsbynature.com/cleveland-browns-analysis/130475/browns-have-mixed-bag-of-reps-on-offense-across-positions-in-first-preseason-game"
+      }
+    ]
+  },
+  "3503": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Allison \u2014 no NFL job this year, and there is no later job at 32. Last cut was Saskatchewan in June 2024.",
+    "links": [
+      {
+        "label": "Riderville: signed Jan 2024",
+        "url": "https://www.riderville.com/2024/01/19/riders-sign-former-nfl-receiver-geronimo-allison/"
+      },
+      {
+        "label": "Football Database: released June 1 2024",
+        "url": "https://www.footballdb.com/players/geronimo-allison-allisge01/transactions"
+      }
+    ]
+  },
+  "11862": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Benson \u2014 no NFL roster this year after the Chargers cut him from the practice squad in 2024, and there is no later job.",
+    "links": [
+      {
+        "label": "Football Database: last move LAC PS release, Sept 2024",
+        "url": "https://www.footballdb.com/players/luke-benson-bensolu01/transactions"
+      },
+      {
+        "label": "RotoWire: free agent, no 2026 outlook",
+        "url": "https://www.rotowire.com/football/player/luke-benson-18090"
+      }
+    ]
+  },
+  "13116": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Watson \u2014 Chiefs TE4 this year if he makes the 53, and the later 2 is already Gray or Wiley behind Kelce.",
+    "depth": "Kelce is the locked 1. Gray and Wiley are the camp 2/3. Path to 2026 snaps is a year-2 UDFA 4 if he sticks. Path to later is still a 4 until Kelce is gone and two veterans move.",
+    "links": [
+      {
+        "label": "Chiefs Wire: TEU, Kelce mentee, camp 90",
+        "url": "https://chiefswire.usatoday.com/story/sports/nfl/chiefs/2026/08/02/travis-kelces-kansas-city-chiefs-teammate-tre-watson-shares-a-review-of-tight-end-university/91013983007/"
+      },
+      {
+        "label": "Arrowhead Pride: reserve/future after 2025 PS",
+        "url": "https://www.arrowheadpride.com/kansas-city-chiefs-roster/192120/chiefs-keep-tight-end-tre-watson-as-practice-squad-contracts-expire"
+      }
+    ]
+  },
+  "13725": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Richardson \u2014 no Titans job this year after Wednesday's waiver, and there is no later job as a 25-year-old UDFA already cut twice.",
+    "notes": [
+      "Titans.com Aug 16: signed after Dallas waived him. Titans.com Aug 19: waived to sign D'Ernest Johnson. Three days. He did not play his way onto the chart."
+    ],
+    "links": [
+      {
+        "label": "Titans.com: waived Aug 19 for D'Ernest Johnson",
+        "url": "https://www.tennesseetitans.com/news/titans-sign-rb-d-ernest-johnson-waive-rb-dominic-richardson"
+      },
+      {
+        "label": "Titans.com: signed Aug 16 after Dallas cut",
+        "url": "https://www.tennesseetitans.com/news/titans-sign-te-matt-lauter-rb-dominic-richardson-while-placing-jaylen-harrell-and-jaren-kanak-on-injured-reserve"
+      }
+    ]
+  },
+  "6973": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Taylor \u2014 no NFL job this year after Winnipeg put him on the reserve/retired list in April, and there is no later job.",
+    "links": [
+      {
+        "label": "Blue Bombers: signed Feb 2 2026",
+        "url": "https://www.bluebombers.com/2026/02/03/blue-bombers-add-three-to-roster-7/"
+      },
+      {
+        "label": "Football Database: reserve/retired April 30 2026",
+        "url": "https://www.footballdb.com/players/jj-taylor-taylojj01/transactions"
+      }
+    ]
+  },
+  "13939": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Benyard \u2014 no NFL roster this year after Carolina waived him Aug 5, and there is no later job as a twice-cut UDFA.",
+    "links": [
+      {
+        "label": "Panthers.com: signed July 30 after Bills camp",
+        "url": "https://www.panthers.com/news/panthers-add-another-wide-receiver"
+      },
+      {
+        "label": "Spotrac: waived by CAR Aug 5, BUF June 11",
+        "url": "https://www.spotrac.com/nfl/player/_/id/107908/gabriel-benyard"
+      }
+    ]
+  },
+  "3410": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Coker \u2014 unsigned since the Cardinals cut him in 2016, so there is no 2026 job and no later job.",
+    "links": [
+      {
+        "label": "NBC Sports: unsigned FA, last Cardinals",
+        "url": "https://www.nbcsports.com/jake-coker/00000188-9cf0-da6b-abd8-fcfd2a4300a6"
+      },
+      {
+        "label": "Wikipedia: 2016 UDFA, released Aug 29",
+        "url": "https://en.wikipedia.org/wiki/Jake_Coker"
+      }
+    ]
+  },
+  "6381": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Hollins \u2014 Alouettes WR this year after the January extension, and later is still CFL, not an NFL roster.",
+    "links": [
+      {
+        "label": "Alouettes: 2026 extension, Jan 5",
+        "url": "https://en.montrealalouettes.com/2026/01/05/alexander-hollins-is-back-and-als-add-a-running-back/"
+      },
+      {
+        "label": "CFL.ca: 15-267-2 in 2026 for MTL",
+        "url": "https://www.cfl.ca/players/alexander-hollins/"
+      }
+    ]
+  },
+  "5136": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Adams \u2014 Vanderbilt assistant running backs coach since 2023, so there is no 2026 job and no later NFL job.",
+    "links": [
+      {
+        "label": "Vanderbilt: assistant RB coach",
+        "url": "https://vucommodores.com/staff/josh-adams"
+      },
+      {
+        "label": "Wikipedia: hired March 15, 2023",
+        "url": "https://en.wikipedia.org/wiki/Josh_Adams_(American_football)"
+      }
+    ]
+  },
+  "13026": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Dixon \u2014 free agent this year after Hamilton cut him in May, and later is still an unsigned Saints 2025 UDFA.",
+    "links": [
+      {
+        "label": "Ticats: released May 31",
+        "url": "https://www.ticats.ca/2026/05/31/tiger-cats-transactions-may-31/"
+      },
+      {
+        "label": "RotoWire: Saints waived Aug 25, 2025",
+        "url": "https://www.rotowire.com/football/player/moochie-dixon-18859"
+      }
+    ]
+  },
+  "2331": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Perriman \u2014 unsigned since the Colts cut him in 2023, and there is no later job at 32.",
+    "links": [
+      {
+        "label": "Spotrac: Colts released Aug 29, 2023",
+        "url": "https://www.spotrac.com/nfl/player/_/id/16750/breshad-perriman"
+      },
+      {
+        "label": "Wikipedia: last NFL stop was IND",
+        "url": "https://en.wikipedia.org/wiki/Breshad_Perriman"
+      }
+    ]
+  },
+  "11859": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Plumlee \u2014 Houston Gamblers QB this year after Pittsburgh cut him in April, and later is UFL, not a Superflex 2.",
+    "links": [
+      {
+        "label": "PFT: Steelers released April 28",
+        "url": "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/steelers-release-qb-wr-john-rhys-plumlee"
+      },
+      {
+        "label": "PFT: Houston Gamblers signed May 2",
+        "url": "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/former-steelers-qb-john-rhys-plumlee-lands-in-the-ufl"
+      }
+    ]
+  },
+  "4111": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Foreman \u2014 unsigned since the 2024 Browns, and later is already gone at 30.",
+    "links": [
+      {
+        "label": "RotoWire: FA, no 2026 outlook",
+        "url": "https://www.rotowire.com/football/player/donta-foreman-11685"
+      },
+      {
+        "label": "Footballguys: free agent, last CLE 2024",
+        "url": "https://www.footballguys.com/player/D'Onta+Foreman/ForeDO00"
+      }
+    ]
+  },
+  "13017": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Williams \u2014 free agent this year after Ottawa cut him in May, and later is a 2025 Raiders tryout with no NFL snaps.",
+    "links": [
+      {
+        "label": "Redblacks: released May 12",
+        "url": "https://www.ottawaredblacks.com/2026/05/12/redblacks-transactions-may-12/"
+      },
+      {
+        "label": "3Down: corresponding cut for Duggan",
+        "url": "https://3downnation.com/2026/05/11/ottawa-redblacks-sign-qb-max-duggan-after-release-from-argonauts/"
+      }
+    ]
+  },
+  "4061": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Webb \u2014 Broncos offensive coordinator this year, not a quarterback, and there is no later playing job.",
+    "links": [
+      {
+        "label": "Broncos.com: Payton named him OC",
+        "url": "https://www.denverbroncos.com/news/head-coach-sean-payton-names-davis-webb-as-offensive-coordinator-and-logan-kilgore-as-quarterbacks-coach"
+      },
+      {
+        "label": "Broncos.com: coach bio, OC",
+        "url": "https://www.denverbroncos.com/team/coaches-roster/davis-webb"
+      }
+    ]
+  },
+  "11615": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Smith \u2014 Panthers already settled him off IR this month, and later is an unsigned slot looking for another camp.",
+    "links": [
+      {
+        "label": "Panthers.com: injury settlement Aug 6",
+        "url": "https://www.panthers.com/news/panthers-waive-one-release-another-on-offense"
+      },
+      {
+        "label": "RotoWire: FA, questionable undisclosed",
+        "url": "https://www.rotowire.com/football/player/ainias-smith-17015"
+      }
+    ]
+  },
+  "11654": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Miller \u2014 waived/injured Aug 17 after a groin vs MIN, and there is no 2026 job on IR.",
+    "depth": "Skattebo and Tracy are the locked 1s. Path to 2026 snaps is already gone \u2014 unclaimed, reverted IR Aug 18. Path to later is a 27-year-old practice-squad back if the groin holds next year.",
+    "links": [
+      {
+        "label": "Giants.com: waived/injured Aug 17",
+        "url": "https://www.giants.com/news/giants-sign-quarterback-jake-haener-linebacker-chandler-martin-roster-moves-dante-miller-injury"
+      },
+      {
+        "label": "CBS: unclaimed, reverts to IR",
+        "url": "https://www.cbssports.com/fantasy/football/news/giants-dante-miller-reverts-to-giants-ir/"
+      }
+    ]
+  },
+  "4401": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Stringfellow \u2014 no NFL team (Sleeper blank), last NFL was 2018 Seahawks PS, and there is no later job from the NAL.",
+    "depth": "Path to 2026 snaps is already gone. Wikipedia lists him with the Carolina Cobras (NAL). 2017 UDFA, no regular-season catch.",
+    "links": [
+      {
+        "label": "Wikipedia: Cobras (NAL), last NFL 2018",
+        "url": "https://en.wikipedia.org/wiki/Damore'ea_Stringfellow"
+      },
+      {
+        "label": "FootballDB: last NFL tx Dec 2018",
+        "url": "https://www.footballdb.com/players/damoreea-stringfellow-strinda01/transactions"
+      }
+    ]
+  },
+  "7050": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Deguara \u2014 49ers TE4 this year if Tonges holds the Kittle PUP snaps, and there is no later job at 29.",
+    "depth": "Kittle is PUP (SL 113). Tonges is the leftover 1 (SL 238). Path to 2026 snaps is a July 31 one-year camp body (3-21-1 with ARI in 2025). Path to later is already gone at 29.",
+    "links": [
+      {
+        "label": "49ers.com: one-year deal July 31",
+        "url": "https://www.49ers.com/news/49ers-sign-te-josiah-deguara-wr-trenton-irwin-to-one-year-deals-move-moves"
+      },
+      {
+        "label": "USA Today: projected TE4",
+        "url": "https://www.usatoday.com/story/sports/nfl/49ers/2026/08/14/san-francisco-49ers-depth-chart-roster-projections/91307868007/"
+      }
+    ]
+  },
+  "268": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Alex Smith \u2014 he retired in April 2021 after 16 seasons, and there is no later job.",
+    "links": [
+      {
+        "label": "NFL.com: retires after 16-year career",
+        "url": "https://www.nfl.com/news/alex-smith-retires-16-year-career-49ers-chiefs-washington"
+      },
+      {
+        "label": "ESPN: retirement announcement",
+        "url": "https://www.espn.com/nfl/story/_/id/31289953/alex-smith-reigning-nfl-comeback-player-year-announces-retirement-football"
+      }
+    ]
+  },
+  "12849": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Holden \u2014 Cowboys waived him Aug 17 after a muffed punt to open Von Miller's spot, and there is no later job until another roster claims him.",
+    "depth": "Lamb and Pickens are the locked 1/2. Path to 2026 snaps is a waiver claim or practice squad. Path to later is a 25-year-old year-2 UDFA if someone taxis him \u2014 I will not.",
+    "links": [
+      {
+        "label": "Cowboys Wire: waived after muffed punt",
+        "url": "https://cowboyswire.usatoday.com/story/sports/nfl/cowboys/2026/08/17/cowboys-wr-traeshon-holden-waived-muffed-punt-von-miller/91341705007/"
+      },
+      {
+        "label": "PFT: cut to make room for Von Miller",
+        "url": "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/cowboys-cut-wr-traeshon-holden-to-make-room-for-von-miller"
+      }
+    ]
+  },
+  "12538": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Cook \u2014 Jets 3 this year if he beats Zappe, and the later 2 is already Klubnik at 237.",
+    "depth": "Geno is the leftover 1 (SL 181). Klubnik is the leftover 2 (SL 237). Path to 2026 snaps is Geno ankle plus Klubnik sitting. Path to later is a 24-year-old UDFA 3 if 9-of-15, 108 vs TB holds \u2014 Superflex leftover does not need a 3.",
+    "links": [
+      {
+        "label": "Jets.com: Cook 8-of-13, 88 in the half",
+        "url": "https://www.newyorkjets.com/news/jets-bucs-game-recap-08-14-2026"
+      },
+      {
+        "label": "ESPN box: 9-of-15, 108, 82.1",
+        "url": "https://www.espn.com/nfl/boxscore/_/gameId/401873276"
+      }
+    ]
+  },
+  "5744": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Massington \u2014 last NFL was a 2018 Saints injury settlement, and there is no later job. PFF lists him inactive, not on a team.",
+    "links": [
+      {
+        "label": "PFF: inactive, not on a team",
+        "url": "https://www.pff.com/nfl/players/eldridge-massington/47955"
+      },
+      {
+        "label": "CBS: 2018 Saints injury settlement",
+        "url": "https://www.cbssports.com/fantasy/football/news/eldridge-massington-agrees-to-injury-settlement/"
+      }
+    ]
+  },
+  "6659": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Reynolds \u2014 Commanders camp body this year behind JCM and the rookies after the Aug 17 signing, and there is no later job at 30.",
+    "depth": "JCM is leftover 1 (SL 131). White leftover 2 (SL 150, hamstring). Allen leftover 3 (SL 197). Henry leftover 319. Path to 2026 snaps is McNichols quad plus Ford IR. Path to later is already gone at 30.",
+    "links": [
+      {
+        "label": "PFT: Commanders sign Reynolds Aug 17",
+        "url": "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/commanders-to-sign-rb-craig-reynolds"
+      },
+      {
+        "label": "Commanders Wire: camp body after injuries",
+        "url": "https://commanderswire.usatoday.com/story/sports/nfl/commanders/2026/08/20/commanders-training-camp-washington-running-back/91382376007/"
+      }
+    ]
+  },
+  "12688": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover climbing Miller \u2014 Dolphins 3 this year if Ewers holds the 2, and the later 2 is already Ewers at 283.",
+    "depth": "Willis is the leftover 1 (SL 111). Ewers is the leftover 2 (SL 283, Q). Path to 2026 snaps is a week of 2s while Ewers' groin sits \u2014 camp TD to Coleman Aug 18. Path to later is a 25-year-old 2025 sixth-rounder if he beats Ewers. I will not taxi the 3.",
+    "links": [
+      {
+        "label": "A to Z: 2s this week, Ewers groin",
+        "url": "https://atozsports.com/nfl/miami-dolphins-news/one-miami-dolphins-player-is-facing-the-most-important-week-of-his-playing-career/"
+      },
+      {
+        "label": "Dolphins.com: camp TD to Coleman, rush TD",
+        "url": "https://www.miamidolphins.com/news/practice-13-2026-miami-dolphins-training-camp-notebook"
+      }
+    ]
+  },
+  "3269": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Moore \u2014 Ravens camp WR this year behind Flowers and the kids, and there is no later job at 33.",
+    "depth": "Flowers is the locked 1. Lane leftover 187, Sarratt leftover 161. Path to 2026 snaps is special teams after the July 24 reunion. Path to later is already gone at 33.",
+    "links": [
+      {
+        "label": "Ravens.com: reunion, July 24",
+        "url": "https://www.baltimoreravens.com/news/ravens-sign-chris-moore-reunite-wide-receiver-2026"
+      },
+      {
+        "label": "Ravens Wire: ST battle for the last WR",
+        "url": "https://ravenswire.usatoday.com/story/sports/nfl/ravens/2026/08/11/ravens-receivers-special-teams-roster-battle-eagles/91228264007/"
+      }
+    ]
+  },
+  "6945": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Gibson \u2014 ACL free agent this year after the Patriots cut, and later only exists if a team signs the medical.",
+    "links": [
+      {
+        "label": "Patriots.com: released Feb 23, ACL rehab",
+        "url": "https://www.patriots.com/news/patriots-release-rb-antonio-gibson"
+      },
+      {
+        "label": "ESPN: torn ACL Week 5 2025, still unsigned",
+        "url": "https://www.espn.com/nfl/story/_/id/48016830/patriots-release-rb-antonio-gibson-two-seasons-team"
+      }
+    ]
+  },
+  "818": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Powell \u2014 he retired as a Jet in April 2022, so there is no 2026 job and no later job.",
+    "links": [
+      {
+        "label": "ESPN: one-day deal, retired as a Jet",
+        "url": "https://www.espn.com/nfl/story/_/id/33810962/rb-bilal-powell-signs-one-day-deal-retire-new-york-jets"
+      },
+      {
+        "label": "AP: last played 2019, retired 2022",
+        "url": "https://apnews.com/article/new-york-jets-nfl-super-bowl-sports-ee8e31100ea65caa79962304b9d25350"
+      }
+    ]
+  },
+  "11257": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Jackson \u2014 Raiders WR3 on Nailor's line this year, and later is already Bech, Tucker, and Nailor.",
+    "depth": "Aug 17 unofficial chart: Nailor, Thornton, Jackson, Roberts on that row. Path to 2026 snaps is a cut-week elevation. Path to later is already the 3.",
+    "links": [
+      {
+        "label": "Raiders.com: Aug 17 chart, Jackson 3 on Nailor line",
+        "url": "https://www.raiders.com/news/raiders-unofficial-depth-chart-second-preseason-game-vs-houston-texans-nfl-082026"
+      },
+      {
+        "label": "Just Blog Baby: WR rows, Jackson behind Thornton",
+        "url": "https://justblogbaby.com/position-by-position-takeaways-from-raiders-first-unofficial-depth-chart"
+      }
+    ]
+  },
+  "8140": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Ross \u2014 unsigned this year after a June Commanders workout, and later only exists if a team signs the UFL tape.",
+    "links": [
+      {
+        "label": "NFLTR: Commanders workout, Chiefs waived July 2025",
+        "url": "https://nfltraderumors.co/commanders-worked-out-ufl-wr-justyn-ross/"
+      },
+      {
+        "label": "SI: 22-327-2 Birmingham, still a free agent",
+        "url": "https://www.si.com/nfl/commanders/onsi/commanders-work-out-justyn-ross-clemson-receiver"
+      }
+    ]
+  },
+  "13043": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Tyree \u2014 free agent this year after the 2025 Saints cut, and later is still waiting on a camp.",
+    "links": [
+      {
+        "label": "RotoWire: FA, Steelers workout Dec 2025",
+        "url": "https://www.rotowire.com/football/player/chris-tyree-17035"
+      },
+      {
+        "label": "Spotrac: Saints UDFA, waived Aug 2025",
+        "url": "https://www.spotrac.com/nfl/player/_/id/98225/chris-tyree/contract/"
+      }
+    ]
+  },
+  "10227": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Durham \u2014 Bucs blocking TE2 this year behind Otton, and later is already Sharp, not a +0.5 TEP dart.",
+    "depth": "Otton is the locked 1. Aug 11 chart lists Durham 2, Kieft 3, then Culp/Sharp. 351 snaps in 2025, 1 catch on 4 targets. Path to receiving work is Otton missing time.",
+    "links": [
+      {
+        "label": "Bucs.com: 351 snaps, 1 catch, blocker behind Otton",
+        "url": "https://www.buccaneers.com/news/training-camp-goals-2026-buccaneers-numbers-80-89"
+      },
+      {
+        "label": "Pewter Report: Durham TE2, Sharp vs Culp for last spot",
+        "url": "https://www.pewterreport.com/bucs-first-depth-chart-is-full-of-surprises/"
+      }
+    ]
+  },
+  "12488": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Hudson \u2014 unsigned this year after a Packers tryout they gave to Johnson, and later is still a street free agent.",
+    "links": [
+      {
+        "label": "NFLTR: Packers worked Hudson Aug 8, no deal",
+        "url": "https://nfltraderumors.co/packers-worked-out-four-free-agents/"
+      },
+      {
+        "label": "Heavy: they signed Kisean Johnson instead",
+        "url": "https://heavy.com/sports/nfl/green-bay-packers/kisean-johnson-nfl-roster-news-rumors/"
+      }
+    ]
+  },
+  "12491": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Kiner \u2014 Cardinals RB6 this year behind Love, Allgeier, and Conner, and later is already Love at 3rd overall.",
+    "depth": "Unofficial chart: Allgeier, Love, Conner, Benson, Knight, Kiner. Path to 2026 snaps is the last-back fight with Benson and Knight. Path to later is already Love.",
+    "links": [
+      {
+        "label": "PFT: Allgeier 1, Love 2, Kiner 6",
+        "url": "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/cardinals-depth-chart-lists-tyler-allgeier-as-no-1-rb-jeremiyah-love-as-no-2"
+      },
+      {
+        "label": "SI: 10-59 vs LV, still behind Knight/Benson",
+        "url": "https://www.si.com/nfl/cardinals/onsi/6-risers-4-fallers-shaking-up-arizona-cardinals-depth-chart-after-las-vegas-raiders-game"
+      }
+    ]
+  },
+  "12928": {
+    "as_of": "2026-08-20",
+    "heat": "neutral",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Johnson \u2014 Chargers RB4/5 this year after a 2-TD preseason pop, and later is already Hampton.",
+    "depth": "Hampton is the locked 1. Aug 17 chart: Mitchell OR Vidal, Patterson, Johnson, Desrosiers. Path to 2026 snaps is a 53/PS win plus Hampton missing time. Path to later is already Hampton.",
+    "notes": [
+      "Chargers.com Aug 14: 85 yards from scrimmage, two TDs vs HOU. Harbaugh gave him a shoutout for burst and speed. Still listed behind Mitchell/Vidal/Patterson."
+    ],
+    "links": [
+      {
+        "label": "Chargers.com: 2 TDs, 85 yards, Harbaugh shoutout",
+        "url": "https://www.chargers.com/news/standout-players-preseason-win-texans"
+      },
+      {
+        "label": "Chargers.com: Aug 17 chart, Johnson behind Patterson",
+        "url": "https://www.chargers.com/news/depth-chart-2026-season"
+      }
+    ]
+  },
+  "6920": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Hodgins \u2014 Giants WR6/7 this year in a crowded room, and later is gone at 27.",
+    "depth": "Nabers, Slayton, Mooney, Austin, Fields, and OBJ are ahead; Hodgins is fighting Hyatt for a bubble seat with no special-teams case. Path to 2026 snaps is a cut-week surprise. Path to later is already gone.",
+    "links": [
+      {
+        "label": "SI: Hodgins fighting to regain 2022 form",
+        "url": "https://www.si.com/nfl/giants/onsi/giants-wide-receiver-depth-chart-training-camp-2026-01kvprfkf343"
+      },
+      {
+        "label": "Big Blue View: bubble with Hyatt, no ST",
+        "url": "https://www.bigblueview.com/new-york-giants-roster/168211/depth-chart-roster-moves-najee-harris-daniel-faalele-josh-ezeudu"
+      }
+    ]
+  },
+  "5906": {
+    "as_of": "2026-08-20",
+    "heat": "neutral",
+    "gem": false,
+    "lead": "I'd take Knox at 25.10 leftover \u2014 Bills 12-personnel TE this year next to Kincaid (10 snaps vs CAR), later is still the 2 at 29.",
+    "links": [
+      {
+        "label": "CBS: Knox 10 snaps, Kincaid 9 vs CAR",
+        "url": "https://www.cbssports.com/fantasy/football/news/bills-dalton-kincaid-logs-nine-snaps-in-preseason-win/"
+      },
+      {
+        "label": "Rumblings: Kincaid/Knox locked 1s",
+        "url": "https://www.buffalorumblings.com/buffalo-bills-analysis/136540/buffalo-bills-2026-training-camp-position-battle-primer-wr-and-te"
+      }
+    ]
+  },
+  "8917": {
+    "as_of": "2026-08-20",
+    "heat": "neutral",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Turpin \u2014 Cowboys gadget and KR1 this year behind Lamb and Pickens, and there is no later job at 30.",
+    "depth": "Lamb, Pickens, and Flournoy are locked. Turpin sat with the 1s vs SEA. Path to weekly WR snaps is already gone; the job is returns.",
+    "links": [
+      {
+        "label": "Cowboys Wire: Turpin still the gadget",
+        "url": "https://cowboyswire.usatoday.com/story/sports/nfl/cowboys/2026/08/11/cowboys-depth-chart-week-1-preseason-seahawks/91265965007/"
+      },
+      {
+        "label": "SI: Turpin held out vs SEA with the 1s",
+        "url": "https://www.si.com/nfl/cowboys/onsi/will-dallas-cowboys-starters-play-vs-seahawks-week-1-nfl-preseason"
+      }
+    ]
+  },
+  "13315": {
+    "as_of": "2026-08-20",
+    "heat": "fire",
+    "gem": true,
+    "lead": "I'd take Connors at 25.10 leftover \u2014 Rams UDFA fighting Hunter for RB4 this year after 4-29-2 vs KC, later is still a 4 behind Kyren and Corum.",
+    "depth": "Kyren and Corum are locked. Rivers is the 3. Hunter started vs KC (9-35). Path to 2026 snaps is beating Hunter for the last spot, not a committee.",
+    "links": [
+      {
+        "label": "Rams Wire: Connors 4-29-2, Hunter on notice",
+        "url": "https://theramswire.usatoday.com/story/sports/nfl/rams/2026/08/17/rams-dean-connors-jarquez-hunter-running-back-preseason/91335211007/"
+      }
+    ]
+  },
+  "8117": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Tolbert \u2014 listed Dolphins 1 this year but zero snaps with the 1s vs WAS, later is still the 4 behind Douglas, Washington, and Bell.",
+    "depth": "Douglas and Washington took the opening drive. Reagor was the 11-personnel 3. Bell (knee) is coming. Path to weekly snaps is already a chart lie.",
+    "links": [
+      {
+        "label": "RotoBaller: zero 1st-team snaps vs WAS",
+        "url": "https://www.rotoballer.com/player-news/jalen-tolbert-does-not-record-snap-with-first-team-offense-against-commanders/1909286"
+      },
+      {
+        "label": "Palm Beach Post: listed 1 with Douglas, Washington",
+        "url": "https://www.palmbeachpost.com/story/sports/nfl/dolphins/2026/08/11/miami-dolphins-depth-chart-roster-news-update/91248906007/"
+      }
+    ]
+  },
+  "13335": {
+    "as_of": "2026-08-20",
+    "heat": "fire",
+    "gem": true,
+    "lead": "I'd take Payton at 25.10 leftover \u2014 Eagles 4 this year behind Hurts, McKee, and Dalton after 4-of-9 for 37 and a TD, later is a Superflex project if the 3 sticks.",
+    "depth": "Hurts is the locked 1. Path to 2026 snaps is already closed. Path to later is a 23-year-old fifth-rounder (178) if they keep four or cut the loser of McKee/Dalton.",
+    "links": [
+      {
+        "label": "PFT: 4th-quarter juice, still the 4",
+        "url": "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/rookie-qb-cole-payton-gave-the-eagles-offense-some-life-in-listless-preseason-opener"
+      },
+      {
+        "label": "Eagles.com: 17-yard 4th-and-3, TD to Ezukanma",
+        "url": "https://www.philadelphiaeagles.com/news/cole-payton-throws-a-touchdown-pass-in-nfl-preseason-debut-eagles-ravens"
+      }
+    ]
+  },
+  "8800": {
+    "as_of": "2026-08-20",
+    "heat": "neutral",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Davis \u2014 Cowboys 4 this year behind Williams, Blue, and Mafah, and there is no later job at 27.",
+    "depth": "Williams is the 1. Blue and Mafah are the leftover 2/3. Path to 2026 snaps is a cut-down after he led vs SEA at 5.6 YPC. Path to later is already gone.",
+    "links": [
+      {
+        "label": "BTB: led vs SEA at 5.6, cut history",
+        "url": "https://www.bloggingtheboys.com/dallas-cowboys-preseason/214233/backup-running-back-malik-davis-jaydon-blue-phil-mafah"
+      },
+      {
+        "label": "Landry Hat: unofficial RB4 behind Mafah",
+        "url": "https://thelandryhat.com/position-by-position-takeaways-from-dallas-cowboys-first-unofficial-depth-chart"
+      }
+    ]
+  },
+  "13322": {
+    "as_of": "2026-08-20",
+    "heat": "neutral",
+    "gem": true,
+    "lead": "I'd take Roush at 25.10 leftover \u2014 Bears TE3 this year in Johnson 13-personnel after a 23-snap start and 2-15 vs CLE, later is still the 3 if Kmet stays.",
+    "depth": "Loveland is the 1. Kmet is the 2. Path to 2026 snaps is already the 13/14 packages. Path to later is a 22-year-old third-rounder (69) when Kmet is only the vet.",
+    "links": [
+      {
+        "label": "Bears.com: started, 23 snaps, 2-15; Taylor on run game",
+        "url": "https://www.chicagobears.com/news/bears-training-camp-report-sunday-aug-16"
+      },
+      {
+        "label": "Shaw Local: TE3 behind Loveland and Kmet",
+        "url": "https://www.shawlocal.com/news/2026/08/17/how-the-chicago-bears-depth-chart-looks-midway-through-training-camp/"
+      }
+    ]
+  },
+  "9999": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Levis \u2014 Titans 3 this year behind Ward and Trubisky, and there is no later job after 3-of-8 vs SF.",
+    "depth": "Ward is the locked 1. Trubisky is the leftover 2. Path to 2026 snaps is already closed. Path to later is a cut and another team's 2.",
+    "notes": [
+      "Trubisky left Monday for a biceps eval and was back Wednesday. The 2 door shut again."
+    ],
+    "links": [
+      {
+        "label": "Tennessean: 3-of-8 for 42, backup fight evaporating",
+        "url": "https://www.tennessean.com/story/sports/nfl/titans/2026/08/13/titans-49ers-preseason-nfl-cam-ward-stats-will-levis/91235791007/"
+      },
+      {
+        "label": "PFT: Trubisky back Wednesday, still the 2",
+        "url": "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/mitchell-trubisky-tony-pollard-return-to-titans-practice-on-wednesday"
+      }
+    ]
+  },
+  "13299": {
+    "as_of": "2026-08-20",
+    "heat": "neutral",
+    "gem": false,
+    "lead": "I'd take Boerkircher at 25.10 leftover \u2014 Jaguars listed TE2 this year behind Strange, later is a blocker unless the receiving comes.",
+    "depth": "Strange is the 1. Path to 2026 snaps is already 12-personnel blocking; 0 targets vs NO. Path to later is a 24-year-old second-rounder (56) if Coen's route praise turns into targets.",
+    "links": [
+      {
+        "label": "Jaguars.com: unofficial TE2 behind Strange",
+        "url": "https://www.jaguars.com/news/jaguars-2026-training-camp-first-unofficial-depth-chart-released"
+      },
+      {
+        "label": "Jaguars Wire: blocking-first, 0 targets vs NO",
+        "url": "https://jaguarswire.usatoday.com/story/sports/nfl/jaguars/2026/08/15/evaluating-play-jaguars-2026-rookies-preseason-game-saints/91323718007/"
+      }
+    ]
+  },
+  "13392": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Caldwell \u2014 Chiefs UDFA this year with a hyperextended knee, and later is a practice-squad hope if he even returns.",
+    "depth": "Armstrong had the better camp tape. Allen is back. Path to 2026 snaps is already closed \u2014 Reid said he will not play Saturday. Path to later is IR or the practice squad.",
+    "notes": [
+      "Reid today: Caldwell hyperextended his knee this week and will not play vs TB."
+    ],
+    "links": [
+      {
+        "label": "Arrowhead Pride: Reid \u2014 hyperextended knee, won't play",
+        "url": "https://www.arrowheadpride.com/kansas-city-chiefs-news/208170/latest-chiefs-injury-update-ashton-gillotte-rupturing-plantar-fascia"
+      },
+      {
+        "label": "Heavy: carted, 0-1 vs LAR, Allen back",
+        "url": "https://heavy.com/sports/nfl/kansas-city-chiefs/jeff-caldwell-injury-cyrus-allen-andrew-armstrong/"
+      }
+    ]
   }
 }
