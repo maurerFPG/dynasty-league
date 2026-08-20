@@ -2,9 +2,9 @@
   "13287": {
     "as_of": "2026-08-20",
     "heat": "ice",
-    "lead": "Love should be Arizona\u2019s lead back as a rookie and the long-term bellcow \u2014 they took him 3rd overall.",
+    "lead": "Love should be Arizona’s lead back as a rookie and the long-term bellcow — they took him 3rd overall.",
     "notes": [
-      "Not a 65-snap job. LaFleur said he won\u2019t give one back the whole game; Allgeier is the other half.",
+      "Not a 65-snap job. LaFleur said he won’t give one back the whole game; Allgeier is the other half.",
       "High-ankle sprain in the preseason debut; done for August; Week 1 (Sep 13 vs LAC) is a hope, not a promise. Conner and Benson also dinged, so the job is still his when healthy."
     ],
     "nearby": "Vs Hampton (SL 20) take Love for the longer window, Hampton for cleaner 2026. Vs Achane (SL 21) youth/volume vs proven pass-game back.",
@@ -22,20 +22,233 @@
   "13338": {
     "as_of": "2026-08-20",
     "heat": "neutral",
-    "lead": "Fifth-round slot rookie. Not a 2026 starter \u2014 this is a developmental year, with punt-return work as the realistic path to snaps if he sticks.",
-    "depth": "Unofficial chart: Malik Washington, Caleb Douglas, and Jalen Tolbert are the ones. Coleman is the backup slot behind Washington and the No. 2 punt returner. Chris Bell (3rd-round, coming off ACL) is the higher-upside name still easing back \u2014 he\u2019s who can push the whole room if the knee holds. Veterans (Atwell, Reagor, Marshall) are fighting leftover 53-man spots; Coleman\u2019s draft capital makes him a likely roster lock even as WR4/5.",
+    "lead": "Fifth-round slot rookie. Not a 2026 starter — this is a developmental year, with punt-return work as the realistic path to snaps if he sticks.",
+    "depth": "Unofficial chart: Malik Washington, Caleb Douglas, and Jalen Tolbert are the ones. Coleman is the backup slot behind Washington and the No. 2 punt returner. Chris Bell (3rd-round, coming off ACL) is the higher-upside name still easing back — he’s who can push the whole room if the knee holds. Veterans (Atwell, Reagor, Marshall) are fighting leftover 53-man spots; Coleman’s draft capital makes him a likely roster lock even as WR4/5.",
     "notes": [
       "Missed early camp, returned Aug 18 and caught two TDs in 11-on-11. Flash, not a role yet."
     ],
-    "nearby": "Ridley (SL 273) is the veteran dart if you want a known r\u00e9sum\u00e9. Bateman (SL 268) is the same kind of fade. Coleman is the younger Miami stash vs those.",
+    "nearby": "Ridley (SL 273) is the veteran dart if you want a known résumé. Bateman (SL 268) is the same kind of fade. Coleman is the younger Miami stash vs those.",
     "links": [
       {
-        "label": "Herald: Coleman\u2019s two TDs on return",
+        "label": "Herald: Coleman’s two TDs on return",
         "url": "https://www.miamiherald.com/sports/article316917888.html"
       },
       {
         "label": "Depth chart: backup slot / PR2",
         "url": "https://phinphanatic.com/position-by-position-takeaways-from-miami-dolphins-first-unofficial-depth-chart-01kzsyrc9pxp"
+      }
+    ]
+  },
+  "4984": {
+    "as_of": "2026-08-20",
+    "heat": "fire",
+    "lead": "Allen is still Buffalo's offense and the long-term franchise QB — Year 1 under Joe Brady just gave him DJ Moore as a real deep threat.",
+    "notes": [
+      "Two preseason drives Aug 15: 6-of-8, 111 yards, TD to Keon Coleman. Moore went 3-for-61.",
+      "Camp click came when Allen stopped aiming at Moore — 60-yarder over three Bills DBs.",
+      "Khalil Shakir has been sidelined this week; Brady hasn't named the injury. Camp caution, not a role change."
+    ],
+    "nearby": "Maye (5) is the young Superflex climb with a longer runway. Daniels (9) is the other dual-threat, with more injury history. Allen is the safest QB1 in this 4-pt Superflex — take him and sleep.",
+    "links": [
+      {
+        "label": "Bills.com — Allen-Moore in preseason opener",
+        "url": "https://www.buffalobills.com/news/bills-29-panthers-14-final-score-game-highlights-key-stats-preseason-week-1"
+      },
+      {
+        "label": "AP — Allen and Moore find the deep ball",
+        "url": "https://apnews.com/article/buffalo-bills-josh-allen-dj-moore-2a5fd51ba8c4edcdcc45794a281279cc"
+      }
+    ]
+  },
+  "9509": {
+    "as_of": "2026-08-20",
+    "heat": "fire",
+    "lead": "Bijan is Atlanta's offense this year and the locked-in bellcow through 2030 — they just made him the highest-paid back in football.",
+    "notes": [
+      "First four joint-practice touches vs the Colts on Wednesday all worked, including a one-handed bubble catch he never slowed down for.",
+      "Three-year extension through 2030, $51M guaranteed. Hold-in is over; he's fully ramped.",
+      "Tua is running first-team 11-on-11. Penix is still limited (no team periods) after last year's knee. Bijan is the constant either way."
+    ],
+    "nearby": "Gibbs (3) is the other paid-up young back — Bijan has more volume certainty, Gibbs has more juice as a receiver. Jeanty (12) is a year behind on proven role. If both are there at 1.03, take Bijan.",
+    "links": [
+      {
+        "label": "Falcons.com — Bijan vs Colts joints, Aug 19",
+        "url": "https://www.atlantafalcons.com/news/falcons-camp-report-atlanta-indianapolis-colts-joint-practices-bijan-tua"
+      },
+      {
+        "label": "NFL.com — extension through 2030",
+        "url": "https://www.nfl.com/news/falcons-bijan-robinson-contract-extension"
+      }
+    ]
+  },
+  "9221": {
+    "as_of": "2026-08-20",
+    "heat": "fire",
+    "lead": "Gibbs is Detroit's bellcow now that Montgomery is in Houston, and the Lions paid him to be the offense for the next three years.",
+    "depth": "Pacheco is the only real committee piece, and he's on an MCL sprain. Campbell expects him Week 1, but Gibbs is the feature until that actually shows up.",
+    "notes": [
+      "Campbell called him the bellcow after the Montgomery trade and did not back off it once Gibbs returned.",
+      "Three-year extension up to $75.7M, $51.5M guaranteed (signed Aug 7 after a week-long hold-in).",
+      "TD catch from Goff in Wednesday's late-game situational period. Usage is already up."
+    ],
+    "nearby": "Bijan (2) is the safer volume bet. Jeanty (12) is the next RB on the board and a real drop in proven role. Gibbs vs Bijan is juice vs certainty — both are locked in.",
+    "links": [
+      {
+        "label": "AP — Gibbs becomes highest-paid RB",
+        "url": "https://apnews.com/article/lions-jahmyr-gibbs-camp-cd87b8b2eacf54fd0906444a5b890e1b"
+      },
+      {
+        "label": "Lions.com — Gibbs TD catch, Day 15 (Aug 19)",
+        "url": "https://www.detroitlions.com/news/detroit-lions-training-camp-day-15-observations-williams-moore-goff"
+      },
+      {
+        "label": "USA Today — Pacheco MCL, Gibbs the feature",
+        "url": "https://www.usatoday.com/story/sports/nfl/lions/2026/08/10/isiah-pacheco-lions-injury-update/91240846007/"
+      }
+    ]
+  },
+  "7564": {
+    "as_of": "2026-08-20",
+    "heat": "neutral",
+    "lead": "Chase is still Cincinnati's alpha and a long-term WR1 — Burrow finds him when the play breaks, and nothing in camp changed that.",
+    "notes": [
+      "Red-zone TD vs the blitz in Tuesday's lock-out drill. Healthy and in joints with the Bears on Thursday.",
+      "Burrow missed nine games in 2025. That's the only real 2026 risk, not Chase."
+    ],
+    "nearby": "Puka (6) is the other WR1 with more this-week noise. JSN (7) just won OPOY. Chase is the one you take for the Burrow stack and the safest WR floor. Puka if you want the younger spike and can live with the groin.",
+    "links": [
+      {
+        "label": "Bengals.com — Chase in final camp tuneup, Aug 18",
+        "url": "https://www.bengals.com/news/training-camp-report-josh-newton-ja-marr-chase-2026"
+      },
+      {
+        "label": "Sun-Times — Chase vs Bears joints, Aug 20",
+        "url": "https://chicago.suntimes.com/bears/2026/08/20/bears-bengals-joint-practice-jamarr-chase-jaylon-johnson-aggressive-touts-cornerback-wid-receiver-nfl"
+      }
+    ]
+  },
+  "11564": {
+    "as_of": "2026-08-20",
+    "heat": "fire",
+    "lead": "Maye is New England's franchise QB coming off a Super Bowl run, and this offense — A.J. Brown, Doubs, Douglas — is built to keep him there.",
+    "notes": [
+      "Carved the Eagles on Wednesday: 15-of-18 in 11-on-11, first 12 complete. Brown won against his old team.",
+      "Thursday was choppier — late red-zone pick to Brown, Maye said they 'could've done more' in the red zone. One off day after a statement practice.",
+      "The Maye-Brown deep ball is the new feature. Doubs is the red-zone climber."
+    ],
+    "nearby": "Allen (1) is the proven QB1 if he's there. Daniels (9) is the next dual-threat with more injury history. In Superflex at 1.03, Maye is the young QB you take if Allen is gone and you don't want a skill player — 4-pt passing trims the pocket-passer gap, and Maye still runs.",
+    "links": [
+      {
+        "label": "Patriots.com — Maye vs Eagles, Day 19 (Aug 19)",
+        "url": "https://www.patriots.com/news/day-19-blogservations-maye-offense-pass-big-test-against-eagles"
+      },
+      {
+        "label": "Patriots.com — Maye red-zone notes, Day 20 (Aug 20)",
+        "url": "https://www.patriots.com/news/day-20-blogservations-patriots-defense-responds-in-the-red-zone"
+      }
+    ]
+  },
+  "9493": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "lead": "Puka is still the Rams' WR1 and a long-term alpha if he stays in L.A. — he's just not practicing this week.",
+    "notes": [
+      "Psoas/groin soreness since the Cowboys joint last Tuesday. Missed the Rams' entire slate of Saints sessions through Thursday.",
+      "McVay said he'd be back this week, then shifted to day-to-day: 'return to performance, not just return to play.' Soft tissue already slipped a week.",
+      "No beat writer is doubting Week 1 (Sept 10, Melbourne). Contract year — Rapoport said don't expect an extension before the season."
+    ],
+    "nearby": "Chase (4) is the cleaner WR1 this week. JSN (7) is the healthy OPOY next door. If Chase is gone at 1.03, Puka vs JSN is the call — Puka if you buy the Week 1 all-clear, JSN if you want zero injury noise.",
+    "links": [
+      {
+        "label": "NBC Sports — still sidelined Thursday, Aug 20",
+        "url": "https://www.nbcsports.com/fantasy/football/player-news/2026-08-20/puka-nacua-groin-still-sidelined-thursday"
+      },
+      {
+        "label": "ESPN — McVay not rushing Puka back",
+        "url": "https://www.espn.com/nfl/story/_/id/49641695/rams-not-looking-rush-wr-puka-nacua-de-myles-garrett-back-practice"
+      }
+    ]
+  },
+  "9488": {
+    "as_of": "2026-08-20",
+    "heat": "neutral",
+    "lead": "JSN is Seattle's offense after an OPOY season, and he's the long-term WR1 even with a new play-caller and a crowded room.",
+    "notes": [
+      "Healthy. Hard Knocks this week had Julian Love calling his routes a 'super power.'",
+      "New OC Brian Fleury is a first-time play-caller — JSN is relearning terminology, not losing targets.",
+      "Shaheed, Kupp, and Horton are real. Camp still runs through JSN."
+    ],
+    "nearby": "Puka (6) is the other WR1, with a groin. ARSB (8) is the safer volume floor in Detroit. JSN vs Puka is health vs a slightly higher peak if Puka's right — I'd take JSN this week because he's practicing.",
+    "links": [
+      {
+        "label": "Seahawks.com — JSN leading the room, Aug 13",
+        "url": "https://www.seahawks.com/news/with-jaxon-smith-njigba-leading-the-way-seahawks-receivers-aim-to-be-best-in-the-league"
+      },
+      {
+        "label": "Seahawks Wire — Hard Knocks route praise, Aug 19",
+        "url": "https://seahawkswire.usatoday.com/story/sports/nfl/seahawks/2026/08/19/seahawks-hard-knocks-julian-love-praises-jaxon-smith-njigbas-routes/91375710007/"
+      }
+    ]
+  },
+  "7547": {
+    "as_of": "2026-08-20",
+    "heat": "neutral",
+    "lead": "St. Brown is Goff's first read and Detroit's WR1 for as long as both are there — another 100-catch year is the baseline, not the hope.",
+    "notes": [
+      "Walk-off situational score Wednesday: Goff hit him at the 3, Campbell gave him the touchdown.",
+      "Jameson Williams is back from a minor shoulder. The room is healthy."
+    ],
+    "nearby": "JSN (7) is the younger WR1 with the higher 2025 peak. Jefferson (15) is the next WR and a real drop on this board. ARSB vs JSN is Detroit volume vs Seattle alpha — ARSB if you want the floor, JSN if you want the ceiling.",
+    "links": [
+      {
+        "label": "Lions.com — ARSB walk-off, Day 15 (Aug 19)",
+        "url": "https://www.detroitlions.com/news/detroit-lions-training-camp-day-15-observations-williams-moore-goff"
+      },
+      {
+        "label": "Lions.com — St. Brown through Week 2 of camp",
+        "url": "https://www.detroitlions.com/news/10-players-impressed-detroit-lions-training-camp-williams-goff-stbrown"
+      }
+    ]
+  },
+  "11566": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "lead": "Daniels is Washington's franchise QB if he stays healthy — last year's knee and elbow are the only reason he's sitting behind Maye on this board.",
+    "notes": [
+      "Healthy. Quinn called camp 'incredible' — accuracy and command in a new system.",
+      "Tunsil out significant time (torn triceps). Allegretti (calf) won't travel this week. Mariota is done for the preseason with an MCL.",
+      "Quinn will play 'a good amount of starters' Saturday vs Detroit but will not commit to Daniels because of the OL."
+    ],
+    "nearby": "Maye (5) is the cleaner 2026 situation. Lamar (10) is the proven dual-threat installing his own new system. Daniels vs Lamar is youth and rushing vs a two-time MVP. I'd still take Daniels for the next five years — this week's OL news is why he's ice.",
+    "links": [
+      {
+        "label": "AP — Quinn unsure on Daniels Saturday; OL banged up",
+        "url": "https://lasvegassun.com/news/2026/aug/20/commanders-to-play-starters-in-preseason-game-vs-d/"
+      },
+      {
+        "label": "Commanders Wire — Quinn on Daniels' camp, Aug 18",
+        "url": "https://commanderswire.usatoday.com/story/sports/nfl/commanders/2026/08/18/washington-commanders-dan-quinn-play-jayden-daniels-preseason/91352703007/"
+      }
+    ]
+  },
+  "4881": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "lead": "Lamar is still Baltimore's offense and the long-term QB1 — he's just installing a new system under Jesse Minter and Declan Doyle.",
+    "notes": [
+      "More under-center snaps than any prior camp. Doyle wants him on script, not Houdini.",
+      "Vikings/Flores joint Wednesday: multiple sacks, two-minute stalls. The outlet was the quick game to Flowers and Andrews.",
+      "Center Danny Pinter was carted off Wednesday after getting rolled up. Team had no update after practice; Garafolo (via NBC) reported a torn patellar — treat that as unconfirmed by Baltimore."
+    ],
+    "nearby": "Daniels (9) is the younger dual-threat with more 2026 OL mess. Caleb (13) is the next QB and a real drop. Lamar vs Daniels is proven MVP vs the kid. 4-pt passing keeps both in the rushing-QB tier.",
+    "links": [
+      {
+        "label": "Ravens.com — joints vs Vikings, Aug 19",
+        "url": "https://www.baltimoreravens.com/news/ravens-vikings-joint-practice-report-notes-offense-pressure-blitz-danny-pinter-jovaughn-gwyn-defense"
+      },
+      {
+        "label": "ESPN — Lamar in Doyle's new offense",
+        "url": "https://www.espn.com/nfl/story/_/id/49591531/inside-lamar-jackson-adjustment-baltimore-ravens-new-offense-jesse-minter"
       }
     ]
   }
