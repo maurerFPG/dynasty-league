@@ -800,53 +800,54 @@
     return by;
   }
 
-  /* Superflex startup needs: 1 QB + SF, 2 RB, 3 WR, 1 TE, 2 FLEX. */
+  /* Superflex startup needs: 1 QB + SF, 2 RB, 3 WR, 1 TE, 2 FLEX.
+     TEP is already in the Sleeper board — empty TE is a normal 1-starter. */
   function posNeed(counts, pos, round) {
     const qb = counts.QB || 0;
     const rb = counts.RB || 0;
     const wr = counts.WR || 0;
     const te = counts.TE || 0;
     if (pos === "QB") {
-      if (qb === 0) return 1.85;
-      if (qb === 1) return round <= 8 ? 1.05 : 0.7;
+      if (qb === 0) return 1.40;
+      if (qb === 1) return 0.55;
       if (qb === 2) return round <= 12 ? 0.22 : 0.08;
       return 0.04;
     }
     if (pos === "RB") {
-      if (rb === 0) return 1.8;
+      if (rb === 0) return 2.40;
       if (rb === 1) return 1.4;
       if (rb === 2) return round <= 5 ? 0.42 : 0.55;
       if (rb >= 3 && round <= 4) return 0.08;
       return 0.32;
     }
     if (pos === "WR") {
-      if (wr === 0) return 1.65;
-      if (wr === 1) return 1.42;
+      if (wr === 0) return 1.08;
+      if (wr === 1) return 0.98;
       if (wr === 2) return 1.12;
       if (wr === 3) return round <= 6 ? 0.48 : 0.4;
       return 0.28;
     }
     if (pos === "TE") {
-      if (te === 0) return round <= 2 ? 1.2 : round <= 6 ? 1.35 : 1.05;
+      if (te === 0) return 1.14;
       return 0.16;
     }
     return 0.15;
   }
 
   function goneTau(round) {
-    if (round <= 1) return 1.6;
-    if (round <= 2) return 2.05;
-    if (round <= 4) return 2.7;
+    if (round <= 1) return 1.45;
+    if (round <= 2) return 3.12;
+    if (round <= 4) return 2.5;
     return 3.5;
   }
 
-  /* Room is a Sleeper board, but some drafters (including Rob) watch ECR. */
+  /* This is a Sleeper-board room. ECR may nudge; it must not rewrite the board. */
   function blendRank(p) {
     const sl = p.fo_rank != null && !Number.isNaN(Number(p.fo_rank)) ? Number(p.fo_rank) : null;
     const ecr = p.fp_rank != null && !Number.isNaN(Number(p.fp_rank)) ? Number(p.fp_rank) : null;
     if (sl != null && ecr != null) {
-      if (sl <= 24) return 0.86 * sl + 0.14 * ecr;
-      return 0.74 * sl + 0.26 * ecr;
+      if (sl <= 24) return 0.90 * sl + 0.10 * ecr;
+      return 0.80 * sl + 0.20 * ecr;
     }
     if (sl != null) return sl;
     if (ecr != null) return ecr;
@@ -884,7 +885,7 @@
   }
 
   function goneModelKey(win) {
-    return [win.current, state.draftedIds.size, win.then ? win.then.overall : "x", state.players.length, "gone3"].join(":");
+    return [win.current, state.draftedIds.size, win.then ? win.then.overall : "x", state.players.length, "gone4"].join(":");
   }
 
   function runGoneSims(win) {
@@ -953,14 +954,13 @@
             u += 0.2;
           }
           if (row.pos === "TE" && row.nextSl != null && row.nextSl - row.sl >= 8) {
-            u += 0.25;
+            u += 0.82;
           }
           const dBpa = row.sl - bpaSl;
-          if (dBpa === 0) u += 0.42;
-          else if (dBpa <= 2) u += 0.23;
-          else if (dBpa <= 4) u += 0.10;
-          if (row.sl <= cell.overall) u += 0.20;
-          else if (row.sl <= cell.overall + 3) u += 0.09;
+          if (dBpa === 0) u += 0.18;
+          else if (dBpa <= 2) u += 0.09;
+          else if (dBpa <= 4) u += 0.05;
+          if (row.sl <= cell.overall) u += 0.10;
           let nRun = 0;
           for (let k = recent.length - 1; k >= Math.max(0, recent.length - 4); k--) {
             if (recent[k] === row.pos) nRun++;
