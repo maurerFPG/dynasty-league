@@ -822,7 +822,27 @@
     return 3.5;
   }
 
-  function softmaxPick(cands, scores) {
+  function seedRng(seed) {
+    let a = seed >>> 0;
+    return function rng() {
+      a |= 0;
+      a = (a + 0x6d2b79f5) | 0;
+      let t = Math.imul(a ^ (a >>> 15), 1 | a);
+      t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
+  }
+
+  function hashSeed(str) {
+    let h = 2166136261;
+    for (let i = 0; i < str.length; i++) {
+      h ^= str.charCodeAt(i);
+      h = Math.imul(h, 16777619);
+    }
+    return h >>> 0;
+  }
+
+  function softmaxPick(cands, scores, rng) {
     let max = -Infinity;
     for (let i = 0; i < scores.length; i++) if (scores[i] > max) max = scores[i];
     const ex = new Array(scores.length);
@@ -832,7 +852,7 @@
       ex[i] = e;
       sum += e;
     }
-    let r = Math.random() * sum;
+    let r = rng() * sum;
     for (let i = 0; i < cands.length; i++) {
       r -= ex[i];
       if (r <= 0) return cands[i];
@@ -864,6 +884,7 @@
     const cap = Math.min(pool.length, Math.max(36, upcoming.length * 16 + 20));
     const short = pool.slice(0, cap);
     const nSims = upcoming.length <= 4 ? 700 : 480;
+    const rng = seedRng(hashSeed(goneModelKey(win) + ":" + [...state.draftedIds].sort().join(",")));
     const hits = new Map();
     for (let s = 0; s < nSims; s++) {
       const gone = new Set();
@@ -917,7 +938,7 @@
           else if (nRun >= 2) u += 0.12;
           scores[i] = u;
         }
-        const pick = softmaxPick(cand, scores);
+        const pick = softmaxPick(cand, scores, rng);
         const id = pick.id != null ? String(pick.id) : playerKey(pick);
         gone.add(id);
         hits.set(id, (hits.get(id) || 0) + 1);
@@ -977,8 +998,7 @@
   function goneStat(p) {
     const g = goneBeforeEstimate(p);
     if (!g) return `<div class="stat"><div class="k">Gone</div><div class="v faint">—</div></div>`;
-    const cap = `Est. ${g.pct}% taken by someone else before ${g.label}. Simulates each upcoming pick from that team's roster so far, Superflex starter needs, Sleeper board, and position runs / tier dropoffs.`;
-    return `<div class="stat" title="${esc(cap)}"><div class="k">Gone</div><div class="v">${g.pct}%</div></div>`;
+    return `<div class="stat"><div class="k">Gone</div><div class="v">${g.pct}%</div></div>`;
   }
 
   function renderCard() {
