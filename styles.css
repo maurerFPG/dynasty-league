@@ -871,7 +871,7 @@ body.resizing-h { cursor: ns-resize; user-select: none; }
 }
 .mp-pad {
   display: grid;
-  grid-template-columns: 1.15fr 1fr 1fr 1.2fr;
+  grid-template-columns: minmax(0, 1.85fr) minmax(0, 0.58fr) minmax(0, 0.58fr) minmax(40px, 0.5fr);
   grid-template-rows: var(--ctrl) var(--ctrl);
   grid-template-areas:
     "label qb wr left"
@@ -903,9 +903,9 @@ body.resizing-h { cursor: ns-resize; user-select: none; }
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 5px;
+  gap: 3px;
   min-width: 0;
-  padding: 0 6px;
+  padding: 0 4px;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.04);
@@ -923,7 +923,7 @@ body.resizing-h { cursor: ns-resize; user-select: none; }
   justify-content: center;
   gap: 1px;
   min-width: 0;
-  padding: 0 6px;
+  padding: 0 4px;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.04);
@@ -935,7 +935,7 @@ body.resizing-h { cursor: ns-resize; user-select: none; }
 }
 .mp-left .n {
   color: var(--text);
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 650;
   line-height: 1;
 }
