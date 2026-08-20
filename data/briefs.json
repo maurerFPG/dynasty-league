@@ -15634,5 +15634,571 @@
     "heat": "neutral",
     "gem": false,
     "lead": "I would not spend 25.10 leftover on Brown \u2014 Commanders WR4 this year behind McLaurin and Diggs, and later is already McCaffrey."
+  },
+  "1339": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Ertz \u2014 free agent this year, and there is no later job at this age."
+  },
+  "4988": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Chubb \u2014 free agent this year after the last knee, and there is no later job from here."
+  },
+  "4144": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Smith \u2014 free agent this year, and there is no later +0.5 TEP job from here."
+  },
+  "7340": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Polk \u2014 free agent this year, and there is no later NFL job."
+  },
+  "11645": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Baker \u2014 free agent this year after the Patriots cut, and there is no later job."
+  },
+  "5937": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Johnson \u2014 free agent this year, and there is no later job from here."
+  },
+  "13818": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Brinson \u2014 free agent this year, and there is no later NFL job."
+  },
+  "6151": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Sanders \u2014 free agent this year, and there is no later job from here."
+  },
+  "11640": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Burton \u2014 free agent this year after the Bengals cut, and there is no later job."
+  },
+  "4663": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Ekeler \u2014 free agent this year, and there is no later job from here."
+  },
+  "13440": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Alford \u2014 free agent this year, and there is no later NFL job."
+  },
+  "3200": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Shepard \u2014 free agent this year, and there is no later job from here."
+  },
+  "4381": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Hill \u2014 free agent this year, and there is no later Saints gadget job."
+  },
+  "5010": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Dissly \u2014 free agent this year, and there is no later +0.5 TEP job."
+  },
+  "7561": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Mitchell \u2014 free agent this year, and there is no later job from here."
+  },
+  "6845": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Moss \u2014 free agent this year, and there is no later job from here."
+  },
+  "5987": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Mattison \u2014 free agent this year, and there is no later job from here."
+  },
+  "4080": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Jones \u2014 free agent this year, and there is no later job from here."
+  },
+  "11651": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Guerendo \u2014 49ers PUP this year, so there is no 2026 job until he returns, and later is still CMC's 2.",
+    "depth": "CMC is the locked 1. Path to 2026 snaps is already closed on PUP. Path to later is a year-3 2 if he comes back healthy."
+  },
+  "11577": {
+    "as_of": "2026-08-20",
+    "heat": "fire",
+    "gem": true,
+    "lead": "I'd take Shipley at 25.10 leftover \u2014 Eagles 2 this year behind Saquon, and the later 1 if Barkley is only the vet.",
+    "depth": "Barkley is the locked 1. Path to 2026 snaps is already the year-2 2. Path to later is Philadelphia's next lead if they do not re-up Saquon."
+  },
+  "6130": {
+    "as_of": "2026-08-20",
+    "heat": "neutral",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Singletary \u2014 Giants RB2 this year if Tracy holds the 1, and later is already Skattebo."
+  },
+  "11579": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Estime \u2014 Saints RB4 this year and out this week, and later is already Etienne and Kamara."
+  },
+  "11623": {
+    "as_of": "2026-08-20",
+    "heat": "neutral",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Whittington \u2014 Rams WR4 this year behind Nacua and Adams, and later is already Mumpfield."
+  },
+  "3271": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Higbee \u2014 Rams TE2 this year if he even stays healthy, and later is already gone at this age."
+  },
+  "12670": {
+    "as_of": "2026-08-20",
+    "heat": "neutral",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Lambert-Smith \u2014 Chargers WR4 this year behind McConkey, and later is a year-2 dart."
+  },
+  "5857": {
+    "as_of": "2026-08-20",
+    "heat": "neutral",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Fant \u2014 Saints TE2 this year behind Moreau/Johnson, and later is already gone."
+  },
+  "12496": {
+    "as_of": "2026-08-20",
+    "heat": "neutral",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Felton \u2014 Vikings WR4 this year behind Jefferson and Addison, and later is a year-2 4."
+  },
+  "7562": {
+    "as_of": "2026-08-20",
+    "heat": "neutral",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Atwell \u2014 Dolphins WR4 this year behind Douglas and Washington, and later is already Bell."
+  },
+  "12473": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Evans \u2014 Panthers TE3 this year behind Tremble, and later is a year-2 blocker."
+  },
+  "4177": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Hollins \u2014 Patriots WR4 this year, and there is no later job from here."
+  },
+  "10231": {
+    "as_of": "2026-08-20",
+    "heat": "neutral",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Higgins \u2014 Cardinals TE2 this year behind McBride, and later is already a blocker."
+  },
+  "13600": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Montgomery \u2014 Titans camp WR this year behind Ridley, and later is already gone."
+  },
+  "4454": {
+    "as_of": "2026-08-20",
+    "heat": "neutral",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Bourne \u2014 Cardinals WR3 this year if Wilson holds the 2, and later is already Harrison."
+  },
+  "13412": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Law \u2014 Lions camp WR this year behind St. Brown and Williams, and later is already TeSlaa."
+  },
+  "13577": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Bentley \u2014 Broncos TE3 this year behind Engram, and later is already Trautman."
+  },
+  "10235": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Johnson \u2014 Bears RB3 this year behind Swift, and later is already gone."
+  },
+  "11588": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Jordan \u2014 Texans RB3 this year behind Mixon/Pierce room, and later is already gone."
+  },
+  "11629": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Walker \u2014 Ravens WR4 this year behind Flowers, and later is a year-3 fade."
+  },
+  "3202": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Hooper \u2014 Falcons TE2 this year behind Pitts, and later is already gone at this age."
+  },
+  "4219": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on McNichols \u2014 Commanders RB3 this year behind JCM, and later is already Ford."
+  },
+  "11570": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Ali \u2014 Ravens RB3 this year behind Henry, and later is already gone."
+  },
+  "1426": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Hopkins \u2014 Ravens WR3 this year if Flowers holds the 1, and there is no later job at this age."
+  },
+  "12715": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Fidone \u2014 Giants TE3 this year behind Bellinger's old room / Theo, and later is a year-2 blocker."
+  },
+  "13419": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Ott \u2014 Chiefs RB4 this year behind Pacheco, and later is already gone."
+  },
+  "10218": {
+    "as_of": "2026-08-20",
+    "heat": "neutral",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Hutchinson \u2014 Texans WR3 this year behind Collins, and later is a year-4 3."
+  },
+  "13433": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Nowakowski \u2014 Steelers TE4 this year behind Freiermuth, and later is a blocker."
+  },
+  "12738": {
+    "as_of": "2026-08-20",
+    "heat": "neutral",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Mafah \u2014 Cowboys RB3 this year if Blue holds the 2, and later is already Williams."
+  },
+  "12634": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Watkins \u2014 49ers WR4 this year behind Aiyuk/Jennings room, and later is a year-2 4."
+  },
+  "12472": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Sanders \u2014 Browns RB3 this year behind Judkins, and later is already Sampson."
+  },
+  "5973": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Oliver \u2014 Vikings TE2 this year behind Hockenson, and later is already a blocker."
+  },
+  "11599": {
+    "as_of": "2026-08-20",
+    "heat": "neutral",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Stover \u2014 Texans TE2 this year if Schultz is gone, and later is a year-3 2 in +0.5 TEP."
+  },
+  "13780": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Stewart \u2014 Chiefs camp RB this year, and later is already Pacheco."
+  },
+  "2749": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Mostert \u2014 Raiders RB3 this year, and there is no later job at this age."
+  },
+  "5970": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Dortch \u2014 Lions WR4 this year behind St. Brown, and later is already gone."
+  },
+  "13429": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Traore \u2014 Dolphins TE3 this year behind Dulcich, and later is a year-2 dart."
+  },
+  "5133": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Conklin \u2014 Lions TE3 this year behind LaPorta, and later is already Wright."
+  },
+  "12542": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Chism \u2014 Patriots WR5 this year, and later is a practice-squad dart."
+  },
+  "10871": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Schoonmaker \u2014 Cowboys TE2 this year behind Ferguson, and later is already Trigg."
+  },
+  "2374": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Lockett \u2014 Raiders WR3 this year, and there is no later job at this age."
+  },
+  "12523": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Horn \u2014 Panthers WR5 this year behind McMillan, and later is already Coker."
+  },
+  "11371": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Hill \u2014 Patriots TE3 this year, and later is already Henry."
+  },
+  "11595": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Wiley \u2014 Chiefs TE3 this year behind Kelce and Gray, and later is a year-3 fade."
+  },
+  "12486": {
+    "as_of": "2026-08-20",
+    "heat": "neutral",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Gabriel \u2014 Browns 3 this year behind Watson/Sanders, and there is no later Superflex job from here."
+  },
+  "12462": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Martinez \u2014 Packers RB3 this year behind Jacobs, and later is already Lloyd."
+  },
+  "7535": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Long \u2014 Jaguars TE2 this year behind Strange, and later is already Boerkircher."
+  },
+  "12516": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Mullings \u2014 Titans RB4 this year behind Pollard and Spears, and later is already gone."
+  },
+  "4972": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Rudolph \u2014 Steelers 2 this year behind Rodgers/old room, and there is no later job."
+  },
+  "6011": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Minshew \u2014 Cardinals 2 this year behind Brissett/Beck, and there is no later job."
+  },
+  "12520": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Restrepo \u2014 Titans WR4 this year behind Ridley, and later is a year-2 4."
+  },
+  "7568": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Jordan \u2014 Texans TE3 this year behind Schultz/Stover, and later is already gone."
+  },
+  "7538": {
+    "as_of": "2026-08-20",
+    "heat": "neutral",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Wilson \u2014 Saints 2 this year if he holds Rattler, and there is no later Superflex job."
+  },
+  "3634": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Raymond \u2014 Bears WR4 this year behind Odunze, and later is already Burden."
+  },
+  "11377": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Shavers \u2014 Bills WR5 this year behind Moore and Shakir, and later is already Palmer."
+  },
+  "10214": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Allen \u2014 Rams TE3 this year behind Higbee, and later is a blocker."
+  },
+  "3286": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Robinson \u2014 49ers WR4 this year, and there is no later job from here."
+  },
+  "13670": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Wallace \u2014 Cardinals camp WR this year behind Harrison, and later is already Wilson."
+  },
+  "12860": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Wease \u2014 Dolphins WR5 this year, and later is already Douglas and Washington."
+  },
+  "12539": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Smith \u2014 Jets WR4 this year behind Wilson, and later is a year-2 4."
+  },
+  "6111": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Browning \u2014 Bucs 2 this year if Mayfield holds the 1, and there is no later job."
+  },
+  "3161": {
+    "as_of": "2026-08-20",
+    "heat": "neutral",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Wentz \u2014 Vikings 3 this year behind Murray and McCarthy, and there is no later job."
+  },
+  "12658": {
+    "as_of": "2026-08-20",
+    "heat": "neutral",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Hawes \u2014 Bills TE3 this year behind Kincaid and Knox, and later is already a blocker."
+  },
+  "11633": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Thrash \u2014 Browns WR4 this year behind Jeudy, and later is already Concepcion."
+  },
+  "5985": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Moreau \u2014 Texans TE2 this year if he even starts, and later is already Stover."
+  },
+  "11616": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Cowing \u2014 49ers WR5 this year, and later is a year-3 fade."
+  },
+  "4040": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Smith-Schuster \u2014 Giants WR4 this year behind Nabers, and there is no later job."
+  },
+  "3976": {
+    "as_of": "2026-08-20",
+    "heat": "neutral",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Trubisky \u2014 Titans 2 this year behind Ward, and there is no later Superflex job."
+  },
+  "13430": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Maryland \u2014 Packers TE3 this year behind Kraft, and later is a blocker."
+  },
+  "6853": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Jefferson \u2014 Commanders WR5 this year behind McLaurin and Diggs, and later is already gone."
+  },
+  "4234": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Brown \u2014 Raiders WR4 this year, and later is already Nailor."
+  },
+  "10225": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Mingo \u2014 Cowboys WR5 this year behind Lamb and Pickens, and later is already Flournoy."
+  },
+  "4274": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Moore \u2014 Panthers WR5 this year behind McMillan, and later is already gone."
+  },
+  "5113": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Wilson \u2014 Lions WR5 this year behind St. Brown, and later is already gone."
+  },
+  "11806": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Washington \u2014 Panthers WR6 this year, and later is already McMillan and Coker."
+  },
+  "4992": {
+    "as_of": "2026-08-20",
+    "heat": "ice",
+    "gem": false,
+    "lead": "I would not spend 25.10 leftover on Pettis \u2014 Bills WR6 this year behind Moore and Shakir, and later is already Palmer."
   }
 }
