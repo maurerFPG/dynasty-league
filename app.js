@@ -755,7 +755,7 @@
     }
     const text = String(raw || "").trim();
     if (!text) return [];
-    let chunks = text.split(/\s*Vs\s+/i).map((s) => s.trim()).filter(Boolean);
+    let chunks = text.split(/(?:^|[.\s])(?=Vs\s+[A-Z])/).map((s) => s.replace(/^Vs\s+/i, "").trim()).filter(Boolean);
     if (chunks.length === 1) {
       const splitMore = text.split(/(?=(?:[A-Z][\w.'’-]+(?:\s+[A-Z][\w.'’-]+)?)\s*\((?:SL|ECR)\s*)/).map((s) => s.trim()).filter(Boolean);
       if (splitMore.length > 1) chunks = splitMore;
@@ -1703,7 +1703,7 @@
     const [pj, dj, bj] = await Promise.all([
       fetch("data/players.json", { cache: "no-store" }).then((r) => r.json()),
       fetch("data/draft.json", { cache: "no-store" }).then((r) => r.json()),
-      fetch("data/briefs.json?v=near2", { cache: "no-store" })
+      fetch("data/briefs.json?v=near3", { cache: "no-store" })
         .then((r) => (r.ok ? r.json() : {}))
         .catch(() => ({})),
     ]);
