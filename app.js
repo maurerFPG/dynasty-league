@@ -863,7 +863,7 @@
   }
 
   function goneModelKey(win) {
-    return String(win.current) + ":" + state.draftedIds.size + ":" + (win.then ? win.then.overall : "x");
+    return [win.current, state.draftedIds.size, win.then ? win.then.overall : "x", state.players.length].join(":");
   }
 
   function runGoneSims(win) {
@@ -873,10 +873,25 @@
     const rosters = liveRosters();
     const pool = state.players
       .filter((p) => remaining(p) && (p.fo_rank != null || p.fp_rank != null))
-      .sort((a, b) => blendRank(a) - blendRank(b));
-    const cap = Math.min(pool.length, Math.max(36, upcoming.length * 16 + 20));
+      .map((p) => {
+        const id = p.id != null ? String(p.id) : playerKey(p);
+        return { p, id, pos: p.pos || "", rk: blendRank(p) };
+      })
+      .sort((a, b) => a.rk - b.rk);
+    const cap = Math.min(pool.length, 48);
     const short = pool.slice(0, cap);
-    const nSims = upcoming.length <= 4 ? 700 : 400;
+    for (let i = 0; i < short.length; i++) {
+      const row = short[i];
+      let nextRk = null;
+      for (let j = i + 1; j < short.length; j++) {
+        if (short[j].pos === row.pos) {
+          nextRk = short[j].rk;
+          break;
+        }
+      }
+      row.nextRk = nextRk;
+    }
+    const nSims = upcoming.length <= 3 ? 500 : 180;
     const nextAt = win.next.overall;
     const hasThen = !!win.then;
     const hits = new Map();
@@ -891,35 +906,14 @@
         const round = Math.ceil(cell.overall / 12);
         const c = counts[cell.slot] || emptyPosCounts();
         const cand = [];
-        for (let i = 0; i < short.length; i++) {
-          const p = short[i];
-          const id = p.id != null ? String(p.id) : playerKey(p);
-          if (!gone.has(id)) cand.push(p);
-        }
-        if (!cand.length) break;
-        const byPos = {};
-        for (let i = 0; i < cand.length; i++) {
-          const p = cand[i];
-          const pos = p.pos || "";
-          if (!byPos[pos]) byPos[pos] = [];
-          byPos[pos].push(p);
-        }
+        const scores = [];
         const tau = goneTau(round);
-        const scores = new Array(cand.length);
-        for (let i = 0; i < cand.length; i++) {
-          const p = cand[i];
-          const rk = blendRank(p);
-          let u = -rk / tau + 0.95 * posNeed(c, p.pos, round);
-          const same = (byPos[p.pos] || []).slice().sort((a, b) => blendRank(a) - blendRank(b));
-          let nextRank = null;
-          for (let j = 0; j < same.length; j++) {
-            if (blendRank(same[j]) > rk) {
-              nextRank = blendRank(same[j]);
-              break;
-            }
-          }
-          if (nextRank != null) {
-            const drop = nextRank - rk;
+        for (let i = 0; i < short.length; i++) {
+          const row = short[i];
+          if (gone.has(row.id)) continue;
+          let u = -row.rk / tau + 0.95 * posNeed(c, row.pos, round);
+          if (row.nextRk != null) {
+            const drop = row.nextRk - row.rk;
             if (drop >= 15) u += 0.55;
             else if (drop >= 10) u += 0.32;
             else if (drop >= 6) u += 0.15;
@@ -928,37 +922,36 @@
           }
           let nRun = 0;
           for (let k = recent.length - 1; k >= Math.max(0, recent.length - 4); k--) {
-            if (recent[k] === p.pos) nRun++;
+            if (recent[k] === row.pos) nRun++;
           }
           if (nRun >= 3) u += 0.28;
           else if (nRun >= 2) u += 0.12;
-          scores[i] = u;
+          cand.push(row);
+          scores.push(u);
         }
+        if (!cand.length) break;
         const pick = softmaxPick(cand, scores);
-        const id = pick.id != null ? String(pick.id) : playerKey(pick);
-        gone.add(id);
-        if (cell.overall < nextAt) hits.set(id, (hits.get(id) || 0) + 1);
+        gone.add(pick.id);
+        if (cell.overall < nextAt) hits.set(pick.id, (hits.get(pick.id) || 0) + 1);
         if (c[pick.pos] != null) c[pick.pos] += 1;
         recent.push(pick.pos);
       }
       if (hasThen) {
         for (let i = 0; i < short.length; i++) {
-          const p = short[i];
-          const id = p.id != null ? String(p.id) : playerKey(p);
+          const id = short[i].id;
           if (!gone.has(id)) still.set(id, (still.get(id) || 0) + 1);
         }
       }
     }
     for (let i = 0; i < short.length; i++) {
-      const p = short[i];
-      const id = p.id != null ? String(p.id) : playerKey(p);
-      const gPct = Math.round(((hits.get(id) || 0) / nSims) * 100);
-      gone1.set(id, gPct);
-      gone1.set(playerKey(p), gPct);
+      const row = short[i];
+      const gPct = Math.round(((hits.get(row.id) || 0) / Math.max(1, nSims)) * 100);
+      gone1.set(row.id, gPct);
+      gone1.set(playerKey(row.p), gPct);
       if (hasThen) {
-        const aPct = Math.round(((still.get(id) || 0) / nSims) * 100);
-        live2.set(id, aPct);
-        live2.set(playerKey(p), aPct);
+        const aPct = Math.round(((still.get(row.id) || 0) / Math.max(1, nSims)) * 100);
+        live2.set(row.id, aPct);
+        live2.set(playerKey(row.p), aPct);
       }
     }
     return { gone1, live2 };
@@ -967,19 +960,34 @@
   function ensureGoneModel() {
     const win = goneWindow();
     if (!win) {
-      state.goneModel = { key: "none", byId: new Map(), availById: new Map(), label: "", thenLabel: "" };
+      state.goneModel = { key: "none", ready: true, byId: new Map(), availById: new Map(), label: "", thenLabel: "" };
       return state.goneModel;
     }
     const key = goneModelKey(win);
     if (state.goneModel && state.goneModel.key === key) return state.goneModel;
-    const { gone1, live2 } = runGoneSims(win);
     state.goneModel = {
       key,
-      byId: gone1,
-      availById: live2,
+      ready: false,
+      byId: new Map(),
+      availById: new Map(),
       label: win.next.label,
       thenLabel: win.then ? win.then.label : "",
     };
+    const run = () => {
+      const { gone1, live2 } = runGoneSims(win);
+      if (!state.goneModel || state.goneModel.key !== key) return;
+      state.goneModel = {
+        key,
+        ready: true,
+        byId: gone1,
+        availById: live2,
+        label: win.next.label,
+        thenLabel: win.then ? win.then.label : "",
+      };
+      if (state.selectedId) renderCard();
+    };
+    if (typeof requestAnimationFrame === "function") requestAnimationFrame(run);
+    else setTimeout(run, 0);
     return state.goneModel;
   }
 
@@ -1010,14 +1018,17 @@
       avail: model.thenLabel ? lookupGone(model.availById, p) : null,
       label: model.label,
       thenLabel: model.thenLabel || "",
+      ready: !!model.ready,
     };
   }
 
   function goneStat(p) {
     const g = goneBeforeEstimate(p);
-    if (!g) return `<div class="stat"><div class="k">Gone</div><div class="v faint">—</div></div>`;
-    let html = `<div class="stat"><div class="k">Gone</div><div class="v">${g.pct}%</div></div>`;
-    if (g.thenLabel) html += `<div class="stat"><div class="k">${esc(g.thenLabel)}</div><div class="v">${g.avail}%</div></div>`;
+    if (!g) return `<div class="stat"><div class="k">—</div><div class="v faint">—</div></div>`;
+    const a = g.ready ? `${g.pct}%` : "…";
+    const b = g.ready ? `${g.avail}%` : "…";
+    let html = `<div class="stat"><div class="k">${esc(g.label || "—")}</div><div class="v">${a}</div></div>`;
+    if (g.thenLabel) html += `<div class="stat"><div class="k">${esc(g.thenLabel)}</div><div class="v">${b}</div></div>`;
     return html;
   }
 
