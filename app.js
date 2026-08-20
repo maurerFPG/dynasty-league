@@ -766,6 +766,9 @@
     const lead = b.lead
       ? `<div class="baked-block"><div class="kicker">Outlook</div><p class="lead">${esc(b.lead)}</p></div>`
       : "";
+    const depth = b.depth
+      ? `<div class="baked-block"><div class="kicker">Depth</div><p class="note">${esc(b.depth)}</p></div>`
+      : "";
     const watch = notes.length
       ? `<div class="baked-block"><div class="kicker">Watch</div>${notes.map((n) => `<p class="note">${esc(n)}</p>`).join("")}</div>`
       : "";
@@ -778,7 +781,7 @@
     const foot = lis
       ? `<div class="baked-foot"><div class="baked-links">${lis}</div></div>`
       : "";
-    return `<div class="baked" id="research-flash">${lead}${watch}${nearby}${foot}</div>`;
+    return `<div class="baked" id="research-flash">${lead}${depth}${watch}${nearby}${foot}</div>`;
   }
 
   function researchBlock(p) {
@@ -1609,7 +1612,7 @@
     const [pj, dj, bj] = await Promise.all([
       fetch("data/players.json", { cache: "no-store" }).then((r) => r.json()),
       fetch("data/draft.json", { cache: "no-store" }).then((r) => r.json()),
-      fetch("data/briefs.json?v=cardstar3", { cache: "no-store" })
+      fetch("data/briefs.json?v=coleman", { cache: "no-store" })
         .then((r) => (r.ok ? r.json() : {}))
         .catch(() => ({})),
     ]);

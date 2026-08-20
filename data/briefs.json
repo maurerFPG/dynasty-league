@@ -2,9 +2,9 @@
   "13287": {
     "as_of": "2026-08-20",
     "heat": "ice",
-    "lead": "Love should be Arizona’s lead back as a rookie and the long-term bellcow — they took him 3rd overall.",
+    "lead": "Love should be Arizona\u2019s lead back as a rookie and the long-term bellcow \u2014 they took him 3rd overall.",
     "notes": [
-      "Not a 65-snap job. LaFleur said he won’t give one back the whole game; Allgeier is the other half.",
+      "Not a 65-snap job. LaFleur said he won\u2019t give one back the whole game; Allgeier is the other half.",
       "High-ankle sprain in the preseason debut; done for August; Week 1 (Sep 13 vs LAC) is a hope, not a promise. Conner and Benson also dinged, so the job is still his when healthy."
     ],
     "nearby": "Vs Hampton (SL 20) take Love for the longer window, Hampton for cleaner 2026. Vs Achane (SL 21) youth/volume vs proven pass-game back.",
@@ -16,6 +16,26 @@
       {
         "label": "NFL: Unlikely to play again in preseason",
         "url": "https://www.nfl.com/news/report-cardinals-rb-jeremiyah-love-unlikely-to-play-again-in-preseason-due-to-high-ankle-sprain"
+      }
+    ]
+  },
+  "13338": {
+    "as_of": "2026-08-20",
+    "heat": "neutral",
+    "lead": "Fifth-round slot rookie. Not a 2026 starter \u2014 this is a developmental year, with punt-return work as the realistic path to snaps if he sticks.",
+    "depth": "Unofficial chart: Malik Washington, Caleb Douglas, and Jalen Tolbert are the ones. Coleman is the backup slot behind Washington and the No. 2 punt returner. Chris Bell (3rd-round, coming off ACL) is the higher-upside name still easing back \u2014 he\u2019s who can push the whole room if the knee holds. Veterans (Atwell, Reagor, Marshall) are fighting leftover 53-man spots; Coleman\u2019s draft capital makes him a likely roster lock even as WR4/5.",
+    "notes": [
+      "Missed early camp, returned Aug 18 and caught two TDs in 11-on-11. Flash, not a role yet."
+    ],
+    "nearby": "Ridley (SL 273) is the veteran dart if you want a known r\u00e9sum\u00e9. Bateman (SL 268) is the same kind of fade. Coleman is the younger Miami stash vs those.",
+    "links": [
+      {
+        "label": "Herald: Coleman\u2019s two TDs on return",
+        "url": "https://www.miamiherald.com/sports/article316917888.html"
+      },
+      {
+        "label": "Depth chart: backup slot / PR2",
+        "url": "https://phinphanatic.com/position-by-position-takeaways-from-miami-dolphins-first-unofficial-depth-chart-01kzsyrc9pxp"
       }
     ]
   }
