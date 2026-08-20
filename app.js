@@ -600,7 +600,7 @@
   async function refreshBaked() {
     try {
       const [bj, rj] = await Promise.all([
-        fetch("data/briefs.json?v=recs7", { cache: "no-store" }).then((r) => (r.ok ? r.json() : null)).catch(() => null),
+        fetch("data/briefs.json?v=recs8", { cache: "no-store" }).then((r) => (r.ok ? r.json() : null)).catch(() => null),
         fetch("data/recs.json", { cache: "no-store" }).then((r) => (r.ok ? r.json() : null)).catch(() => null),
       ]);
       if (bj && typeof bj === "object" && !Array.isArray(bj)) state.briefs = bj;
@@ -1638,8 +1638,9 @@
     try { localStorage.setItem(HOOK_SENT_KEY, JSON.stringify(sent)); } catch (e) { /* ignore */ }
     const headers = { "Content-Type": "application/json" };
     if (key) {
-      headers.Authorization = key;
-      headers["X-Webhook-Key"] = key;
+      const raw = key.replace(/^Bearer\s+/i, "");
+      headers.Authorization = "Bearer " + raw;
+      headers["X-Webhook-Key"] = raw;
     }
     const body = JSON.stringify(Object.assign({ kind: kind }, extra));
     fetch(url, { method: "POST", headers: headers, body: body }).catch(() => {
@@ -1831,7 +1832,7 @@
     const [pj, dj, bj, rj] = await Promise.all([
       fetch("data/players.json", { cache: "no-store" }).then((r) => r.json()),
       fetch("data/draft.json", { cache: "no-store" }).then((r) => r.json()),
-      fetch("data/briefs.json?v=recs7", { cache: "no-store" })
+      fetch("data/briefs.json?v=recs8", { cache: "no-store" })
         .then((r) => (r.ok ? r.json() : {}))
         .catch(() => ({})),
       fetch("data/recs.json", { cache: "no-store" })
