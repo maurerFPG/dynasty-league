@@ -312,7 +312,7 @@
   }
   function injuryBadge(p) {
     const st = String(p.injury_status || "").trim();
-    if (!st) return "";
+    if (!st) return `<div class="inj none">No injury listed.</div>`;
     const abbr = injuryAbbrev(st);
     if (!abbr) return "";
     const bits = [st];
@@ -837,7 +837,7 @@
     const age = p.age == null ? "" : ` · ${p.age}`;
     card.innerHTML = `
       <div class="card-layout">
-        <div class="card-head">
+        <div class="card-left">
           <div class="card-idrow">
             ${headshotHtml(p.id)}
             <div class="card-id">
@@ -860,7 +860,7 @@
               <div class="v ${gapClass(p.gap)}">${esc(gapLabel(p.gap))}</div>
             </div>
           </div>
-          <div class="card-side">
+          <div class="card-toolbar">
             <div class="card-ops">
               <button type="button" class="toggle${tgt ? " on" : ""}" id="btn-target">${tgt ? "★ Target" : "☆ Target"}</button>
               <button type="button" class="btn" id="btn-research">Research</button>
@@ -868,8 +868,6 @@
             </div>
             ${goneBlock(p)}
           </div>
-        </div>
-        <div class="card-body">
           <div class="alts">
             <div class="k">Nearby on the boards</div>
             <div class="alt-list">
@@ -888,8 +886,8 @@
               }
             </div>
           </div>
-          <div class="card-right">${researchBlock(p)}</div>
         </div>
+        <div class="card-right">${researchBlock(p)}</div>
       </div>
     `;
     $("btn-target").addEventListener("click", () => {
