@@ -1006,11 +1006,17 @@ body.resizing-h { cursor: ns-resize; user-select: none; }
 }
 .card-idrow {
   display: grid;
-  grid-template-columns: 40px minmax(0, 1fr) minmax(86px, 92px);
-  gap: 8px 10px;
-  align-items: stretch;
+  grid-template-columns: 40px minmax(0, 1fr) 22px;
+  grid-template-rows: 40px auto;
+  gap: 6px 10px;
+  align-items: start;
   padding-bottom: 8px;
 }
+.card-idrow .headshot,
+.card-idrow .headshot.ph { grid-column: 1; grid-row: 1; }
+.card-idrow .card-id { grid-column: 2; grid-row: 1; }
+.card-idrow .card-star { grid-column: 3; grid-row: 1; }
+.card-idrow .inj-cell { grid-column: 3; grid-row: 2; }
 .headshot {
   width: 40px;
   height: 40px;
@@ -1060,6 +1066,23 @@ body.resizing-h { cursor: ns-resize; user-select: none; }
   letter-spacing: 0;
 }
 .card-id .who .heat { font-size: 11px; }
+.card-star {
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--faint);
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  justify-self: end;
+  align-self: start;
+}
+.card-star:hover { color: var(--text); }
+.card-star.on { color: var(--steal); }
 .inj-cell {
   margin: 0;
   display: flex;

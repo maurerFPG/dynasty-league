@@ -331,7 +331,7 @@
   }
   function injuryLine(p) {
     const st = String(p.injury_status || "").trim();
-    if (!st) return `<div class="inj-cell empty" aria-hidden="true"></div>`;
+    if (!st) return "";
     const bits = [st];
     if (p.injury_body_part) bits.push(p.injury_body_part);
     const title = p.injury_notes ? bits.concat(p.injury_notes).join(" · ") : bits.join(" · ");
@@ -1121,6 +1121,7 @@
               <div class="who"><span class="${p.is_rookie ? "rookie" : ""}" title="${esc(p.name)}">${esc(cardName(p))}</span>${heatMark(p)}${rookieChip(p)}</div>
               <div class="meta"><span class="c-pos ${esc(p.pos || "")}">${esc(p.pos || "")}</span> · ${esc(p.team || "FA")}${age}${exp}</div>
             </div>
+            <button type="button" class="card-star${tgt ? " on" : ""}" id="btn-target" title="${tgt ? "Remove target" : "Target"}" aria-pressed="${tgt ? "true" : "false"}">${tgt ? "★" : "☆"}</button>
             ${injuryLine(p)}
           </div>
           <div class="card-stats">
@@ -1137,11 +1138,6 @@
               <div class="v ${gapClass(p.gap)}">${esc(gapLabel(p.gap))}</div>
             </div>
             ${goneStat(p)}
-          </div>
-          <div class="card-ops">
-            <button type="button" class="card-act${tgt ? " on" : ""}" id="btn-target">${tgt ? "★ Target" : "☆ Target"}</button>
-            <button type="button" class="card-act" id="btn-research">Research</button>
-            <button type="button" class="card-x" id="btn-close" title="Clear">×</button>
           </div>
           <div class="alts">
             ${
@@ -1164,12 +1160,9 @@
         <div class="card-right">${researchBlock(p)}</div>
       </div>
     `;
-    $("btn-target").addEventListener("click", () => {
+    const star = $("btn-target");
+    if (star) star.addEventListener("click", () => {
       if (p.id) toggleTarget(String(p.id));
-    });
-    $("btn-research").addEventListener("click", () => fetchResearch(p, alts));
-    $("btn-close").addEventListener("click", () => {
-      clearSelectionUi();
     });
     card.querySelectorAll("[data-alt]").forEach((btn) => {
       btn.addEventListener("click", () => selectPlayer(btn.getAttribute("data-alt")));
@@ -1614,7 +1607,7 @@
     const [pj, dj, bj] = await Promise.all([
       fetch("data/players.json", { cache: "no-store" }).then((r) => r.json()),
       fetch("data/draft.json", { cache: "no-store" }).then((r) => r.json()),
-      fetch("data/briefs.json?v=brief3", { cache: "no-store" })
+      fetch("data/briefs.json?v=cardstar", { cache: "no-store" })
         .then((r) => (r.ok ? r.json() : {}))
         .catch(() => ({})),
     ]);
