@@ -586,7 +586,10 @@
         const team = (p && p.team) || o.team || "";
         const key = p ? playerKey(p) : "";
         const alt = key ? ` data-alt="${esc(key)}"` : "";
-        return `<li class="rec-row"${alt}><span class="rec-n">${i + 1}.</span>${logoHtml(team)}<span class="rec-who">${esc(name)}</span></li>`;
+        const posRaw = (p && p.pos) || o.pos || o.position || "";
+        const pos = String(posRaw).trim().toUpperCase();
+        const posHtml = pos ? `<span class="c-pos ${esc(pos)}">${esc(pos)}</span>` : "";
+        return `<li class="rec-row"${alt}><span class="rec-n">${i + 1}.</span>${logoHtml(team)}<span class="rec-who">${esc(name)}</span>${posHtml}</li>`;
       })
       .join("");
     el.querySelectorAll("[data-alt]").forEach((row) => {
@@ -597,7 +600,7 @@
   async function refreshBaked() {
     try {
       const [bj, rj] = await Promise.all([
-        fetch("data/briefs.json?v=recs6", { cache: "no-store" }).then((r) => (r.ok ? r.json() : null)).catch(() => null),
+        fetch("data/briefs.json?v=recs7", { cache: "no-store" }).then((r) => (r.ok ? r.json() : null)).catch(() => null),
         fetch("data/recs.json", { cache: "no-store" }).then((r) => (r.ok ? r.json() : null)).catch(() => null),
       ]);
       if (bj && typeof bj === "object" && !Array.isArray(bj)) state.briefs = bj;
@@ -1828,7 +1831,7 @@
     const [pj, dj, bj, rj] = await Promise.all([
       fetch("data/players.json", { cache: "no-store" }).then((r) => r.json()),
       fetch("data/draft.json", { cache: "no-store" }).then((r) => r.json()),
-      fetch("data/briefs.json?v=recs6", { cache: "no-store" })
+      fetch("data/briefs.json?v=recs7", { cache: "no-store" })
         .then((r) => (r.ok ? r.json() : {}))
         .catch(() => ({})),
       fetch("data/recs.json", { cache: "no-store" })

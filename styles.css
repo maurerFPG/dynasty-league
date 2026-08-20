@@ -1452,3 +1452,4 @@ body.resizing-h { cursor: ns-resize; user-select: none; }
   font-weight: 600;
   font-size: 13px;
 }
+.rec-row .c-pos { flex: 0 0 auto; font-size: 11px; }
