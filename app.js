@@ -5,6 +5,9 @@
   const CARD_H_KEY = "nasty-ui-card-h-v6";
   const PICK_FMT_KEY = "nasty-ui-pick-fmt-v1";
   const POLL_MS = 30000;
+  const HOOK_URL_KEY = "nasty-draft-hook-url";
+  const HOOK_KEY_KEY = "nasty-draft-hook-key";
+  const HOOK_SENT_KEY = "nasty-draft-hook-sent";
   const ROB_USER = "469299052404535296";
   const DRAFT_END = 300;
   const UNDRAFTED = 301;
@@ -566,7 +569,7 @@
   async function refreshBaked() {
     try {
       const [bj, rj] = await Promise.all([
-        fetch("data/briefs.json?v=recs2", { cache: "no-store" }).then((r) => (r.ok ? r.json() : null)).catch(() => null),
+        fetch("data/briefs.json?v=recs3", { cache: "no-store" }).then((r) => (r.ok ? r.json() : null)).catch(() => null),
         fetch("data/recs.json", { cache: "no-store" }).then((r) => (r.ok ? r.json() : null)).catch(() => null),
       ]);
       if (bj && typeof bj === "object" && !Array.isArray(bj)) state.briefs = bj;
@@ -1372,6 +1375,9 @@
     if (state.pollError) dot.title = "Picks poll failed · " + state.pollError;
     else if (state.lastPoll) dot.title = "Last poll " + state.lastPoll;
     else dot.title = "Picks poll every 30s";
+    const hookOn = !!(hookConfig().url);
+    if (!hookOn) dot.title = (dot.title || "") + " · draft pings off — click to set";
+    else dot.title = (dot.title || "") + " · draft pings on";
   }
 
   function toEpochMs(v) {
@@ -1566,6 +1572,78 @@
     state.goneModel = { key: "", byId: new Map(), availById: new Map(), label: "", thenLabel: "" };
   }
 
+  function hookConfig() {
+    try {
+      return {
+        url: localStorage.getItem(HOOK_URL_KEY) || "",
+        key: localStorage.getItem(HOOK_KEY_KEY) || "",
+      };
+    } catch (e) {
+      return { url: "", key: "" };
+    }
+  }
+
+  function configureDraftHook() {
+    const cur = hookConfig();
+    const url = window.prompt("Draft ping URL (from Draft pick watch in my Routines)", cur.url);
+    if (url == null) return;
+    const key = window.prompt("Sender key (same routine card)", cur.key);
+    if (key == null) return;
+    try {
+      localStorage.setItem(HOOK_URL_KEY, url.trim());
+      localStorage.setItem(HOOK_KEY_KEY, key.trim());
+    } catch (e) { /* ignore */ }
+    renderChrome();
+  }
+
+  function notifyDraftEvent(kind, extra) {
+    const { url, key } = hookConfig();
+    if (!url) return;
+    let sent = {};
+    try { sent = JSON.parse(localStorage.getItem(HOOK_SENT_KEY) || "{}"); } catch (e) { sent = {}; }
+    const token = kind + ":" + String(extra.overall || extra.pick || "");
+    if (sent[token]) return;
+    sent[token] = Date.now();
+    try { localStorage.setItem(HOOK_SENT_KEY, JSON.stringify(sent)); } catch (e) { /* ignore */ }
+    const headers = { "Content-Type": "application/json" };
+    if (key) {
+      headers.Authorization = key;
+      headers["X-Webhook-Key"] = key;
+    }
+    const body = JSON.stringify(Object.assign({ kind: kind }, extra));
+    fetch(url, { method: "POST", headers: headers, body: body }).catch(() => {
+      fetch(url, { method: "POST", body: body, mode: "no-cors" }).catch(() => {});
+    });
+  }
+
+  function maybePingDraftEvents(draftedChanged) {
+    const rob = nextRobPick();
+    const cur = currentOverall();
+    if (draftedChanged && state.picks.length) {
+      const last = state.picks.reduce((best, pk) => {
+        const n = Number(pk.pick_no || pk.pickNo) || 0;
+        const b = Number(best.pick_no || best.pickNo) || 0;
+        return n >= b ? pk : best;
+      }, state.picks[0]);
+      if (last && isRobPick(last)) {
+        const meta = last.metadata || {};
+        notifyDraftEvent("rob_picked", {
+          overall: Number(last.pick_no || last.pickNo),
+          player_id: last.player_id || null,
+          name: [meta.first_name, meta.last_name].filter(Boolean).join(" "),
+          next_rob: rob ? rob.overall : null,
+        });
+      }
+    }
+    if (rob && (cur === rob.overall - 1 || cur === rob.overall)) {
+      notifyDraftEvent("one_away", {
+        overall: rob.overall,
+        label: rob.label || "",
+        current: cur,
+      });
+    }
+  }
+
   async function pollPicks(manual) {
     const btn = $("btn-refresh");
     if (manual) btn.classList.add("busy");
@@ -1606,6 +1684,7 @@
       [...state.draftedIds].some((id) => !prevDrafted.has(id));
     await refreshBaked();
     renderRecs();
+    maybePingDraftEvents(draftedChanged);
     if (draftedChanged) {
       state.altsCache = { key: null, list: [] };
       renderLists();
@@ -1641,6 +1720,8 @@
 
   function bind() {
     $("btn-refresh").addEventListener("click", () => pollPicks(true));
+    const hookDot = $("poll-dot");
+    if (hookDot) hookDot.addEventListener("click", configureDraftHook);
     document.querySelectorAll("#filters .pos").forEach((btn) => {
       btn.addEventListener("click", () => {
         const pos = btn.getAttribute("data-pos");
@@ -1719,7 +1800,7 @@
     const [pj, dj, bj, rj] = await Promise.all([
       fetch("data/players.json", { cache: "no-store" }).then((r) => r.json()),
       fetch("data/draft.json", { cache: "no-store" }).then((r) => r.json()),
-      fetch("data/briefs.json?v=recs2", { cache: "no-store" })
+      fetch("data/briefs.json?v=recs3", { cache: "no-store" })
         .then((r) => (r.ok ? r.json() : {}))
         .catch(() => ({})),
       fetch("data/recs.json", { cache: "no-store" })
