@@ -172,6 +172,11 @@
     if (!init) return last;
     return init.toUpperCase() + ". " + last;
   }
+  function cardName(p) {
+    const full = String((p && p.name) || "").trim();
+    if (full.length <= 13) return full;
+    return boardName(full);
+  }
 
   function fmtAdp(v) {
     if (v == null || Number.isNaN(Number(v))) return "—";
@@ -820,7 +825,7 @@
           <div class="card-idrow">
             ${headshotHtml(p.id)}
             <div class="card-id">
-              <div class="who"><span class="${p.is_rookie ? "rookie" : ""}">${esc(p.name)}</span>${heatMark(p)}${rookieChip(p)}</div>
+              <div class="who"><span class="${p.is_rookie ? "rookie" : ""}" title="${esc(p.name)}">${esc(cardName(p))}</span>${heatMark(p)}${rookieChip(p)}</div>
               <div class="meta"><span class="c-pos ${esc(p.pos || "")}">${esc(p.pos || "")}</span> · ${esc(p.team || "FA")}${age}${exp}</div>
             </div>
             ${injuryLine(p)}

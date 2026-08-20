@@ -1018,16 +1018,15 @@ body.resizing-h { cursor: ns-resize; user-select: none; }
   align-items: center;
   flex-wrap: nowrap;
   gap: 5px;
-  font-size: clamp(13px, 10cqi, 16px);
+  font-size: 15px;
   font-weight: 600;
   letter-spacing: -0.015em;
-  line-height: 1.05;
+  line-height: 1.1;
   min-width: 0;
 }
 .card-id .who > span:first-child {
   min-width: 0;
   overflow: hidden;
-  text-overflow: ellipsis;
   white-space: nowrap;
 }
 .card-id .who .heat,
@@ -1035,8 +1034,8 @@ body.resizing-h { cursor: ns-resize; user-select: none; }
 .card-id .meta {
   color: var(--muted);
   margin-top: 0;
-  font-size: 12px;
-  line-height: 1.1;
+  font-size: 14px;
+  line-height: 1.15;
 }
 .card-id .who .heat { font-size: 11px; }
 .inj-cell {
