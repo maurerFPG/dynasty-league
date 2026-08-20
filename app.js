@@ -1612,7 +1612,7 @@
     const [pj, dj, bj] = await Promise.all([
       fetch("data/players.json", { cache: "no-store" }).then((r) => r.json()),
       fetch("data/draft.json", { cache: "no-store" }).then((r) => r.json()),
-      fetch("data/briefs.json?v=v2h", { cache: "no-store" })
+      fetch("data/briefs.json?v=v2i", { cache: "no-store" })
         .then((r) => (r.ok ? r.json() : {}))
         .catch(() => ({})),
     ]);
