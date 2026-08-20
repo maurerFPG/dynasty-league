@@ -3,6 +3,7 @@
   const TARGETS_KEY = "nasty-draft-hq-targets-v1";
   const BOARD_H_KEY = "nasty-ui-board-h-v1";
   const CARD_H_KEY = "nasty-ui-card-h-v5";
+  const PICK_FMT_KEY = "nasty-ui-pick-fmt-v1";
   const POLL_MS = 30000;
   const ROB_USER = "469299052404535296";
   const DRAFT_END = 300;
@@ -72,6 +73,7 @@
     research: { key: null, status: "idle", headlines: [], error: null },
     altsCache: { key: null, list: [] },
     goneModel: { key: "", byId: new Map(), availById: new Map(), label: "", thenLabel: "" },
+    pickOverall: false,
   };
 
   const $ = (id) => document.getElementById(id);
@@ -97,6 +99,7 @@
     if (Number.isFinite(ch) && ch >= 88) {
       document.documentElement.style.setProperty("--card-h", Math.round(ch) + "px");
     }
+    state.pickOverall = localStorage.getItem(PICK_FMT_KEY) === "1";
   }
 
   function bindSplitters() {
@@ -339,6 +342,11 @@
     return `<span class="c-who"><span class="c-name${rook}">${esc(p.name)}</span>${heatMark(p)}${injuryBadge(p)}</span>`;
   }
 
+  function fmtPick(cell) {
+    if (!cell) return "";
+    return state.pickOverall ? String(cell.overall) : (cell.label || String(cell.overall));
+  }
+
   function nextEmptyPick() {
     const map = state.draft?.pick_map || [];
     for (const cell of map) {
@@ -377,7 +385,7 @@
       const n = i === 0 ? rob[i].overall - current : rob[i].overall - rob[i - 1].overall - 1;
       if (n <= 0) continue;
       cum += n;
-      marks.push({ after: cum, label: "before " + rob[i].label });
+      marks.push({ after: cum, label: "before " + fmtPick(rob[i]) });
     }
     return marks;
   }
@@ -446,6 +454,7 @@
     const frag = document.createDocumentFragment();
     const corner = document.createElement("div");
     corner.className = "b-corner";
+    corner.innerHTML = `<button type="button" class="pick-fmt${state.pickOverall ? " on" : ""}" id="btn-pick-fmt" title="${state.pickOverall ? "Show 1.03-style picks" : "Show overall pick numbers"}">#</button>`;
     frag.appendChild(corner);
     for (const slot of d.slots) {
       const el = document.createElement("div");
@@ -478,17 +487,28 @@
           if (pos) cls.push("pos-" + pos);
           const nm = boardName(pick.name);
           el.innerHTML = `<span class="nm">${esc(nm)}</span><span class="p">${esc(pos)}</span>`;
-          el.title = `${cell.label} · ${pick.name} (${pos} ${pick.team || ""})`;
+          el.title = `${fmtPick(cell)} · ${pick.name} (${pos} ${pick.team || ""})`;
         } else {
           if (next && cell && cell.overall === next.overall) cls.push("next");
-          el.innerHTML = `<span class="lbl">${esc(cell ? cell.label : "")}</span>`;
-          el.title = cell ? `${cell.label} · slot ${cell.slot}` : "";
+          el.innerHTML = `<span class="lbl">${esc(cell ? fmtPick(cell) : "")}</span>`;
+          el.title = cell ? `${fmtPick(cell)} · slot ${cell.slot}` : "";
         }
         el.className = cls.join(" ");
         frag.appendChild(el);
       }
     }
     board.replaceChildren(frag);
+    const fmtBtn = $("btn-pick-fmt");
+    if (fmtBtn) {
+      fmtBtn.addEventListener("click", () => {
+        state.pickOverall = !state.pickOverall;
+        try { localStorage.setItem(PICK_FMT_KEY, state.pickOverall ? "1" : "0"); } catch (e) { /* ignore */ }
+        renderBoard();
+        renderLists();
+        renderCard();
+        renderChrome();
+      });
+    }
   }
 
   function bucketPos(raw, playerId) {
@@ -1020,10 +1040,13 @@
   function goneStat(p) {
     const g = goneBeforeEstimate(p);
     if (!g) return `<div class="stat"><div class="k">—</div><div class="v faint">—</div></div>`;
+    const win = goneWindow();
+    const k1 = win && win.next ? fmtPick(win.next) : (g.label || "—");
+    const k2 = win && win.then ? fmtPick(win.then) : g.thenLabel;
     const a = g.ready ? `${g.pct}%` : "…";
     const b = g.ready ? `${g.avail}%` : "…";
-    let html = `<div class="stat"><div class="k">${esc(g.label || "—")}</div><div class="v">${a}</div></div>`;
-    if (g.thenLabel) html += `<div class="stat"><div class="k">${esc(g.thenLabel)}</div><div class="v">${b}</div></div>`;
+    let html = `<div class="stat"><div class="k">${esc(k1)}</div><div class="v">${a}</div></div>`;
+    if (k2) html += `<div class="stat"><div class="k">${esc(k2)}</div><div class="v">${b}</div></div>`;
     return html;
   }
 
@@ -1165,7 +1188,7 @@
       if (k) k.textContent = label;
     }
     if (robNext) {
-      setChip(nextEl, robNext.label, onClock ? "Clock" : "Next");
+      setChip(nextEl, fmtPick(robNext), onClock ? "Clock" : "Next");
       setChip(untilEl, String(until), "until");
     } else {
       setChip(nextEl, "—", "Done");
