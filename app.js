@@ -8,13 +8,6 @@
   const DRAFT_END = 300;
   const UNDRAFTED = 301;
 
-  const PREVIEW_LIVE = true;
-  const PREVIEW_PICKS = [
-    { pick_no: 1, draft_slot: 1, player_id: "11564", picked_by: "608064411164274688", roster_id: 4,
-      metadata: { first_name: "Drake", last_name: "Maye", position: "QB", team: "NE" } },
-    { pick_no: 2, draft_slot: 2, player_id: "4984", picked_by: "1255998594205360128", roster_id: 10,
-      metadata: { first_name: "Josh", last_name: "Allen", position: "QB", team: "BUF" } },
-  ];
 
   const TEAM_NAMES = {
     ARI: ["arizona", "cardinals", "arizona cardinals"],
@@ -170,6 +163,14 @@
       return `${parts[parts.length - 2]} ${parts[parts.length - 1]}`;
     }
     return parts[parts.length - 1] || full;
+  }
+  function boardName(full) {
+    const last = lastName(full);
+    if (!full) return last;
+    const first = full.replace(/,/g, "").trim().split(/\s+/)[0] || "";
+    const init = first.replace(/[^A-Za-z]/g, "").charAt(0);
+    if (!init) return last;
+    return init.toUpperCase() + ". " + last;
   }
 
   function fmtAdp(v) {
@@ -468,7 +469,7 @@
           cls.push("filled");
           const pos = (pick.position || "").toUpperCase();
           if (pos) cls.push("pos-" + pos);
-          const nm = lastName(pick.name);
+          const nm = boardName(pick.name);
           el.innerHTML = `<span class="nm">${esc(nm)}</span><span class="p">${esc(pos)}</span>`;
           el.title = `${cell.label} · ${pick.name} (${pos} ${pick.team || ""})`;
         } else {
@@ -1193,11 +1194,10 @@
       ]);
       if (!pRes.ok) throw new Error("picks " + pRes.status);
       const picks = await pRes.json();
-      applyPicks(PREVIEW_LIVE ? PREVIEW_PICKS : picks);
-      if (PREVIEW_LIVE) state.draftStatus = "drafting";
+      applyPicks(picks);
       if (dRes.ok) {
         const dj = await dRes.json();
-        if (!PREVIEW_LIVE && dj && dj.status) state.draftStatus = dj.status;
+        if (dj && dj.status) state.draftStatus = dj.status;
         state.draftLive = dj
           ? {
               start_time: dj.start_time ?? null,
