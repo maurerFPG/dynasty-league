@@ -1,5 +1,19 @@
 {
-  "pick": null,
-  "overall": null,
-  "options": []
+  "pick": "1.03",
+  "overall": 3,
+  "preview": true,
+  "options": [
+    {
+      "id": "9509",
+      "name": "Bijan Robinson"
+    },
+    {
+      "id": "7564",
+      "name": "Ja'Marr Chase"
+    },
+    {
+      "id": "11564",
+      "name": "Drake Maye"
+    }
+  ]
 }
