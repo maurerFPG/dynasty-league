@@ -5,17 +5,17 @@ Type Dynasty, position OP (Superflex), scoring PPR. Not the Draft Wizard cheat s
 Sleeper ids via the same conservative matcher as `tools/ingest_cheatsheet.py`.
 
 - Snapshot present: **True**
-- Snapshot rows: **547**
+- Snapshot rows: **546**
 - Type / position / scoring: **Dynasty / OP / PPR**
-- Experts: **29** · last updated **8/18** · tier **premium**
-- Matched to a Sleeper player: **544**
+- Experts: **28** · last updated **8/20** · tier **premium**
+- Matched to a Sleeper player: **543**
 - Unmatched: **3**
-- Unique FP-ranked Sleeper players: **543**
+- Unique FP-ranked Sleeper players: **542**
 
 ### Match methods
 
 - `name+pos+team`: 500
-- `name+pos`: 42
+- `name+pos`: 41
 - `unmatched`: 3
 - `alias+name+pos+team`: 2
 
@@ -23,7 +23,7 @@ Sleeper ids via the same conservative matcher as `tools/ingest_cheatsheet.py`.
 
 | fp_rank | Name | Pos | Team | Reason |
 | --- | --- | --- | --- | --- |
-| 514 | Daylan Smothers | RB | FA | no match |
-| 517 | Mark Fletcher | RB | FA | no match |
-| 518 | Chip Trayanum | RB | NYJ | no match |
+| 513 | Daylan Smothers | RB | FA | no match |
+| 516 | Mark Fletcher | RB | FA | no match |
+| 517 | Chip Trayanum | RB | NYJ | no match |
 
