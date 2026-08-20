@@ -1006,17 +1006,18 @@ body.resizing-h { cursor: ns-resize; user-select: none; }
 }
 .card-idrow {
   display: grid;
-  grid-template-columns: 40px minmax(0, 1fr) 22px;
-  grid-template-rows: 40px auto;
-  gap: 6px 10px;
+  grid-template-columns: 40px minmax(0, 1fr) auto;
+  gap: 8px 10px;
   align-items: start;
   padding-bottom: 8px;
 }
-.card-idrow .headshot,
-.card-idrow .headshot.ph { grid-column: 1; grid-row: 1; }
-.card-idrow .card-id { grid-column: 2; grid-row: 1; }
-.card-idrow .card-star { grid-column: 3; grid-row: 1; }
-.card-idrow .inj-cell { grid-column: 3; grid-row: 2; }
+.card-corner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+  min-width: 22px;
+}
 .headshot {
   width: 40px;
   height: 40px;
@@ -1069,7 +1070,7 @@ body.resizing-h { cursor: ns-resize; user-select: none; }
 .card-star {
   appearance: none;
   width: 22px;
-  height: 22px;
+  height: 18px;
   margin: 0;
   padding: 0;
   border: 0;
@@ -1078,8 +1079,6 @@ body.resizing-h { cursor: ns-resize; user-select: none; }
   font-size: 16px;
   line-height: 1;
   cursor: pointer;
-  justify-self: end;
-  align-self: start;
 }
 .card-star:hover { color: var(--text); }
 .card-star.on { color: var(--steal); }
@@ -1175,7 +1174,7 @@ body.resizing-h { cursor: ns-resize; user-select: none; }
 .gone-est, .gone-num, .gone-cap { display: none; }
 .alts {
   margin: 0;
-  padding-top: 2px;
+  padding-top: 10px;
   border-top: 0;
   min-width: 0;
   min-height: 0;

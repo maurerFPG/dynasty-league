@@ -1121,8 +1121,10 @@
               <div class="who"><span class="${p.is_rookie ? "rookie" : ""}" title="${esc(p.name)}">${esc(cardName(p))}</span>${heatMark(p)}${rookieChip(p)}</div>
               <div class="meta"><span class="c-pos ${esc(p.pos || "")}">${esc(p.pos || "")}</span> · ${esc(p.team || "FA")}${age}${exp}</div>
             </div>
-            <button type="button" class="card-star${tgt ? " on" : ""}" id="btn-target" title="${tgt ? "Remove target" : "Target"}" aria-pressed="${tgt ? "true" : "false"}">${tgt ? "★" : "☆"}</button>
-            ${injuryLine(p)}
+            <div class="card-corner">
+              <button type="button" class="card-star${tgt ? " on" : ""}" id="btn-target" title="${tgt ? "Remove target" : "Target"}" aria-pressed="${tgt ? "true" : "false"}">${tgt ? "★" : "☆"}</button>
+              ${injuryLine(p)}
+            </div>
           </div>
           <div class="card-stats">
             <div class="stat">
@@ -1607,7 +1609,7 @@
     const [pj, dj, bj] = await Promise.all([
       fetch("data/players.json", { cache: "no-store" }).then((r) => r.json()),
       fetch("data/draft.json", { cache: "no-store" }).then((r) => r.json()),
-      fetch("data/briefs.json?v=cardstar", { cache: "no-store" })
+      fetch("data/briefs.json?v=cardstar2", { cache: "no-store" })
         .then((r) => (r.ok ? r.json() : {}))
         .catch(() => ({})),
     ]);
