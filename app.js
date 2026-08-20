@@ -2,7 +2,7 @@
 (() => {
   const TARGETS_KEY = "nasty-draft-hq-targets-v1";
   const BOARD_H_KEY = "nasty-ui-board-h-v1";
-  const CARD_H_KEY = "nasty-ui-card-h-v2";
+  const CARD_H_KEY = "nasty-ui-card-h-v3";
   const POLL_MS = 30000;
   const ROB_USER = "469299052404535296";
   const DRAFT_END = 300;
