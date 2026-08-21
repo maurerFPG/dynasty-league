@@ -6891,33 +6891,29 @@
   },
   "13414": {
     "as_of": "2026-08-20",
-    "heat": "fire",
-    "lead": "I'd take Black at 17.10 leftover \u2014 49ers RB2 dart this year with CMC tightness and James' rib out, and the later cuff if the 3rd-rounder holds. I will not climb him.",
-    "depth": "CMC is the locked 1 (SL 31) when the tightness holds. James is the year-2 2 (SL 243, fractured rib). Guerendo is out (pectoral). Path to 2026 snaps is the 2 and the days CMC sits; path to later is a 24-year-old 90th overall pick.",
+    "heat": "neutral",
+    "gem": true,
+    "lead": "I'd take Black at 17.10 leftover as a taxi \u2014 49ers RB2 this year with CMC tightness and James' rib out, later is the 24-year-old 3rd-round cuff if he holds the 2. I will not climb him.",
+    "depth": "CMC is the locked 1 (SL 31). James is the year-2 2 (SL 242, fractured rib). Guerendo is out (pectoral). Herbert was re-signed today after Taylor went on IR \u2014 veteran committee body, not the 2. Path to 2026 snaps is the days CMC sits, not a lead-back. Path to later is a 90th-overall pick.",
     "notes": [
-      "Barrows (Athletic via NBC Aug 19): with CMC (tightness) and James (rib) out, the 3rd-rounder ran as the lead vs LAC \u2014 50-yard burst left, violence, goal-line catch. Purdy: looked good hitting the hole, different intensity when he touched it. Shanahan (49ers.com Day 14 / NBC Bay Area): looked healthy, juice, most likely plays tonight at SoFi. Missed two weeks adductor (Questionable thigh). Dropped an early pitch from Mac. Guerendo still out.",
-      "Sleeper 214 / FP 247 \u2014 33 spots this room is ahead. Trends fired him off the Barrows lead-back note \u2014 I agree with the beat, not the tag. I will not climb him into the 16th. At leftover this is the CMC cuff that actually practiced. I already iced CMC at 31. No standalone r/DynastyFF pile-on."
+      "Barrows (Athletic via NBC Aug 19): with CMC and James out, Black ran as the lead vs LAC \u2014 50-yard burst left, violence, goal-line catch. Purdy: looked good hitting the hole, different intensity. Shanahan: juice. Missed two weeks adductor. Tonight at SoFi is the first live look (Black, McCormick, White, Herbert).",
+      "Today: 49ers re-signed Khalil Herbert, Patrick Taylor to IR (Wagoner). That is a committee, not a clean RB2. Dynasty room will skip a 24-year-old at 211; I taxi the CMC days. I do not climb him into the 16th. Sleeper 211 / FP 247."
     ],
     "nearby": [
-      {
-        "id": "4034",
-        "name": "Christian McCaffrey",
-        "take": "CMC is the locked 1. Black is the leftover 2 \u2014 do not climb CMC here."
-      },
       {
         "id": "12467",
         "name": "Jordan James",
         "take": "James was the camp 2. Black has this week's tape \u2014 I'd take Black."
       },
       {
-        "id": "6803",
-        "name": "Brandon Aiyuk",
-        "take": "Aiyuk is the 49ers WR freeze. Black is the live back."
+        "id": "11647",
+        "name": "Kimani Vidal",
+        "take": "Same leftover band. I'd take Black for the CMC days."
       },
       {
-        "id": "7527",
-        "name": "Mac Jones",
-        "take": "Mac is the leftover QB. Black is the leftover back \u2014 I'd take Black."
+        "id": "4034",
+        "name": "Christian McCaffrey",
+        "take": "CMC is the locked 1. Do not climb him here."
       }
     ],
     "links": [
@@ -6930,8 +6926,8 @@
         "url": "https://www.49ers.com/news/day-14-of-2026-training-camp-kaelon-black-returns-for-joint-practice-with-chargers"
       },
       {
-        "label": "NBC Bay Area: 50-yard burst, Purdy",
-        "url": "https://www.nbcbayarea.com/news/sports/nfl/san-francisco-49ers/kaelon-black-joint-practice-chargers/4129803/"
+        "label": "49ers Webzone: Herbert re-signed, Taylor IR",
+        "url": "https://www.49erswebzone.com/articles/202497-49ers-running-chargers-re-sign-veteran/"
       }
     ]
   },
@@ -13917,7 +13913,7 @@
   "13335": {
     "as_of": "2026-08-20",
     "heat": "fire",
-    "gem": true,
+    "gem": false,
     "lead": "I'd take Payton at 25.10 leftover as a Superflex taxi \u2014 Eagles 4 this year behind Hurts, McKee, and Dalton after the Ravens fourth, later is the 2 if they cut the loser of McKee/Dalton.",
     "depth": "Hurts is the locked 1. McKee and Dalton are fighting the 2 and both stalled vs Baltimore (McKee 6-of-10 for 35, Dalton 3-of-6 for 20). Path to 2026 snaps is already closed. Path to later is a 23-year-old fifth-rounder (178) if they keep four or stash him.",
     "notes": [
@@ -15154,7 +15150,7 @@
   "13557": {
     "as_of": "2026-08-20",
     "heat": "fire",
-    "gem": true,
+    "gem": false,
     "lead": "I'd take Kaliakmanis at 25.10 leftover as a Superflex taxi \u2014 Commanders 3/4 this year with Mariota on an MCL, later is the developmental 2 if Hartman is only the vet.",
     "depth": "Daniels is the locked 1. Mariota is the leftover 2 (sprained MCL Friday; Quinn optimistic for Week 1). Hartman is the leftover 3. Path to 2026 snaps is already closed. Path to later is a 22-year-old seventh-rounder (223) if he beats Hartman for the developmental seat.",
     "notes": [
