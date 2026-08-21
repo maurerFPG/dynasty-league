@@ -1,18 +1,5 @@
 {
-  "pick": "6.03",
-  "overall": 63,
-  "options": [
-    {
-      "id": "7525",
-      "name": "DeVonta Smith"
-    },
-    {
-      "id": "6801",
-      "name": "Tee Higgins"
-    },
-    {
-      "id": "7553",
-      "name": "Kyle Pitts"
-    }
-  ]
+  "pick": null,
+  "overall": null,
+  "options": []
 }
