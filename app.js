@@ -607,7 +607,7 @@
     try {
       const [bj, rj] = await Promise.all([
         fetch("data/briefs.json?v=bgem3", { cache: "no-store" }).then((r) => (r.ok ? r.json() : null)).catch(() => null),
-        fetch("data/recs.json", { cache: "no-store" }).then((r) => (r.ok ? r.json() : null)).catch(() => null),
+        fetch("data/recs.json?v=r103", { cache: "no-store" }).then((r) => (r.ok ? r.json() : null)).catch(() => null),
       ]);
       if (bj && typeof bj === "object" && !Array.isArray(bj)) state.briefs = bj;
       if (rj && typeof rj === "object") state.recs = rj;
@@ -1842,7 +1842,7 @@
       fetch("data/briefs.json?v=bgem3", { cache: "no-store" })
         .then((r) => (r.ok ? r.json() : {}))
         .catch(() => ({})),
-      fetch("data/recs.json", { cache: "no-store" })
+      fetch("data/recs.json?v=r103", { cache: "no-store" })
         .then((r) => (r.ok ? r.json() : null))
         .catch(() => null),
     ]);
