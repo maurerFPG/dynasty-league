@@ -1,5 +1,21 @@
 {
-  "pick": null,
-  "overall": null,
-  "options": []
+  "pick": "4.03",
+  "overall": 39,
+  "options": [
+    {
+      "id": "12508",
+      "name": "Jaxson Dart",
+      "pos": "QB"
+    },
+    {
+      "id": "8144",
+      "name": "Chris Olave",
+      "pos": "WR"
+    },
+    {
+      "id": "11635",
+      "name": "Ladd McConkey",
+      "pos": "WR"
+    }
+  ]
 }
