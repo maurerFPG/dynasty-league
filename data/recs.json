@@ -1,21 +1,5 @@
 {
-  "pick": "1.03",
-  "overall": 3,
-  "options": [
-    {
-      "id": "4984",
-      "name": "Josh Allen",
-      "pos": "QB"
-    },
-    {
-      "id": "11566",
-      "name": "Jayden Daniels",
-      "pos": "QB"
-    },
-    {
-      "id": "4881",
-      "name": "Lamar Jackson",
-      "pos": "QB"
-    }
-  ]
+  "pick": null,
+  "overall": null,
+  "options": []
 }
