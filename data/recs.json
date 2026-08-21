@@ -1,21 +1,5 @@
 {
-  "pick": "2.10",
-  "overall": 22,
-  "options": [
-    {
-      "id": "9226",
-      "name": "De'Von Achane",
-      "pos": "RB"
-    },
-    {
-      "id": "8112",
-      "name": "Drake London",
-      "pos": "WR"
-    },
-    {
-      "id": "12508",
-      "name": "Jaxson Dart",
-      "pos": "QB"
-    }
-  ]
+  "pick": null,
+  "overall": null,
+  "options": []
 }
