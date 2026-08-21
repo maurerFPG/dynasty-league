@@ -1,5 +1,18 @@
 {
-  "pick": null,
-  "overall": null,
-  "options": []
+  "pick": "3.10",
+  "overall": 34,
+  "options": [
+    {
+      "id": "12508",
+      "name": "Jaxson Dart"
+    },
+    {
+      "id": "7569",
+      "name": "Nico Collins"
+    },
+    {
+      "id": "4046",
+      "name": "Patrick Mahomes"
+    }
+  ]
 }
