@@ -450,9 +450,9 @@
   function isRobPick(pk) {
     const robUser = String(state.draft?.rob_user_id || ROB_USER);
     if (pk.picked_by && String(pk.picked_by) === robUser) return true;
-    const slot = (state.draft?.slots || []).find((s) => s.is_rob) || { slot: 3, roster_id: 12 };
-    if (pk.roster_id != null && Number(pk.roster_id) === Number(slot.roster_id)) return true;
-    if (pk.draft_slot != null && Number(pk.draft_slot) === Number(slot.slot)) return true;
+    const overall = Number(pk.pick_no || pk.pickNo);
+    const cell = (state.draft?.pick_map || []).find((c) => Number(c.overall) === overall);
+    if (cell) return !!cell.is_rob;
     return false;
   }
 
@@ -1838,7 +1838,7 @@
     loadLayout();
     const [pj, dj, bj, rj] = await Promise.all([
       fetch("data/players.json?v=heat1", { cache: "no-store" }).then((r) => r.json()),
-      fetch("data/draft.json?v=tr712", { cache: "no-store" }).then((r) => r.json()),
+      fetch("data/draft.json?v=mp1", { cache: "no-store" }).then((r) => r.json()),
       fetch("data/briefs.json?v=b82", { cache: "no-store" })
         .then((r) => (r.ok ? r.json() : {}))
         .catch(() => ({})),
