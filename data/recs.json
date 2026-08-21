@@ -1,18 +1,14 @@
 {
-  "pick": "5.10",
-  "overall": 58,
+  "pick": "6.03",
+  "overall": 63,
   "options": [
-    {
-      "id": "10229",
-      "name": "Rashee Rice"
-    },
     {
       "id": "7525",
       "name": "DeVonta Smith"
     },
     {
-      "id": "12506",
-      "name": "Harold Fannin"
+      "id": "6801",
+      "name": "Tee Higgins"
     }
   ]
 }
