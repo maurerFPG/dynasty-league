@@ -1,5 +1,18 @@
 {
-  "pick": null,
-  "overall": null,
-  "options": []
+  "pick": "5.10",
+  "overall": 58,
+  "options": [
+    {
+      "id": "10229",
+      "name": "Rashee Rice"
+    },
+    {
+      "id": "7525",
+      "name": "DeVonta Smith"
+    },
+    {
+      "id": "12506",
+      "name": "Harold Fannin"
+    }
+  ]
 }
