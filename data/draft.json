@@ -771,7 +771,7 @@
       "pick_in_round": 10,
       "slot": 3,
       "label": "7.10",
-      "is_rob": true
+      "is_rob": false
     },
     {
       "overall": 83,
@@ -787,7 +787,7 @@
       "pick_in_round": 12,
       "slot": 1,
       "label": "7.12",
-      "is_rob": false
+      "is_rob": true
     },
     {
       "overall": 85,
@@ -795,7 +795,7 @@
       "pick_in_round": 1,
       "slot": 1,
       "label": "8.01",
-      "is_rob": false
+      "is_rob": true
     },
     {
       "overall": 86,
@@ -811,7 +811,7 @@
       "pick_in_round": 3,
       "slot": 3,
       "label": "8.03",
-      "is_rob": true
+      "is_rob": false
     },
     {
       "overall": 88,
@@ -1123,7 +1123,7 @@
       "pick_in_round": 6,
       "slot": 7,
       "label": "11.06",
-      "is_rob": false
+      "is_rob": true
     },
     {
       "overall": 127,
@@ -1195,7 +1195,7 @@
       "pick_in_round": 3,
       "slot": 3,
       "label": "12.03",
-      "is_rob": true
+      "is_rob": false
     },
     {
       "overall": 136,
@@ -2525,12 +2525,12 @@
     "4.03",
     "5.10",
     "6.03",
-    "7.10",
-    "8.03",
+    "7.12",
+    "8.01",
     "9.10",
     "10.03",
+    "11.06",
     "11.10",
-    "12.03",
     "13.10",
     "14.03",
     "15.10",
