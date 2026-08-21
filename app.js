@@ -606,7 +606,7 @@
   async function refreshBaked() {
     try {
       const [bj, rj] = await Promise.all([
-        fetch("data/briefs.json?v=ol3", { cache: "no-store" }).then((r) => (r.ok ? r.json() : null)).catch(() => null),
+        fetch("data/briefs.json?v=ol4", { cache: "no-store" }).then((r) => (r.ok ? r.json() : null)).catch(() => null),
         fetch("data/recs.json?v=r1106", { cache: "no-store" }).then((r) => (r.ok ? r.json() : null)).catch(() => null),
       ]);
       if (bj && typeof bj === "object" && !Array.isArray(bj)) state.briefs = bj;
@@ -1839,7 +1839,7 @@
     const [pj, dj, bj, rj] = await Promise.all([
       fetch("data/players.json?v=heat1", { cache: "no-store" }).then((r) => r.json()),
       fetch("data/draft.json?v=mp1", { cache: "no-store" }).then((r) => r.json()),
-      fetch("data/briefs.json?v=ol3", { cache: "no-store" })
+      fetch("data/briefs.json?v=ol4", { cache: "no-store" })
         .then((r) => (r.ok ? r.json() : {}))
         .catch(() => ({})),
       fetch("data/recs.json?v=r1106", { cache: "no-store" })
