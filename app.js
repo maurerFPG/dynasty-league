@@ -1837,7 +1837,7 @@
     loadTargets();
     loadLayout();
     const [pj, dj, bj, rj] = await Promise.all([
-      fetch("data/players.json?v=ecr823", { cache: "no-store" }).then((r) => r.json()),
+      fetch("data/players.json?v=ecr825", { cache: "no-store" }).then((r) => r.json()),
       fetch("data/draft.json?v=mp1", { cache: "no-store" }).then((r) => r.json()),
       fetch("data/briefs.json?v=ol8", { cache: "no-store" })
         .then((r) => (r.ok ? r.json() : {}))
