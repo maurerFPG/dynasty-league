@@ -1,10 +1,10 @@
-/* Dynasty league — remaining-name glance. No pick recommender. */
+/* Redraft — remaining-name glance. No pick recommender. */
 (() => {
   const TARGETS_KEY = "nasty-draft-hq-targets-v1";
   const BOARD_H_KEY = "nasty-ui-board-h-v1";
   const CARD_H_KEY = "nasty-ui-card-h-v6";
   const PICK_FMT_KEY = "nasty-ui-pick-fmt-v1";
-  const POLL_MS = 30000;
+  const POLL_MS = 2000;
   const HOOK_URL_KEY = "nasty-draft-hook-url";
   const HOOK_KEY_KEY = "nasty-draft-hook-key";
   const HOOK_SENT_KEY = "nasty-draft-hook-sent";
@@ -402,8 +402,8 @@
   function remainingRanked(side) {
     if (side === "fo") {
       return state.players
-        .filter((p) => remaining(p) && p.fo_adp != null)
-        .sort((a, b) => (a.fo_rank || 9999) - (b.fo_rank || 9999) || a.fo_adp - b.fo_adp);
+        .filter((p) => remaining(p) && p.fo_rank != null)
+        .sort((a, b) => (a.fo_rank || 9999) - (b.fo_rank || 9999));
     }
     return state.players
       .filter((p) => remaining(p) && p.fp_rank != null)
@@ -524,7 +524,8 @@
     const tryOne = (s) => {
       const t = String(s || "").toUpperCase().trim();
       if (!t) return null;
-      if (t === "DST" || t === "DEF" || t === "K" || t === "PK") return null;
+      if (t === "DST" || t === "DEF" || t === "D/ST") return "DEF";
+      if (t === "K" || t === "PK") return "K";
       const m = t.match(/\b(QB|RB|WR|TE)\b/);
       return m ? m[1] : null;
     };
@@ -537,7 +538,7 @@
   }
 
   function robPosCounts() {
-    const counts = { QB: 0, RB: 0, WR: 0, TE: 0 };
+    const counts = { QB: 0, RB: 0, WR: 0, TE: 0, K: 0, DEF: 0 };
     for (const p of state.robTaken) {
       const bucket = bucketPos(p.position || p.pos, p.player_id);
       if (bucket) counts[bucket] += 1;
@@ -551,7 +552,7 @@
     const leftEl = $("mypicks-left");
     if (countsEl) {
       const counts = robPosCounts();
-      countsEl.innerHTML = ["QB", "WR", "RB", "TE"]
+      countsEl.innerHTML = ["QB", "WR", "RB", "TE", "K", "DEF"]
         .map((pos) => {
           const n = counts[pos];
           return `<span class="mp-pill mp-${pos.toLowerCase()}" title="${pos} ${n}"><span class="c-pos ${pos}">${pos}</span><span class="mp-n">${n}</span></span>`;
@@ -607,7 +608,7 @@
     try {
       const [bj, rj] = await Promise.all([
         fetch("data/briefs.json?v=ol8", { cache: "no-store" }).then((r) => (r.ok ? r.json() : null)).catch(() => null),
-        fetch("data/recs.json?v=r2203b", { cache: "no-store" }).then((r) => (r.ok ? r.json() : null)).catch(() => null),
+        fetch("data/recs.json?v=rd830", { cache: "no-store" }).then((r) => (r.ok ? r.json() : null)).catch(() => null),
       ]);
       if (bj && typeof bj === "object" && !Array.isArray(bj)) state.briefs = bj;
       if (rj && typeof rj === "object") state.recs = rj;
@@ -625,8 +626,8 @@
       $("count-fo").textContent = "0";
     } else {
       const foRows = state.players
-        .filter((p) => p.fo_adp != null && matchesFilter(p, "fo"))
-        .sort((a, b) => (a.fo_rank || 9999) - (b.fo_rank || 9999) || a.fo_adp - b.fo_adp);
+        .filter((p) => p.fo_rank != null && matchesFilter(p, "fo"))
+        .sort((a, b) => (a.fo_rank || 9999) - (b.fo_rank || 9999));
       fo.replaceChildren(...listNodes(foRows, "fo"));
       $("count-fo").textContent = stealOn ? `${foRows.filter(remaining).length} steals` : `${foRows.filter(remaining).length} left`;
     }
@@ -1683,14 +1684,23 @@
     }
   }
 
+  function resolveLiveUrl(u, fallback) {
+    if (!u) return fallback;
+    const s = String(u);
+    if (/api\.sleeper\.app/i.test(s)) return fallback;
+    return s;
+  }
+
   async function pollPicks(manual) {
     const btn = $("btn-refresh");
     if (manual) btn.classList.add("busy");
     const prevDrafted = new Set(state.draftedIds);
     try {
+      const picksUrl = resolveLiveUrl(state.draft && state.draft.picks_api, "data/espn_picks.json");
+      const draftUrl = resolveLiveUrl(state.draft && state.draft.draft_api, "data/espn_draft_status.json");
       const [pRes, dRes] = await Promise.all([
-        fetch(state.draft.picks_api, { cache: "no-store" }),
-        fetch(state.draft.draft_api, { cache: "no-store" }),
+        fetch(picksUrl, { cache: "no-store" }),
+        fetch(draftUrl, { cache: "no-store" }),
       ]);
       if (!pRes.ok) throw new Error("picks " + pRes.status);
       const picks = await pRes.json();
@@ -1837,12 +1847,12 @@
     loadTargets();
     loadLayout();
     const [pj, dj, bj, rj] = await Promise.all([
-      fetch("data/players.json?v=ecr826", { cache: "no-store" }).then((r) => r.json()),
-      fetch("data/draft.json?v=mp1", { cache: "no-store" }).then((r) => r.json()),
+      fetch("data/players.json?v=rd830", { cache: "no-store" }).then((r) => r.json()),
+      fetch("data/draft.json?v=rd830", { cache: "no-store" }).then((r) => r.json()),
       fetch("data/briefs.json?v=ol8", { cache: "no-store" })
         .then((r) => (r.ok ? r.json() : {}))
         .catch(() => ({})),
-      fetch("data/recs.json?v=r2203b", { cache: "no-store" })
+      fetch("data/recs.json?v=rd830", { cache: "no-store" })
         .then((r) => (r.ok ? r.json() : null))
         .catch(() => null),
     ]);
@@ -1873,17 +1883,8 @@
   }
 
   function startLivePolling() {
-    const kick = () => {
-      pollPicks(false);
-      setInterval(() => pollPicks(false), POLL_MS);
-    };
-    if (draftIsLive()) {
-      kick();
-      return;
-    }
-    const start = draftStartMs();
-    if (start == null) return;
-    setTimeout(kick, Math.max(0, start - Date.now()));
+    pollPicks(false);
+    setInterval(() => pollPicks(false), POLL_MS);
   }
 
   init().catch((err) => {

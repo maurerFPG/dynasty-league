@@ -1,9 +1,5 @@
 {
-  "pick": "22.03",
-  "overall": 255,
-  "options": [
-    {"id": "13424", "name": "Seth McGowan"},
-    {"id": "9757", "name": "Kendre Miller"},
-    {"id": "11575", "name": "Ray Davis"}
-  ]
+  "pick": null,
+  "overall": null,
+  "options": []
 }
