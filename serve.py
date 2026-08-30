@@ -80,7 +80,12 @@ def to_record(raw: dict, by_espn: dict) -> dict | None:
         return None
 
     espn_id = raw.get("espn_id") or raw.get("espnId") or raw.get("playerId")
-    espn_id = None if espn_id in (None, "") else str(espn_id)
+    espn_id = None if espn_id in (None, "", "-1", -1) else str(espn_id)
+    try:
+        if espn_id is not None and int(espn_id) <= 0:
+            return None
+    except (TypeError, ValueError):
+        pass
 
     matched = by_espn.get(espn_id) if espn_id else None
     sleeper_id = None

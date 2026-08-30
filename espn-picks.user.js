@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ESPN redraft picks → local board
 // @namespace    maurerFPG
-// @version      0.2.0
+// @version      0.3.0
 // @description  Forward ESPN draft picks and the room ranking list to the local dashboard. Does not send cookies or passwords.
 // @match        https://fantasy.espn.com/football/draft*
 // @match        https://fantasy.espn.com/*draft*
@@ -145,14 +145,23 @@
   }
 
   async function pollEspnApi() {
-    const url = "/apis/v3/games/ffl/seasons/2026/segments/0/leagues/1030576?view=mDraftDetail";
+    const slot = { 1: 12, 2: 2, 3: 4, 4: 1, 5: 9, 6: 3, 7: 6, 8: 8, 9: 5, 10: 11, 11: 10, 12: 7 };
+    const url = "https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/2026/segments/0/leagues/1030576?view=mDraftDetail";
     try {
-      const res = await fetch(url, { credentials: "same-origin", cache: "no-store" });
+      const res = await fetch(url, { credentials: "include", cache: "no-store" });
       if (!res.ok) return;
       const data = await res.json();
-      const picks = fromDetail(data.draftDetail || data);
+      const raw = (data.draftDetail && data.draftDetail.picks) || [];
+      const picks = raw.filter((p) => Number(p.playerId) > 0).map((p) => rec(
+        p.overallPickNumber,
+        p.playerId,
+        (p.player && p.player.fullName) || p.playerName || "",
+        "",
+        "",
+        slot[p.teamId] || p.teamId
+      )).filter(Boolean);
       if (picks.length) postPicks(picks);
-    } catch (e) { /* page may not expose this path */ }
+    } catch (e) { /* ignore */ }
   }
 
   function posFromId(id) {
@@ -253,14 +262,7 @@
   }
 
   function tick() {
-    const fromState = picksFromPageState();
-    if (fromState.length) {
-      postPicks(fromState);
-      return;
-    }
     pollEspnApi();
-    const fromDom = picksFromDom();
-    if (fromDom.length) postPicks(fromDom);
   }
 
   tick();
