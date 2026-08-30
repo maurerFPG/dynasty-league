@@ -15,6 +15,7 @@ from urllib.parse import urlparse
 ROOT = Path(__file__).resolve().parent
 PLAYERS_PATH = ROOT / "data" / "players.json"
 PICKS_PATH = ROOT / "data" / "espn_picks.json"
+RANKS_PATH = ROOT / "data" / "espn_room_ranks.json"
 HOST = "127.0.0.1"
 PORT = 8765
 
@@ -122,6 +123,59 @@ def to_record(raw: dict, by_espn: dict) -> dict | None:
     return rec
 
 
+
+def apply_ranks(items: list) -> int:
+    """Overwrite fo_rank from the ESPN room list. items: {rank, espn_id, name, pos, team}."""
+    rows = []
+    for it in items:
+        if not isinstance(it, dict):
+            continue
+        try:
+            rank = int(it.get("rank") or it.get("fo_rank") or 0)
+        except (TypeError, ValueError):
+            continue
+        if rank <= 0:
+            continue
+        eid = it.get("espn_id") or it.get("espnId") or it.get("playerId")
+        eid = None if eid in (None, "") else str(eid)
+        rows.append({
+            "rank": rank,
+            "espn_id": eid,
+            "name": (it.get("name") or "").strip(),
+            "pos": norm_pos(it.get("position") or it.get("pos") or ""),
+            "team": it.get("team") or "",
+        })
+    if not rows:
+        return 0
+    rows.sort(key=lambda r: r["rank"])
+    tmp = RANKS_PATH.with_suffix(".json.tmp")
+    tmp.write_text(json.dumps(rows, indent=2) + "\n")
+    os.replace(tmp, RANKS_PATH)
+
+    try:
+        blob = json.loads(PLAYERS_PATH.read_text())
+    except (OSError, json.JSONDecodeError):
+        return len(rows)
+    players = blob.get("players") or []
+    by_espn = {str(p.get("espn_id")): p for p in players if p.get("espn_id") not in (None, "")}
+    n = 0
+    for r in rows:
+        pl = by_espn.get(r["espn_id"]) if r["espn_id"] else None
+        if not pl:
+            continue
+        pl["fo_rank"] = r["rank"]
+        fp = pl.get("fp_rank")
+        try:
+            pl["gap"] = int(pl["fo_rank"]) - int(fp) if fp is not None else pl.get("gap")
+        except (TypeError, ValueError):
+            pass
+        n += 1
+    tmpp = PLAYERS_PATH.with_suffix(".json.tmp")
+    tmpp.write_text(json.dumps(blob) + "\n")
+    os.replace(tmpp, PLAYERS_PATH)
+    return n
+
+
 class Handler(SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, directory=str(ROOT), **kwargs)
@@ -138,7 +192,7 @@ class Handler(SimpleHTTPRequestHandler):
         self.send_header("Access-Control-Allow-Origin", "*")
         self.send_header("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
         self.send_header("Access-Control-Allow-Headers", "Content-Type")
-        if json_body or self._route().endswith(".json") or self._route() == "/picks":
+        if json_body or self._route().endswith(".json") or self._route() in ("/picks", "/ranks"):
             self.send_header("Cache-Control", "no-store, no-cache, must-revalidate")
             self.send_header("Pragma", "no-cache")
 
@@ -151,6 +205,18 @@ class Handler(SimpleHTTPRequestHandler):
         self.end_headers()
 
     def do_GET(self):
+        if self._route() == "/ranks":
+            try:
+                body = RANKS_PATH.read_bytes()
+            except OSError:
+                body = b"[]"
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Content-Length", str(len(body)))
+            self._cors(json_body=True)
+            SimpleHTTPRequestHandler.end_headers(self)
+            self.wfile.write(body)
+            return
         if self._route() == "/picks":
             body = json.dumps(load_picks()).encode("utf-8")
             self.send_response(200)
@@ -163,7 +229,36 @@ class Handler(SimpleHTTPRequestHandler):
         super().do_GET()
 
     def do_POST(self):
-        if self._route() != "/picks":
+        route = self._route()
+        if route == "/ranks":
+            length = int(self.headers.get("Content-Length") or 0)
+            raw = self.rfile.read(max(0, min(length, 2_000_000)))
+            try:
+                payload = json.loads(raw.decode("utf-8") or "null")
+            except json.JSONDecodeError:
+                self.send_error(400, "invalid json")
+                return
+            items = []
+            if isinstance(payload, list):
+                items = payload
+            elif isinstance(payload, dict):
+                items = payload.get("ranks") or payload.get("players") or []
+                if isinstance(items, dict):
+                    items = []
+            else:
+                self.send_error(400, "expected {ranks:[...]}")
+                return
+            n = apply_ranks(items)
+            body = json.dumps({"ok": True, "applied": n, "total": len(items)}).encode("utf-8")
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Content-Length", str(len(body)))
+            self._cors(json_body=True)
+            SimpleHTTPRequestHandler.end_headers(self)
+            self.wfile.write(body)
+            self.log_message("POST /ranks applied=%s of %s", n, len(items))
+            return
+        if route != "/picks":
             self.send_error(404, "not found")
             return
         length = int(self.headers.get("Content-Length") or 0)
