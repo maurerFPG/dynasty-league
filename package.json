@@ -4,7 +4,8 @@
   "type": "module",
   "scripts": {
     "test": "node --test tests/*.test.js",
-    "dev": "node scripts/local.mjs"
+    "dev": "node scripts/local.mjs",
+    "bundle:extension": "node scripts/bundle-content.mjs"
   },
   "dependencies": {
     "@vercel/blob": "^2.0.0"

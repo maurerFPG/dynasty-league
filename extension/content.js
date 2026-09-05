@@ -1,5 +1,7 @@
 /**
- * Isolated-world content script on fantasy.espn.com.
+ * Isolated-world content script SOURCE. Chrome loads content.bundle.js
+ * (classic IIFE). Rebuild with: node scripts/bundle-content.mjs
+ *
  * Asks the page world for mDraftDetail (cookies stay on ESPN),
  * scrapes Pick History if that payload is empty/stale, then
  * hands normalized-ready payloads to the service worker.
