@@ -4,7 +4,7 @@
   const BOARD_H_KEY = "nasty-ui-board-h-v1";
   const CARD_H_KEY = "nasty-ui-card-h-v6";
   const PICK_FMT_KEY = "nasty-ui-pick-fmt-v1";
-  const POLL_MS = 15000;
+  const POLL_MS = 1000;
   const HOOK_URL_KEY = "nasty-draft-hook-url";
   const HOOK_KEY_KEY = "nasty-draft-hook-key";
   const HOOK_SENT_KEY = "nasty-draft-hook-sent";
@@ -74,6 +74,7 @@
     search: "",
     targets: new Set(),
     lastPoll: null,
+    picksFingerprint: "",
     pollError: null,
     draftStatus: "pre_draft",
     draftLive: null,
@@ -1459,13 +1460,13 @@
     if (polledEl) {
       if (state.pollError) polledEl.title = "Picks poll failed · " + state.pollError;
       else if (state.lastPoll) polledEl.title = "Last poll " + state.lastPoll;
-      else polledEl.title = "Refresh pulls /api/picks · auto every 15s";
+      else polledEl.title = "Refresh pulls /api/picks · auto every 1s when visible";
     }
     const dot = $("poll-dot");
     dot.className = "poll-dot" + (state.pollError ? " err" : state.lastPoll ? " ok" : "");
     if (state.pollError) dot.title = "Picks poll failed · " + state.pollError;
     else if (state.lastPoll) dot.title = "Last poll " + state.lastPoll;
-    else dot.title = "Refresh pulls /api/picks · auto every 15s";
+    else dot.title = "Refresh pulls /api/picks · auto every 1s when visible";
     const hookOn = !!(hookConfig().url);
     if (!hookOn) dot.title = (dot.title || "") + " · draft pings off — click to set";
     else dot.title = (dot.title || "") + " · draft pings on";
@@ -1635,6 +1636,19 @@
     if (Array.isArray(payload)) return payload;
     if (payload && Array.isArray(payload.picks)) return payload.picks;
     return [];
+  }
+
+  function picksFingerprint(picks) {
+    const list = Array.isArray(picks) ? picks : [];
+    const keys = [];
+    for (const p of list) {
+      if (!p || typeof p !== "object") continue;
+      const n = Number(p.pick_no ?? p.pickNo);
+      const id = p.espn_id != null && p.espn_id !== "" ? String(p.espn_id) : "";
+      keys.push(`${Number.isFinite(n) ? n : 0}:${id}`);
+    }
+    keys.sort();
+    return `${keys.length}|${keys.join(",")}`;
   }
 
   function resolvePickPlayer(pk) {
@@ -1828,10 +1842,23 @@
     if (btn) btn.classList.remove("busy");
   }
 
+  let pollInFlight = false;
+  let pollAgain = false;
+
   async function pollPicks(manual) {
+    if (pollInFlight) {
+      pollAgain = true;
+      if (manual) {
+        const busy = $("btn-refresh");
+        if (busy) busy.classList.add("busy");
+      }
+      return;
+    }
+    pollInFlight = true;
     const btn = $("btn-refresh");
     if (manual) btn.classList.add("busy");
     const prevDrafted = new Set(state.draftedIds);
+    let skippedUnchanged = false;
     try {
       const picksUrl = picksApiUrl();
       const draftUrl = resolveLiveUrl(state.draft && state.draft.draft_api, "data/espn_draft_status.json");
@@ -1844,46 +1871,62 @@
       }
       if (!pRes.ok) throw new Error("picks " + pRes.status);
       const picks = await pRes.json();
-      applyPicks(picks);
-      if (dRes.ok) {
-        const dj = await dRes.json();
-        if (dj && dj.status) state.draftStatus = dj.status;
-        state.draftLive = dj
-          ? {
-              start_time: dj.start_time ?? null,
-              last_picked: dj.last_picked ?? null,
-              pick_timer: dj.settings && dj.settings.pick_timer != null ? dj.settings.pick_timer : null,
-              settings: dj.settings || null,
-              status: dj.status || null,
-            }
-          : null;
+      const fingerprint = picksFingerprint(unwrapPicks(picks));
+      if (!manual && fingerprint === state.picksFingerprint && state.picksFingerprint) {
+        skippedUnchanged = true;
+        const hadError = state.pollError;
+        state.pollError = null;
+        if (hadError) renderChrome();
+      } else {
+        state.picksFingerprint = fingerprint;
+        applyPicks(picks);
+        if (dRes.ok) {
+          const dj = await dRes.json();
+          if (dj && dj.status) state.draftStatus = dj.status;
+          state.draftLive = dj
+            ? {
+                start_time: dj.start_time ?? null,
+                last_picked: dj.last_picked ?? null,
+                pick_timer: dj.settings && dj.settings.pick_timer != null ? dj.settings.pick_timer : null,
+                settings: dj.settings || null,
+                status: dj.status || null,
+              }
+            : null;
+        }
+        state.pollError = null;
+        const now = new Date();
+        state.lastPoll = now.toLocaleTimeString("en-US", { timeZone: "America/Chicago", hour: "numeric", minute: "2-digit", second: "2-digit" }) + " CT";
+        $("poll-dot").classList.add("pulse");
+        setTimeout(() => $("poll-dot").classList.remove("pulse"), 1200);
       }
-      state.pollError = null;
-      const now = new Date();
-      state.lastPoll = now.toLocaleTimeString("en-US", { timeZone: "America/Chicago", hour: "numeric", minute: "2-digit", second: "2-digit" }) + " CT";
-      $("poll-dot").classList.add("pulse");
-      setTimeout(() => $("poll-dot").classList.remove("pulse"), 1200);
     } catch (err) {
       state.pollError = (err && err.message) || "network";
     }
-    renderBoard();
-    renderMyPicks();
-    const draftedChanged =
-      prevDrafted.size !== state.draftedIds.size ||
-      [...state.draftedIds].some((id) => !prevDrafted.has(id));
-    await refreshBaked();
-    renderRecs();
-    maybePingDraftEvents(draftedChanged);
-    if (draftedChanged) {
-      state.altsCache = { key: null, list: [] };
-      renderLists();
-      renderCard();
-    } else if (state.selectedId) {
-      renderCard();
+    if (!skippedUnchanged) {
+      renderBoard();
+      renderMyPicks();
+      const draftedChanged =
+        prevDrafted.size !== state.draftedIds.size ||
+        [...state.draftedIds].some((id) => !prevDrafted.has(id));
+      await refreshBaked();
+      renderRecs();
+      maybePingDraftEvents(draftedChanged);
+      if (draftedChanged) {
+        state.altsCache = { key: null, list: [] };
+        renderLists();
+        renderCard();
+      } else if (state.selectedId) {
+        renderCard();
+      }
+      renderChrome();
+      tickCountdown();
     }
-    renderChrome();
-    tickCountdown();
     btn.classList.remove("busy");
+    pollInFlight = false;
+    if (pollAgain) {
+      pollAgain = false;
+      pollPicks(manual);
+    }
   }
 
   function syncAvailUi() {
@@ -2037,7 +2080,13 @@
 
   function startLivePolling() {
     pollPicks(false);
-    setInterval(() => pollPicks(false), POLL_MS);
+    setInterval(() => {
+      if (document.visibilityState === "visible") pollPicks(false);
+    }, POLL_MS);
+    document.addEventListener("visibilitychange", () => {
+      if (document.visibilityState === "visible") pollPicks(false);
+    });
+    window.addEventListener("espn-companion-picks-updated", () => pollPicks(false));
   }
 
   init().catch((err) => {

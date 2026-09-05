@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "ESPN redraft companion",
-  "version": "1.0.4",
-  "description": "On-demand ESPN pick sync to the HTTPS redraft board. Does not send ESPN cookies or passwords.",
+  "version": "1.0.5",
+  "description": "Live ESPN pick sync to the HTTPS redraft board. Does not send ESPN cookies or passwords.",
   "action": {
     "default_title": "Sync ESPN picks",
     "default_popup": "popup.html"
@@ -15,11 +15,12 @@
     "service_worker": "background.js",
     "type": "module"
   },
-  "permissions": ["storage", "activeTab", "scripting", "webNavigation"],
+  "permissions": ["storage", "activeTab", "scripting", "webNavigation", "alarms"],
   "host_permissions": [
     "https://fantasy.espn.com/*",
     "https://lm-api-reads.fantasy.espn.com/*",
-    "https://*.vercel.app/*"
+    "https://*.vercel.app/*",
+    "https://maurerfpg.github.io/*"
   ],
   "content_scripts": [
     {
@@ -35,6 +36,15 @@
       "run_at": "document_idle",
       "world": "ISOLATED",
       "all_frames": true
+    },
+    {
+      "matches": [
+        "https://*.vercel.app/*",
+        "https://maurerfpg.github.io/*"
+      ],
+      "js": ["board.js"],
+      "run_at": "document_idle",
+      "world": "ISOLATED"
     }
   ]
 }

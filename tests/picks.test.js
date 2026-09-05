@@ -11,9 +11,13 @@ import {
   normalizeName,
   parsePickHistoryText,
   parsePickLine,
+  parsePlayerCell,
   pickLinesFromCellRows,
+  picksFingerprint,
   resolvePlayer,
   scrapeHistoryText,
+  shouldSkipIdenticalPost,
+  stripGenerationalTokens,
   toRecord,
   upsertPicks,
 } from "../lib/picks.js";
@@ -169,6 +173,68 @@ test("Jr/Sr/II/III/IV suffixes fold to the same player as the bare name", () => 
   assert.equal(picks.map((p) => p.pick_no).join(","), "9,10,11,21,22,23");
   assert.equal(picks.find((p) => p.pick_no === 10).espn_id, "4379399");
   assert.equal(picks.find((p) => p.pick_no === 22).espn_id, "4567048");
+});
+
+test("pick lines strip Jr/Sr/II/III before team/pos and still resolve espn_id", () => {
+  assert.equal(stripGenerationalTokens("Travis Etienne Jr. JAX RB"), "Travis Etienne JAX RB");
+  assert.equal(stripGenerationalTokens("Luther Burden III CHI WR"), "Luther Burden CHI WR");
+  assert.equal(stripGenerationalTokens("Michael Pittman Jr."), "Michael Pittman");
+  assert.equal(stripGenerationalTokens("Andrei Iosivas"), "Andrei Iosivas");
+
+  const cases = [
+    { line: "37 Travis Etienne Jr. JAX RB", espn: "4239996", name: "Travis Etienne" },
+    { line: "37 Travis Etienne Jr JAX RB", espn: "4239996", name: "Travis Etienne" },
+    { line: "12 Luther Burden III CHI WR", espn: "4685278", name: "Luther Burden" },
+    { line: "15 Michael Pittman Jr. IND WR", espn: "4035687", name: "Michael Pittman" },
+    { line: "10 James Cook III BUF RB", espn: "4379399", name: "James Cook" },
+    { line: "22 Kenneth Walker III SEA RB", espn: "4567048", name: "Kenneth Walker" },
+    { line: "8 Kyle Pitts ATL TE", espn: "4360248", name: "Kyle Pitts" },
+    { line: "8 Kyle Pitts TE ATL", espn: "4360248", name: "Kyle Pitts" },
+    { line: "37 Travis Etienne Jr.", espn: "4239996", name: "Travis Etienne" },
+    { line: "12 Luther Burden III", espn: "4685278", name: "Luther Burden" },
+  ];
+  for (const c of cases) {
+    const parsed = parsePickLine(c.line);
+    assert.ok(parsed, c.line);
+    assert.equal(parsed.name, c.name, c.line);
+    const rec = toRecord(parsed, index);
+    assert.ok(rec, c.line);
+    assert.equal(rec.espn_id, c.espn, c.line);
+  }
+
+  const etienneCell = parsePlayerCell("Travis Etienne Jr. JAX RB");
+  assert.equal(etienneCell.name, "Travis Etienne");
+  assert.equal(etienneCell.team, "JAX");
+  assert.equal(etienneCell.pos, "RB");
+  assert.equal(parsePlayerCell("Luther Burden III CHI WR").name, "Luther Burden");
+  assert.equal(parsePlayerCell("Michael Pittman Jr. (IND WR)").name, "Michael Pittman");
+  assert.equal(parsePlayerCell("James Cook III BUF RB").name, "James Cook");
+  assert.equal(parsePlayerCell("Kenneth Walker III SEA RB").name, "Kenneth Walker");
+
+  const history = parsePickHistoryText(
+    [
+      "37 Travis Etienne Jr. JAX RB",
+      "12 Luther Burden III CHI WR",
+      "15 Michael Pittman Jr. IND WR",
+      "10 James Cook III BUF RB",
+      "22 Kenneth Walker III SEA RB",
+      "8 Kyle Pitts ATL TE",
+    ].join("\n"),
+    index
+  );
+  assert.equal(history.length, 6);
+  assert.equal(history.find((p) => p.pick_no === 37).espn_id, "4239996");
+  assert.equal(history.find((p) => p.pick_no === 12).espn_id, "4685278");
+  assert.equal(history.find((p) => p.pick_no === 15).espn_id, "4035687");
+  assert.equal(history.find((p) => p.pick_no === 10).espn_id, "4379399");
+  assert.equal(history.find((p) => p.pick_no === 22).espn_id, "4567048");
+  assert.equal(history.find((p) => p.pick_no === 8).espn_id, "4360248");
+
+  const unknown = toRecord({ pick_no: 99, name: "Unknown Prospect Jr.", pos: "WR" }, index);
+  assert.ok(unknown);
+  assert.equal(unknown.pick_no, 99);
+  assert.equal(unknown.metadata.first_name, "Unknown");
+  assert.match(unknown.metadata.last_name, /Prospect/);
 });
 
 test("name-only skill history lines become picks; D/ST still maps", () => {
@@ -431,6 +497,21 @@ test("extension copies lib/picks.js", async () => {
   const a = await readFile(fileURLToPath(new URL("../lib/picks.js", import.meta.url)), "utf8");
   const b = await readFile(fileURLToPath(new URL("../extension/picks.js", import.meta.url)), "utf8");
   assert.equal(a, b);
+});
+
+test("fingerprint is count + sorted pick_no:espn_id and skips identical posts", () => {
+  const a = toRecord({ pick_no: 1, playerId: 4429795 }, index);
+  const b = toRecord({ pick_no: 2, playerId: -16034 }, index);
+  const c = toRecord({ pick_no: 1, playerId: 4430807 }, index);
+  const fp = picksFingerprint([b, a]);
+  assert.equal(fp, picksFingerprint([a, b]));
+  assert.equal(fp, "2|1:4429795,2:-16034");
+  assert.notEqual(picksFingerprint([a, b]), picksFingerprint([c, b]));
+  assert.equal(picksFingerprint([]), "0|");
+  assert.equal(shouldSkipIdenticalPost(fp, [a, b]), true);
+  assert.equal(shouldSkipIdenticalPost(fp, [a, b, c]), false);
+  assert.equal(shouldSkipIdenticalPost("", [a]), false);
+  assert.equal(shouldSkipIdenticalPost(null, [a]), false);
 });
 
 test("upsert is by overall pick number", () => {

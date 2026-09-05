@@ -4,13 +4,18 @@
   <meta charset="utf-8" />
   <title>ESPN companion</title>
   <style>
-    body { font: 13px/1.4 system-ui, sans-serif; margin: 12px; width: 260px; color: #0b1830; }
+    body { font: 13px/1.4 system-ui, sans-serif; margin: 12px; width: 280px; color: #0b1830; }
     button { width: 100%; padding: 8px; font-weight: 600; cursor: pointer; }
+    .live { display: flex; align-items: center; gap: 8px; margin: 0 0 10px; font-weight: 600; }
     #status { margin-top: 10px; color: #334; white-space: pre-wrap; }
     a { color: #1a3a6b; }
   </style>
 </head>
 <body>
+  <label class="live">
+    <input type="checkbox" id="live" checked />
+    Live auto-sync
+  </label>
   <button type="button" id="sync">Sync picks now</button>
   <p id="status">Uses the active ESPN draft tab. Cookies stay in the browser.</p>
   <p><a href="options.html" target="_blank">Options</a></p>

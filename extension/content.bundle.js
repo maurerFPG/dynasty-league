@@ -237,6 +237,22 @@ function splitName(name) {
 /** Trailing Jr/Sr/II/III/IV (and spelled-out junior/senior). Do not strip a lone I. */
 const GENERATIONAL_SUFFIX = /(?:\s+(?:junior|senior|iii|ii|iv|jr|sr|v))+$/;
 
+/** Display-name / pick-line tokens, including Jr. with a period. Not a lone I. */
+const GENERATIONAL_INLINE = /\s+(?:junior|senior|iii|ii|iv|jr\.?|sr\.?|v)(?=\s|$)/gi;
+
+/**
+ * Remove standalone Jr/Sr/II/III/IV tokens from a pick line or captured name
+ * so they cannot be parsed as team/pos or left on the name.
+ */
+function stripGenerationalTokens(text) {
+  return String(text || "")
+    .replace(/\s+/g, " ")
+    .trim()
+    .replace(GENERATIONAL_INLINE, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 /**
  * Shared name fold for indexPlayers keys and resolvePlayer lookups.
  * ESPN Pick History often appends "III" / "Jr." while players.json does not.
@@ -345,14 +361,24 @@ function toRecord(raw, index) {
     team = team || teamFromNickname(name);
   }
 
-  const matched = resolvePlayer(index, { espnId, name, pos, team });
+  let matched = resolvePlayer(index, { espnId, name, pos, team });
+  if (!matched && name) {
+    const normalized = normalizeName(name);
+    if (normalized) {
+      matched = resolvePlayer(index, { espnId, name: normalized, pos, team });
+      if (!matched) matched = resolvePlayer(index, { espnId, name: normalized, pos: "", team });
+    }
+  }
   if (matched) {
     espnId = espnId || normEspnId(matched.espn_id);
-    if (!name || normPos(matched.pos) === "DEF") name = matched.name || name;
+    if (!name || normPos(matched.pos) === "DEF" || foldKey(matched.name) === foldKey(name)) {
+      name = matched.name || name;
+    }
     pos = pos || normPos(matched.pos);
     team = team || canonTeam(matched.team);
   }
 
+  // Keep skill picks that have a pick number + name even if espn_id is unknown.
   if (!espnId && !name) return null;
 
   const { first, last } = splitName(name);
@@ -440,21 +466,23 @@ const PICK_PAREN_POS = new RegExp(
 );
 
 function cleanParsedName(name, team) {
-  let n = String(name || "")
-    .replace(/,$/, "")
-    .replace(/\s+/g, " ")
-    .trim();
-  const parts = n.split(/\s+/);
+  let n = stripGenerationalTokens(
+    String(name || "")
+      .replace(/,$/, "")
+      .replace(/\s+/g, " ")
+      .trim()
+  );
+  const parts = n.split(/\s+/).filter(Boolean);
   if (parts.length >= 2 && canonTeam(parts[parts.length - 1])) {
-    return { name: parts.slice(0, -1).join(" "), team: team || canonTeam(parts[parts.length - 1]) };
+    return {
+      name: stripGenerationalTokens(parts.slice(0, -1).join(" ")),
+      team: team || canonTeam(parts[parts.length - 1]),
+    };
   }
   return { name: n, team: team || "" };
 }
 
-function parsePickLine(line) {
-  const text = String(line || "").replace(/\s+/g, " ").trim();
-  if (!text) return null;
-
+function parsePickLineText(text) {
   let m = text.match(PICK_PAREN_POS);
   if (m) {
     const pos = normPos(m[4]);
@@ -483,7 +511,7 @@ function parsePickLine(line) {
   // "12 Texans D/ST" / "12. Lions" / name-only skill "1 Jahmyr Gibbs"
   m = text.match(/^(?:pick\s*)?(\d{1,3})\s*[.):\-–]?\s+(.+)$/i);
   if (m) {
-    const rest = m[2].replace(/\s+/g, " ").trim();
+    const rest = stripGenerationalTokens(m[2].replace(/\s+/g, " ").trim());
     if (isTeamNicknameName(rest)) {
       return { pick_no: num(m[1]), name: rest, pos: "DEF", team: teamFromNickname(rest) };
     }
@@ -494,22 +522,40 @@ function parsePickLine(line) {
   return null;
 }
 
+function parsePickLine(line) {
+  const text = String(line || "").replace(/\s+/g, " ").trim();
+  if (!text) return null;
+  const stripped = stripGenerationalTokens(text);
+  return parsePickLineText(stripped) || (stripped !== text ? parsePickLineText(text) : null);
+}
+
 function isPickHistoryHeaderText(text) {
   const t = String(text || "").replace(/\s+/g, " ").toUpperCase();
   return /\bPICK\b/.test(t) && /\bPLAYER\b/.test(t);
 }
 
+function parsePlayerCellText(t) {
+  let m = t.match(new RegExp(`^(.+?)\\s+\\(([A-Za-z]{2,4})\\s+(${POS_TOKEN})\\)$`, "i"));
+  if (m) return { name: stripGenerationalTokens(m[1]), team: canonTeam(m[2] || ""), pos: normPos(m[3]) };
+  m = t.match(new RegExp(`^(.+?)\\s+([A-Za-z]{2,4})\\s+(${POS_TOKEN})\\b`, "i"));
+  if (m && canonTeam(m[2])) {
+    return { name: stripGenerationalTokens(m[1]), team: canonTeam(m[2]), pos: normPos(m[3]) };
+  }
+  m = t.match(new RegExp(`^(.+?)\\s+(${POS_TOKEN})\\b(?:\\s+([A-Za-z]{2,4}))?`, "i"));
+  if (m) return { name: stripGenerationalTokens(m[1]), pos: normPos(m[2]), team: canonTeam(m[3] || "") };
+  const stripped = stripGenerationalTokens(t);
+  if (isTeamNicknameName(stripped) || isTeamNicknameName(t)) {
+    const nick = isTeamNicknameName(stripped) ? stripped : t;
+    return { name: nick, pos: "DEF", team: teamFromNickname(nick) };
+  }
+  return { name: stripped || t, pos: "", team: "" };
+}
+
 function parsePlayerCell(text) {
   const t = String(text || "").replace(/\s+/g, " ").trim();
   if (!t) return null;
-  let m = t.match(new RegExp(`^(.+?)\\s+\\(([A-Za-z]{2,4})\\s+(${POS_TOKEN})\\)$`, "i"));
-  if (m) return { name: m[1].trim(), team: canonTeam(m[2] || ""), pos: normPos(m[3]) };
-  m = t.match(new RegExp(`^(.+?)\\s+([A-Za-z]{2,4})\\s+(${POS_TOKEN})\\b`, "i"));
-  if (m && canonTeam(m[2])) return { name: m[1].trim(), team: canonTeam(m[2]), pos: normPos(m[3]) };
-  m = t.match(new RegExp(`^(.+?)\\s+(${POS_TOKEN})\\b(?:\\s+([A-Za-z]{2,4}))?`, "i"));
-  if (m) return { name: m[1].trim(), pos: normPos(m[2]), team: canonTeam(m[3] || "") };
-  if (isTeamNicknameName(t)) return { name: t, pos: "DEF", team: teamFromNickname(t) };
-  return { name: t, pos: "", team: "" };
+  const stripped = stripGenerationalTokens(t);
+  return parsePlayerCellText(stripped) || (stripped !== t ? parsePlayerCellText(t) : null);
 }
 
 function formatPickLine(parsed) {
@@ -717,6 +763,28 @@ function upsertPicks(existing, incoming) {
   return { picks, merged };
 }
 
+/**
+ * Stable pick-set id: count + sorted pick_no:espn_id.
+ * Used so live auto-sync can skip POSTing an unchanged set every second.
+ */
+function picksFingerprint(picks) {
+  const list = Array.isArray(picks) ? picks : [];
+  const keys = [];
+  for (const p of list) {
+    if (!p || typeof p !== "object") continue;
+    const n = Number(p.pick_no ?? p.pickNo);
+    const id = p.espn_id != null && p.espn_id !== "" ? String(p.espn_id) : "";
+    keys.push(`${Number.isFinite(n) ? n : 0}:${id}`);
+  }
+  keys.sort();
+  return `${keys.length}|${keys.join(",")}`;
+}
+
+function shouldSkipIdenticalPost(lastFingerprint, picks) {
+  const fp = picksFingerprint(picks);
+  return Boolean(lastFingerprint) && fp === lastFingerprint;
+}
+
 function extractPicksPayload(body) {
   if (Array.isArray(body)) return { items: body, reset: false, source: "unknown", league_id: null };
   if (!body || typeof body !== "object") return { items: [], reset: false, source: "unknown", league_id: null };
@@ -801,6 +869,77 @@ function extractPicksPayload(body) {
     return /\/football\/(draft|waitingroom)/i.test(location.pathname);
   }
 
+  const LIVE_MS = 1000;
+  let liveTimer = null;
+  let liveBusy = false;
+  let lastCollectAt = 0;
+  let historyObserver = null;
+  let observerTimer = null;
+
+  async function liveEnabled() {
+    try {
+      const data = await chrome.storage.sync.get({ liveSync: true });
+      return data.liveSync !== false;
+    } catch {
+      return true;
+    }
+  }
+
+  async function tickLive() {
+    if (!onDraftPage() || liveBusy) return;
+    if (Date.now() - lastCollectAt < 800) return;
+    if (!(await liveEnabled())) return;
+    liveBusy = true;
+    lastCollectAt = Date.now();
+    try {
+      const payload = await collect();
+      await chrome.runtime.sendMessage({ type: "espn-companion-autosync", payload });
+    } catch {
+      /* service worker may be restarting */
+    }
+    liveBusy = false;
+  }
+
+  function onHistoryMutation() {
+    if (observerTimer) return;
+    observerTimer = setTimeout(() => {
+      observerTimer = null;
+      tickLive();
+    }, 400);
+  }
+
+  function startLive() {
+    if (!onDraftPage()) return;
+    if (!liveTimer) {
+      liveTimer = setInterval(tickLive, LIVE_MS);
+      tickLive();
+    }
+    if (!historyObserver && document.documentElement) {
+      historyObserver = new MutationObserver(onHistoryMutation);
+      historyObserver.observe(document.documentElement, { childList: true, subtree: true });
+    }
+  }
+
+  function stopLive() {
+    if (liveTimer) {
+      clearInterval(liveTimer);
+      liveTimer = null;
+    }
+    if (historyObserver) {
+      historyObserver.disconnect();
+      historyObserver = null;
+    }
+    if (observerTimer) {
+      clearTimeout(observerTimer);
+      observerTimer = null;
+    }
+  }
+
+  function syncLiveLoop() {
+    if (onDraftPage()) startLive();
+    else stopLive();
+  }
+
   async function collect() {
     const id = leagueId();
     const yr = season();
@@ -875,10 +1014,20 @@ function extractPicksPayload(body) {
     return true;
   });
 
+  chrome.storage.onChanged.addListener((changes, area) => {
+    if (area !== "sync" || !changes.liveSync) return;
+    if (changes.liveSync.newValue === false) stopLive();
+    else syncLiveLoop();
+  });
+
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", ensureButton);
+    document.addEventListener("DOMContentLoaded", () => {
+      ensureButton();
+      syncLiveLoop();
+    });
   } else {
     ensureButton();
+    syncLiveLoop();
   }
 }
 
