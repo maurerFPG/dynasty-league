@@ -13,7 +13,7 @@ This is not a localhost Tampermonkey setup. Happy path: Vercel board + Chrome ex
    - Manual **Sync picks** (page button or popup) remains an override
    - Fetches `mDraftDetail` **from the ESPN page** with the browser session (`credentials: include`)
    - Ignores unmade slots (`playerId: -1`)
-   - If the room is live but `mDraftDetail` is all `-1` / empty, reads **Pick History** (full names). Nicknames like Lions / Ravens are D/ST only.
+   - If the room is live but `mDraftDetail` is all `-1` / empty, reads **Pick History** (full names). Nicknames like Lions / Ravens are D/ST only. Jr/Sr/II/III suffixes are stripped on parse and fold so Etienne Jr. / Burden III / Pittman Jr. still resolve.
    - Posts normalized picks (`espn_id` primary) to `POST /api/picks` with `x-picks-secret`
    - Never sends `espn_s2` / SWID / ESPN passwords to our server
 
