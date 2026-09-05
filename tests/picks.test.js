@@ -101,6 +101,8 @@ test("paste parser reads ESPN Pick History text including D/ST", () => {
   const dst = picks.find((p) => p.pick_no === 48);
   assert.equal(dst.espn_id, "-16034");
   assert.equal(dst.player_id, "espn--16034");
+  assert.equal(dst.metadata.first_name, "Texans");
+  assert.equal(dst.metadata.last_name, "D/ST");
   const lions = picks.find((p) => p.pick_no === 49);
   assert.equal(lions.espn_id, "-16008");
 });
