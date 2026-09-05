@@ -248,8 +248,14 @@ body.resizing-h { cursor: ns-resize; user-select: none; }
 }
 .btn:hover { border-color: rgba(200, 220, 255, 0.35); background: rgba(16, 30, 54, 0.85); }
 .btn.busy { opacity: 0.55; }
-#btn-refresh {
+.hdr-actions {
   grid-area: refresh;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 6px;
+  min-width: 0;
+}
+#btn-refresh, #btn-paste {
   appearance: none;
   display: flex;
   align-items: center;
@@ -267,8 +273,72 @@ body.resizing-h { cursor: ns-resize; user-select: none; }
   cursor: pointer;
   line-height: 1;
 }
-#btn-refresh:hover { border-color: rgba(200, 220, 255, 0.35); }
-#btn-refresh.busy { opacity: 0.55; }
+#btn-paste { width: auto; padding: 0 10px; color: var(--muted); font-weight: 600; }
+#btn-refresh:hover, #btn-paste:hover { border-color: rgba(200, 220, 255, 0.35); }
+#btn-refresh.busy, #btn-paste.busy { opacity: 0.55; }
+
+.sync-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  background: rgba(4, 10, 20, 0.62);
+}
+.sync-modal[hidden] { display: none; }
+.sync-panel {
+  width: min(560px, 100%);
+  padding: 16px 16px 14px;
+  color: var(--text);
+}
+.sync-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.sync-head h2 { margin: 0; font-size: 15px; font-weight: 650; }
+#btn-sync-close {
+  appearance: none;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--muted);
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+}
+.sync-hint, .sync-muted { color: var(--muted); }
+.sync-hint { margin: 0 0 12px; font-size: 12px; line-height: 1.45; }
+.sync-label { display: block; margin: 10px 0 4px; font-size: 11px; font-weight: 650; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); }
+#sync-secret, #sync-text {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255,255,255,0.04);
+  color: var(--text);
+  font-family: inherit;
+  padding: 8px 10px;
+}
+#sync-text { resize: vertical; min-height: 140px; font-size: 12px; line-height: 1.4; }
+.sync-row { display: flex; align-items: center; gap: 10px; margin-top: 12px; }
+#btn-sync-apply {
+  appearance: none;
+  border: 1px solid var(--line-2);
+  border-radius: 8px;
+  background: rgba(155, 184, 232, 0.14);
+  color: var(--text);
+  font-weight: 650;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+#sync-status { color: var(--muted); font-size: 12px; }
 
 /* ——— board ——— */
 .board-pane {

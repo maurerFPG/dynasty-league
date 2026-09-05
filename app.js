@@ -4,10 +4,12 @@
   const BOARD_H_KEY = "nasty-ui-board-h-v1";
   const CARD_H_KEY = "nasty-ui-card-h-v6";
   const PICK_FMT_KEY = "nasty-ui-pick-fmt-v1";
-  const POLL_MS = 2000;
+  const POLL_MS = 15000;
   const HOOK_URL_KEY = "nasty-draft-hook-url";
   const HOOK_KEY_KEY = "nasty-draft-hook-key";
   const HOOK_SENT_KEY = "nasty-draft-hook-sent";
+  const PICKS_SECRET_KEY = "espn-companion-secret";
+  const PICKS_API_KEY = "espn-companion-api";
   const ROB_USER = "469299052404535296";
   const DRAFT_END = 300;
   const UNDRAFTED = 301;
@@ -57,6 +59,8 @@
     match: {},
     picks: [],
     draftedIds: new Set(),
+    draftedEspnIds: new Set(),
+    byEspn: new Map(),
     pickByOverall: new Map(),
     robTaken: [],
     selectedId: null,
@@ -224,7 +228,9 @@
     return p.id != null ? String(p.id) : `name:${p.name}`;
   }
   function remaining(p) {
-    return !p.id || !state.draftedIds.has(String(p.id));
+    if (p.id && state.draftedIds.has(String(p.id))) return false;
+    if (p.espn_id != null && state.draftedEspnIds.has(String(p.espn_id))) return false;
+    return true;
   }
 
   function stealScore(p) {
@@ -1407,13 +1413,13 @@
     if (polledEl) {
       if (state.pollError) polledEl.title = "Picks poll failed · " + state.pollError;
       else if (state.lastPoll) polledEl.title = "Last poll " + state.lastPoll;
-      else polledEl.title = "Picks poll every 30s";
+      else polledEl.title = "Refresh pulls /api/picks · auto every 15s";
     }
     const dot = $("poll-dot");
     dot.className = "poll-dot" + (state.pollError ? " err" : state.lastPoll ? " ok" : "");
     if (state.pollError) dot.title = "Picks poll failed · " + state.pollError;
     else if (state.lastPoll) dot.title = "Last poll " + state.lastPoll;
-    else dot.title = "Picks poll every 30s";
+    else dot.title = "Refresh pulls /api/picks · auto every 15s";
     const hookOn = !!(hookConfig().url);
     if (!hookOn) dot.title = (dot.title || "") + " · draft pings off — click to set";
     else dot.title = (dot.title || "") + " · draft pings on";
@@ -1579,26 +1585,48 @@
     return String(n).padStart(2, "0");
   }
 
+  function unwrapPicks(payload) {
+    if (Array.isArray(payload)) return payload;
+    if (payload && Array.isArray(payload.picks)) return payload.picks;
+    return [];
+  }
+
+  function resolvePickPlayer(pk) {
+    if (pk.player_id != null && pk.player_id !== "" && state.byId.has(String(pk.player_id))) {
+      return state.byId.get(String(pk.player_id));
+    }
+    const eid = pk.espn_id != null && pk.espn_id !== "" ? String(pk.espn_id) : "";
+    if (eid && state.byEspn.has(eid)) return state.byEspn.get(eid);
+    return null;
+  }
+
   function applyPicks(picks) {
-    state.picks = Array.isArray(picks) ? picks : [];
+    state.picks = unwrapPicks(picks);
     state.draftedIds = new Set();
+    state.draftedEspnIds = new Set();
     state.pickByOverall = new Map();
     state.robTaken = [];
     for (const pk of state.picks) {
       const overall = Number(pk.pick_no || pk.pickNo);
-      const pid = pk.player_id != null ? String(pk.player_id) : null;
+      const matched = resolvePickPlayer(pk);
+      const pid = matched ? String(matched.id) : pk.player_id != null ? String(pk.player_id) : null;
       if (pid) state.draftedIds.add(pid);
+      const eid = pk.espn_id != null && pk.espn_id !== "" ? String(pk.espn_id) : matched && matched.espn_id != null ? String(matched.espn_id) : "";
+      if (eid && eid !== "-1") state.draftedEspnIds.add(eid);
       const meta = pk.metadata || {};
       const name =
         [meta.first_name, meta.last_name].filter(Boolean).join(" ") ||
+        (matched && matched.name) ||
         (pid && state.byId.get(pid)?.name) ||
-        "Unknown";
+        "";
+      if (!name) continue;
       const rec = {
         overall,
         player_id: pid,
+        espn_id: eid || null,
         name,
-        position: meta.position || state.byId.get(pid)?.pos || "",
-        team: meta.team || state.byId.get(pid)?.team || "",
+        position: meta.position || (matched && matched.pos) || state.byId.get(pid)?.pos || "",
+        team: meta.team || (matched && matched.team) || state.byId.get(pid)?.team || "",
         slot: pk.draft_slot,
         picked_by: pk.picked_by,
         roster_id: pk.roster_id,
@@ -1691,17 +1719,83 @@
     return s;
   }
 
+  function picksApiUrl() {
+    try {
+      const stored = localStorage.getItem(PICKS_API_KEY);
+      if (stored) return stored;
+    } catch { /* ignore */ }
+    return resolveLiveUrl(state.draft && state.draft.picks_api, "/api/picks");
+  }
+
+  function picksSecret() {
+    try {
+      return localStorage.getItem(PICKS_SECRET_KEY) || "";
+    } catch {
+      return "";
+    }
+  }
+
+  function openSyncModal() {
+    const modal = $("sync-modal");
+    const secretEl = $("sync-secret");
+    if (secretEl && !secretEl.value) secretEl.value = picksSecret();
+    if (modal) modal.hidden = false;
+  }
+
+  function closeSyncModal() {
+    const modal = $("sync-modal");
+    if (modal) modal.hidden = true;
+  }
+
+  async function applyPastedHistory() {
+    const text = ($("sync-text") && $("sync-text").value) || "";
+    const secret = ($("sync-secret") && $("sync-secret").value) || "";
+    const status = $("sync-status");
+    const btn = $("btn-sync-apply");
+    if (!text.trim()) {
+      if (status) status.textContent = "Paste Pick History text first.";
+      return;
+    }
+    if (!secret.trim()) {
+      if (status) status.textContent = "PICKS_SECRET is required to POST.";
+      return;
+    }
+    try { localStorage.setItem(PICKS_SECRET_KEY, secret.trim()); } catch { /* ignore */ }
+    if (btn) btn.classList.add("busy");
+    if (status) status.textContent = "Posting…";
+    try {
+      const res = await fetch(picksApiUrl(), {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "x-picks-secret": secret.trim(),
+        },
+        body: JSON.stringify({ text, source: "paste" }),
+      });
+      const body = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(body.error || ("HTTP " + res.status));
+      if (status) status.textContent = `Saved ${body.total || 0} pick(s).`;
+      await pollPicks(true);
+    } catch (err) {
+      if (status) status.textContent = (err && err.message) || "paste failed";
+    }
+    if (btn) btn.classList.remove("busy");
+  }
+
   async function pollPicks(manual) {
     const btn = $("btn-refresh");
     if (manual) btn.classList.add("busy");
     const prevDrafted = new Set(state.draftedIds);
     try {
-      const picksUrl = resolveLiveUrl(state.draft && state.draft.picks_api, "data/espn_picks.json");
+      const picksUrl = picksApiUrl();
       const draftUrl = resolveLiveUrl(state.draft && state.draft.draft_api, "data/espn_draft_status.json");
-      const [pRes, dRes] = await Promise.all([
+      let [pRes, dRes] = await Promise.all([
         fetch(picksUrl, { cache: "no-store" }),
         fetch(draftUrl, { cache: "no-store" }),
       ]);
+      if (!pRes.ok && picksUrl !== "data/espn_picks.json") {
+        pRes = await fetch("data/espn_picks.json", { cache: "no-store" });
+      }
       if (!pRes.ok) throw new Error("picks " + pRes.status);
       const picks = await pRes.json();
       applyPicks(picks);
@@ -1769,6 +1863,14 @@
 
   function bind() {
     $("btn-refresh").addEventListener("click", () => pollPicks(true));
+    if ($("btn-paste")) $("btn-paste").addEventListener("click", openSyncModal);
+    if ($("btn-sync-close")) $("btn-sync-close").addEventListener("click", closeSyncModal);
+    if ($("btn-sync-apply")) $("btn-sync-apply").addEventListener("click", applyPastedHistory);
+    if ($("sync-modal")) {
+      $("sync-modal").addEventListener("click", (ev) => {
+        if (ev.target === $("sync-modal")) closeSyncModal();
+      });
+    }
     const hookDot = $("poll-dot");
     if (hookDot) hookDot.addEventListener("click", configureDraftHook);
     document.querySelectorAll("#filters .pos").forEach((btn) => {
@@ -1847,8 +1949,8 @@
     loadTargets();
     loadLayout();
     const [pj, dj, bj, rj] = await Promise.all([
-      fetch("data/players.json?v=rd835", { cache: "no-store" }).then((r) => r.json()),
-      fetch("data/draft.json?v=rd830slot7", { cache: "no-store" }).then((r) => r.json()),
+      fetch("data/players.json?v=rd840", { cache: "no-store" }).then((r) => r.json()),
+      fetch("data/draft.json?v=rd840", { cache: "no-store" }).then((r) => r.json()),
       fetch("data/briefs.json?v=rd831", { cache: "no-store" })
         .then((r) => (r.ok ? r.json() : {}))
         .catch(() => ({})),
@@ -1865,6 +1967,11 @@
     state.draft = dj;
     state.draftStatus = dj.status || "pre_draft";
     state.byId = new Map(state.players.filter((p) => p.id != null).map((p) => [String(p.id), p]));
+    state.byEspn = new Map(
+      state.players
+        .filter((p) => p.espn_id != null && p.espn_id !== "")
+        .map((p) => [String(p.espn_id), p])
+    );
     bind();
     renderBoard();
     renderMyPicks();
