@@ -4,7 +4,9 @@
  * scrapes Pick History if that payload is empty/stale, then
  * hands normalized-ready payloads to the service worker.
  */
-(() => {
+import { scrapeHistoryText } from "./picks.js";
+
+{
   const DEFAULT_LEAGUE = "1030576";
   const DEFAULT_SEASON = 2026;
 
@@ -54,31 +56,6 @@
     });
   }
 
-  function scrapeHistoryText() {
-    const roots = [
-      document.querySelector(".pick-history"),
-      document.querySelector(".pick-history-tables"),
-      document.querySelector(".pick-history-table.isViewing"),
-    ].filter(Boolean);
-    const root = roots[0] || document.body;
-    const lines = [];
-    const nameNodes = root.querySelectorAll(".playerinfo__playername");
-    nameNodes.forEach((el) => {
-      const row = el.closest("tr") || el.closest("[class*='Table__TR']") || el.parentElement;
-      const text = ((row && row.textContent) || el.textContent || "").replace(/\s+/g, " ").trim();
-      if (text) lines.push(text);
-    });
-    if (lines.length) return lines.join("\n");
-    const rows = root.querySelectorAll(
-      ".pick-history-table tr, .picklist--pick, [data-pick-number]"
-    );
-    rows.forEach((el) => {
-      const text = (el.textContent || "").replace(/\s+/g, " ").trim();
-      if (text && text.length < 240) lines.push(text);
-    });
-    return lines.join("\n");
-  }
-
   function onDraftPage() {
     return /\/football\/(draft|waitingroom)/i.test(location.pathname);
   }
@@ -103,7 +80,7 @@
       href: location.href,
       mdraft,
       mdraftError,
-      historyText: scrapeHistoryText(),
+      historyText: scrapeHistoryText(document),
     };
   }
 
@@ -162,4 +139,4 @@
   } else {
     ensureButton();
   }
-})();
+}

@@ -47,6 +47,7 @@ Public `GET https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/2026
    - Add a **Vercel Blob** store so `BLOB_READ_WRITE_TOKEN` is injected
 2. Open the Vercel URL (HTTPS board). Confirm **Refresh** works (0 picks is fine).
 3. Chrome → `chrome://extensions` → Developer mode → **Load unpacked** → `extension/`
+   After pulling a new build, click the **reload / refresh icon on the extension card**. The old Pick History scrape stays loaded until you do.
 4. Extension **Options**: board origin (`https://your-app.vercel.app`) and the same `PICKS_SECRET`
 5. Sign into ESPN in Chrome. Open the [mock lobby](https://fantasy.espn.com/football/mockdraftlobby), join a **12-team snake** room, wait for the draft page.
 6. Make a few picks **in ESPN** (including a D/ST). Do not use this tool to draft.

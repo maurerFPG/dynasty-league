@@ -9,7 +9,9 @@ import {
   normEspnId,
   parsePickHistoryText,
   parsePickLine,
+  pickLinesFromCellRows,
   resolvePlayer,
+  scrapeHistoryText,
   toRecord,
   upsertPicks,
 } from "../lib/picks.js";
@@ -88,6 +90,220 @@ test("team nicknames are defenses, never skill players", () => {
   const skill = resolvePlayer(index, { name: "Lions" });
   assert.equal(skill.pos, "DEF");
 });
+
+test("draft-room Pick History rows use PICK/PLAYER/TEAM (team before pos)", () => {
+  const rows = [
+    "PICK PLAYER TEAM 2025 PTS PROJ PTS RK",
+    "1 Jahmyr Gibbs DET RB Sully's Smart Team 312.4 289.2 1",
+    "2 Bijan Robinson ATL RB ethan's Excellent Team 298.1 285.0 2",
+    "3 Josh Allen BUF QB Liz's Loud Team 410.2 388.0 4",
+    "4 Puka Nacua LAR WR Sam's Super Team 250.1 240.0 6",
+    "5 Jaxon Smith-Njigba SEA WR David's Daring Team 198.4 188.0 12",
+    "48 Texans D/ST HOU DEF Tucker's Talented Team 140.0 130.0 180",
+  ];
+  const gibbs = parsePickLine(rows[1]);
+  assert.equal(gibbs.pick_no, 1);
+  assert.equal(gibbs.name, "Jahmyr Gibbs");
+  assert.equal(gibbs.pos, "RB");
+  assert.equal(gibbs.team, "DET");
+  const chaseOld = parsePickLine("1 Ja'Marr Chase WR Cin");
+  assert.equal(chaseOld.name, "Ja'Marr Chase");
+  assert.equal(chaseOld.pos, "WR");
+  assert.equal(chaseOld.team, "CIN");
+  const picks = parsePickHistoryText(rows.join("\n"), index);
+  assert.equal(picks.length, 6);
+  assert.equal(picks[0].espn_id, "4429795");
+  assert.equal(picks[1].player_id, "9509");
+  assert.equal(picks[2].metadata.position, "QB");
+  const dst = picks.find((p) => p.pick_no === 48);
+  assert.equal(dst.espn_id, "-16034");
+});
+
+test("scrapeHistoryText reads a PICK/PLAYER/TEAM table without playerinfo or pick-history classes", () => {
+  const header = ["PICK", "PLAYER", "TEAM", "2025 PTS", "PROJ PTS", "RK"];
+  const data = [
+    ["1", "Jahmyr Gibbs DET RB", "Sully's Smart Team", "312.4", "289.2", "1"],
+    ["2", "Bijan Robinson ATL RB", "ethan's Excellent Team", "298.1", "285.0", "2"],
+    ["5", "Jaxon Smith-Njigba SEA WR", "David's Daring Team", "198.4", "188.0", "12"],
+  ];
+  const lines = pickLinesFromCellRows([
+    { cells: header },
+    ...data.map((cells) => ({ cells })),
+  ]);
+  assert.deepEqual(lines, [
+    "1 Jahmyr Gibbs RB DET",
+    "2 Bijan Robinson RB ATL",
+    "5 Jaxon Smith-Njigba WR SEA",
+  ]);
+  const doc = fakePickTable(header, data);
+  const scraped = scrapeHistoryText(doc);
+  const picks = parsePickHistoryText(scraped, index);
+  assert.equal(picks.length, 3);
+  assert.equal(picks[0].espn_id, "4429795");
+  assert.equal(picks[0].metadata.first_name, "Jahmyr");
+  assert.equal(picks[2].pick_no, 5);
+  assert.match(scraped, /Jahmyr Gibbs/);
+  assert.doesNotMatch(scraped, /PICK PLAYER/);
+
+  const fdt = fakeFixedDataTable(header, data);
+  const fdtPicks = parsePickHistoryText(scrapeHistoryText(fdt), index);
+  assert.equal(fdtPicks.length, 3);
+  assert.equal(fdtPicks[1].espn_id, "4430807");
+});
+
+function fakePickTable(header, dataRows) {
+  function match(el, rawSel) {
+    const sel = rawSel.trim();
+    if (sel === "*") return true;
+    if (/^[a-z]+$/i.test(sel)) return el.tagName === sel.toUpperCase();
+    const cls = sel.match(/^\[class\*='([^']+)'\]$/) || sel.match(/^\[class\*="([^"]+)"\]$/);
+    if (cls) return String(el.className || "").includes(cls[1]);
+    if (sel.startsWith(".")) return String(el.className || "").split(/\s+/).includes(sel.slice(1));
+    if (sel.startsWith("[role=")) return false;
+    return false;
+  }
+  function matches(el, selector) {
+    return String(selector)
+      .split(",")
+      .some((part) => match(el, part));
+  }
+  function descendants(el, out = []) {
+    for (const c of el.children || []) {
+      out.push(c);
+      descendants(c, out);
+    }
+    return out;
+  }
+  function decorate(el) {
+    el.querySelectorAll = (sel) => descendants(el).filter((n) => matches(n, sel));
+    el.querySelector = (sel) => el.querySelectorAll(sel)[0] || null;
+    el.closest = () => el;
+    return el;
+  }
+  function cell(tag, className, text) {
+    return decorate({
+      tagName: tag,
+      className,
+      textContent: text,
+      children: [],
+      shadowRoot: null,
+    });
+  }
+  function row(tag, className, texts, cellTag, cellClass) {
+    const children = texts.map((t) => cell(cellTag, cellClass, t));
+    return decorate({
+      tagName: tag,
+      className,
+      textContent: texts.join(" "),
+      children,
+      shadowRoot: null,
+    });
+  }
+  const thead = decorate({
+    tagName: "THEAD",
+    className: "Table__THEAD",
+    textContent: header.join(" "),
+    children: [row("TR", "Table__TR", header, "TH", "Table__TH")],
+    shadowRoot: null,
+  });
+  const bodyRows = dataRows.map((cells) => row("TR", "Table__TR", cells, "TD", "Table__TD"));
+  const tbody = decorate({
+    tagName: "TBODY",
+    className: "Table__TBODY",
+    textContent: bodyRows.map((r) => r.textContent).join(" "),
+    children: bodyRows,
+    shadowRoot: null,
+  });
+  const table = decorate({
+    tagName: "TABLE",
+    className: "Table",
+    textContent: `${header.join(" ")} ${tbody.textContent}`,
+    children: [thead, tbody],
+    shadowRoot: null,
+  });
+  return decorate({
+    tagName: "BODY",
+    className: "",
+    textContent: table.textContent,
+    children: [table],
+    shadowRoot: null,
+    contentDocument: null,
+  });
+}
+
+function fakeFixedDataTable(header, dataRows) {
+  function match(el, rawSel) {
+    const sel = rawSel.trim();
+    if (sel === "*") return true;
+    if (/^[a-z]+$/i.test(sel)) return el.tagName === sel.toUpperCase();
+    const cls = sel.match(/^\[class\*='([^']+)'\]$/) || sel.match(/^\[class\*="([^"]+)"\]$/);
+    if (cls) return String(el.className || "").includes(cls[1]);
+    if (sel.startsWith(".")) return String(el.className || "").split(/\s+/).includes(sel.slice(1));
+    return false;
+  }
+  function matches(el, selector) {
+    return String(selector)
+      .split(",")
+      .some((part) => match(el, part));
+  }
+  function descendants(el, out = []) {
+    for (const c of el.children || []) {
+      out.push(c);
+      descendants(c, out);
+    }
+    return out;
+  }
+  function decorate(el) {
+    el.querySelectorAll = (sel) => descendants(el).filter((n) => matches(n, sel));
+    el.querySelector = (sel) => el.querySelectorAll(sel)[0] || null;
+    el.closest = (sel) => {
+      let n = el;
+      while (n) {
+        if (!sel || matches(n, sel)) return n;
+        n = n.parentElement;
+      }
+      return null;
+    };
+    return el;
+  }
+  function cell(text) {
+    return decorate({
+      tagName: "DIV",
+      className: "public_fixedDataTableCell_cellContent",
+      textContent: text,
+      children: [],
+      shadowRoot: null,
+    });
+  }
+  function row(texts, extraClass = "") {
+    const children = texts.map(cell);
+    return decorate({
+      tagName: "DIV",
+      className: `public_fixedDataTableRow_main ${extraClass}`.trim(),
+      textContent: texts.join(" "),
+      children,
+      shadowRoot: null,
+    });
+  }
+  const headerRow = row(header, "public_fixedDataTable_header");
+  const bodyRows = dataRows.map((cells) => row(cells));
+  const table = decorate({
+    tagName: "DIV",
+    className: "k-table public_fixedDataTable_main",
+    textContent: `${header.join(" ")} ${bodyRows.map((r) => r.textContent).join(" ")}`,
+    children: [headerRow, ...bodyRows],
+    shadowRoot: null,
+  });
+  headerRow.parentElement = table;
+  for (const r of bodyRows) r.parentElement = table;
+  return decorate({
+    tagName: "BODY",
+    className: "",
+    textContent: table.textContent,
+    children: [table],
+    shadowRoot: null,
+  });
+}
 
 test("paste parser reads ESPN Pick History text including D/ST", () => {
   const text = [
