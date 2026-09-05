@@ -23,7 +23,7 @@ test("manifest loads the classic bundle, not a module content.js", async () => {
   const manifest = JSON.parse(
     await readFile(fileURLToPath(new URL("../extension/manifest.json", import.meta.url)), "utf8")
   );
-  assert.equal(manifest.version, "1.0.3");
+  assert.equal(manifest.version, "1.0.4");
   const isolated = manifest.content_scripts.find((s) => s.world === "ISOLATED");
   assert.deepEqual(isolated.js, ["content.bundle.js"]);
   assert.notEqual(isolated.type, "module");
