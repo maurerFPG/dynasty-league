@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "ESPN redraft companion",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "On-demand ESPN pick sync to the HTTPS redraft board. Does not send ESPN cookies or passwords.",
   "action": {
     "default_title": "Sync ESPN picks",

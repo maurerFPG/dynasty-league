@@ -91,6 +91,30 @@ test("team nicknames are defenses, never skill players", () => {
   assert.equal(skill.pos, "DEF");
 });
 
+test("name-only skill history lines become picks; D/ST still maps", () => {
+  assert.equal(parsePickLine("1 Jahmyr Gibbs").name, "Jahmyr Gibbs");
+  assert.equal(parsePickLine("1 Jahmyr Gibbs").pos, "");
+  assert.equal(parsePickLine("5 Jaxon Smith-Njigba").name, "Jaxon Smith-Njigba");
+  const named = parsePickHistoryText(["1 Jahmyr Gibbs", "5 Jaxon Smith-Njigba", "73 Commanders DEF WAS"].join("\n"), index);
+  assert.equal(named.length, 3);
+  assert.equal(named[0].espn_id, "4429795");
+  assert.equal(named[0].metadata.position, "RB");
+  assert.equal(named[1].espn_id, "4430878");
+  assert.equal(named[1].metadata.position, "WR");
+  assert.equal(named.find((p) => p.pick_no === 73).espn_id, "-16028");
+  const cellLines = pickLinesFromCellRows([
+    { cells: ["1", "Jahmyr Gibbs", "Sully's Smart Team"], name: "Jahmyr Gibbs", rowText: "1 Jahmyr Gibbs Sully's Smart Team" },
+    { cells: ["5", "Jaxon Smith-Njigba", "David's Daring Team"], name: "Jaxon Smith-Njigba" },
+    { cells: ["73", "Commanders DEF WAS", "Tucker's Team"], name: "Commanders" },
+  ]);
+  assert.ok(cellLines.includes("1 Jahmyr Gibbs"));
+  assert.ok(cellLines.includes("5 Jaxon Smith-Njigba"));
+  const fromCells = parsePickHistoryText(cellLines.join("\n"), index);
+  assert.equal(fromCells.find((p) => p.pick_no === 1).espn_id, "4429795");
+  assert.equal(fromCells.find((p) => p.pick_no === 5).espn_id, "4430878");
+  assert.equal(fromCells.find((p) => p.pick_no === 73).espn_id, "-16028");
+});
+
 test("draft-room Pick History rows use PICK/PLAYER/TEAM (team before pos)", () => {
   const rows = [
     "PICK PLAYER TEAM 2025 PTS PROJ PTS RK",

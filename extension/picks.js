@@ -459,16 +459,16 @@ export function parsePickLine(line) {
     );
     return { pick_no: num(m[1]), name: cleaned.name, pos, team: cleaned.team };
   }
-  // "12 Texans D/ST" / "12. Lions"
-  m = text.match(/^(?:pick\s*)?(\d{1,3})\s*[.):\-–]\s+(.+)$/i);
-  if (m && isTeamNicknameName(m[2])) {
-    const name = m[2].trim();
-    return { pick_no: num(m[1]), name, pos: "DEF", team: teamFromNickname(name) };
-  }
-  m = text.match(/^(?:pick\s*)?(\d{1,3})\s+(.+)$/i);
-  if (m && isTeamNicknameName(m[2])) {
-    const name = m[2].trim();
-    return { pick_no: num(m[1]), name, pos: "DEF", team: teamFromNickname(name) };
+  // "12 Texans D/ST" / "12. Lions" / name-only skill "1 Jahmyr Gibbs"
+  m = text.match(/^(?:pick\s*)?(\d{1,3})\s*[.):\-–]?\s+(.+)$/i);
+  if (m) {
+    const rest = m[2].replace(/\s+/g, " ").trim();
+    if (isTeamNicknameName(rest)) {
+      return { pick_no: num(m[1]), name: rest, pos: "DEF", team: teamFromNickname(rest) };
+    }
+    if (rest && /[A-Za-z]/.test(rest) && !isPickHistoryHeaderText(text)) {
+      return { pick_no: num(m[1]), name: rest, pos: "", team: "" };
+    }
   }
   return null;
 }
@@ -653,9 +653,9 @@ export function scrapeHistoryText(doc) {
     if (!c || seenEls.has(c)) continue;
     seenEls.add(c);
     for (const line of pickLinesFromCellRows(queryAll(c, HISTORY_ROW_SEL).map(rowRecord))) {
-      const parsed = parsePickLine(line);
-      if (!parsed || seenPick.has(parsed.pick_no)) continue;
-      seenPick.add(parsed.pick_no);
+      const n = num((String(line).match(/^(\d{1,3})\b/) || [])[1]);
+      if (!n || seenPick.has(n)) continue;
+      seenPick.add(n);
       lines.push(line);
     }
   }
