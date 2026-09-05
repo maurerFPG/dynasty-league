@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
-"""Local ESPN redraft dashboard server. Serves this folder on 127.0.0.1:8765.
+"""Deprecated local file server. Prefer `npm run dev` or the Vercel HTTPS app.
 
-POST /picks merges ESPN picks into data/espn_picks.json, mapping espn_id
-to Sleeper player_id via players.json. No secrets are logged.
+Monday-night happy path is the Chrome extension + POST /api/picks, not this.
 """
 from __future__ import annotations
 

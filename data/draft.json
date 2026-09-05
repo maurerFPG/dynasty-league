@@ -28,7 +28,7 @@
   },
   "divisions": 1,
   "order_note": "Draft order randomized 1 hour before (3:00 PM CT). Live order from ESPN Draft Recap 2026-08-30 ~3:02 PM CT. Maurer Hour = slot 7.",
-  "picks_api": "data/espn_picks.json",
+  "picks_api": "/api/picks",
   "draft_api": "data/espn_draft_status.json",
   "slots": [
     {

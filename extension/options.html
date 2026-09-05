@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>ESPN companion options</title>
+  <style>
+    body { font: 15px/1.45 system-ui, sans-serif; margin: 24px auto; max-width: 560px; color: #102030; }
+    label { display: block; margin: 14px 0 4px; font-weight: 600; }
+    input { width: 100%; padding: 8px; box-sizing: border-box; }
+    .hint { color: #556; font-size: 13px; margin: 4px 0 0; }
+    button { margin-top: 18px; padding: 8px 14px; font-weight: 600; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h1>ESPN redraft companion</h1>
+  <p>The extension reads picks from the ESPN tab you have open. It never sends <code>espn_s2</code> / SWID.</p>
+  <label for="boardUrl">Board origin (HTTPS)</label>
+  <input id="boardUrl" type="url" placeholder="https://your-app.vercel.app" />
+  <p class="hint">Used to load <code>/data/players.json</code> and as the default picks API host.</p>
+  <label for="apiUrl">Picks API (optional override)</label>
+  <input id="apiUrl" type="url" placeholder="https://your-app.vercel.app/api/picks" />
+  <label for="secret">PICKS_SECRET</label>
+  <input id="secret" type="password" autocomplete="off" />
+  <p class="hint">Same value as the Vercel env var. Stored in this browser only.</p>
+  <button type="button" id="save">Save</button>
+  <p id="status" class="hint"></p>
+  <script src="options.js"></script>
+</body>
+</html>
