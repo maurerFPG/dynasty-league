@@ -1,6 +1,7 @@
 /**
  * Runs in the ESPN page world so mDraftDetail is fetched with the user's
  * ESPN session cookies. Cookies never leave this page.
+ * Pick History scraping lives in the isolated content script (scrapeHistoryText).
  */
 (() => {
   if (window.__espnCompanionBridge) return;
