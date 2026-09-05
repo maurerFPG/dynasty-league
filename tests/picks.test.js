@@ -87,6 +87,11 @@ test("team nicknames are defenses, never skill players", () => {
   assert.equal(isTeamNicknameName("Lions"), true);
   assert.equal(isTeamNicknameName("Ravens"), true);
   assert.equal(isTeamNicknameName("Jahmyr Gibbs"), false);
+  assert.equal(isTeamNicknameName("Washington"), true);
+  assert.equal(isTeamNicknameName("Washington Commanders"), true);
+  assert.equal(isTeamNicknameName("Houston Texans"), true);
+  assert.equal(isTeamNicknameName("New York Giants"), true);
+  assert.equal(isTeamNicknameName("Los Angeles Rams"), true);
   const lions = parsePickLine("12 Lions");
   assert.equal(lions.pos, "DEF");
   assert.equal(lions.team, "DET");
@@ -95,6 +100,79 @@ test("team nicknames are defenses, never skill players", () => {
   assert.equal(rec.espn_id, "-16008");
   const skill = resolvePlayer(index, { name: "Lions" });
   assert.equal(skill.pos, "DEF");
+});
+
+test("Parker Washington is a WR, not WAS D/ST", () => {
+  assert.equal(isTeamNicknameName("Parker Washington"), false);
+  assert.equal(isTeamNicknameName("Mike Washington"), false);
+  assert.equal(isTeamNicknameName("Malik Washington"), false);
+  assert.equal(isTeamNicknameName("Darnell Washington"), false);
+  assert.equal(isTeamNicknameName("DeeJay Dallas"), false);
+  assert.equal(foldKey("Parker Washington"), "parker washington");
+
+  const pw = resolvePlayer(index, { name: "Parker Washington" });
+  assert.ok(pw);
+  assert.equal(pw.espn_id, "4432620");
+  assert.equal(pw.id, "9487");
+  assert.equal(pw.pos, "WR");
+  assert.equal(resolvePlayer(index, { name: "Parker Washington", pos: "WR", team: "JAX" }).espn_id, "4432620");
+  assert.equal(resolvePlayer(index, { name: "Washington" }).pos, "DEF");
+
+  const nameOnly = parsePickLine("83 Parker Washington");
+  assert.equal(nameOnly.name, "Parker Washington");
+  assert.notEqual(nameOnly.pos, "DEF");
+  const nameRec = toRecord(nameOnly, index);
+  assert.equal(nameRec.espn_id, "4432620");
+  assert.equal(nameRec.player_id, "9487");
+
+  const withTeamPos = parsePickLine("83 Parker Washington JAX WR");
+  assert.equal(withTeamPos.name, "Parker Washington");
+  assert.equal(withTeamPos.team, "JAX");
+  assert.equal(withTeamPos.pos, "WR");
+  assert.equal(toRecord(withTeamPos, index).espn_id, "4432620");
+
+  const paren = parsePickLine("83 Parker Washington (JAX, WR)");
+  assert.equal(paren.name, "Parker Washington");
+  assert.equal(paren.team, "JAX");
+  assert.equal(paren.pos, "WR");
+  assert.equal(toRecord(paren, index).espn_id, "4432620");
+
+  const cell = parsePlayerCell("Parker Washington JAX WR");
+  assert.equal(cell.name, "Parker Washington");
+  assert.equal(cell.team, "JAX");
+  assert.equal(cell.pos, "WR");
+  assert.equal(parsePlayerCell("Parker Washington").name, "Parker Washington");
+  assert.notEqual(parsePlayerCell("Parker Washington").pos, "DEF");
+  assert.equal(parsePlayerCell("Parker Washington (JAX, WR)").name, "Parker Washington");
+
+  const history = parsePickHistoryText(
+    ["83 Parker Washington (JAX, WR)", "1 Jahmyr Gibbs DET RB"].join("\n"),
+    index
+  );
+  const pick83 = history.find((p) => p.pick_no === 83);
+  assert.ok(pick83);
+  assert.equal(pick83.espn_id, "4432620");
+  assert.equal(pick83.player_id, "9487");
+  assert.equal(pick83.metadata.position, "WR");
+  assert.equal(pick83.metadata.team, "JAX");
+
+  const cellLines = pickLinesFromCellRows([
+    { cells: ["83", "Parker Washington (JAX, WR)", "Team"], name: "Parker Washington", rowText: "83 Parker Washington (JAX, WR) Team" },
+  ]);
+  assert.ok(cellLines.some((line) => /Parker Washington/.test(line)));
+  assert.ok(cellLines.every((line) => !/\bDEF\b/.test(line)));
+  const fromCells = parsePickHistoryText(cellLines.join("\n"), index);
+  assert.equal(fromCells.find((p) => p.pick_no === 83).espn_id, "4432620");
+
+  const gibbs = parsePickLine("1 Jahmyr Gibbs DET RB");
+  assert.equal(gibbs.name, "Jahmyr Gibbs");
+  assert.equal(gibbs.team, "DET");
+  assert.equal(gibbs.pos, "RB");
+  const gibbsAbbrev = parsePickLine("1 Jahmyr Gibbs DET");
+  assert.equal(gibbsAbbrev.name, "Jahmyr Gibbs");
+  assert.equal(gibbsAbbrev.team, "DET");
+  assert.equal(toRecord(gibbsAbbrev, index).espn_id, "4429795");
+  assert.equal(toRecord(gibbs, index).espn_id, "4429795");
 });
 
 test("Jr/Sr/II/III/IV suffixes fold to the same player as the bare name", () => {
