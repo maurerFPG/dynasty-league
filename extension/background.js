@@ -107,12 +107,64 @@ async function syncFromPayload(payload) {
   };
 }
 
+function frameScore(url) {
+  const u = String(url || "");
+  if (/\/football\/draft/i.test(u)) return 0;
+  if (/\/football\/waitingroom/i.test(u)) return 1;
+  if (/fantasy\.espn\.com/i.test(u)) return 2;
+  return 3;
+}
+
+async function injectCompanion(tabId) {
+  try {
+    await chrome.scripting.executeScript({
+      target: { tabId, allFrames: true },
+      files: ["page-bridge.js"],
+      world: "MAIN",
+    });
+  } catch {
+    /* MAIN inject can fail on a blank iframe; isolated still needed */
+  }
+  await chrome.scripting.executeScript({
+    target: { tabId, allFrames: true },
+    files: ["content.bundle.js"],
+    world: "ISOLATED",
+  });
+}
+
+async function collectFromTab(tabId) {
+  await injectCompanion(tabId);
+  let frames = [];
+  try {
+    frames = await chrome.webNavigation.getAllFrames({ tabId });
+  } catch {
+    frames = [];
+  }
+  const ordered = (frames || [])
+    .filter((f) => /^https:\/\/fantasy\.espn\.com\//i.test(f.url || ""))
+    .sort((a, b) => frameScore(a.url) - frameScore(b.url) || a.frameId - b.frameId);
+  const attempts = ordered.length ? ordered : [{ frameId: undefined }];
+
+  let lastErr = "content script not ready";
+  for (const frame of attempts) {
+    try {
+      const opts = frame.frameId == null ? {} : { frameId: frame.frameId };
+      const got = await chrome.tabs.sendMessage(tabId, { type: "espn-companion-collect" }, opts);
+      if (got && got.ok) return got;
+      lastErr = (got && got.error) || lastErr;
+    } catch (err) {
+      lastErr = err && err.message ? err.message : lastErr;
+    }
+  }
+  throw new Error(lastErr);
+}
+
 async function syncActiveTab() {
   const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
   if (!tab || !tab.id || !/^https:\/\/fantasy\.espn\.com\//i.test(tab.url || "")) {
     throw new Error("Open an ESPN draft or waiting-room tab first.");
   }
-  const got = await chrome.tabs.sendMessage(tab.id, { type: "espn-companion-collect" });
+  const got = await collectFromTab(tab.id);
   if (!got || !got.ok) throw new Error((got && got.error) || "content script not ready");
   return syncFromPayload(got.payload);
 }
