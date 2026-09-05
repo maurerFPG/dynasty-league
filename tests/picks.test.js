@@ -3,10 +3,12 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import {
+  foldKey,
   fromMDraftDetail,
   indexPlayers,
   isTeamNicknameName,
   normEspnId,
+  normalizeName,
   parsePickHistoryText,
   parsePickLine,
   pickLinesFromCellRows,
@@ -89,6 +91,49 @@ test("team nicknames are defenses, never skill players", () => {
   assert.equal(rec.espn_id, "-16008");
   const skill = resolvePlayer(index, { name: "Lions" });
   assert.equal(skill.pos, "DEF");
+});
+
+test("Jr/Sr/II/III/IV suffixes fold to the same player as the bare name", () => {
+  assert.equal(normalizeName("James Cook III"), normalizeName("James Cook"));
+  assert.equal(foldKey("James Cook III"), foldKey("James Cook"));
+  assert.equal(foldKey("James Cook III"), "james cook");
+  assert.equal(foldKey("Michael Pittman Jr."), foldKey("Michael Pittman"));
+  assert.equal(foldKey("Odell Beckham Jr."), foldKey("Odell Beckham"));
+  assert.equal(foldKey("Marvin Harrison Jr"), foldKey("Marvin Harrison"));
+  assert.equal(foldKey("Kenneth Walker III"), foldKey("Kenneth Walker"));
+  assert.equal(foldKey("Andrei Iosivas"), "andrei iosivas");
+  assert.equal(foldKey("Lions D/ST"), "lions d st");
+  assert.equal(foldKey("Texans"), "texans");
+
+  const cook = resolvePlayer(index, { name: "James Cook", pos: "RB" });
+  const cookIII = resolvePlayer(index, { name: "James Cook III", pos: "RB", team: "BUF" });
+  assert.ok(cook);
+  assert.equal(cook.espn_id, "4379399");
+  assert.equal(cookIII, cook);
+  assert.equal(index.byNamePos.get("james cook|RB"), cook);
+  assert.equal(index.byNamePos.has("james cook iii|RB"), false);
+
+  const pitt = resolvePlayer(index, { name: "Michael Pittman Jr.", pos: "WR" });
+  assert.equal(pitt, resolvePlayer(index, { name: "Michael Pittman", pos: "WR" }));
+  assert.ok(pitt);
+
+  const jrIndex = indexPlayers([
+    { id: "objr", espn_id: "16737", name: "Odell Beckham Jr.", pos: "WR", team: "MIA" },
+  ]);
+  const withJr = resolvePlayer(jrIndex, { name: "Odell Beckham Jr.", pos: "WR" });
+  const bare = resolvePlayer(jrIndex, { name: "Odell Beckham", pos: "WR" });
+  assert.ok(withJr);
+  assert.equal(withJr, bare);
+  assert.ok(jrIndex.byNamePos.has("odell beckham|WR"));
+  assert.equal(jrIndex.byNamePos.has("odell beckham jr|WR"), false);
+
+  const lions = resolvePlayer(index, { name: "Lions" });
+  assert.equal(lions.pos, "DEF");
+  assert.equal(resolvePlayer(index, { name: "Lions D/ST" }).espn_id, lions.espn_id);
+
+  const picks = parsePickHistoryText(["9 Jahmyr Gibbs DET RB", "10 James Cook III BUF RB", "11 Jaxon Smith-Njigba SEA WR"].join("\n"), index);
+  assert.equal(picks.map((p) => p.pick_no).join(","), "9,10,11");
+  assert.equal(picks.find((p) => p.pick_no === 10).espn_id, "4379399");
 });
 
 test("name-only skill history lines become picks; D/ST still maps", () => {

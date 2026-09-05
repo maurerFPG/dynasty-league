@@ -226,13 +226,26 @@ function splitName(name) {
   return { first: parts[0], last: parts.slice(1).join(" ") };
 }
 
-export function foldKey(s) {
+/** Trailing Jr/Sr/II/III/IV (and spelled-out junior/senior). Do not strip a lone I. */
+const GENERATIONAL_SUFFIX = /(?:\s+(?:junior|senior|iii|ii|iv|jr|sr|v))+$/;
+
+/**
+ * Shared name fold for indexPlayers keys and resolvePlayer lookups.
+ * ESPN Pick History often appends "III" / "Jr." while players.json does not.
+ */
+export function normalizeName(s) {
   return String(s || "")
     .toLowerCase()
     .normalize("NFKD")
     .replace(/[\u0300-\u036f]/g, "")
     .replace(/[^a-z0-9]+/g, " ")
+    .trim()
+    .replace(GENERATIONAL_SUFFIX, "")
     .trim();
+}
+
+export function foldKey(s) {
+  return normalizeName(s);
 }
 
 export function indexPlayers(players) {
