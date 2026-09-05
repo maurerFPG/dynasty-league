@@ -1,4 +1,6 @@
 /* Redraft — remaining-name glance. No pick recommender. */
+import { ensureDraftShape, roundOfOverall, teamCount as draftTeamCount } from "./lib/draft-map.js";
+
 (() => {
   const TARGETS_KEY = "nasty-draft-hq-targets-v1";
   const BOARD_H_KEY = "nasty-ui-board-h-v1";
@@ -227,6 +229,9 @@
   function playerKey(p) {
     return p.id != null ? String(p.id) : `name:${p.name}`;
   }
+  function teamCount() {
+    return draftTeamCount(state.draft);
+  }
   function remaining(p) {
     if (p.id && state.draftedIds.has(String(p.id))) return false;
     if (p.espn_id != null && state.draftedEspnIds.has(String(p.espn_id))) return false;
@@ -239,8 +244,9 @@
     const fo_rank = Number(p.fo_rank);
     if (!Number.isFinite(fp_rank) || !Number.isFinite(fo_rank)) return null;
     const sl_eff = Math.min(fo_rank, UNDRAFTED);
-    const fp_round = (fp_rank - 1) / 12 + 1;
-    const sl_round = (sl_eff - 1) / 12 + 1;
+    const n = teamCount();
+    const fp_round = (fp_rank - 1) / n + 1;
+    const sl_round = (sl_eff - 1) / n + 1;
     const score = (sl_round - fp_round) / Math.sqrt(fp_round);
     return Number.isFinite(score) ? score : null;
   }
@@ -466,6 +472,9 @@
     const board = $("board");
     const d = state.draft;
     if (!d) return;
+    const teams = teamCount();
+    document.documentElement.style.setProperty("--board-cols", String(teams));
+    board.style.gridTemplateColumns = `32px repeat(${teams}, minmax(72px, 1fr))`;
     const frag = document.createDocumentFragment();
     const corner = document.createElement("div");
     corner.className = "b-corner";
@@ -490,7 +499,7 @@
       frag.appendChild(rh);
       const row = byRound.get(rnd) || [];
       const bySlot = new Map(row.map((c) => [c.slot, c]));
-      for (let slot = 1; slot <= d.teams; slot++) {
+      for (let slot = 1; slot <= teams; slot++) {
         const cell = bySlot.get(slot);
         const el = document.createElement("div");
         const pick = cell ? state.pickByOverall.get(cell.overall) : null;
@@ -967,7 +976,7 @@
   }
 
   function liveRosters() {
-    const teams = (state.draft && state.draft.teams) || 12;
+    const teams = teamCount();
     const by = {};
     for (let s = 1; s <= teams; s++) by[s] = emptyPosCounts();
     for (const rec of state.pickByOverall.values()) {
@@ -1111,7 +1120,7 @@
       const recent = [];
       for (let pki = 0; pki < upcoming.length; pki++) {
         const cell = upcoming[pki];
-        const round = Math.ceil(cell.overall / 12);
+        const round = roundOfOverall(cell.overall, teamCount());
         const c = counts[cell.slot] || emptyPosCounts();
         const cand = [];
         const scores = [];
@@ -1950,7 +1959,7 @@
     loadLayout();
     const [pj, dj, bj, rj] = await Promise.all([
       fetch("data/players.json?v=rd840", { cache: "no-store" }).then((r) => r.json()),
-      fetch("data/draft.json?v=rd840", { cache: "no-store" }).then((r) => r.json()),
+      fetch("data/draft.json?v=rd841", { cache: "no-store" }).then((r) => r.json()),
       fetch("data/briefs.json?v=rd831", { cache: "no-store" })
         .then((r) => (r.ok ? r.json() : {}))
         .catch(() => ({})),
@@ -1964,8 +1973,8 @@
     state.briefs = bj && typeof bj === "object" && !Array.isArray(bj) ? bj : {};
     applyGems();
     if (rj && typeof rj === "object") state.recs = rj;
-    state.draft = dj;
-    state.draftStatus = dj.status || "pre_draft";
+    state.draft = ensureDraftShape(dj);
+    state.draftStatus = dj.status || "pre-draft";
     state.byId = new Map(state.players.filter((p) => p.id != null).map((p) => [String(p.id), p]));
     state.byEspn = new Map(
       state.players

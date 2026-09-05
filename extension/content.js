@@ -5,15 +5,14 @@
  * hands normalized-ready payloads to the service worker.
  */
 (() => {
-  const DEFAULT_LEAGUE = "1030576";
   const DEFAULT_SEASON = 2026;
 
   function leagueId() {
     try {
       const u = new URL(location.href);
-      return u.searchParams.get("leagueId") || u.searchParams.get("league_id") || DEFAULT_LEAGUE;
+      return u.searchParams.get("leagueId") || u.searchParams.get("league_id") || "";
     } catch {
-      return DEFAULT_LEAGUE;
+      return "";
     }
   }
 
@@ -28,6 +27,7 @@
   }
 
   function mDraftUrls(id, yr) {
+    if (!id) return [];
     return [
       `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${yr}/segments/0/leagues/${id}?view=mDraftDetail`,
       `https://fantasy.espn.com/apis/v3/games/ffl/seasons/${yr}/segments/0/leagues/${id}?view=mDraftDetail`,

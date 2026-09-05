@@ -1,18 +1,18 @@
 {
-  "league_id": "1030576",
-  "league_name": "redraft (ESPN 1030576)",
-  "league_url": "https://fantasy.espn.com/football/league?leagueId=1030576",
+  "league_id": "PENDING",
+  "league_name": "ESPN redraft (10-team) — leagueId pending",
+  "league_url": "",
   "platform": "espn",
-  "rob_slot": 7,
+  "rob_slot": 1,
   "rob_team": "Maurer Hour",
   "rob_owner": "Rob Maurer",
-  "teams": 12,
+  "teams": 10,
   "rounds": 16,
   "type": "snake",
   "reversal_round": null,
-  "start_time_ct": "2026-08-30T16:00:00-05:00",
-  "start_label": "Sun Aug 30, 2026 4:00 PM CT",
-  "status": "live",
+  "start_time_ct": null,
+  "start_label": "Monday night — time and order TBD",
+  "status": "pre-draft",
   "pick_timer_seconds": 60,
   "scoring": "half-PPR, 4-pt pass TD, no TEP, 1QB (no superflex)",
   "roster": {
@@ -27,80 +27,68 @@
     "IR": 1
   },
   "divisions": 1,
-  "order_note": "Draft order randomized 1 hour before (3:00 PM CT). Live order from ESPN Draft Recap 2026-08-30 ~3:02 PM CT. Maurer Hour = slot 7.",
+  "order_note": "10-team snake, 16 rounds. Draft order is not set. rob_slot=1 is a placeholder so the board has a Maurer Hour column — replace with Monday’s real slot. Do not invent leagueId; Rob will supply Monday’s ESPN leagueId. Today’s 10-team mock (1835701124) is for smoke tests only and is not production.",
   "picks_api": "/api/picks",
   "draft_api": "data/espn_draft_status.json",
   "slots": [
     {
       "slot": 1,
-      "display": "The Money Pitts",
-      "short": "Pitts",
-      "is_rob": false
-    },
-    {
-      "slot": 2,
-      "display": "HailToTheCommanders",
-      "short": "HailTo",
-      "is_rob": false
-    },
-    {
-      "slot": 3,
-      "display": "TEAM MCCORMACK",
-      "short": "MCCORMACK",
-      "is_rob": false
-    },
-    {
-      "slot": 4,
-      "display": "Mad Max",
-      "short": "Mad Max",
-      "is_rob": false
-    },
-    {
-      "slot": 5,
-      "display": "All The Fixin's",
-      "short": "Fixin's",
-      "is_rob": false
-    },
-    {
-      "slot": 6,
-      "display": "2Much Speed",
-      "short": "2Much",
-      "is_rob": false
-    },
-    {
-      "slot": 7,
       "display": "Maurer Hour",
       "short": "MAURER",
       "is_rob": true
     },
     {
+      "slot": 2,
+      "display": "Slot 2",
+      "short": "Slot 2",
+      "is_rob": false
+    },
+    {
+      "slot": 3,
+      "display": "Slot 3",
+      "short": "Slot 3",
+      "is_rob": false
+    },
+    {
+      "slot": 4,
+      "display": "Slot 4",
+      "short": "Slot 4",
+      "is_rob": false
+    },
+    {
+      "slot": 5,
+      "display": "Slot 5",
+      "short": "Slot 5",
+      "is_rob": false
+    },
+    {
+      "slot": 6,
+      "display": "Slot 6",
+      "short": "Slot 6",
+      "is_rob": false
+    },
+    {
+      "slot": 7,
+      "display": "Slot 7",
+      "short": "Slot 7",
+      "is_rob": false
+    },
+    {
       "slot": 8,
-      "display": "Lost my semi Chubb",
-      "short": "Chubb",
+      "display": "Slot 8",
+      "short": "Slot 8",
       "is_rob": false
     },
     {
       "slot": 9,
-      "display": "Snapbacks and Tattoos",
-      "short": "Snapbacks",
+      "display": "Slot 9",
+      "short": "Slot 9",
       "is_rob": false
     },
     {
       "slot": 10,
-      "display": "The Rookie",
-      "short": "Rookie",
-      "is_rob": false
-    },
-    {
-      "slot": 11,
-      "display": "It's Brees-y Baby",
-      "short": "Brees-y",
-      "is_rob": false
-    },
-    {
-      "slot": 12,
-      "display": "Matty Ice",
-      "short": "Matty Ice",
+      "display": "Slot 10",
+      "short": "Slot 10",
       "is_rob": false
     }
   ],
@@ -111,7 +99,7 @@
       "pick_in_round": 1,
       "slot": 1,
       "label": "1.01",
-      "is_rob": false
+      "is_rob": true
     },
     {
       "overall": 2,
@@ -159,7 +147,7 @@
       "pick_in_round": 7,
       "slot": 7,
       "label": "1.07",
-      "is_rob": true
+      "is_rob": false
     },
     {
       "overall": 8,
@@ -187,126 +175,94 @@
     },
     {
       "overall": 11,
-      "round": 1,
-      "pick_in_round": 11,
-      "slot": 11,
-      "label": "1.11",
+      "round": 2,
+      "pick_in_round": 1,
+      "slot": 10,
+      "label": "2.01",
       "is_rob": false
     },
     {
       "overall": 12,
-      "round": 1,
-      "pick_in_round": 12,
-      "slot": 12,
-      "label": "1.12",
+      "round": 2,
+      "pick_in_round": 2,
+      "slot": 9,
+      "label": "2.02",
       "is_rob": false
     },
     {
       "overall": 13,
       "round": 2,
-      "pick_in_round": 1,
-      "slot": 12,
-      "label": "2.01",
+      "pick_in_round": 3,
+      "slot": 8,
+      "label": "2.03",
       "is_rob": false
     },
     {
       "overall": 14,
       "round": 2,
-      "pick_in_round": 2,
-      "slot": 11,
-      "label": "2.02",
+      "pick_in_round": 4,
+      "slot": 7,
+      "label": "2.04",
       "is_rob": false
     },
     {
       "overall": 15,
       "round": 2,
-      "pick_in_round": 3,
-      "slot": 10,
-      "label": "2.03",
+      "pick_in_round": 5,
+      "slot": 6,
+      "label": "2.05",
       "is_rob": false
     },
     {
       "overall": 16,
       "round": 2,
-      "pick_in_round": 4,
-      "slot": 9,
-      "label": "2.04",
+      "pick_in_round": 6,
+      "slot": 5,
+      "label": "2.06",
       "is_rob": false
     },
     {
       "overall": 17,
       "round": 2,
-      "pick_in_round": 5,
-      "slot": 8,
-      "label": "2.05",
+      "pick_in_round": 7,
+      "slot": 4,
+      "label": "2.07",
       "is_rob": false
     },
     {
       "overall": 18,
       "round": 2,
-      "pick_in_round": 6,
-      "slot": 7,
-      "label": "2.06",
-      "is_rob": true
+      "pick_in_round": 8,
+      "slot": 3,
+      "label": "2.08",
+      "is_rob": false
     },
     {
       "overall": 19,
       "round": 2,
-      "pick_in_round": 7,
-      "slot": 6,
-      "label": "2.07",
+      "pick_in_round": 9,
+      "slot": 2,
+      "label": "2.09",
       "is_rob": false
     },
     {
       "overall": 20,
       "round": 2,
-      "pick_in_round": 8,
-      "slot": 5,
-      "label": "2.08",
-      "is_rob": false
+      "pick_in_round": 10,
+      "slot": 1,
+      "label": "2.10",
+      "is_rob": true
     },
     {
       "overall": 21,
-      "round": 2,
-      "pick_in_round": 9,
-      "slot": 4,
-      "label": "2.09",
-      "is_rob": false
-    },
-    {
-      "overall": 22,
-      "round": 2,
-      "pick_in_round": 10,
-      "slot": 3,
-      "label": "2.10",
-      "is_rob": false
-    },
-    {
-      "overall": 23,
-      "round": 2,
-      "pick_in_round": 11,
-      "slot": 2,
-      "label": "2.11",
-      "is_rob": false
-    },
-    {
-      "overall": 24,
-      "round": 2,
-      "pick_in_round": 12,
-      "slot": 1,
-      "label": "2.12",
-      "is_rob": false
-    },
-    {
-      "overall": 25,
       "round": 3,
       "pick_in_round": 1,
       "slot": 1,
       "label": "3.01",
-      "is_rob": false
+      "is_rob": true
     },
     {
-      "overall": 26,
+      "overall": 22,
       "round": 3,
       "pick_in_round": 2,
       "slot": 2,
@@ -314,7 +270,7 @@
       "is_rob": false
     },
     {
-      "overall": 27,
+      "overall": 23,
       "round": 3,
       "pick_in_round": 3,
       "slot": 3,
@@ -322,7 +278,7 @@
       "is_rob": false
     },
     {
-      "overall": 28,
+      "overall": 24,
       "round": 3,
       "pick_in_round": 4,
       "slot": 4,
@@ -330,7 +286,7 @@
       "is_rob": false
     },
     {
-      "overall": 29,
+      "overall": 25,
       "round": 3,
       "pick_in_round": 5,
       "slot": 5,
@@ -338,7 +294,7 @@
       "is_rob": false
     },
     {
-      "overall": 30,
+      "overall": 26,
       "round": 3,
       "pick_in_round": 6,
       "slot": 6,
@@ -346,15 +302,15 @@
       "is_rob": false
     },
     {
-      "overall": 31,
+      "overall": 27,
       "round": 3,
       "pick_in_round": 7,
       "slot": 7,
       "label": "3.07",
-      "is_rob": true
+      "is_rob": false
     },
     {
-      "overall": 32,
+      "overall": 28,
       "round": 3,
       "pick_in_round": 8,
       "slot": 8,
@@ -362,7 +318,7 @@
       "is_rob": false
     },
     {
-      "overall": 33,
+      "overall": 29,
       "round": 3,
       "pick_in_round": 9,
       "slot": 9,
@@ -370,7 +326,7 @@
       "is_rob": false
     },
     {
-      "overall": 34,
+      "overall": 30,
       "round": 3,
       "pick_in_round": 10,
       "slot": 10,
@@ -378,127 +334,95 @@
       "is_rob": false
     },
     {
+      "overall": 31,
+      "round": 4,
+      "pick_in_round": 1,
+      "slot": 10,
+      "label": "4.01",
+      "is_rob": false
+    },
+    {
+      "overall": 32,
+      "round": 4,
+      "pick_in_round": 2,
+      "slot": 9,
+      "label": "4.02",
+      "is_rob": false
+    },
+    {
+      "overall": 33,
+      "round": 4,
+      "pick_in_round": 3,
+      "slot": 8,
+      "label": "4.03",
+      "is_rob": false
+    },
+    {
+      "overall": 34,
+      "round": 4,
+      "pick_in_round": 4,
+      "slot": 7,
+      "label": "4.04",
+      "is_rob": false
+    },
+    {
       "overall": 35,
-      "round": 3,
-      "pick_in_round": 11,
-      "slot": 11,
-      "label": "3.11",
+      "round": 4,
+      "pick_in_round": 5,
+      "slot": 6,
+      "label": "4.05",
       "is_rob": false
     },
     {
       "overall": 36,
-      "round": 3,
-      "pick_in_round": 12,
-      "slot": 12,
-      "label": "3.12",
+      "round": 4,
+      "pick_in_round": 6,
+      "slot": 5,
+      "label": "4.06",
       "is_rob": false
     },
     {
       "overall": 37,
       "round": 4,
-      "pick_in_round": 1,
-      "slot": 12,
-      "label": "4.01",
+      "pick_in_round": 7,
+      "slot": 4,
+      "label": "4.07",
       "is_rob": false
     },
     {
       "overall": 38,
       "round": 4,
-      "pick_in_round": 2,
-      "slot": 11,
-      "label": "4.02",
+      "pick_in_round": 8,
+      "slot": 3,
+      "label": "4.08",
       "is_rob": false
     },
     {
       "overall": 39,
       "round": 4,
-      "pick_in_round": 3,
-      "slot": 10,
-      "label": "4.03",
+      "pick_in_round": 9,
+      "slot": 2,
+      "label": "4.09",
       "is_rob": false
     },
     {
       "overall": 40,
       "round": 4,
-      "pick_in_round": 4,
-      "slot": 9,
-      "label": "4.04",
-      "is_rob": false
-    },
-    {
-      "overall": 41,
-      "round": 4,
-      "pick_in_round": 5,
-      "slot": 8,
-      "label": "4.05",
-      "is_rob": false
-    },
-    {
-      "overall": 42,
-      "round": 4,
-      "pick_in_round": 6,
-      "slot": 7,
-      "label": "4.06",
+      "pick_in_round": 10,
+      "slot": 1,
+      "label": "4.10",
       "is_rob": true
     },
     {
-      "overall": 43,
-      "round": 4,
-      "pick_in_round": 7,
-      "slot": 6,
-      "label": "4.07",
-      "is_rob": false
-    },
-    {
-      "overall": 44,
-      "round": 4,
-      "pick_in_round": 8,
-      "slot": 5,
-      "label": "4.08",
-      "is_rob": false
-    },
-    {
-      "overall": 45,
-      "round": 4,
-      "pick_in_round": 9,
-      "slot": 4,
-      "label": "4.09",
-      "is_rob": false
-    },
-    {
-      "overall": 46,
-      "round": 4,
-      "pick_in_round": 10,
-      "slot": 3,
-      "label": "4.10",
-      "is_rob": false
-    },
-    {
-      "overall": 47,
-      "round": 4,
-      "pick_in_round": 11,
-      "slot": 2,
-      "label": "4.11",
-      "is_rob": false
-    },
-    {
-      "overall": 48,
-      "round": 4,
-      "pick_in_round": 12,
-      "slot": 1,
-      "label": "4.12",
-      "is_rob": false
-    },
-    {
-      "overall": 49,
+      "overall": 41,
       "round": 5,
       "pick_in_round": 1,
       "slot": 1,
       "label": "5.01",
-      "is_rob": false
+      "is_rob": true
     },
     {
-      "overall": 50,
+      "overall": 42,
       "round": 5,
       "pick_in_round": 2,
       "slot": 2,
@@ -506,7 +430,7 @@
       "is_rob": false
     },
     {
-      "overall": 51,
+      "overall": 43,
       "round": 5,
       "pick_in_round": 3,
       "slot": 3,
@@ -514,7 +438,7 @@
       "is_rob": false
     },
     {
-      "overall": 52,
+      "overall": 44,
       "round": 5,
       "pick_in_round": 4,
       "slot": 4,
@@ -522,7 +446,7 @@
       "is_rob": false
     },
     {
-      "overall": 53,
+      "overall": 45,
       "round": 5,
       "pick_in_round": 5,
       "slot": 5,
@@ -530,7 +454,7 @@
       "is_rob": false
     },
     {
-      "overall": 54,
+      "overall": 46,
       "round": 5,
       "pick_in_round": 6,
       "slot": 6,
@@ -538,15 +462,15 @@
       "is_rob": false
     },
     {
-      "overall": 55,
+      "overall": 47,
       "round": 5,
       "pick_in_round": 7,
       "slot": 7,
       "label": "5.07",
-      "is_rob": true
+      "is_rob": false
     },
     {
-      "overall": 56,
+      "overall": 48,
       "round": 5,
       "pick_in_round": 8,
       "slot": 8,
@@ -554,7 +478,7 @@
       "is_rob": false
     },
     {
-      "overall": 57,
+      "overall": 49,
       "round": 5,
       "pick_in_round": 9,
       "slot": 9,
@@ -562,7 +486,7 @@
       "is_rob": false
     },
     {
-      "overall": 58,
+      "overall": 50,
       "round": 5,
       "pick_in_round": 10,
       "slot": 10,
@@ -570,127 +494,95 @@
       "is_rob": false
     },
     {
-      "overall": 59,
-      "round": 5,
-      "pick_in_round": 11,
-      "slot": 11,
-      "label": "5.11",
-      "is_rob": false
-    },
-    {
-      "overall": 60,
-      "round": 5,
-      "pick_in_round": 12,
-      "slot": 12,
-      "label": "5.12",
-      "is_rob": false
-    },
-    {
-      "overall": 61,
+      "overall": 51,
       "round": 6,
       "pick_in_round": 1,
-      "slot": 12,
+      "slot": 10,
       "label": "6.01",
       "is_rob": false
     },
     {
-      "overall": 62,
+      "overall": 52,
       "round": 6,
       "pick_in_round": 2,
-      "slot": 11,
+      "slot": 9,
       "label": "6.02",
       "is_rob": false
     },
     {
-      "overall": 63,
+      "overall": 53,
       "round": 6,
       "pick_in_round": 3,
-      "slot": 10,
+      "slot": 8,
       "label": "6.03",
       "is_rob": false
     },
     {
-      "overall": 64,
+      "overall": 54,
       "round": 6,
       "pick_in_round": 4,
-      "slot": 9,
+      "slot": 7,
       "label": "6.04",
       "is_rob": false
     },
     {
-      "overall": 65,
+      "overall": 55,
       "round": 6,
       "pick_in_round": 5,
-      "slot": 8,
+      "slot": 6,
       "label": "6.05",
       "is_rob": false
     },
     {
-      "overall": 66,
+      "overall": 56,
       "round": 6,
       "pick_in_round": 6,
-      "slot": 7,
+      "slot": 5,
       "label": "6.06",
-      "is_rob": true
+      "is_rob": false
     },
     {
-      "overall": 67,
+      "overall": 57,
       "round": 6,
       "pick_in_round": 7,
-      "slot": 6,
+      "slot": 4,
       "label": "6.07",
       "is_rob": false
     },
     {
-      "overall": 68,
+      "overall": 58,
       "round": 6,
       "pick_in_round": 8,
-      "slot": 5,
+      "slot": 3,
       "label": "6.08",
       "is_rob": false
     },
     {
-      "overall": 69,
+      "overall": 59,
       "round": 6,
       "pick_in_round": 9,
-      "slot": 4,
+      "slot": 2,
       "label": "6.09",
       "is_rob": false
     },
     {
-      "overall": 70,
+      "overall": 60,
       "round": 6,
       "pick_in_round": 10,
-      "slot": 3,
-      "label": "6.10",
-      "is_rob": false
-    },
-    {
-      "overall": 71,
-      "round": 6,
-      "pick_in_round": 11,
-      "slot": 2,
-      "label": "6.11",
-      "is_rob": false
-    },
-    {
-      "overall": 72,
-      "round": 6,
-      "pick_in_round": 12,
       "slot": 1,
-      "label": "6.12",
-      "is_rob": false
+      "label": "6.10",
+      "is_rob": true
     },
     {
-      "overall": 73,
+      "overall": 61,
       "round": 7,
       "pick_in_round": 1,
       "slot": 1,
       "label": "7.01",
-      "is_rob": false
+      "is_rob": true
     },
     {
-      "overall": 74,
+      "overall": 62,
       "round": 7,
       "pick_in_round": 2,
       "slot": 2,
@@ -698,7 +590,7 @@
       "is_rob": false
     },
     {
-      "overall": 75,
+      "overall": 63,
       "round": 7,
       "pick_in_round": 3,
       "slot": 3,
@@ -706,7 +598,7 @@
       "is_rob": false
     },
     {
-      "overall": 76,
+      "overall": 64,
       "round": 7,
       "pick_in_round": 4,
       "slot": 4,
@@ -714,7 +606,7 @@
       "is_rob": false
     },
     {
-      "overall": 77,
+      "overall": 65,
       "round": 7,
       "pick_in_round": 5,
       "slot": 5,
@@ -722,7 +614,7 @@
       "is_rob": false
     },
     {
-      "overall": 78,
+      "overall": 66,
       "round": 7,
       "pick_in_round": 6,
       "slot": 6,
@@ -730,15 +622,15 @@
       "is_rob": false
     },
     {
-      "overall": 79,
+      "overall": 67,
       "round": 7,
       "pick_in_round": 7,
       "slot": 7,
       "label": "7.07",
-      "is_rob": true
+      "is_rob": false
     },
     {
-      "overall": 80,
+      "overall": 68,
       "round": 7,
       "pick_in_round": 8,
       "slot": 8,
@@ -746,7 +638,7 @@
       "is_rob": false
     },
     {
-      "overall": 81,
+      "overall": 69,
       "round": 7,
       "pick_in_round": 9,
       "slot": 9,
@@ -754,7 +646,7 @@
       "is_rob": false
     },
     {
-      "overall": 82,
+      "overall": 70,
       "round": 7,
       "pick_in_round": 10,
       "slot": 10,
@@ -762,127 +654,95 @@
       "is_rob": false
     },
     {
-      "overall": 83,
-      "round": 7,
-      "pick_in_round": 11,
-      "slot": 11,
-      "label": "7.11",
-      "is_rob": false
-    },
-    {
-      "overall": 84,
-      "round": 7,
-      "pick_in_round": 12,
-      "slot": 12,
-      "label": "7.12",
-      "is_rob": false
-    },
-    {
-      "overall": 85,
+      "overall": 71,
       "round": 8,
       "pick_in_round": 1,
-      "slot": 12,
+      "slot": 10,
       "label": "8.01",
       "is_rob": false
     },
     {
-      "overall": 86,
+      "overall": 72,
       "round": 8,
       "pick_in_round": 2,
-      "slot": 11,
+      "slot": 9,
       "label": "8.02",
       "is_rob": false
     },
     {
-      "overall": 87,
+      "overall": 73,
       "round": 8,
       "pick_in_round": 3,
-      "slot": 10,
+      "slot": 8,
       "label": "8.03",
       "is_rob": false
     },
     {
-      "overall": 88,
+      "overall": 74,
       "round": 8,
       "pick_in_round": 4,
-      "slot": 9,
+      "slot": 7,
       "label": "8.04",
       "is_rob": false
     },
     {
-      "overall": 89,
+      "overall": 75,
       "round": 8,
       "pick_in_round": 5,
-      "slot": 8,
+      "slot": 6,
       "label": "8.05",
       "is_rob": false
     },
     {
-      "overall": 90,
+      "overall": 76,
       "round": 8,
       "pick_in_round": 6,
-      "slot": 7,
+      "slot": 5,
       "label": "8.06",
-      "is_rob": true
+      "is_rob": false
     },
     {
-      "overall": 91,
+      "overall": 77,
       "round": 8,
       "pick_in_round": 7,
-      "slot": 6,
+      "slot": 4,
       "label": "8.07",
       "is_rob": false
     },
     {
-      "overall": 92,
+      "overall": 78,
       "round": 8,
       "pick_in_round": 8,
-      "slot": 5,
+      "slot": 3,
       "label": "8.08",
       "is_rob": false
     },
     {
-      "overall": 93,
+      "overall": 79,
       "round": 8,
       "pick_in_round": 9,
-      "slot": 4,
+      "slot": 2,
       "label": "8.09",
       "is_rob": false
     },
     {
-      "overall": 94,
+      "overall": 80,
       "round": 8,
       "pick_in_round": 10,
-      "slot": 3,
-      "label": "8.10",
-      "is_rob": false
-    },
-    {
-      "overall": 95,
-      "round": 8,
-      "pick_in_round": 11,
-      "slot": 2,
-      "label": "8.11",
-      "is_rob": false
-    },
-    {
-      "overall": 96,
-      "round": 8,
-      "pick_in_round": 12,
       "slot": 1,
-      "label": "8.12",
-      "is_rob": false
+      "label": "8.10",
+      "is_rob": true
     },
     {
-      "overall": 97,
+      "overall": 81,
       "round": 9,
       "pick_in_round": 1,
       "slot": 1,
       "label": "9.01",
-      "is_rob": false
+      "is_rob": true
     },
     {
-      "overall": 98,
+      "overall": 82,
       "round": 9,
       "pick_in_round": 2,
       "slot": 2,
@@ -890,7 +750,7 @@
       "is_rob": false
     },
     {
-      "overall": 99,
+      "overall": 83,
       "round": 9,
       "pick_in_round": 3,
       "slot": 3,
@@ -898,7 +758,7 @@
       "is_rob": false
     },
     {
-      "overall": 100,
+      "overall": 84,
       "round": 9,
       "pick_in_round": 4,
       "slot": 4,
@@ -906,7 +766,7 @@
       "is_rob": false
     },
     {
-      "overall": 101,
+      "overall": 85,
       "round": 9,
       "pick_in_round": 5,
       "slot": 5,
@@ -914,7 +774,7 @@
       "is_rob": false
     },
     {
-      "overall": 102,
+      "overall": 86,
       "round": 9,
       "pick_in_round": 6,
       "slot": 6,
@@ -922,15 +782,15 @@
       "is_rob": false
     },
     {
-      "overall": 103,
+      "overall": 87,
       "round": 9,
       "pick_in_round": 7,
       "slot": 7,
       "label": "9.07",
-      "is_rob": true
+      "is_rob": false
     },
     {
-      "overall": 104,
+      "overall": 88,
       "round": 9,
       "pick_in_round": 8,
       "slot": 8,
@@ -938,7 +798,7 @@
       "is_rob": false
     },
     {
-      "overall": 105,
+      "overall": 89,
       "round": 9,
       "pick_in_round": 9,
       "slot": 9,
@@ -946,7 +806,7 @@
       "is_rob": false
     },
     {
-      "overall": 106,
+      "overall": 90,
       "round": 9,
       "pick_in_round": 10,
       "slot": 10,
@@ -954,127 +814,95 @@
       "is_rob": false
     },
     {
-      "overall": 107,
-      "round": 9,
-      "pick_in_round": 11,
-      "slot": 11,
-      "label": "9.11",
-      "is_rob": false
-    },
-    {
-      "overall": 108,
-      "round": 9,
-      "pick_in_round": 12,
-      "slot": 12,
-      "label": "9.12",
-      "is_rob": false
-    },
-    {
-      "overall": 109,
+      "overall": 91,
       "round": 10,
       "pick_in_round": 1,
-      "slot": 12,
+      "slot": 10,
       "label": "10.01",
       "is_rob": false
     },
     {
-      "overall": 110,
+      "overall": 92,
       "round": 10,
       "pick_in_round": 2,
-      "slot": 11,
+      "slot": 9,
       "label": "10.02",
       "is_rob": false
     },
     {
-      "overall": 111,
+      "overall": 93,
       "round": 10,
       "pick_in_round": 3,
-      "slot": 10,
+      "slot": 8,
       "label": "10.03",
       "is_rob": false
     },
     {
-      "overall": 112,
+      "overall": 94,
       "round": 10,
       "pick_in_round": 4,
-      "slot": 9,
+      "slot": 7,
       "label": "10.04",
       "is_rob": false
     },
     {
-      "overall": 113,
+      "overall": 95,
       "round": 10,
       "pick_in_round": 5,
-      "slot": 8,
+      "slot": 6,
       "label": "10.05",
       "is_rob": false
     },
     {
-      "overall": 114,
+      "overall": 96,
       "round": 10,
       "pick_in_round": 6,
-      "slot": 7,
+      "slot": 5,
       "label": "10.06",
-      "is_rob": true
+      "is_rob": false
     },
     {
-      "overall": 115,
+      "overall": 97,
       "round": 10,
       "pick_in_round": 7,
-      "slot": 6,
+      "slot": 4,
       "label": "10.07",
       "is_rob": false
     },
     {
-      "overall": 116,
+      "overall": 98,
       "round": 10,
       "pick_in_round": 8,
-      "slot": 5,
+      "slot": 3,
       "label": "10.08",
       "is_rob": false
     },
     {
-      "overall": 117,
+      "overall": 99,
       "round": 10,
       "pick_in_round": 9,
-      "slot": 4,
+      "slot": 2,
       "label": "10.09",
       "is_rob": false
     },
     {
-      "overall": 118,
+      "overall": 100,
       "round": 10,
       "pick_in_round": 10,
-      "slot": 3,
-      "label": "10.10",
-      "is_rob": false
-    },
-    {
-      "overall": 119,
-      "round": 10,
-      "pick_in_round": 11,
-      "slot": 2,
-      "label": "10.11",
-      "is_rob": false
-    },
-    {
-      "overall": 120,
-      "round": 10,
-      "pick_in_round": 12,
       "slot": 1,
-      "label": "10.12",
-      "is_rob": false
+      "label": "10.10",
+      "is_rob": true
     },
     {
-      "overall": 121,
+      "overall": 101,
       "round": 11,
       "pick_in_round": 1,
       "slot": 1,
       "label": "11.01",
-      "is_rob": false
+      "is_rob": true
     },
     {
-      "overall": 122,
+      "overall": 102,
       "round": 11,
       "pick_in_round": 2,
       "slot": 2,
@@ -1082,7 +910,7 @@
       "is_rob": false
     },
     {
-      "overall": 123,
+      "overall": 103,
       "round": 11,
       "pick_in_round": 3,
       "slot": 3,
@@ -1090,7 +918,7 @@
       "is_rob": false
     },
     {
-      "overall": 124,
+      "overall": 104,
       "round": 11,
       "pick_in_round": 4,
       "slot": 4,
@@ -1098,7 +926,7 @@
       "is_rob": false
     },
     {
-      "overall": 125,
+      "overall": 105,
       "round": 11,
       "pick_in_round": 5,
       "slot": 5,
@@ -1106,7 +934,7 @@
       "is_rob": false
     },
     {
-      "overall": 126,
+      "overall": 106,
       "round": 11,
       "pick_in_round": 6,
       "slot": 6,
@@ -1114,15 +942,15 @@
       "is_rob": false
     },
     {
-      "overall": 127,
+      "overall": 107,
       "round": 11,
       "pick_in_round": 7,
       "slot": 7,
       "label": "11.07",
-      "is_rob": true
+      "is_rob": false
     },
     {
-      "overall": 128,
+      "overall": 108,
       "round": 11,
       "pick_in_round": 8,
       "slot": 8,
@@ -1130,7 +958,7 @@
       "is_rob": false
     },
     {
-      "overall": 129,
+      "overall": 109,
       "round": 11,
       "pick_in_round": 9,
       "slot": 9,
@@ -1138,7 +966,7 @@
       "is_rob": false
     },
     {
-      "overall": 130,
+      "overall": 110,
       "round": 11,
       "pick_in_round": 10,
       "slot": 10,
@@ -1146,127 +974,95 @@
       "is_rob": false
     },
     {
-      "overall": 131,
-      "round": 11,
-      "pick_in_round": 11,
-      "slot": 11,
-      "label": "11.11",
-      "is_rob": false
-    },
-    {
-      "overall": 132,
-      "round": 11,
-      "pick_in_round": 12,
-      "slot": 12,
-      "label": "11.12",
-      "is_rob": false
-    },
-    {
-      "overall": 133,
+      "overall": 111,
       "round": 12,
       "pick_in_round": 1,
-      "slot": 12,
+      "slot": 10,
       "label": "12.01",
       "is_rob": false
     },
     {
-      "overall": 134,
+      "overall": 112,
       "round": 12,
       "pick_in_round": 2,
-      "slot": 11,
+      "slot": 9,
       "label": "12.02",
       "is_rob": false
     },
     {
-      "overall": 135,
+      "overall": 113,
       "round": 12,
       "pick_in_round": 3,
-      "slot": 10,
+      "slot": 8,
       "label": "12.03",
       "is_rob": false
     },
     {
-      "overall": 136,
+      "overall": 114,
       "round": 12,
       "pick_in_round": 4,
-      "slot": 9,
+      "slot": 7,
       "label": "12.04",
       "is_rob": false
     },
     {
-      "overall": 137,
+      "overall": 115,
       "round": 12,
       "pick_in_round": 5,
-      "slot": 8,
+      "slot": 6,
       "label": "12.05",
       "is_rob": false
     },
     {
-      "overall": 138,
+      "overall": 116,
       "round": 12,
       "pick_in_round": 6,
-      "slot": 7,
+      "slot": 5,
       "label": "12.06",
-      "is_rob": true
+      "is_rob": false
     },
     {
-      "overall": 139,
+      "overall": 117,
       "round": 12,
       "pick_in_round": 7,
-      "slot": 6,
+      "slot": 4,
       "label": "12.07",
       "is_rob": false
     },
     {
-      "overall": 140,
+      "overall": 118,
       "round": 12,
       "pick_in_round": 8,
-      "slot": 5,
+      "slot": 3,
       "label": "12.08",
       "is_rob": false
     },
     {
-      "overall": 141,
+      "overall": 119,
       "round": 12,
       "pick_in_round": 9,
-      "slot": 4,
+      "slot": 2,
       "label": "12.09",
       "is_rob": false
     },
     {
-      "overall": 142,
+      "overall": 120,
       "round": 12,
       "pick_in_round": 10,
-      "slot": 3,
-      "label": "12.10",
-      "is_rob": false
-    },
-    {
-      "overall": 143,
-      "round": 12,
-      "pick_in_round": 11,
-      "slot": 2,
-      "label": "12.11",
-      "is_rob": false
-    },
-    {
-      "overall": 144,
-      "round": 12,
-      "pick_in_round": 12,
       "slot": 1,
-      "label": "12.12",
-      "is_rob": false
+      "label": "12.10",
+      "is_rob": true
     },
     {
-      "overall": 145,
+      "overall": 121,
       "round": 13,
       "pick_in_round": 1,
       "slot": 1,
       "label": "13.01",
-      "is_rob": false
+      "is_rob": true
     },
     {
-      "overall": 146,
+      "overall": 122,
       "round": 13,
       "pick_in_round": 2,
       "slot": 2,
@@ -1274,7 +1070,7 @@
       "is_rob": false
     },
     {
-      "overall": 147,
+      "overall": 123,
       "round": 13,
       "pick_in_round": 3,
       "slot": 3,
@@ -1282,7 +1078,7 @@
       "is_rob": false
     },
     {
-      "overall": 148,
+      "overall": 124,
       "round": 13,
       "pick_in_round": 4,
       "slot": 4,
@@ -1290,7 +1086,7 @@
       "is_rob": false
     },
     {
-      "overall": 149,
+      "overall": 125,
       "round": 13,
       "pick_in_round": 5,
       "slot": 5,
@@ -1298,7 +1094,7 @@
       "is_rob": false
     },
     {
-      "overall": 150,
+      "overall": 126,
       "round": 13,
       "pick_in_round": 6,
       "slot": 6,
@@ -1306,15 +1102,15 @@
       "is_rob": false
     },
     {
-      "overall": 151,
+      "overall": 127,
       "round": 13,
       "pick_in_round": 7,
       "slot": 7,
       "label": "13.07",
-      "is_rob": true
+      "is_rob": false
     },
     {
-      "overall": 152,
+      "overall": 128,
       "round": 13,
       "pick_in_round": 8,
       "slot": 8,
@@ -1322,7 +1118,7 @@
       "is_rob": false
     },
     {
-      "overall": 153,
+      "overall": 129,
       "round": 13,
       "pick_in_round": 9,
       "slot": 9,
@@ -1330,7 +1126,7 @@
       "is_rob": false
     },
     {
-      "overall": 154,
+      "overall": 130,
       "round": 13,
       "pick_in_round": 10,
       "slot": 10,
@@ -1338,127 +1134,95 @@
       "is_rob": false
     },
     {
-      "overall": 155,
-      "round": 13,
-      "pick_in_round": 11,
-      "slot": 11,
-      "label": "13.11",
-      "is_rob": false
-    },
-    {
-      "overall": 156,
-      "round": 13,
-      "pick_in_round": 12,
-      "slot": 12,
-      "label": "13.12",
-      "is_rob": false
-    },
-    {
-      "overall": 157,
+      "overall": 131,
       "round": 14,
       "pick_in_round": 1,
-      "slot": 12,
+      "slot": 10,
       "label": "14.01",
       "is_rob": false
     },
     {
-      "overall": 158,
+      "overall": 132,
       "round": 14,
       "pick_in_round": 2,
-      "slot": 11,
+      "slot": 9,
       "label": "14.02",
       "is_rob": false
     },
     {
-      "overall": 159,
+      "overall": 133,
       "round": 14,
       "pick_in_round": 3,
-      "slot": 10,
+      "slot": 8,
       "label": "14.03",
       "is_rob": false
     },
     {
-      "overall": 160,
+      "overall": 134,
       "round": 14,
       "pick_in_round": 4,
-      "slot": 9,
+      "slot": 7,
       "label": "14.04",
       "is_rob": false
     },
     {
-      "overall": 161,
+      "overall": 135,
       "round": 14,
       "pick_in_round": 5,
-      "slot": 8,
+      "slot": 6,
       "label": "14.05",
       "is_rob": false
     },
     {
-      "overall": 162,
+      "overall": 136,
       "round": 14,
       "pick_in_round": 6,
-      "slot": 7,
+      "slot": 5,
       "label": "14.06",
-      "is_rob": true
+      "is_rob": false
     },
     {
-      "overall": 163,
+      "overall": 137,
       "round": 14,
       "pick_in_round": 7,
-      "slot": 6,
+      "slot": 4,
       "label": "14.07",
       "is_rob": false
     },
     {
-      "overall": 164,
+      "overall": 138,
       "round": 14,
       "pick_in_round": 8,
-      "slot": 5,
+      "slot": 3,
       "label": "14.08",
       "is_rob": false
     },
     {
-      "overall": 165,
+      "overall": 139,
       "round": 14,
       "pick_in_round": 9,
-      "slot": 4,
+      "slot": 2,
       "label": "14.09",
       "is_rob": false
     },
     {
-      "overall": 166,
+      "overall": 140,
       "round": 14,
       "pick_in_round": 10,
-      "slot": 3,
-      "label": "14.10",
-      "is_rob": false
-    },
-    {
-      "overall": 167,
-      "round": 14,
-      "pick_in_round": 11,
-      "slot": 2,
-      "label": "14.11",
-      "is_rob": false
-    },
-    {
-      "overall": 168,
-      "round": 14,
-      "pick_in_round": 12,
       "slot": 1,
-      "label": "14.12",
-      "is_rob": false
+      "label": "14.10",
+      "is_rob": true
     },
     {
-      "overall": 169,
+      "overall": 141,
       "round": 15,
       "pick_in_round": 1,
       "slot": 1,
       "label": "15.01",
-      "is_rob": false
+      "is_rob": true
     },
     {
-      "overall": 170,
+      "overall": 142,
       "round": 15,
       "pick_in_round": 2,
       "slot": 2,
@@ -1466,7 +1230,7 @@
       "is_rob": false
     },
     {
-      "overall": 171,
+      "overall": 143,
       "round": 15,
       "pick_in_round": 3,
       "slot": 3,
@@ -1474,7 +1238,7 @@
       "is_rob": false
     },
     {
-      "overall": 172,
+      "overall": 144,
       "round": 15,
       "pick_in_round": 4,
       "slot": 4,
@@ -1482,7 +1246,7 @@
       "is_rob": false
     },
     {
-      "overall": 173,
+      "overall": 145,
       "round": 15,
       "pick_in_round": 5,
       "slot": 5,
@@ -1490,7 +1254,7 @@
       "is_rob": false
     },
     {
-      "overall": 174,
+      "overall": 146,
       "round": 15,
       "pick_in_round": 6,
       "slot": 6,
@@ -1498,15 +1262,15 @@
       "is_rob": false
     },
     {
-      "overall": 175,
+      "overall": 147,
       "round": 15,
       "pick_in_round": 7,
       "slot": 7,
       "label": "15.07",
-      "is_rob": true
+      "is_rob": false
     },
     {
-      "overall": 176,
+      "overall": 148,
       "round": 15,
       "pick_in_round": 8,
       "slot": 8,
@@ -1514,7 +1278,7 @@
       "is_rob": false
     },
     {
-      "overall": 177,
+      "overall": 149,
       "round": 15,
       "pick_in_round": 9,
       "slot": 9,
@@ -1522,7 +1286,7 @@
       "is_rob": false
     },
     {
-      "overall": 178,
+      "overall": 150,
       "round": 15,
       "pick_in_round": 10,
       "slot": 10,
@@ -1530,116 +1294,84 @@
       "is_rob": false
     },
     {
-      "overall": 179,
-      "round": 15,
-      "pick_in_round": 11,
-      "slot": 11,
-      "label": "15.11",
-      "is_rob": false
-    },
-    {
-      "overall": 180,
-      "round": 15,
-      "pick_in_round": 12,
-      "slot": 12,
-      "label": "15.12",
-      "is_rob": false
-    },
-    {
-      "overall": 181,
+      "overall": 151,
       "round": 16,
       "pick_in_round": 1,
-      "slot": 12,
+      "slot": 10,
       "label": "16.01",
       "is_rob": false
     },
     {
-      "overall": 182,
+      "overall": 152,
       "round": 16,
       "pick_in_round": 2,
-      "slot": 11,
+      "slot": 9,
       "label": "16.02",
       "is_rob": false
     },
     {
-      "overall": 183,
+      "overall": 153,
       "round": 16,
       "pick_in_round": 3,
-      "slot": 10,
+      "slot": 8,
       "label": "16.03",
       "is_rob": false
     },
     {
-      "overall": 184,
+      "overall": 154,
       "round": 16,
       "pick_in_round": 4,
-      "slot": 9,
+      "slot": 7,
       "label": "16.04",
       "is_rob": false
     },
     {
-      "overall": 185,
+      "overall": 155,
       "round": 16,
       "pick_in_round": 5,
-      "slot": 8,
+      "slot": 6,
       "label": "16.05",
       "is_rob": false
     },
     {
-      "overall": 186,
+      "overall": 156,
       "round": 16,
       "pick_in_round": 6,
-      "slot": 7,
+      "slot": 5,
       "label": "16.06",
-      "is_rob": true
+      "is_rob": false
     },
     {
-      "overall": 187,
+      "overall": 157,
       "round": 16,
       "pick_in_round": 7,
-      "slot": 6,
+      "slot": 4,
       "label": "16.07",
       "is_rob": false
     },
     {
-      "overall": 188,
+      "overall": 158,
       "round": 16,
       "pick_in_round": 8,
-      "slot": 5,
+      "slot": 3,
       "label": "16.08",
       "is_rob": false
     },
     {
-      "overall": 189,
+      "overall": 159,
       "round": 16,
       "pick_in_round": 9,
-      "slot": 4,
+      "slot": 2,
       "label": "16.09",
       "is_rob": false
     },
     {
-      "overall": 190,
+      "overall": 160,
       "round": 16,
       "pick_in_round": 10,
-      "slot": 3,
-      "label": "16.10",
-      "is_rob": false
-    },
-    {
-      "overall": 191,
-      "round": 16,
-      "pick_in_round": 11,
-      "slot": 2,
-      "label": "16.11",
-      "is_rob": false
-    },
-    {
-      "overall": 192,
-      "round": 16,
-      "pick_in_round": 12,
       "slot": 1,
-      "label": "16.12",
-      "is_rob": false
+      "label": "16.10",
+      "is_rob": true
     }
   ]
 }

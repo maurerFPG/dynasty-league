@@ -359,8 +359,9 @@ body.resizing-h { cursor: ns-resize; user-select: none; }
 }
 .board {
   display: grid;
-  grid-template-columns: 32px repeat(12, minmax(72px, 1fr));
-  min-width: 980px;
+  --board-cols: 10;
+  grid-template-columns: 32px repeat(var(--board-cols), minmax(72px, 1fr));
+  min-width: calc(32px + var(--board-cols) * 72px);
 }
 .b-corner, .b-team, .b-rnd, .b-cell {
   border-right: 1px solid rgba(180, 210, 255, 0.06);

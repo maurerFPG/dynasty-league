@@ -38,7 +38,7 @@ ESPN mock rooms are real temporary leagues. Confirmed live URLs (Sep 2026):
 
 `/football/mockdraft?leagueId=` is a **404** — do not use it.
 
-Public `GET https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/2026/segments/0/leagues/{id}?view=mDraftDetail` works for many mock rooms **without** cookies, but live rooms often return every slot as `playerId: -1` until the browser session fetch (or Pick History) sees made picks. The private redraft (league `1030576`) returns **401** without ESPN auth — that is why the extension fetches from the page, not from our server.
+Public `GET https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/2026/segments/0/leagues/{id}?view=mDraftDetail` works for many mock rooms **without** cookies, but live rooms often return every slot as `playerId: -1` until the browser session fetch (or Pick History) sees made picks. Private redrafts return **401** without ESPN auth — that is why the extension fetches from the page, not from our server.
 
 ### Steps
 
@@ -48,7 +48,7 @@ Public `GET https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/2026
 2. Open the Vercel URL (HTTPS board). Confirm **Refresh** works (0 picks is fine).
 3. Chrome → `chrome://extensions` → Developer mode → **Load unpacked** → `extension/`
 4. Extension **Options**: board origin (`https://your-app.vercel.app`) and the same `PICKS_SECRET`
-5. Sign into ESPN in Chrome. Open the [mock lobby](https://fantasy.espn.com/football/mockdraftlobby), join a **12-team snake** room, wait for the draft page.
+5. Sign into ESPN in Chrome. Open the [mock lobby](https://fantasy.espn.com/football/mockdraftlobby), join a **10-team snake** room, wait for the draft page. Today’s smoke mock was league `1835701124` (10-team) — practice only, not Monday’s league.
 6. Make a few picks **in ESPN** (including a D/ST). Do not use this tool to draft.
 7. Click **Sync picks** on the ESPN page (or the extension popup).
 8. On the board, click **Refresh** within a few seconds. Taken players grey out, including that D/ST.
@@ -92,6 +92,8 @@ Opens `http://127.0.0.1:8765/` for UI/API tests. **Do not use localhost as the M
 
 ## League
 
-- ESPN league `1030576`, season **2026**
-- Maurer Hour = slot 7
-- Extension reads `leagueId` / `seasonId` from the current ESPN URL (mocks included). Falls back to `1030576` / `2026` on pages without those params.
+- **10-team** snake, 16 rounds. Season **2026**.
+- `data/draft.json` `league_id` is `PENDING` until Rob supplies Monday’s ESPN leagueId. Do not invent it.
+- Maurer Hour `rob_slot` is a **placeholder (slot 1)** until the real order is set.
+- Extension reads `leagueId` / `seasonId` from the current ESPN URL (mocks included). No hard-coded production leagueId.
+- Today’s 10-team mock (`1835701124`) is README-only, not wired as production.
