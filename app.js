@@ -227,6 +227,48 @@
   function playerKey(p) {
     return p.id != null ? String(p.id) : `name:${p.name}`;
   }
+  function teamCount(draft) {
+    const d = draft || state.draft;
+    const n = Number(d && d.teams);
+    if (Number.isFinite(n) && n > 0) return Math.floor(n);
+    const slots = d && Array.isArray(d.slots) ? d.slots.length : 0;
+    return slots > 0 ? slots : 10;
+  }
+
+  function buildSnakePickMap(draft) {
+    const teams = Number(draft && draft.teams) > 0 ? Math.floor(draft.teams) : teamCount();
+    const rounds = Number(draft && draft.rounds) > 0 ? Math.floor(draft.rounds) : 16;
+    const rob = Number(draft && draft.rob_slot);
+    const map = [];
+    let overall = 1;
+    for (let rnd = 1; rnd <= rounds; rnd++) {
+      for (let pir = 1; pir <= teams; pir++) {
+        const slot = rnd % 2 === 0 ? teams - pir + 1 : pir;
+        map.push({
+          overall,
+          round: rnd,
+          pick_in_round: pir,
+          slot,
+          label: `${rnd}.${String(pir).padStart(2, "0")}`,
+          is_rob: Number.isFinite(rob) && rob > 0 && slot === rob,
+        });
+        overall += 1;
+      }
+    }
+    return map;
+  }
+
+  function ensureDraft(draft) {
+    const d = draft && typeof draft === "object" ? { ...draft } : {};
+    d.teams = teamCount(d);
+    d.rounds = Number(d.rounds) > 0 ? Math.floor(d.rounds) : 16;
+    const expected = d.teams * d.rounds;
+    const map = Array.isArray(d.pick_map) ? d.pick_map : [];
+    const ok = map.length === expected && map.every((c, i) => Number(c.overall) === i + 1);
+    if (!ok) d.pick_map = buildSnakePickMap(d);
+    return d;
+  }
+
   function remaining(p) {
     if (p.id && state.draftedIds.has(String(p.id))) return false;
     if (p.espn_id != null && state.draftedEspnIds.has(String(p.espn_id))) return false;
@@ -239,8 +281,9 @@
     const fo_rank = Number(p.fo_rank);
     if (!Number.isFinite(fp_rank) || !Number.isFinite(fo_rank)) return null;
     const sl_eff = Math.min(fo_rank, UNDRAFTED);
-    const fp_round = (fp_rank - 1) / 12 + 1;
-    const sl_round = (sl_eff - 1) / 12 + 1;
+    const n = teamCount();
+    const fp_round = (fp_rank - 1) / n + 1;
+    const sl_round = (sl_eff - 1) / n + 1;
     const score = (sl_round - fp_round) / Math.sqrt(fp_round);
     return Number.isFinite(score) ? score : null;
   }
@@ -466,6 +509,9 @@
     const board = $("board");
     const d = state.draft;
     if (!d) return;
+    const teams = teamCount();
+    document.documentElement.style.setProperty("--board-cols", String(teams));
+    board.style.gridTemplateColumns = `32px repeat(${teams}, minmax(72px, 1fr))`;
     const frag = document.createDocumentFragment();
     const corner = document.createElement("div");
     corner.className = "b-corner";
@@ -967,7 +1013,7 @@
   }
 
   function liveRosters() {
-    const teams = (state.draft && state.draft.teams) || 12;
+    const teams = teamCount();
     const by = {};
     for (let s = 1; s <= teams; s++) by[s] = emptyPosCounts();
     for (const rec of state.pickByOverall.values()) {
@@ -1111,7 +1157,7 @@
       const recent = [];
       for (let pki = 0; pki < upcoming.length; pki++) {
         const cell = upcoming[pki];
-        const round = Math.ceil(cell.overall / 12);
+        const round = Math.ceil(cell.overall / teamCount());
         const c = counts[cell.slot] || emptyPosCounts();
         const cand = [];
         const scores = [];
@@ -1964,8 +2010,8 @@
     state.briefs = bj && typeof bj === "object" && !Array.isArray(bj) ? bj : {};
     applyGems();
     if (rj && typeof rj === "object") state.recs = rj;
-    state.draft = dj;
-    state.draftStatus = dj.status || "pre_draft";
+    state.draft = ensureDraft(dj);
+    state.draftStatus = dj.status || "pre-draft";
     state.byId = new Map(state.players.filter((p) => p.id != null).map((p) => [String(p.id), p]));
     state.byEspn = new Map(
       state.players
