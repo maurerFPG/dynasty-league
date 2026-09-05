@@ -137,6 +137,10 @@ const NICK_TO_TEAM = {
   tennessee: "TEN",
   commanders: "WAS",
   washington: "WAS",
+  "new york giants": "NYG",
+  "new york jets": "NYJ",
+  "los angeles rams": "LAR",
+  "los angeles chargers": "LAC",
 };
 
 const SKILL_POS = new Set(["QB", "RB", "WR", "TE", "K"]);
@@ -209,15 +213,15 @@ function teamFromNickname(name) {
   if (NICK_TO_TEAM[raw]) return NICK_TO_TEAM[raw];
   const compact = raw.replace(/\s+/g, " ");
   if (NICK_TO_TEAM[compact]) return NICK_TO_TEAM[compact];
-  // "Houston Texans" / "Detroit Lions"
+  // "Houston Texans" / "Detroit Lions" — city and nickname must both map to the same team.
+  // Do not treat a player surname (Washington, Dallas) as a trailing team token.
   const parts = compact.split(" ");
   if (parts.length >= 2) {
     const nick = parts[parts.length - 1];
     const city = parts.slice(0, -1).join(" ");
-    if (NICK_TO_TEAM[nick] && (NICK_TO_TEAM[city] === NICK_TO_TEAM[nick] || !NICK_TO_TEAM[city])) {
+    if (NICK_TO_TEAM[nick] && NICK_TO_TEAM[city] && NICK_TO_TEAM[city] === NICK_TO_TEAM[nick]) {
       return NICK_TO_TEAM[nick];
     }
-    if (NICK_TO_TEAM[city] && NICK_TO_TEAM[nick] === NICK_TO_TEAM[city]) return NICK_TO_TEAM[nick];
   }
   return "";
 }
@@ -461,9 +465,16 @@ const PICK_TEAM_POS = new RegExp(
   "i"
 );
 const PICK_PAREN_POS = new RegExp(
-  `^(?:pick\\s*)?(\\d{1,3})\\s*[.):\\-–]?\\s+(.+?)\\s+\\(([A-Za-z]{2,4})\\s+(${POS_TOKEN})\\)`,
+  `^(?:pick\\s*)?(\\d{1,3})\\s*[.):\\-–]?\\s+(.+?)\\s+\\(([A-Za-z]{2,4})\\s*,?\\s+(${POS_TOKEN})\\)`,
   "i"
 );
+
+/** Trailing DET/JAX/WAS — not city or nickname tokens like Washington or Giants. */
+function trailingTeamAbbrev(token) {
+  const letters = String(token || "").replace(/[^A-Za-z]/g, "");
+  if (letters.length < 2 || letters.length > 3) return "";
+  return canonTeam(token);
+}
 
 function cleanParsedName(name, team) {
   let n = stripGenerationalTokens(
@@ -473,10 +484,12 @@ function cleanParsedName(name, team) {
       .trim()
   );
   const parts = n.split(/\s+/).filter(Boolean);
-  if (parts.length >= 2 && canonTeam(parts[parts.length - 1])) {
+  const last = parts[parts.length - 1];
+  const peeled = trailingTeamAbbrev(last);
+  if (parts.length >= 2 && peeled) {
     return {
       name: stripGenerationalTokens(parts.slice(0, -1).join(" ")),
-      team: team || canonTeam(parts[parts.length - 1]),
+      team: team || peeled,
     };
   }
   return { name: n, team: team || "" };
@@ -512,11 +525,17 @@ function parsePickLineText(text) {
   m = text.match(/^(?:pick\s*)?(\d{1,3})\s*[.):\-–]?\s+(.+)$/i);
   if (m) {
     const rest = stripGenerationalTokens(m[2].replace(/\s+/g, " ").trim());
-    if (isTeamNicknameName(rest)) {
-      return { pick_no: num(m[1]), name: rest, pos: "DEF", team: teamFromNickname(rest) };
+    const cleaned = cleanParsedName(rest, "");
+    if (isTeamNicknameName(cleaned.name)) {
+      return {
+        pick_no: num(m[1]),
+        name: cleaned.name,
+        pos: "DEF",
+        team: teamFromNickname(cleaned.name) || cleaned.team,
+      };
     }
-    if (rest && /[A-Za-z]/.test(rest) && !isPickHistoryHeaderText(text)) {
-      return { pick_no: num(m[1]), name: rest, pos: "", team: "" };
+    if (cleaned.name && /[A-Za-z]/.test(cleaned.name) && !isPickHistoryHeaderText(text)) {
+      return { pick_no: num(m[1]), name: cleaned.name, pos: "", team: cleaned.team };
     }
   }
   return null;
@@ -535,7 +554,7 @@ function isPickHistoryHeaderText(text) {
 }
 
 function parsePlayerCellText(t) {
-  let m = t.match(new RegExp(`^(.+?)\\s+\\(([A-Za-z]{2,4})\\s+(${POS_TOKEN})\\)$`, "i"));
+  let m = t.match(new RegExp(`^(.+?)\\s+\\(([A-Za-z]{2,4})\\s*,?\\s+(${POS_TOKEN})\\)$`, "i"));
   if (m) return { name: stripGenerationalTokens(m[1]), team: canonTeam(m[2] || ""), pos: normPos(m[3]) };
   m = t.match(new RegExp(`^(.+?)\\s+([A-Za-z]{2,4})\\s+(${POS_TOKEN})\\b`, "i"));
   if (m && canonTeam(m[2])) {

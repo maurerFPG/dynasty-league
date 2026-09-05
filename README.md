@@ -6,7 +6,7 @@ This is not a localhost Tampermonkey setup. Happy path: Vercel board + Chrome ex
 
 ## What shipped
 
-1. **Chrome MV3 extension** on `https://fantasy.espn.com/*` (v1.0.5)
+1. **Chrome MV3 extension** on `https://fantasy.espn.com/*` (v1.0.6)
    - **Live auto-sync** (popup toggle, default ON) while an ESPN draft / waiting-room tab is open
    - Re-scrapes about every 1s; POSTs only when the pick set changes (count + sorted `pick_no:espn_id`)
    - After a POST that changed picks, notifies open board tabs to refresh immediately
@@ -52,7 +52,7 @@ Public `GET https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/2026
    - Add a **Vercel Blob** store so `BLOB_READ_WRITE_TOKEN` is injected
 2. Open the Vercel URL (HTTPS board). Confirm **Refresh** works (0 picks is fine).
 3. Chrome → `chrome://extensions` → Developer mode → **Load unpacked** → `extension/`
-   After pulling a new build, click the **reload / refresh icon on the extension card**. The old content script stays loaded until you do. Runtime is `content.bundle.js` (classic IIFE, v1.0.5) — do not load `content.js` as a module.
+   After pulling a new build, click the **reload / refresh icon on the extension card**. The old content script stays loaded until you do. Runtime is `content.bundle.js` (classic IIFE, v1.0.6) — do not load `content.js` as a module.
 4. Extension **Options**: board origin (`https://your-app.vercel.app`) and the same `PICKS_SECRET`
 5. Sign into ESPN in Chrome. Open the [mock lobby](https://fantasy.espn.com/football/mockdraftlobby), join a **10-team snake** room, wait for the draft page.
 6. Make a few picks **in ESPN** (including a D/ST). Do not use this tool to draft.
