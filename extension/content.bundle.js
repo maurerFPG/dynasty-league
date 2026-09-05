@@ -717,6 +717,28 @@ function upsertPicks(existing, incoming) {
   return { picks, merged };
 }
 
+/**
+ * Stable pick-set id: count + sorted pick_no:espn_id.
+ * Used so live auto-sync can skip POSTing an unchanged set every second.
+ */
+function picksFingerprint(picks) {
+  const list = Array.isArray(picks) ? picks : [];
+  const keys = [];
+  for (const p of list) {
+    if (!p || typeof p !== "object") continue;
+    const n = Number(p.pick_no ?? p.pickNo);
+    const id = p.espn_id != null && p.espn_id !== "" ? String(p.espn_id) : "";
+    keys.push(`${Number.isFinite(n) ? n : 0}:${id}`);
+  }
+  keys.sort();
+  return `${keys.length}|${keys.join(",")}`;
+}
+
+function shouldSkipIdenticalPost(lastFingerprint, picks) {
+  const fp = picksFingerprint(picks);
+  return Boolean(lastFingerprint) && fp === lastFingerprint;
+}
+
 function extractPicksPayload(body) {
   if (Array.isArray(body)) return { items: body, reset: false, source: "unknown", league_id: null };
   if (!body || typeof body !== "object") return { items: [], reset: false, source: "unknown", league_id: null };
@@ -801,6 +823,77 @@ function extractPicksPayload(body) {
     return /\/football\/(draft|waitingroom)/i.test(location.pathname);
   }
 
+  const LIVE_MS = 1000;
+  let liveTimer = null;
+  let liveBusy = false;
+  let lastCollectAt = 0;
+  let historyObserver = null;
+  let observerTimer = null;
+
+  async function liveEnabled() {
+    try {
+      const data = await chrome.storage.sync.get({ liveSync: true });
+      return data.liveSync !== false;
+    } catch {
+      return true;
+    }
+  }
+
+  async function tickLive() {
+    if (!onDraftPage() || liveBusy) return;
+    if (Date.now() - lastCollectAt < 800) return;
+    if (!(await liveEnabled())) return;
+    liveBusy = true;
+    lastCollectAt = Date.now();
+    try {
+      const payload = await collect();
+      await chrome.runtime.sendMessage({ type: "espn-companion-autosync", payload });
+    } catch {
+      /* service worker may be restarting */
+    }
+    liveBusy = false;
+  }
+
+  function onHistoryMutation() {
+    if (observerTimer) return;
+    observerTimer = setTimeout(() => {
+      observerTimer = null;
+      tickLive();
+    }, 400);
+  }
+
+  function startLive() {
+    if (!onDraftPage()) return;
+    if (!liveTimer) {
+      liveTimer = setInterval(tickLive, LIVE_MS);
+      tickLive();
+    }
+    if (!historyObserver && document.documentElement) {
+      historyObserver = new MutationObserver(onHistoryMutation);
+      historyObserver.observe(document.documentElement, { childList: true, subtree: true });
+    }
+  }
+
+  function stopLive() {
+    if (liveTimer) {
+      clearInterval(liveTimer);
+      liveTimer = null;
+    }
+    if (historyObserver) {
+      historyObserver.disconnect();
+      historyObserver = null;
+    }
+    if (observerTimer) {
+      clearTimeout(observerTimer);
+      observerTimer = null;
+    }
+  }
+
+  function syncLiveLoop() {
+    if (onDraftPage()) startLive();
+    else stopLive();
+  }
+
   async function collect() {
     const id = leagueId();
     const yr = season();
@@ -875,10 +968,20 @@ function extractPicksPayload(body) {
     return true;
   });
 
+  chrome.storage.onChanged.addListener((changes, area) => {
+    if (area !== "sync" || !changes.liveSync) return;
+    if (changes.liveSync.newValue === false) stopLive();
+    else syncLiveLoop();
+  });
+
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", ensureButton);
+    document.addEventListener("DOMContentLoaded", () => {
+      ensureButton();
+      syncLiveLoop();
+    });
   } else {
     ensureButton();
+    syncLiveLoop();
   }
 }
 

@@ -6,8 +6,11 @@ This is not a localhost Tampermonkey setup. Happy path: Vercel board + Chrome ex
 
 ## What shipped
 
-1. **Chrome MV3 extension** on `https://fantasy.espn.com/*`
-   - On demand (page **Sync picks** button, or the extension popup)
+1. **Chrome MV3 extension** on `https://fantasy.espn.com/*` (v1.0.5)
+   - **Live auto-sync** (popup toggle, default ON) while an ESPN draft / waiting-room tab is open
+   - Re-scrapes about every 1s; POSTs only when the pick set changes (count + sorted `pick_no:espn_id`)
+   - After a POST that changed picks, notifies open board tabs to refresh immediately
+   - Manual **Sync picks** (page button or popup) remains an override
    - Fetches `mDraftDetail` **from the ESPN page** with the browser session (`credentials: include`)
    - Ignores unmade slots (`playerId: -1`)
    - If the room is live but `mDraftDetail` is all `-1` / empty, reads **Pick History** (full names). Nicknames like Lions / Ravens are D/ST only.
@@ -21,7 +24,9 @@ This is not a localhost Tampermonkey setup. Happy path: Vercel board + Chrome ex
    - Durable store: **Vercel Blob** in production (not memory)
 
 3. **Web board** (existing dual-column redraft UI)
-   - **Refresh** GETs `/api/picks` and greys taken players by `espn_id` / board id
+   - Auto-GETs `/api/picks` about every 1s while the tab is visible (pauses when hidden)
+   - Re-renders only when the pick set changes; also refreshes on the extension’s `picks-updated` push
+   - **Refresh** remains a manual override
    - **Paste** is the reliability floor: paste Pick History text → POST
 
 4. **Single D/ST id scheme**: `espn--16034` / `espn_id: "-16034"`. The old team-code twins (`HOU` vs `Texans D/ST`) are gone.
@@ -47,12 +52,12 @@ Public `GET https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/2026
    - Add a **Vercel Blob** store so `BLOB_READ_WRITE_TOKEN` is injected
 2. Open the Vercel URL (HTTPS board). Confirm **Refresh** works (0 picks is fine).
 3. Chrome → `chrome://extensions` → Developer mode → **Load unpacked** → `extension/`
-   After pulling a new build, click the **reload / refresh icon on the extension card**. The old content script stays loaded until you do. Runtime is `content.bundle.js` (classic IIFE, v1.0.4) — do not load `content.js` as a module.
+   After pulling a new build, click the **reload / refresh icon on the extension card**. The old content script stays loaded until you do. Runtime is `content.bundle.js` (classic IIFE, v1.0.5) — do not load `content.js` as a module.
 4. Extension **Options**: board origin (`https://your-app.vercel.app`) and the same `PICKS_SECRET`
-5. Sign into ESPN in Chrome. Open the [mock lobby](https://fantasy.espn.com/football/mockdraftlobby), join a **12-team snake** room, wait for the draft page.
+5. Sign into ESPN in Chrome. Open the [mock lobby](https://fantasy.espn.com/football/mockdraftlobby), join a **10-team snake** room, wait for the draft page.
 6. Make a few picks **in ESPN** (including a D/ST). Do not use this tool to draft.
-7. Click **Sync picks** on the ESPN page (or the extension popup).
-8. On the board, click **Refresh** within a few seconds. Taken players grey out, including that D/ST.
+7. Leave **Live auto-sync** ON in the popup. Picks should POST themselves; the board should grey taken names without clicking Sync or Refresh.
+8. **Sync picks now** and board **Refresh** are still overrides if live hiccups.
 9. If the extension reports stale mDraftDetail, open ESPN **Pick History**, copy the rows, board **Paste** → Apply.
 
 ### Paste-only drill (no extension)

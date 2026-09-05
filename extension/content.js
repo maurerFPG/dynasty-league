@@ -62,6 +62,77 @@ import { scrapeHistoryText } from "./picks.js";
     return /\/football\/(draft|waitingroom)/i.test(location.pathname);
   }
 
+  const LIVE_MS = 1000;
+  let liveTimer = null;
+  let liveBusy = false;
+  let lastCollectAt = 0;
+  let historyObserver = null;
+  let observerTimer = null;
+
+  async function liveEnabled() {
+    try {
+      const data = await chrome.storage.sync.get({ liveSync: true });
+      return data.liveSync !== false;
+    } catch {
+      return true;
+    }
+  }
+
+  async function tickLive() {
+    if (!onDraftPage() || liveBusy) return;
+    if (Date.now() - lastCollectAt < 800) return;
+    if (!(await liveEnabled())) return;
+    liveBusy = true;
+    lastCollectAt = Date.now();
+    try {
+      const payload = await collect();
+      await chrome.runtime.sendMessage({ type: "espn-companion-autosync", payload });
+    } catch {
+      /* service worker may be restarting */
+    }
+    liveBusy = false;
+  }
+
+  function onHistoryMutation() {
+    if (observerTimer) return;
+    observerTimer = setTimeout(() => {
+      observerTimer = null;
+      tickLive();
+    }, 400);
+  }
+
+  function startLive() {
+    if (!onDraftPage()) return;
+    if (!liveTimer) {
+      liveTimer = setInterval(tickLive, LIVE_MS);
+      tickLive();
+    }
+    if (!historyObserver && document.documentElement) {
+      historyObserver = new MutationObserver(onHistoryMutation);
+      historyObserver.observe(document.documentElement, { childList: true, subtree: true });
+    }
+  }
+
+  function stopLive() {
+    if (liveTimer) {
+      clearInterval(liveTimer);
+      liveTimer = null;
+    }
+    if (historyObserver) {
+      historyObserver.disconnect();
+      historyObserver = null;
+    }
+    if (observerTimer) {
+      clearTimeout(observerTimer);
+      observerTimer = null;
+    }
+  }
+
+  function syncLiveLoop() {
+    if (onDraftPage()) startLive();
+    else stopLive();
+  }
+
   async function collect() {
     const id = leagueId();
     const yr = season();
@@ -136,9 +207,19 @@ import { scrapeHistoryText } from "./picks.js";
     return true;
   });
 
+  chrome.storage.onChanged.addListener((changes, area) => {
+    if (area !== "sync" || !changes.liveSync) return;
+    if (changes.liveSync.newValue === false) stopLive();
+    else syncLiveLoop();
+  });
+
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", ensureButton);
+    document.addEventListener("DOMContentLoaded", () => {
+      ensureButton();
+      syncLiveLoop();
+    });
   } else {
     ensureButton();
+    syncLiveLoop();
   }
 }

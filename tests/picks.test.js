@@ -12,8 +12,10 @@ import {
   parsePickHistoryText,
   parsePickLine,
   pickLinesFromCellRows,
+  picksFingerprint,
   resolvePlayer,
   scrapeHistoryText,
+  shouldSkipIdenticalPost,
   toRecord,
   upsertPicks,
 } from "../lib/picks.js";
@@ -431,6 +433,21 @@ test("extension copies lib/picks.js", async () => {
   const a = await readFile(fileURLToPath(new URL("../lib/picks.js", import.meta.url)), "utf8");
   const b = await readFile(fileURLToPath(new URL("../extension/picks.js", import.meta.url)), "utf8");
   assert.equal(a, b);
+});
+
+test("fingerprint is count + sorted pick_no:espn_id and skips identical posts", () => {
+  const a = toRecord({ pick_no: 1, playerId: 4429795 }, index);
+  const b = toRecord({ pick_no: 2, playerId: -16034 }, index);
+  const c = toRecord({ pick_no: 1, playerId: 4430807 }, index);
+  const fp = picksFingerprint([b, a]);
+  assert.equal(fp, picksFingerprint([a, b]));
+  assert.equal(fp, "2|1:4429795,2:-16034");
+  assert.notEqual(picksFingerprint([a, b]), picksFingerprint([c, b]));
+  assert.equal(picksFingerprint([]), "0|");
+  assert.equal(shouldSkipIdenticalPost(fp, [a, b]), true);
+  assert.equal(shouldSkipIdenticalPost(fp, [a, b, c]), false);
+  assert.equal(shouldSkipIdenticalPost("", [a]), false);
+  assert.equal(shouldSkipIdenticalPost(null, [a]), false);
 });
 
 test("upsert is by overall pick number", () => {
