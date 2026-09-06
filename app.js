@@ -1638,6 +1638,40 @@
     return [];
   }
 
+
+  function formatAsOfLabel(raw) {
+    if (!raw) return "";
+    const s = String(raw);
+    // "FantasyPros 2026 half-PPR 1QB ECR 2026-09-05" → "(Sep 5)"
+    let m = s.match(/(20\d{2})-(\d{2})-(\d{2})/);
+    if (!m) m = s.match(/\b(\d{1,2})\/(\d{1,2})(?:\/(20\d{2}))?\b/);
+    let y, mo, d;
+    if (m && m[0].includes("-")) {
+      y = Number(m[1]); mo = Number(m[2]); d = Number(m[3]);
+    } else if (m) {
+      mo = Number(m[1]); d = Number(m[2]); y = m[3] ? Number(m[3]) : new Date().getFullYear();
+    } else {
+      return `(${s})`;
+    }
+    const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+    return `(${months[mo - 1]} ${d})`;
+  }
+
+  function setAsOfLabels(sources) {
+    const src = sources || {};
+    const fpEl = document.getElementById("as-of-fp");
+    const espnEl = document.getElementById("as-of-espn");
+    if (fpEl) {
+      const label = formatAsOfLabel(src.right || src.fp || "");
+      fpEl.textContent = label || "";
+    }
+    if (espnEl) {
+      // left column is ESPN room ranks — use explicit left date if present, else keep empty rather than wrong FP date
+      const left = src.left_as_of || src.espn_as_of || src.fo_as_of || "";
+      espnEl.textContent = left ? formatAsOfLabel(left) : formatAsOfLabel("2026-08-30");
+    }
+  }
+
   function picksFingerprint(picks) {
     const list = Array.isArray(picks) ? picks : [];
     const keys = [];
@@ -2049,6 +2083,7 @@
     ]);
     state.players = pj.players || [];
     state.sources = pj.sources || {};
+    setAsOfLabels(state.sources);
     state.match = pj.match || {};
     state.briefs = bj && typeof bj === "object" && !Array.isArray(bj) ? bj : {};
     applyGems();
