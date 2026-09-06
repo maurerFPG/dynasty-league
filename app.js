@@ -1,4 +1,6 @@
 /* Redraft — remaining-name glance. No pick recommender. */
+import { boardCellPos, boardName, lastName } from "./lib/board-label.js?v=dstcell1";
+
 (() => {
   const TARGETS_KEY = "nasty-draft-hq-targets-v1";
   const BOARD_H_KEY = "nasty-ui-board-h-v1";
@@ -166,30 +168,10 @@
 
   }
 
-  function lastName(full) {
-    if (!full) return "";
-    const suf = new Set(["jr", "sr", "ii", "iii", "iv", "v"]);
-    const parts = full.replace(/,/g, "").trim().split(/\s+/);
-    while (parts.length > 1 && suf.has(parts[parts.length - 1].toLowerCase().replace(/\./g, ""))) {
-      parts.pop();
-    }
-    if (parts.length >= 2 && /^st\.?$/i.test(parts[parts.length - 2])) {
-      return `${parts[parts.length - 2]} ${parts[parts.length - 1]}`;
-    }
-    return parts[parts.length - 1] || full;
-  }
-  function boardName(full) {
-    const last = lastName(full);
-    if (!full) return last;
-    const first = full.replace(/,/g, "").trim().split(/\s+/)[0] || "";
-    const init = first.replace(/[^A-Za-z]/g, "").charAt(0);
-    if (!init) return last;
-    return init.toUpperCase() + ". " + last;
-  }
   function cardName(p) {
     const full = String((p && p.name) || "").trim();
     if (full.length <= 13) return full;
-    return boardName(full);
+    return boardName(full, p && p.pos);
   }
 
   function fmtAdp(v) {
@@ -545,9 +527,9 @@
         if (cell?.is_rob) cls.push("rob");
         if (pick) {
           cls.push("filled");
-          const pos = (pick.position || "").toUpperCase();
+          const pos = boardCellPos(pick.position);
           if (pos) cls.push("pos-" + pos);
-          const nm = boardName(pick.name);
+          const nm = boardName(pick.name, pos);
           el.innerHTML = `<span class="nm">${esc(nm)}</span><span class="p">${esc(pos)}</span>`;
           el.title = `${fmtPick(cell)} · ${pick.name} (${pos} ${pick.team || ""})`;
         } else {
@@ -642,7 +624,7 @@
           return `<li class="rec-row empty"><span class="rec-n">${i + 1}.</span><span class="rec-who">—</span></li>`;
         }
         const p = o.id ? findPlayer(String(o.id)) : findPlayerByLooseName(o.name || "");
-        const name = p ? boardName(p.name) : o.name ? boardName(o.name) : "—";
+        const name = p ? boardName(p.name, p.pos) : o.name ? boardName(o.name, o.pos || o.position) : "—";
         const team = (p && p.team) || o.team || "";
         const key = p ? playerKey(p) : "";
         const alt = key ? ` data-alt="${esc(key)}"` : "";
@@ -960,7 +942,7 @@
     const nearby = rows.length
       ? `<div class="baked-block"><div class="kicker">Nearby</div><div class="near-list">${rows
           .map(({ p: n, name, take }) => {
-            const label = n ? boardName(n.name) : name;
+            const label = n ? boardName(n.name, n.pos) : name;
             const logo = n ? logoHtml(n.team) : `<span class="logo ph" aria-hidden="true"></span>`;
             const alt = n ? ` data-alt="${esc(playerKey(n))}"` : "";
             const who = label ? `<span class="near-name">${esc(label)}:</span> ` : "";
