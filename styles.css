@@ -463,6 +463,11 @@ body.resizing-h { cursor: ns-resize; user-select: none; }
 .b-cell.pos-RB { box-shadow: inset 2px 0 0 var(--rb); }
 .b-cell.pos-WR { box-shadow: inset 2px 0 0 var(--wr); }
 .b-cell.pos-TE { box-shadow: inset 2px 0 0 var(--te); }
+.b-cell.pos-K,
+.b-cell.pos-PK { box-shadow: inset 2px 0 0 var(--k); }
+.b-cell.pos-DEF,
+.b-cell.pos-DST,
+.b-cell.pos-D\/ST { box-shadow: inset 2px 0 0 var(--def); }
 
 /* ——— splitters ——— */
 .splitter {
