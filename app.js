@@ -1,5 +1,7 @@
 /* Redraft — remaining-name glance. No pick recommender. */
 import { boardCellPos, boardName, lastName } from "./lib/board-label.js?v=dstcell1";
+import { isDefPos, scheduleBlockHtml } from "./lib/card-brief.js?v=rd907e";
+import { heatFromBrief, rookieChipInfo } from "./lib/player-marks.js?v=rd907e";
 
 (() => {
   const TARGETS_KEY = "nasty-draft-hq-targets-v1";
@@ -308,10 +310,11 @@ import { boardCellPos, boardName, lastName } from "./lib/board-label.js?v=dstcel
     if (!team || team === "FA") return null;
     return `https://sleepercdn.com/images/team_logos/nfl/${String(team).toLowerCase()}.png`;
   }
-  function logoHtml(team) {
+  function logoHtml(team, extraClass) {
     const url = teamLogoUrl(team);
-    if (!url) return `<span class="logo ph" aria-hidden="true"></span>`;
-    return `<img class="logo" src="${esc(url)}" alt="" loading="lazy" decoding="async" onerror="this.style.display='none'" />`;
+    const cls = ["logo", extraClass].filter(Boolean).join(" ");
+    if (!url) return `<span class="${cls} ph" aria-hidden="true"></span>`;
+    return `<img class="${cls}" src="${esc(url)}" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.classList.add('ph');this.removeAttribute('src')" />`;
   }
   function headshotHtml(id) {
     if (!id) return `<span class="headshot ph" aria-hidden="true"></span>`;
@@ -330,13 +333,18 @@ import { boardCellPos, boardName, lastName } from "./lib/board-label.js?v=dstcel
       p.gem = !!(state.briefs[String(p.id)] && state.briefs[String(p.id)].gem === true);
     });
   }
+  function applyHeat() {
+    (state.players || []).forEach((p) => {
+      const b = state.briefs && state.briefs[String(p.id)];
+      const { hot, cold } = heatFromBrief(b && b.heat);
+      p.hot = hot;
+      p.cold = cold;
+    });
+  }
   function rookieChip(p) {
-    if (!p.is_rookie) return "";
-    const rnd = Number(p.nfl_draft_round);
-    const known = Number.isFinite(rnd) && rnd > 0;
-    const lab = known ? "R" + rnd : "UDFA";
-    const title = known ? `2026 rookie · NFL draft round ${rnd}` : "2026 rookie · undrafted free agent";
-    return `<span class="rchip" title="${esc(title)}">${esc(lab)}</span>`;
+    const info = rookieChipInfo(p);
+    if (!info) return "";
+    return `<span class="rchip" title="${esc(info.title)}">${esc(info.lab)}</span>`;
   }
   function rookieCell(p) {
     return rookieChip(p) || `<span class="rchip empty" aria-hidden="true"></span>`;
@@ -642,13 +650,14 @@ import { boardCellPos, boardName, lastName } from "./lib/board-label.js?v=dstcel
   async function refreshBaked() {
     try {
       const [bj, rj] = await Promise.all([
-        fetch("data/briefs.json?v=rd907d", { cache: "no-store" }).then((r) => (r.ok ? r.json() : null)).catch(() => null),
+        fetch("data/briefs.json?v=rd907e", { cache: "no-store" }).then((r) => (r.ok ? r.json() : null)).catch(() => null),
         fetch("data/recs.json?v=rd830", { cache: "no-store" }).then((r) => (r.ok ? r.json() : null)).catch(() => null),
       ]);
       if (bj && typeof bj === "object" && !Array.isArray(bj)) state.briefs = bj;
       if (rj && typeof rj === "object") state.recs = rj;
     } catch (e) { /* ignore */ }
     applyGems();
+    applyHeat();
   }
 
   function renderLists() {
@@ -926,8 +935,9 @@ import { boardCellPos, boardName, lastName } from "./lib/board-label.js?v=dstcel
   function bakedBriefHtml(b, subject) {
     const notes = Array.isArray(b.notes) ? b.notes.filter(Boolean) : [];
     const links = Array.isArray(b.links) ? b.links.filter((l) => l && l.url) : [];
-    const lead = b.lead
-      ? `<div class="baked-block"><div class="kicker">Outlook</div><p class="lead">${esc(b.lead)}</p></div>`
+    const sched = scheduleBlockHtml(b, esc);
+    const lead = b.lead || sched
+      ? `<div class="baked-block"><div class="kicker">Outlook</div>${b.lead ? `<p class="lead">${esc(b.lead)}</p>` : ""}${sched}</div>`
       : "";
     const board = b.draft
       ? `<div class="baked-block"><div class="kicker">Board</div><p class="note">${esc(b.draft)}</p></div>`
@@ -1297,7 +1307,7 @@ import { boardCellPos, boardName, lastName } from "./lib/board-label.js?v=dstcel
       <div class="card-layout">
         <div class="card-left">
           <div class="card-idrow">
-            ${headshotHtml(p.id)}
+            ${isDefPos(p.pos) ? logoHtml(p.team, "card-team-logo") : headshotHtml(p.id)}
             <div class="card-id">
               <div class="who"><span class="${p.is_rookie ? "rookie" : ""}" title="${esc(p.name)}">${esc(cardName(p))}</span>${heatMark(p)}${rookieChip(p)}</div>
               <div class="meta"><span class="c-pos ${esc(p.pos || "")}">${esc(p.pos || "")}</span> · ${esc(p.team || "FA")}${age}${exp}</div>
@@ -2056,7 +2066,7 @@ import { boardCellPos, boardName, lastName } from "./lib/board-label.js?v=dstcel
     const [pj, dj, bj, rj] = await Promise.all([
       fetch("data/players.json?v=rd840", { cache: "no-store" }).then((r) => r.json()),
       fetch("data/draft.json?v=rd840", { cache: "no-store" }).then((r) => r.json()),
-      fetch("data/briefs.json?v=rd907d", { cache: "no-store" })
+      fetch("data/briefs.json?v=rd907e", { cache: "no-store" })
         .then((r) => (r.ok ? r.json() : {}))
         .catch(() => ({})),
       fetch("data/recs.json?v=rd830", { cache: "no-store" })
@@ -2069,6 +2079,7 @@ import { boardCellPos, boardName, lastName } from "./lib/board-label.js?v=dstcel
     state.match = pj.match || {};
     state.briefs = bj && typeof bj === "object" && !Array.isArray(bj) ? bj : {};
     applyGems();
+    applyHeat();
     if (rj && typeof rj === "object") state.recs = rj;
     state.draft = ensureDraft(dj);
     state.draftStatus = dj.status || "pre-draft";
