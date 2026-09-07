@@ -1,25 +1,28 @@
 {
   "13287": {
-    "as_of": "2026-08-30",
+    "as_of": "2026-09-07",
     "heat": "ice",
-    "lead": "Cardinals lead back this year \u2014 they took him 3rd overall. Allgeier is the veteran 1B, not a split of the job. LaFleur said Monday he still will not practice this week after the Aug. 13 high-ankle sprain; Week 1 (Sept. 13 vs LAC) is the hope, not a lock. I'd take him in the 4th\u20135th as an RB2; this ESPN room has him 21 so he may go earlier.",
+    "lead": "Cardinals lead back this year \u2014 they took him 3rd overall. Allgeier is the veteran 1B, not a split of the job. High-ankle sprain Aug. 13 vs the Raiders; LaFleur keeps saying he is progressing, and Garafolo put Week 1 (Sep. 13 at LAC) at about 50-50 until he practices full speed. I'd take him in the 3rd\u20134th as an RB2 if the ankle clears; this ESPN room has him 21 so he may go earlier.",
     "notes": [
-      "14 touches (11-58 rush, 3-15 rec) vs the Raiders before the sprain. No surgery. Conner (foot) and Benson (knee) are also dinged, so Allgeier is the healthy fill-in if Love misses the opener.",
-      "Public redraft chatter is sliding him off early-RB2 ADP into the Skattebo/Irving range until he practices. I searched r/fantasyfootball this week; no standalone thread loaded."
+      "14 touches (11-58, 3-14) before the sprain; Schefter: rest of preseason unlikely. Conner (foot) and Benson (knee) are on IR, so Allgeier/Knight handle early work if Love sits. Official injury report starts Wednesday of Week 1."
     ],
-    "nearby": "Vs Hall (FP 34) take Hall if you need a cleaner Week 1; Love if you want the 3rd-overall lead when the ankle clears. Vs Jacobs (FP 43) Jacobs has the Packers job plus the charges; Love is the younger lead.",
+    "nearby": "Vs Breece Hall (FP 34): take Hall if you need a cleaner Week 1; take Love if you want the 3rd-overall lead when the ankle clears. Vs Travis Etienne (FP 44): take Love for the clearer franchise lead; Etienne shares Jacksonville.",
     "links": [
       {
-        "label": "PFT: LaFleur \u2014 out of practice this week",
-        "url": "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/jeremiyah-love-will-remain-out-of-practice-this-week"
+        "label": "Garafolo: ~50-50 for Week 1",
+        "url": "https://sports.yahoo.com/articles/jeremiyah-love-injury-chances-playing-032227441.html"
       },
       {
-        "label": "NFL.com: high ankle, hopeful for Week 1",
-        "url": "https://www.nfl.com/news/report-cardinals-rb-jeremiyah-love-unlikely-to-play-again-in-preseason-due-to-high-ankle-sprain"
+        "label": "LaFleur: progressing really well",
+        "url": "https://www.nbcsports.com/fantasy/football/player-news/2026-08-31/lafleur-jeremiyah-love-progressing-really-well"
       },
       {
-        "label": "Newsweek: still sidelined, clock ticking",
-        "url": "https://www.newsweek.com/sports/nfl/cardinals-rb-jeremiyah-love-still-sidelined-clock-ticking-toward-week-1-12361639"
+        "label": "CBS: continues to progress (Sep. 3)",
+        "url": "https://www.cbssports.com/fantasy/football/news/cardinals-jeremiyah-love-continues-to-progress-636168/"
+      },
+      {
+        "label": "azcardinals.com: out early with ankle",
+        "url": "https://www.azcardinals.com/news/jeremiyah-love-to-sit-for-now-with-ankle-injury"
       }
     ]
   },
@@ -44,157 +47,169 @@
     ]
   },
   "4984": {
-    "as_of": "2026-08-30",
+    "as_of": "2026-09-07",
     "heat": "neutral",
-    "lead": "Bills offense this year \u2014 Year 1 under Brady. Sat Thursday's Steelers finale (some starters played); Brady put him on the headset and let him call. One preseason look: 6-of-8, 111, scramble-drill TD to Coleman vs Carolina. In 1QB with 4-pt pass TDs, wait for the dual-threat. I'd take him in the 3rd; this ESPN room has him 26.",
-    "nearby": "Vs Lamar Jackson (FP 39): take Allen \u2014 locked Brady year, no Week 1 question; Lamar is learning Doyle and this ESPN room has him 49. Vs Drake Maye (FP 45): take Allen for the proven dual-threat; Maye is the cheaper 1QB dart.",
+    "lead": "Bills offense this year \u2014 Year 1 under Brady. Sat the Steelers finale (some starters played); Brady put him on the headset and let him call. One preseason look: 6-of-8, 111, scramble-drill TD to Coleman vs Carolina. DJ Moore is the new paid WR1. In 1QB with 4-pt pass TDs, wait for the dual-threat. I'd take him in the 3rd; this ESPN room has him 26.",
+    "notes": [
+      "2025: 3,668 pass / 25 TD / 10 INT plus league-best 579 rush yards and 14 rush TD \u2014 finished QB1. Week 1 at Houston Sep. 13."
+    ],
+    "nearby": "Vs Lamar Jackson (FP 35): take Allen \u2014 locked Brady year, no Week 1 question; Lamar is learning Doyle. Vs Drake Maye (FP 43): take Allen for the proven dual-threat; Maye is the cheaper 1QB dart.",
     "links": [
       {
-        "label": "SI: Brady \u2014 Josh will not play Thursday",
-        "url": "https://www.si.com/nfl/bills/onsi/joe-brady-makes-josh-allen-decision-as-some-starters-will-play-preseason-finale-vs-steelers"
+        "label": "FFC: sat Steelers finale, Week 1 at Houston",
+        "url": "https://fantasyfootballcalculator.com/players/josh-allen"
       },
       {
-        "label": "CBS: perfect preseason, Allen on the headset",
-        "url": "https://www.cbssports.com/nfl/news/bills-cap-perfect-preseason-with-comeback-win-over-steelers/"
+        "label": "SI: projected Week 1 lineup vs Texans",
+        "url": "https://www.si.com/nfl/bills/onsi/starters-bills-projected-week-1-lineup-for-september-13-road-test-vs-texans"
       },
       {
-        "label": "AP: 6-of-8, 111, TD to Coleman vs Carolina",
-        "url": "https://apnews.com/article/panthers-bills-preseason-score-d20c739dbd0c682a79341b448efe20ed"
+        "label": "FTN: Allen anchors Brady's Bills",
+        "url": "https://ftnfantasy.com/nfl/buffalo-bills-2026-fantasy-football-preview-allen-anchors-a-loaded-backfield"
       }
     ]
   },
   "9509": {
-    "as_of": "2026-08-30",
+    "as_of": "2026-09-07",
     "heat": "neutral",
-    "lead": "Falcons lead back this year on the three-year, $66.75 million. Brian Robinson Jr. is the new Allgeier \u2014 Stefanski already said this is not a one-person attack, so some early-down and short-yardage is his. Tua started Friday's finale; Penix is back in 11-on-11 and the Week 1 QB vs Pittsburgh is still uncalled. I'd take him 1st if Gibbs is gone; this ESPN room has him 2.",
+    "lead": "Falcons lead back this year on the three-year, $66.75 million. Brian Robinson Jr. is the new Allgeier \u2014 Stefanski already said this is not a one-person attack, and Kendall flagged B-Rob for goal-line work. Tua was named the Week 1 starter Monday over Penix (ACL ramp) vs Pittsburgh. I'd take him 1st if Gibbs is gone; this ESPN room has him 2.",
     "notes": [
-      "Stefanski still has not named Tua or Penix for Week 1; Tua started the Dolphins finale, Penix sat."
+      "Falcons named Tua Week 1 starter Sep. 7 \u2014 sixth different Week 1 QB in six seasons. Penix cleared 11-on-11 late in camp; Tua got the majority of 1s reps."
     ],
-    "nearby": "Vs Jahmyr Gibbs (FP 1): take Bijan if you want the receiving three-down profile and will live with B-Rob; take Gibbs for the cleaner feature. Vs Christian McCaffrey (FP 7): take Bijan \u2014 younger, camp is clean after the hold-in, no tightness sit.",
+    "nearby": "Vs Jahmyr Gibbs (FP 1): take Bijan if you want the receiving three-down profile and will live with B-Rob; take Gibbs for the cleaner feature with Pacheco on IR. Vs Christian McCaffrey (FP 7): take Bijan \u2014 younger, camp clean after the hold-in, named QB locked; CMC is managing a Melbourne pitch count at 30.",
     "links": [
+      {
+        "label": "Falcons name Tua Week 1 starter",
+        "url": "https://www.espn.com/nfl/story/_/id/49858957/falcons-name-tua-tagovailoa-week-1-starting-qb-vs-steelers"
+      },
+      {
+        "label": "B-Rob expected goal-line role",
+        "url": "https://www.cbssports.com/fantasy/football/news/falcons-brian-robinson-expected-to-have-role-at-goal-line/"
+      },
       {
         "label": "Bijan extension, back at practice",
         "url": "https://www.nytimes.com/athletic/7494490/2026/08/05/bijan-robinson-falcons-contract-extension/"
-      },
-      {
-        "label": "Stefanski on balanced Robinson usage",
-        "url": "https://www.profootballnetwork.com/kevin-stefanski-bijan-robinson-usage-fantasy/"
-      },
-      {
-        "label": "Week 1 QB still uncalled",
-        "url": "https://www.nfl.com/news/michael-penix-jr-out-falcons-preseason-finale-falcons-qb1-decision"
       }
     ]
   },
   "9221": {
-    "as_of": "2026-08-30",
+    "as_of": "2026-09-07",
     "heat": "fire",
-    "lead": "Lions lead back this year \u2014 Montgomery is in Houston, and Campbell already called Gibbs the bell cow after the three-year, $67.5 million deal. Pacheco (MCL most of camp, now a back) still has no Week 1 date; Vaki has been the 1s fill-in, not a split of the job. I'd take him 1st overall in this 1QB half-PPR room.",
+    "lead": "Lions lead back this year \u2014 Montgomery is in Houston, and Campbell already called Gibbs the bell cow after the three-year, $67.5 million deal. Pacheco (MCL most of camp, then a back) hit IR on Sep. 1 and misses at least the first four; Saylors and Vaki are the 2s, not a split of the job. I'd take him 1st overall in this 1QB half-PPR room.",
     "notes": [
-      "Campbell Thursday: no definitive return for Pacheco after the back popped on top of the MCL. Lions worked out Kareem Hunt this week."
+      "Pacheco IR Sep. 1 \u2014 earliest eligible return Week 5 at Arizona. Holmes: still hopes he plays this year; Week 5 is not a firm target. Campbell already comfortable with Saylors as the Gibbs backup."
     ],
-    "nearby": "Vs Bijan Robinson (FP 2): take Gibbs because Detroit is a true feature with Montgomery gone and Pacheco hurt; Bijan has Brian Robinson Jr. as a named 1B in a Stefanski attack he already said is not one-person. Vs Christian McCaffrey (FP 7): take Gibbs \u2014 24, signed, practicing; CMC is 30 coming off 413 touches and a 15-day camp sit.",
+    "nearby": "Vs Bijan Robinson (FP 2): take Gibbs \u2014 true feature with Montgomery gone and Pacheco on IR; Bijan has Brian Robinson Jr. as a named goal-line 1B in a Stefanski attack he already said is not one-person. Vs Christian McCaffrey (FP 7): take Gibbs \u2014 24, signed, practicing; CMC is 30 after 413 touches and sat early Melbourne drills Monday on a Week 1 pitch count.",
     "links": [
       {
-        "label": "Gibbs record deal, Campbell bell cow",
-        "url": "https://www.freep.com/story/sports/nfl/lions/2026/08/07/detroit-lions-rb-jahmyr-gibbs-record-contract/91218257007/"
+        "label": "Lions place Pacheco on IR",
+        "url": "https://www.espn.com/nfl/story/_/id/49796729/detroit-lions-place-rb-isiah-pacheco-injured-reserve"
       },
       {
-        "label": "Gibbs full-go after hold-in",
-        "url": "https://sports.yahoo.com/articles/lions-training-camp-observations-jahmyr-210153942.html"
+        "label": "Pacheco IR before Saints opener",
+        "url": "https://heavy.com/sports/nfl/detroit-lions/isiah-pacheco-injury-news-ir/"
       },
       {
-        "label": "Pacheco MCL + back, no Week 1 date",
-        "url": "https://www.detroitlions.com/news/camp-notes-campbell-reflects-on-lions-2026-training-camp-hutchinson-pacheco"
+        "label": "Saylors likely RB2 while Pacheco out",
+        "url": "https://www.freep.com/story/sports/nfl/lions/2026/08/30/detroit-lions-jacob-saylors-could-be-no-2-rb-to-open-regular-season/91531721007/"
       }
     ]
   },
   "7564": {
-    "as_of": "2026-08-30",
+    "as_of": "2026-09-07",
     "heat": "ice",
-    "lead": "Bengals WR1 this year with Burrow. Left-knee hyperextension Tuesday on a deep ball \u2014 Chase called it a tweak and said if he had a game tomorrow he'd play, then sat Wednesday in a sleeve with Dohnte Meyers on the 1s. Higgins is the WR2; starters already sit Friday vs Philly. I'd still take him in the 1st; this ESPN room has him 3.",
+    "lead": "Bengals WR1 this year with Burrow. Left-knee hyperextension Aug. 25 on a deep ball \u2014 Chase called it a tweak, then sat through early-September practices while Taylor said he'd be limited and still expects him for Week 1 vs Tampa. Higgins (heel) is in the same limited bucket as the WR2. I'd still take him in the 1st; this ESPN room has him 3.",
     "notes": [
-      "Hyperextension Tuesday (Aug. 25); sat Wednesday. Taylor deferred to Chase's 'I'm fine' \u2014 no structural report from the team."
+      "Taylor Sep. 1: Chase limited this week, 'feel good about him,' expects ready for Sep. 13 Bucs. Present but not suited up Wednesday (Sep. 2) after missing Tuesday \u2014 monitor game-week reports."
     ],
-    "nearby": "Vs Puka Nacua (FP 4): take Chase because Burrow is healthy and the knee is a one-day sit he downplayed; Puka has been out of team drills since Aug. 11. Vs Jaxon Smith-Njigba (FP 5): take Chase \u2014 proven Burrow volume in a 4-pt pass-TD league; JSN is the healthier camp tape this week.",
+    "nearby": "Vs Puka Nacua (FP 4): take Chase for Burrow volume if the knee clears game week; take Puka if you want McVay's Week 1 expectation after the long psoas sit. Vs Jaxon Smith-Njigba (FP 5): take Chase \u2014 proven Burrow volume in a 4-pt pass-TD league; JSN is the healthier camp tape and opens Wednesday vs New England.",
     "links": [
+      {
+        "label": "Taylor: Chase limited, expects Week 1",
+        "url": "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/jamarr-chase-tee-higgins-out-of-practice-tuesday-but-bengals-expect-them-for-week-1"
+      },
+      {
+        "label": "Chase not suited up Wednesday",
+        "url": "https://www.cbssports.com/fantasy/football/news/bengals-jamarr-chase-doesnt-practice-wednesday-636033/"
+      },
       {
         "label": "Chase: fine after left-knee scare",
         "url": "https://www.espn.com/nfl/story/_/id/49724848/bengals-jamarr-chase-says-fine-injury-scare"
-      },
-      {
-        "label": "Sat Wednesday, sleeve on the left leg",
-        "url": "https://www.si.com/nfl/bengals/onsi/ja-marr-chase-s-latest-practice-status-revealed-following-knee-injury-in-training-camp-01m0yx08fas5"
       }
     ]
   },
   "11564": {
-    "as_of": "2026-08-30",
+    "as_of": "2026-09-07",
     "heat": "neutral",
-    "lead": "Patriots starter this year. Vrabel sat him for a full preseason on purpose after about 84 joint-practice snaps vs the Colts and Eagles. Week 1 is Wednesday, Sept. 9 at Seattle. In 1QB with 4-pt pass TDs, do not pay him like a Superflex QB1. I'd take him in the 6th\u20137th if you still need QB; this ESPN room has him 62.",
+    "lead": "Patriots starter this year. Vrabel sat him the full preseason on purpose; Week 1 is Wednesday night (Sept 9) at Seattle, with Brown and Doubs as the new paid weapons. In 1QB with 4-pt pass TDs, do not pay him like a Superflex QB1. I'd take him in the 5th\u20136th if you still need QB; this ESPN room has him 57.",
     "notes": [
-      "Camp tape vs the Eagles was the statement (15-of-18, first 12 complete on Wednesday; choppier red-zone Thursday). Healthy. No this-week injury."
+      "QB2 in fantasy PPG last year (21.1), MVP runner-up; 4,394 pass yards, 31 pass TD, 450 rush yards. Healthy. No this-week injury.",
+      "FP 43 / ESPN 57 / QB3. The ESPN board is behind the ADP chatter \u2014 wait in 1QB."
     ],
-    "nearby": "Vs Lamar Jackson (FP 39) Lamar is the proven rushing QB1 if he is there \u2014 take Lamar. Vs Burrow (FP 50) Maye is the younger rushing 1QB; Burrow is Chase/Higgins if you want the pocket volume later.",
+    "nearby": "Vs Lamar Jackson (FP 35) Lamar is the proven rushing QB1 if he is there \u2014 take Lamar. Vs Joe Burrow (FP 49) Maye is the younger rushing 1QB; Burrow is Chase/Higgins if you want the pocket volume later.",
     "links": [
+      {
+        "label": "Patriots.com: Week 1 Wed 9/9 at Seattle",
+        "url": "https://www.patriots.com/schedule/"
+      },
+      {
+        "label": "RotoBaller: Maye Week 1 vs Seahawks",
+        "url": "https://www.rotoballer.com/fantasy-football-start-em-sit-em-friday-patriots-vs-seahawks-week-1-2026/1922634"
+      },
       {
         "label": "ESPN: why Maye sat the preseason",
         "url": "https://www.espn.com/nfl/story/_/id/49756779/why-new-england-patriots-qb-drake-maye-didnt-play-preseason-matter-week-1-vs-seattle-seahawks"
-      },
-      {
-        "label": "WEEI: 15-of-18 vs Eagles",
-        "url": "https://www.audacy.com/weei/sports/patriots/how-drake-maye-patriots-offense-fared-in-first-joint-practice-with-eagles"
       }
     ]
   },
   "9493": {
-    "as_of": "2026-08-30",
-    "heat": "ice",
-    "lead": "Rams WR1 this year with Stafford when the psoas lets him. He has not been in team drills since leaving the Aug. 11 Cowboys joint \u2014 McVay's next-week target came and went; this week he was only side work with trainers. Adams (33) has been the camp 1 next to Stafford. I'd take him in the 1st only if you can live with a Melbourne ramp; this ESPN room has him 4, so he may not fall.",
+    "as_of": "2026-09-07",
+    "heat": "fire",
+    "lead": "Rams WR1 this year with Stafford. McVay said Sunday he expects Puka to play Thursday in Melbourne vs the 49ers after the psoas kept him out of team drills from the Aug. 11 Cowboys joint into September \u2014 he was back practicing this weekend. Adams (33) ate the camp 1 reps while he sat; NFL still reviewing the personal-conduct case, no Week 1 suspension announced. I'd take him in the 1st; this ESPN room has him 4.",
     "notes": [
-      "Psoas/groin since Aug. 11; still out of team work as of this week (side work Mon/Tue). NFL still reviewing the off-field case; Schefter said an Australia miss is within the realm. No suspension announced."
+      "McVay Sep. 6: expects Nacua (and Alaric Jackson) to play Australia \u2014 'that's what I've heard.' Schefter: back in stride this week, no setbacks. PCP review ongoing; not on commissioner exempt."
     ],
-    "nearby": "Vs Ja'Marr Chase (FP 3): take Puka only if you want last year's 129-1,715-10 volume and will bet the psoas is caution; take Chase this week because he practiced through Tuesday and has Burrow. Vs Jaxon Smith-Njigba (FP 5): take JSN if you need a clean Week 1 WR1; take Puka if you think Stafford's target share outweighs two-plus weeks off.",
+    "nearby": "Vs Ja'Marr Chase (FP 3): take Puka if you buy McVay's Week 1 go-ahead after the long sit; take Chase if you want Burrow and will live with the knee ramp. Vs Jaxon Smith-Njigba (FP 5): take JSN if you need a clean Week 1 WR1 Wednesday; take Puka for Stafford's target share once the psoas clears.",
     "links": [
       {
-        "label": "Rams: Nacua (psoas) still a non-participant",
-        "url": "https://www.therams.com/news/injury-updates-ol-justin-dedich-hand-and-te-davis-allen-quad-return-to-practice-wr-puka-nacua-psoas-and-de-myles-garrett-knee-still-non-participants"
+        "label": "McVay expects Puka Week 1 Australia",
+        "url": "https://nypost.com/2026/09/06/sports/puka-nacua-expected-to-play-week-1-against-49ers/"
       },
       {
-        "label": "Still out of team drills this week",
-        "url": "https://www.rotoballer.com/player-news/puka-nacuas-return-to-team-drills-still-on-hold/1916177"
+        "label": "Rams expect Nacua, Jackson vs 49ers",
+        "url": "https://www.espn.com.au/nfl/story/_/id/49853118/rams-expect-puka-nacua-alaric-jackson-play-vs-49ers"
       },
       {
-        "label": "Adams uncoverable while Puka sits",
-        "url": "https://theramswire.usatoday.com/story/sports/nfl/rams/2026/08/25/rams-davante-adams-joint-practice-receiver/91456307007/"
+        "label": "Psoas: back in stride, no setbacks",
+        "url": "https://bleacherreport.com/articles/25496691-puka-nacua-has-rare-psoas-injury-latest-rams-stars-status-vs-49ers-nfl-tnf-opener"
       }
     ]
   },
   "9488": {
-    "as_of": "2026-08-30",
+    "as_of": "2026-09-07",
     "heat": "neutral",
-    "lead": "Seahawks WR1 this year with Darnold \u2014 last year's OPOY (119-1,793-10) and Super Bowl. Kupp, Shaheed, and Horton are around him, not taking the job; Walker is in Kansas City, so some extra passing volume is already here. I'd take him in the 1st; this ESPN room has him 6.",
-    "nearby": "Vs Puka Nacua (FP 4): take JSN because he is healthy and the camp 1 with Darnold; Puka has not been in team drills since Aug. 11. Vs Amon-Ra St. Brown (FP 6): take JSN for the target-hog profile after Walker left; take Amon-Ra if you want Goff's safer floor in a 4-pt pass-TD league.",
+    "lead": "Seahawks WR1 this year with Darnold \u2014 last year's OPOY (119-1,793-10) and Super Bowl. Kupp, Shaheed, and Horton are around him, not taking the job; Walker is in Kansas City, so some extra passing volume is already here. Opens Wednesday's kickoff rematch vs New England. I'd take him in the 1st; this ESPN room has him 6.",
+    "nearby": "Vs Puka Nacua (FP 4): take JSN because he is healthy and the locked camp 1 with Darnold; Puka is ramping from the psoas into a Thursday Melbourne opener. Vs Amon-Ra St. Brown (FP 6): take JSN for the target-hog profile after Walker left; take Amon-Ra if you want Goff's safer floor in a 4-pt pass-TD league.",
     "links": [
       {
-        "label": "JSN camp, Walker-to-KC passing bump",
-        "url": "https://www.cbssports.com/fantasy/football/news/seahawks-jaxon-smith-njigba-always-willing-to-be-coached-up/"
+        "label": "53: JSN, Kupp, Shaheed, Horton locked",
+        "url": "https://www.seahawks.com/news/a-position-by-position-look-at-the-seahawks-initial-2026-53-man-roster"
       },
       {
-        "label": "JSN TD over Witherspoon in camp",
-        "url": "https://www.seahawks.com/news/five-observations-from-day-13-of-2026-seahawks-training-camp"
+        "label": "Week 1 kickoff vs Patriots rematch",
+        "url": "https://www.seahawks.com/game-day/2026/reg-week1/seahawks-vs-patriots/"
       }
     ]
   },
   "7547": {
-    "as_of": "2026-08-30",
+    "as_of": "2026-09-07",
     "heat": "neutral",
-    "lead": "Lions WR1 this year with Goff. Williams is the deep 2; Gibbs is the other target, not a committee at receiver. Camp closed Thursday on a 16-yard post TD and a 22-yarder \u2014 no injury this week. I'd take him in the 1st; this ESPN room has him 8, so he can slide a pick behind JSN.",
-    "nearby": "Vs Jaxon Smith-Njigba (FP 5): take Amon-Ra for Goff's floor and the Lions' red-zone diet; take JSN for last year's 1,793-yard hog. Vs CeeDee Lamb (FP 9): take Amon-Ra \u2014 healthier camp, no Pickens split; Lamb shares Dak with a 1,000-yard Pickens.",
+    "lead": "Lions WR1 this year with Goff. Williams is the deep 2; Gibbs is the other target, not a committee at receiver. Camp closed hot \u2014 16-yard post TD and multi-catch series vs Ya-Sin \u2014 and he is not on the early Week 1 injury board. I'd take him in the 1st; this ESPN room has him 8, so he can slide a pick behind JSN.",
+    "nearby": "Vs Jaxon Smith-Njigba (FP 5): take Amon-Ra for Goff's floor and the Lions' red-zone diet; take JSN for last year's 1,793-yard hog. Vs CeeDee Lamb (FP 10): take Amon-Ra \u2014 cleaner target share with Goff; Lamb shares Dak with a 1,000-yard Pickens.",
     "links": [
       {
-        "label": "St. Brown 32-yard TD vs Reed",
-        "url": "https://www.detroitlions.com/news/detroit-lions-training-camp-day-18-observations-gibbs-brown-williams"
+        "label": "St. Brown ends camp on high note",
+        "url": "https://www.cbssports.com/fantasy/football/news/lions-amon-ra-st-brown-ends-camp-on-high-note/"
       },
       {
         "label": "Camp finale: St. Brown, Williams close hot",
@@ -226,64 +241,73 @@
     ]
   },
   "4881": {
-    "as_of": "2026-08-30",
+    "as_of": "2026-09-07",
     "heat": "neutral",
-    "lead": "Ravens offense this year \u2014 Year 1 under Minter and Doyle. Flowers missed two Commanders joints as caution; Henry is the run. Wednesday's joint started rocky; Lamar said after that the team is in a great place. Sat Friday's finale with the other starters. Doyle wants him on-time, not more designed runs. In 1QB with 4-pt pass TDs, wait for the dual-threat. I'd take him in the 5th; this ESPN room has him 49.",
+    "lead": "Ravens offense this year \u2014 Year 1 under Minter and Doyle. Flowers missed the Vikings joints into early September, then returned to practice Sep. 3 and is expected for the Colts opener; Henry is the run. Lamar sat the preseason and told Schein defenses aren't prepared for Doyle's moving parts. I'd take him in the 4th as QB1; this ESPN room has him 47.",
     "notes": [
-      "Wednesday: whatever it takes to win on designed runs, but Doyle is not asking for more scramble volume. Pinter (torn patellar) is already out for the year; Pocic/Gwyn at center."
+      "Flowers back at practice Sep. 3 after ~two weeks; Zenitz/team expect Week 1. Doyle calling from the booth; Jackson sat all preseason."
     ],
-    "nearby": "Vs Josh Allen (FP 27): take Allen \u2014 locked Brady year; Lamar is the cheaper dual-threat if you wait. Vs Drake Maye (FP 45): take Lamar for the MVP track record in a new-OC year; Maye if you want the extra years at a similar 1QB cost.",
+    "nearby": "Vs Josh Allen (FP 28): take Allen for the cleaner floor and known Brady attack; take Lamar if you want dual-threat upside in Doyle's Year 1. Vs Drake Maye (FP 43): take Lamar \u2014 proven QB1 ceiling; Maye is the cheaper dart if you waited.",
     "links": [
       {
-        "label": "Athletic: rocky Commanders joint, then 'great place'",
-        "url": "https://www.nytimes.com/athletic/7541255/2026/08/26/ravens-lamar-jackson-offense-commanders-practice/"
+        "label": "Lamar on Doyle offense vs Colts",
+        "url": "https://www.nfl.com/news/lamar-jackson-defenses-not-prepared-whats-in-store-ravens-offense"
       },
       {
-        "label": "SI: up for running more, Doyle not asking",
-        "url": "https://www.si.com/nfl/ravens/onsi/ravens-qb-lamar-jackson-says-he-is-up-for-running-more-this-season-but-won-t-be-asked-to-01m1220z6pdt"
+        "label": "Flowers returns to practice Sep. 3",
+        "url": "https://www.baltimoreravens.com/news/zay-flowers-returns-ravens-practice-wide-receiver-injury"
       },
       {
-        "label": "ESPN: Lamar in Doyle's new offense",
-        "url": "https://www.espn.com/nfl/story/_/id/49591531/inside-lamar-jackson-adjustment-baltimore-ravens-new-offense-jesse-minter"
+        "label": "Doyle play-calling from the booth",
+        "url": "https://www.si.com/nfl/ravens/onsi/ravens-coordinators-discuss-play-calling-dynamic-for-2026-season-01m0xxta0pz8"
       }
     ]
   },
   "11604": {
-    "as_of": "2026-08-30",
-    "heat": "neutral",
-    "lead": "Raiders TE1 this year with Cousins. Healthy after last year's knee wrecked Week 1; camp has been the Bowers show on Kubiak crossers. Mayer is the blocker/2, not a split of the targets. Half-PPR with no TEP \u2014 do not pay him like a WR1. I'd take him in the 2nd if TE is empty; this ESPN room has him 22.",
-    "nearby": "Vs Trey McBride (FP 25): take Bowers \u2014 healthier camp after the 2025 knee, and Cousins has been feeding him; McBride is the next TE off the board. Vs Colston Loveland (FP 40): take Bowers and stop; Loveland is a later TE dart in a no-TEP room.",
+    "as_of": "2026-09-07",
+    "heat": "fire",
+    "lead": "Raiders TE1 this year with Cousins. Kubiak named Kirk the Week 1 starter Sep 2\u20133; Mendoza is the backup for now. Healthy after last year's knee wrecked Week 1; camp has been the Bowers show on Kubiak crossers. Mayer is the blocker/2, not a split of the targets. Half-PPR with no TEP \u2014 do not pay him like a WR1. I'd take him in the 2nd if TE is empty; this ESPN room has him 22.",
+    "depth": "Mayer the inline/blocker; thin WR room (Tucker/Nailor) funnels targets to Bowers.",
+    "notes": [
+      "Sep 2\u20133: Kubiak named Cousins Week 1 starter vs Dolphins (Schefter/ESPN). Bowers' ADP ~21.8 as TE1; knee year limited him to 12 games in 2025.",
+      "FP 17 / ESPN 22 / TE1. No TEP \u2014 pay for TE1 production, not a first-round WR price."
+    ],
+    "nearby": "Vs Trey McBride (FP 25): take Bowers \u2014 healthier camp after the 2025 knee, and Cousins is locked Week 1; McBride is the next TE off the board. Vs Colston Loveland (FP 40): take Bowers and stop; Loveland is a later TE dart in a no-TEP room.",
     "links": [
       {
-        "label": "Bowers dominating Raiders camp",
-        "url": "https://www.nytimes.com/athletic/7487545/2026/08/03/las-vegas-raiders-training-camp-practice-stock-report/"
+        "label": "Cousins named Week 1 starter \u2014 Bowers impact",
+        "url": "https://www.si.com/onsi/fantasy/nfl/raiders-name-kirk-cousins-week-1-starter-fantasy-football-impact-on-fernando-mendoza-and-brock-bowers"
       },
       {
-        "label": "Back from a personal day, two Cousins TDs",
-        "url": "https://www.espn.com/nfl/story/_/id/49425032/las-vegas-raiders-training-camp-2026-intel-updates"
+        "label": "Bowers opens with Cousins",
+        "url": "https://www.thefantasyfootballers.com/news/636056/brock-bowers-working-with-cousins-to-open-season/"
+      },
+      {
+        "label": "Bowers ADP / Jeanty market (Sep 6)",
+        "url": "https://www.reviewjournal.com/sports/raiders/what-the-fantasy-betting-markets-say-about-expectations-for-2026-raiders-3883152/"
       }
     ]
   },
   "12527": {
-    "as_of": "2026-08-30",
+    "as_of": "2026-09-07",
     "heat": "ice",
-    "lead": "Raiders lead back this year when the ankle lets him. Washington Jr. is the 2 \u2014 eight-for-49 in Thursday's 49ers finale \u2014 not a split if Jeanty plays. Low-ankle sprain diving for a Cousins pass Aug. 23; Rapoport said more low than high, not a major; Kubiak Friday: still on the mend, counting on him Week 1 vs Miami. I'd take him in the 2nd only if you can live with a Week 1 question; this ESPN room has him 18.",
+    "lead": "Raiders lead back this year when the ankle lets him. Washington Jr. is the 2 \u2014 ate first-team work while Jeanty sat \u2014 not a split if Jeanty plays. Low-ankle sprain diving for a Cousins pass Aug. 23; Kubiak Sep. 2 smiled yes on Week 1 optimism vs Miami, but Jeanty still had not returned to full practice. I'd take him in the 2nd only if you can live with a Week 1 question; this ESPN room has him 18.",
     "notes": [
-      "Helped off, no weight on the right leg; team took a knee. Rapoport Aug. 25: chance he misses Week 1, Raiders still hopeful. I searched r/fantasyfootball this week; no standalone thread loaded."
+      "Rapoport: more low than high, not major, still a real chance he misses Week 1. Spytek: good spot, on the mend. 266-975-5 as a rookie (3.7 YPC)."
     ],
     "nearby": "Vs Derrick Henry (FP 21): take Henry for the cleaner camp; take Jeanty if you want the younger receiving work and will bet the ankle. Vs Kyren Williams (FP 31): take Jeanty if healthy \u2014 cleaner lead than a Corum 1A/1B; take Kyren if you need a locked Week 1 snap.",
     "links": [
       {
-        "label": "Athletic: sprained ankle diving for Cousins pass",
-        "url": "https://www.nytimes.com/athletic/7533988/2026/08/23/ashton-jeanty-injury-raiders-running-back/"
+        "label": "PFT: Kubiak optimistic for Week 1 (Sep 2)",
+        "url": "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/klint-kubiak-is-optimistic-about-ashton-jeanty-playing-week-1"
       },
       {
-        "label": "USA Today: Rapoport \u2014 more low than high",
-        "url": "https://www.usatoday.com/story/sports/nfl/raiders/2026/08/25/ashton-jeanty-injury-update-raiders/91458131007/"
+        "label": "Review-Journal: on the mend, Washington filled 1s",
+        "url": "https://www.reviewjournal.com/sports/raiders/will-raiders-rb-ashton-jeanty-be-ready-week-1-klint-kubiak-is-optimistic-3882142/"
       },
       {
-        "label": "NY Post: Kubiak counting on him Week 1",
-        "url": "https://nypost.com/2026/08/28/sports/ashton-jeanty-injury-update-raiders-counting-week-1/"
+        "label": "RotoBaller: ankle + Washington emergence (Sep 5)",
+        "url": "https://www.rotoballer.com/player-news/ashton-jeanty-a-risky-pick-now-with-injury-emergence-of-mike-washington-jr/1923852"
       }
     ]
   },
@@ -319,192 +343,216 @@
     ]
   },
   "6770": {
-    "as_of": "2026-08-30",
+    "as_of": "2026-09-07",
     "heat": "neutral",
-    "lead": "Bengals starter this year. Chase and Higgins are both healthy and connecting in camp; Burrow sat the preseason finale by design and said he could play now. In 1QB with 4-pt pass TDs, wait. I'd take him in the 6th\u20137th if you still need QB; this ESPN room has him 70.",
+    "lead": "Bengals starter this year. Chase (knee) and Higgins (heel) were limited into early September, but Taylor says both will be ready for the Sep 13 opener vs Tampa; Burrow sat the preseason finale by design and is healthy. In 1QB with 4-pt pass TDs, wait. I'd take him in the 6th if you still need QB; this ESPN room has him 64.",
     "notes": [
-      "Turf toe from last year 'feels great' at the start of camp. Friday: treat every day like it's now or never. No this-week injury."
+      "Turf toe from 2025 'feels great' into camp. Chase/Higgins limits are rest/management, not a Burrow sit. No this-week Burrow injury.",
+      "FP 49 / ESPN 64 / QB4. Pocket QB1 upside with Chase/Higgins; 1QB pricing says wait past the rushers."
     ],
-    "nearby": "Vs Maye (FP 45) Maye is the rushing 1QB if you want legs; Burrow is Chase/Higgins if the pocket volume is the pitch. Vs Daniels (FP 60) Daniels is the other rusher; Burrow is the cheaper pocket if you wait.",
+    "nearby": "Vs Drake Maye (FP 43) Maye is the rushing 1QB if you want legs; Burrow is Chase/Higgins if the pocket volume is the pitch. Vs Lamar Jackson (FP 35) Lamar is the proven rushing QB1 \u2014 take Lamar if he is there.",
     "links": [
       {
-        "label": "Bengals.com: 40\u201350 joint snaps, ready for Bucs",
-        "url": "https://www.bengals.com/news/roster-look-joe-burrow-dohnte-meyers-colbie-young-landon-robinson"
+        "label": "ESPN: Taylor \u2014 Chase, Higgins ready for opener",
+        "url": "https://www.espn.com/nfl/story/_/id/49796201/chase-higgins-ready-bengals-opener"
       },
       {
-        "label": "SI: now-or-never, preseason finale",
-        "url": "https://www.si.com/nfl/bengals/onsi/treat-every-day-like-it-s-my-last-joe-burrow-endorses-staff-urgency-continues-as-bengals-preseason-end-01m16tydtbmc"
+        "label": "98.1: Chase knee / Higgins heel limited (Sep 1)",
+        "url": "https://www.thesportsanimal.com/2026/09/01/bengals-wrs-jamarr-chase-knee-tee-higgins-heel-limited-this-week/"
+      },
+      {
+        "label": "Bengals.com: Burrow camp execution",
+        "url": "https://www.bengals.com/news/training-camp-report-joe-burrow-tames-dog-days"
       }
     ]
   },
   "6794": {
-    "as_of": "2026-08-30",
-    "heat": "ice",
-    "lead": "Vikings WR1 this year. Kyler Murray won the job Aug. 11 \u2014 fourth different Week 1 QB in four years \u2014 and Jefferson is building the timing now (double-team TD in the Ravens joint). McCarthy (mild deltoid ankle) sat Friday's finale. Addison and Hockenson still eat. I'd take him in the 1st if the WR1s are gone; this ESPN room has him 12.",
+    "as_of": "2026-09-07",
+    "heat": "fire",
+    "lead": "Vikings WR1 this year with Murray. Kyler won the job Aug. 11 \u2014 fourth different Week 1 QB in four years \u2014 and the chemistry is real (double-team TD in the Ravens joint). McCarthy's mild deltoid ankle sat the Broncos finale; GM Teasley says he's on the Week 1 roster to develop behind Murray/Wentz. Addison and Hockenson still eat. I'd take him in the 1st if the WR1s are gone; this ESPN room has him 12.",
+    "depth": "Addison and Jennings flank him; Hockenson is the TE volume. Murray is locked Week 1.",
     "notes": [
-      "McCarthy sat the Broncos finale with the ankle; O'Connell has no long-term concern but the backup job is now competitive. Jefferson's 2025 barely cleared 1,000 yards with three passers."
+      "Sep 2: Teasley expects McCarthy on the Week 1 roster and practicing fully after the Aug. 22 Ravens deltoid-ankle sprain. Jefferson's 2025 was 84-1,048-2 with three passers \u2014 WR21 on an elite target share.",
+      "FP 11 / ESPN 12 / WR6. Bounce-back is the story if Murray stays upright."
     ],
-    "nearby": "Vs CeeDee Lamb (FP 9): take Lamb for Dak's known volume; take Jefferson only if you buy the Kyler timing. Vs A.J. Brown (FP 13): take Jefferson for the WR1 target share; take A.J. if you want Maye's camp chemistry at a cheaper ESPN slot (19).",
+    "nearby": "Vs CeeDee Lamb (FP 10): take Lamb for Dak's known volume; take Jefferson if you buy the Kyler timing rebound. Vs A.J. Brown (FP 13): take Jefferson for the cleaner WR1 share; take A.J. if you want Maye's locked camp chemistry at ESPN 19.",
     "links": [
       {
-        "label": "Jefferson-Murray joint-practice TD",
-        "url": "https://www.startribune.com/minnesota-vikings-kyler-murray-justin-jefferson-stats-nfl-records-baltimore-ravens-joint-practice/601874681"
+        "label": "Murray named Vikings starter; Jefferson rebound",
+        "url": "https://medicinehatnews.com/sports/national-sports/2026/09/02/vikings-make-their-latest-pivot-at-qb-as-murray-takes-the-reins-for-what-could-be-a-rebound-season/"
       },
       {
-        "label": "McCarthy sits finale; Murray is the starter",
-        "url": "https://www.espn.com/nfl/story/_/id/49756810/vikings-mccarthy-preseason-finale-due-ankle-injury"
+        "label": "Jefferson-Murray Ravens joint TD",
+        "url": "https://www.baltimoreravens.com/news/ravens-vikings-joint-practice-report-notes-offense-pressure-blitz-danny-pinter-jovaughn-gwyn-defense"
+      },
+      {
+        "label": "Teasley: McCarthy on Week 1 roster",
+        "url": "https://www.tsn.ca/nfl/article/vikings-gm-expects-mccarthy-to-be-on-week-1-roster-to-develop-n1-49805381/"
       }
     ]
   },
   "11632": {
-    "as_of": "2026-08-30",
+    "as_of": "2026-09-07",
     "heat": "ice",
-    "lead": "Giants WR1 this year when the ACL lets him \u2014 Dart is the QB. Shed the red no-contact jersey Monday; Harbaugh said it's reasonable to assume Week 1 vs Dallas. Walked off Wednesday with a trainer about 20 minutes early \u2014 Harbaugh: no injury, not part of the plan. ACL plus meniscus last October, scar-tissue cleanup in the spring. I'd take him in the 3rd only if you can live with a ramp; this ESPN room has him 33.",
+    "lead": "Giants WR1 this year when the ACL lets him \u2014 Dart is the QB. Shed the red no-contact jersey in late August; Harbaugh confirmed he practiced start-to-finish in the final session before the weekend break, but Nabers remains noncommittal on Week 1 vs Dallas \u2014 wants four-quarter confidence, not a pitch count. ACL plus meniscus last October, scar-tissue cleanup in the spring. I'd take him in the 3rd only if you can live with a ramp; this ESPN room has him 32.",
     "notes": [
-      "Harbaugh: he still needs to get bumped around before real games; could wait until next week for live contact and stay on the Week 1 track. I searched r/fantasyfootball this week; no standalone thread loaded."
+      "Raanan: expectation is he plays barring a setback. Harbaugh: plan for full / partial / none. Source still lists Questionable (Knee - ACL)."
     ],
-    "nearby": "Vs Chris Olave (FP 24): take Olave for the locked Week 1 WR1; take Nabers if you want the target hog and will bet the knee. Vs DeVonta Smith (FP 28): take DeVonta \u2014 full-go after the hamstring; Nabers is the younger alpha if the ACL holds.",
+    "nearby": "Vs Chris Olave (FP 23): take Olave for the locked Week 1 WR1; take Nabers if you want the target hog and will bet the knee. Vs DeVonta Smith (FP 27): take DeVonta \u2014 full-go after the hamstring; Nabers is the younger alpha if the ACL holds.",
     "links": [
       {
-        "label": "ESPN: Harbaugh \u2014 reasonable to assume Week 1",
-        "url": "https://www.espn.com/nfl/story/_/id/49715422/harbaugh-reasonable-assume-nabers-ready-opener"
+        "label": "CBS: Nabers honest Week 1 assessment (Sep 1)",
+        "url": "https://www.cbssports.com/nfl/news/malik-nabers-injury-status-giants-wr-shares-honest-assessment-of-progress-week-1-availability/"
       },
       {
-        "label": "NY Post: sheds red jersey Monday",
-        "url": "https://nypost.com/2026/08/24/sports/malik-nabers-sheds-red-jersey-in-promising-giants-injury-sign/"
+        "label": "NBC: noncommittal for Week 1",
+        "url": "https://www.nbcsports.com/fantasy/football/player-news/2026-09-01/nabers-knee-noncommittal-for-week-1"
       },
       {
-        "label": "SI: early exit Wednesday, Harbaugh says no injury",
-        "url": "https://www.si.com/nfl/giants/onsi/nabers-practice-scare-harbaugh-01m0zzg1jf0x"
+        "label": "Bolavip: practiced start-to-finish, still uncertain",
+        "url": "https://bolavip.com/en/nfl/ny-giants-confirm-major-malik-nabers-injury-update-ahead-of-week-1-game-vs-cowboys"
       }
     ]
   },
   "6786": {
-    "as_of": "2026-08-30",
+    "as_of": "2026-09-07",
     "heat": "neutral",
-    "lead": "Cowboys WR1 this year with Dak. Pickens is the other 1,000-yard guy and led Dallas in catches/yards/TDs last year while Lamb sat three games (ankle) and fought drops; Lamb has been healthy all camp. I'd take him in the 1st; this ESPN room has him 11.",
+    "lead": "Cowboys WR1 this year with Dak. Pickens is back on the franchise tag as the other 1,000-yard guy \u2014 he led Dallas in catches/yards/TDs last year while Lamb sat three (ankle) and fought drops; Lamb has been healthy all camp and Dallas listed no WR injuries into Week 1. I'd take him in the 1st; this ESPN room has him 11.",
     "nearby": "Vs Amon-Ra St. Brown (FP 6): take Amon-Ra for the cleaner target share with Goff; take Lamb if you want Dak's ceiling and will live with Pickens. Vs Justin Jefferson (FP 11): take Lamb \u2014 Dak is a known quantity; Jefferson is on Week 1 QB number four in four years (Kyler).",
     "links": [
       {
-        "label": "Lamb: stay healthy, dominate the year",
-        "url": "https://www.dallascowboys.com/news/ceedee-lamb-looking-to-win-and-dominate-the-year-in-seventh-season-with-cowboys"
+        "label": "Lamb on 2026, Pickens, Week 1 excitement",
+        "url": "https://www.dallascowboys.com/news/ceedee-lamb-on-excitement-for-2026-season-george-pickens-more"
       },
       {
-        "label": "Camp drop work after last year's hands",
-        "url": "https://www.nfl.com/news/ceedee-lamb-eliminate-drops-cowboys-camp-net"
+        "label": "Cowboys Week 1 injury board mostly clean",
+        "url": "https://www.si.com/nfl/cowboys/onsi/dallas-cowboys-injury-updates-entering-week-1-2026-nfl-season"
       }
     ]
   },
   "8130": {
-    "as_of": "2026-08-30",
+    "as_of": "2026-09-07",
     "heat": "neutral",
-    "lead": "Cardinals TE1 this year with Brissett. Harrison and Wilson still eat, and Love (high ankle) is the other mouth when he plays \u2014 not a split of McBride's targets. Superstar rest in August (one snap vs the Raiders). 126-1,239-11 last year. Half-PPR with no TEP \u2014 do not pay him like a WR1. I'd take him in the 2nd if TE is empty; this ESPN room has him 20 so he may go earlier.",
-    "nearby": "Vs Brock Bowers (FP 18): take Bowers \u2014 healthier camp after the 2025 knee, Cousins feeding him; McBride is the next TE off the board. Vs Colston Loveland (FP 40): take McBride and stop; Loveland is a later dart in a no-TEP room.",
+    "lead": "Cardinals TE1 this year with Brissett. Harrison and Wilson still eat, and Love (high ankle, ~50-50 Week 1 per Garafolo) is the other mouth when he plays \u2014 not a split of McBride's targets. Superstar rest in August (one snap vs the Raiders); 126-1,239-11 last year. Half-PPR with no TEP \u2014 do not pay him like a WR1. I'd take him in the 2nd if TE is empty; this ESPN room has him 20 so he may go earlier.",
+    "notes": [
+      "LaFleur staff drafted Love 3rd overall and signed Allgeier \u2014 expect more run than last year's extreme pass rate. Still TE2 ADP for a reason."
+    ],
+    "nearby": "Vs Brock Bowers (FP 17): take Bowers \u2014 healthier camp after the 2025 knee, Cousins feeding him; McBride is the next TE off the board. Vs Colston Loveland (FP 40): take McBride and stop; Loveland is a later dart in a no-TEP room.",
     "links": [
       {
         "label": "CBS: one snap vs Raiders",
         "url": "https://www.cbssports.com/fantasy/football/news/cardinals-trey-mcbride-limited-to-one-snap/"
       },
       {
-        "label": "Cardinals: All-Pro, 126-catch record",
-        "url": "https://www.azcardinals.com/news/cardinals-tight-end-trey-mcbride-named-first-team-all-pro-2025"
+        "label": "Cards Wire: Love ~50-50 Week 1 (Sep 1)",
+        "url": "https://cardswire.usatoday.com/story/sports/nfl/cardinals/2026/09/01/arizona-cardinals-rb-jeremiyah-love-is-uncertain-to-play-in-week-1/91573125007/"
       },
       {
-        "label": "ESPN camp: Brissett feeding McBride",
-        "url": "https://www.espn.com/nfl/story/_/id/49426382/arizona-cardinals-training-camp-2026-intel-updates"
+        "label": "Cards Wire: McBride chasing another TE record",
+        "url": "https://cardswire.usatoday.com/story/sports/nfl/cardinals/2026/09/03/trey-mcbride-approaching-another-nfl-tight-end-record/91591138007/"
       }
     ]
   },
   "12507": {
-    "as_of": "2026-08-30",
+    "as_of": "2026-09-07",
     "heat": "fire",
-    "lead": "Chargers lead back this year in McDaniel's offense. Both ankles ate his rookie year (about 10 games); he says that is behind him and McDaniel has already called him the growth leader. Vidal and Mitchell will get some McDaniel committee snaps, not the lead. Four snaps, no touches Thursday vs the Rams. I'd take him in the 2nd as an RB2; this ESPN room has him 14, so he may go at the 1/2 turn.",
+    "lead": "Chargers lead back this year in McDaniel's offense. Both ankles ate his rookie year (~9\u201310 games); he says that is behind him and McDaniel already called him the growth leader. Vidal and Mitchell will get some McDaniel committee snaps every week \u2014 not a pure bell cow. Four snaps, no touches in the Rams finale. I'd take him in the 2nd as an RB2; this ESPN room has him 14, so he may go at the 1/2 turn.",
+    "depth": "Hampton lead; Mitchell the juice 2; Vidal the pass-down/hot-hand piece. McDaniel: all three every game.",
     "notes": [
-      "LAT (Aug. 24): coaches raving about camp physicality after the 49ers joint. CBS: four snaps, no box-score line in the Rams finale."
+      "Aug 10 McDaniel: will use Hampton, Vidal, and Mitchell every game; still expects a ton of touches for Hampton. LAT Aug 24: coaches raving after 49ers joint. Rookie line ~545 rush / 192 rec / 5 TD in nine games.",
+      "FP 20 / ESPN 14 / RB10. ESPN is early if the committee is real; still the lead."
     ],
-    "nearby": "Vs Kenneth Walker (FP 17): take Hampton \u2014 healthier August, locked McDaniel lead; Walker missed two practices and Mahomes is uncalled. Vs Derrick Henry (FP 21): take Hampton for the receiving work in half-PPR; Henry is the older feature if you want pure rushing volume.",
+    "nearby": "Vs Kenneth Walker (FP 18): take Hampton \u2014 healthier August, locked McDaniel lead; Walker is full-go now but Mahomes is uncalled. Vs Derrick Henry (FP 21): take Hampton for the receiving work in half-PPR; Henry is the older feature if you want pure rushing volume.",
     "links": [
       {
-        "label": "LAT: Hampton primed for a breakout",
-        "url": "https://www.latimes.com/sports/chargers/story/2026-08-24/why-chargers-omarion-hampton-is-primed-for-breakout-season"
+        "label": "McDaniel: most growth; Hampton lead",
+        "url": "https://www.chargers.com/news/omarion-hampton-mike-mcdaniel-rankings-fantasy-2026"
       },
       {
-        "label": "Four snaps in the Rams finale",
-        "url": "https://www.cbssports.com/fantasy/football/news/chargers-omarion-hampton-four-snaps-in-preseason-finale/"
+        "label": "McDaniel committee: Hampton/Vidal/Mitchell",
+        "url": "https://bleacherreport.com/articles/25470048-fantasy-alert-omarion-hamptons-role-updated-chargers-oc-mike-mcdaniel-alongside-mitchell-vidal"
+      },
+      {
+        "label": "Ankles behind him; primed for breakout",
+        "url": "https://chargerswire.usatoday.com/story/sports/nfl/chargers/2026/08/24/chargers-omarion-hampton-sophomore-season-mike-mcdaniel/91442016007/"
       }
     ]
   },
   "9226": {
-    "as_of": "2026-08-30",
+    "as_of": "2026-09-07",
     "heat": "ice",
-    "lead": "Dolphins lead back this year. Hafley already said the workload can get heavy enough that he might have to carry him to the locker room; Wright is the 2, Gordon the kid. Willis is the QB after Miami cut down to him this weekend (McCord the new backup) and Waddle is in Denver. I'd take him in the 2nd, not the 1st; this ESPN room has him 10, so he may go earlier.",
+    "lead": "Dolphins lead back this year. Hafley already said the workload can get heavy enough that he might have to carry him to the locker room; Wright is the 2, Gordon the kid (ribs \u2014 questionable Week 1 at LV). Willis is the QB after Miami cut down to him, and Waddle is in Denver. I'd take him in the 2nd, not the 1st; this ESPN room has him 10, so he may go earlier.",
+    "depth": "Achane, then Wright; Gordon II (ribs) is the bigger short-yardage kid. Hunter on the practice squad.",
     "notes": [
-      "Sunday: Ewers traded, Miller/Gronowski waived, McCord in from Green Bay. Willis is the only plan. Achane sat the Giants preseason game as rest after offseason shoulder cleanup."
+      "Sep 3 CBS: Achane leads a backfield with Wright and Gordon on the 53; Gordon listed ribs questionable for Week 1. Hafley Aug 11 on Eisen: 40\u201345-touch joke, no head taps. Willis checkdowns may dip vs Tua years.",
+      "FP 16 / ESPN 10 / RB8. ESPN is a round early on a Willis rebuild feature."
     ],
-    "nearby": "Vs Saquon Barkley (FP 14): take Saquon for Hurts and a real offense; take Achane only for the receiving floor if you can live with Willis. Vs Kenneth Walker (FP 17): take Achane for the locked three-down job; Walker missed two practices this week and Mahomes is not cleared.",
+    "nearby": "Vs Saquon Barkley (FP 14): take Saquon for Hurts and a real offense; take Achane only for the receiving floor if you can live with Willis. Vs Kenneth Walker (FP 18): take Achane for the locked three-down job; Walker is healthy now but Mahomes is still not game-cleared.",
     "links": [
       {
-        "label": "Achane sat Giants preseason as rest",
-        "url": "https://www.cbssports.com/fantasy/football/news/dolphins-devon-achane-not-playing-saturday/"
+        "label": "Hafley: carry Achane to the locker room",
+        "url": "https://www.espn.com/nfl/story/_/id/49582399/jeff-hafley-devon-achane-workload-better-good-shape"
       },
       {
-        "label": "Willis locked; McCord in as backup",
-        "url": "https://www.thephinsider.com/miami-dolphins-roster/121948/miami-dolphins-roster-cuts-2026-tracker-live-updates-rumors-news"
+        "label": "53: Achane leads; Wright/Gordon behind",
+        "url": "https://www.cbssports.com/fantasy/football/news/dolphins-devon-achane-set-to-lead-miamis-new-look-offense/"
       },
       {
-        "label": "Depth chart: Achane, then Wright",
-        "url": "https://www.local10.com/sports/local/2026/08/11/dolphins-1st-depth-chart-revealed-ahead-of-preseason-game-vs-commanders/"
+        "label": "Wright/Gordon pecking order under Hafley",
+        "url": "https://www.espn.com/nfl/story/_/id/49564317/dolphins-rbs-devon-achane-heavy-workload-fantasy-ollie-gordon-jaylen-wright"
       }
     ]
   },
   "6813": {
-    "as_of": "2026-08-30",
+    "as_of": "2026-09-07",
     "heat": "neutral",
-    "lead": "Colts lead back this year on the two-year, $44 million from Aug. 6. Giddens (hamstring) has missed a chunk of camp; McGowan is the kid eating those reps, not a split of Taylor's job. Jones is the QB. I'd take him in the 1st; this ESPN room has him 5, ahead of CMC.",
-    "nearby": "Vs Christian McCaffrey (FP 7): take Taylor because the camp is clean and the extension is done; CMC just sat 15 days at 30. Vs James Cook (FP 10): take Taylor for the goal-line and volume profile; Cook is the Bills workhorse but Davis still spells him.",
+    "lead": "Colts lead back this year on the two-year, $44 million from Aug. 6. Giddens (hamstring) missed most of camp and returned late; McGowan ate those reps and is the clear 2 on cutdown charts, not a split of Taylor's job. Jones is the QB vs Baltimore Week 1. I'd take him in the 1st; this ESPN room has him 5, ahead of CMC.",
+    "nearby": "Vs Christian McCaffrey (FP 7): take Taylor because the camp is clean and the extension is done; CMC is on a Melbourne pitch count at 30. Vs James Cook (FP 9): take Taylor for the goal-line and volume profile; Cook is the Bills workhorse but Brady has talked about getting Davis/Johnson more involved.",
     "links": [
       {
         "label": "Taylor two-year, $44 million extension",
         "url": "https://www.nbcsports.com/fantasy/football/player-news/2026-08-06/colts-and-taylor-agree-on-two-year-44m-extension"
       },
       {
-        "label": "Unofficial chart: Taylor, Giddens, McGowan",
-        "url": "https://www.colts.com/news/colts-release-unofficial-depth-chart-for-preseason-week-3-game-vs-detroit-lions"
+        "label": "Cutdown: McGowan ahead of Giddens",
+        "url": "https://www.indystar.com/story/sports/nfl/colts/2026/08/30/after-roster-cuts-colts-set-initial-53-man-roster-depth-chart-week-1/91540709007/"
       }
     ]
   },
   "8112": {
-    "as_of": "2026-08-30",
+    "as_of": "2026-09-07",
     "heat": "ice",
-    "lead": "Falcons WR1 this year. Tua started Friday in Miami; Penix is back in 11-on-11 after the ACL and Stefanski still has not named a Week 1 QB vs Pittsburgh. Dotson and Zaccheaus are fighting for the 2. I'd take him in the 2nd; this ESPN room has him 17.",
+    "lead": "Falcons WR1 this year \u2014 Tua is the Week 1 starter vs Pittsburgh as of this morning. Penix is healthy enough after the ACL but lost the camp reps; Dotson and Zaccheaus are fighting for the 2. Tua spreads it and loves Bijan/Pitts checkdowns, so this is not the Penix alpha-share ceiling. I'd take him in the 2nd; this ESPN room has him 17.",
+    "depth": "Dotson and Zaccheaus battle for WR2; Pitts and Bijan eat in a Tua offense.",
     "notes": [
-      "Last team without a named Week 1 QB as of this week. Penix sat the finale after three 11-on-11 practices; Tua got the start."
+      "Sep 7 Falcons.com: Stefanski/staff named Tua Week 1 starter vs Steelers after he took most 11-on-11 camp work while Penix rehabbed. Penix sat the preseason finale.",
+      "FP 15 / ESPN 17 / WR8. Named QB helps the floor; Tua's distribution is why I'm not chasing him over A.J."
     ],
-    "nearby": "Vs A.J. Brown (FP 13): take A.J. because Maye is locked; take London if you think Tua/Penix still feeds the WR1. Vs Nico Collins (FP 19): take London for the cleaner WR1 share; take Nico if you want Stroud over an uncalled Falcons QB.",
+    "nearby": "Vs A.J. Brown (FP 13): take A.J. because Maye is locked and feeds the alpha; take London if you think Tua still funnels the WR1. Vs Nico Collins (FP 19): take Nico \u2014 Stroud WR1 with Higgins/Dell out; take London only if you prefer the named Falcons volume.",
     "links": [
       {
-        "label": "Stefanski: no Week 1 QB yet",
-        "url": "https://www.nfl.com/news/michael-penix-jr-out-falcons-preseason-finale-falcons-qb1-decision"
+        "label": "Falcons name Tua Week 1 starter (Sep 7)",
+        "url": "https://www.atlantafalcons.com/news/falcons-name-tua-tagovailoa-starting-quarterback-week-1"
       },
       {
-        "label": "Tua finds London at Colts joint",
-        "url": "https://thefalconswire.usatoday.com/story/sports/nfl/falcons/2026/08/19/falcons-tua-tagovailoa-colts-joint-practice/91376657007/"
+        "label": "Tua started finale; Penix sat, QB undecided then",
+        "url": "https://www.espn.com/nfl/story/_/id/49733404/tua-start-falcons-preseason-finale-no-starter-named-yet"
       }
     ]
   },
   "8138": {
-    "as_of": "2026-08-30",
+    "as_of": "2026-09-07",
     "heat": "neutral",
-    "lead": "Bills lead back this year. Brady already called him the workhorse after last year's league-high 1,621 rushing yards; Davis is the 2 and returner, not a split of the job. Sat Thursday's finale with the other starters. I'd take him in the 1st; this ESPN room has him 9.",
-    "nearby": "Vs Jonathan Taylor (FP 8): take Cook if you want the Bills' game script and receiving work; take Taylor for the cleaner goal-line role. Vs Chase Brown (FP 12): take Cook \u2014 locked feature in a better offense; Brown still cedes some pass-down/goal-line to Perine.",
+    "lead": "Bills lead back this year. Brady already called him the workhorse after last year's league-high 1,621 rushing yards; Davis is the 2 and returner, not a flip of the job \u2014 though Brady has said he wants Ray/Ty more involved after 309 carries. Sat the preseason finale with the other starters; Week 1 at Houston. I'd take him in the 1st; this ESPN room has him 9.",
+    "nearby": "Vs Jonathan Taylor (FP 8): take Cook if you want the Bills' game script and receiving bump Brady has teased; take Taylor for the cleaner goal-line role. Vs Chase Brown (FP 12): take Cook \u2014 locked feature in a better offense; Brown still cedes some pass-down/goal-line to Perine.",
     "links": [
       {
         "label": "Cook sits preseason finale, Week 1 lead",
         "url": "https://www.cbssports.com/fantasy/football/news/bills-james-cook-sits-out-preseason-finale/"
       },
       {
-        "label": "Brady: Cook the workhorse; Davis the 2",
-        "url": "https://heavy.com/sports/nfl/buffalo-bills/bills-good-news-ray-davis-injury-scare/"
+        "label": "Brady on managing Cook, involving Davis",
+        "url": "https://www.si.com/nfl/bills/onsi/minicamp-what-bills-limiting-james-cook-workload-would-mean-for-buffalo-running-backs-ray-davis"
       }
     ]
   },
@@ -595,104 +643,116 @@
     ]
   },
   "12517": {
-    "as_of": "2026-08-30",
+    "as_of": "2026-09-07",
     "heat": "fire",
-    "lead": "Bears TE1 this year with Caleb. Kmet is the blocker/2, not a split of the targets; Odunze and Burden still eat. Camp has been un-guardable \u2014 six-yard corner fade with Jaylon Johnson trailing, red-zone TD at the Bengals joint. 58-713-6 as a rookie. Half-PPR with no TEP \u2014 do not pay him like a TE1. I'd take him in the 4th if TE is empty; this ESPN room has him 43.",
-    "nearby": "Vs Trey McBride (FP 25): take McBride for the proven 126-catch year; take Loveland if you want the cheaper Year-2 dart. Vs Tyler Warren (FP 52): take Loveland and stop; Warren is a later TE dart in a no-TEP room.",
+    "lead": "Bears TE1 this year with Caleb. Kmet is the blocker/co-starter on the unofficial chart, not a split of the targets; Odunze and Burden still eat. Closed 2025 as Williams' top option \u2014 59-790-6 from Week 9 through the divisional, including four straight double-digit target games. I'd take him in the 4th as TE1; this ESPN room has him 41.",
+    "notes": [
+      "CBS Sep. 3: listed starter with Kmet. Half-PPR TE12 as a rookie; consensus TE3 behind Bowers/McBride entering 2026."
+    ],
+    "nearby": "Vs Trey McBride (FP 25): take McBride for the safer volume floor; take Loveland if you want Caleb's ascending TE at a discount. Vs Brock Bowers (FP 17): take Bowers first; Loveland is the next TE off if you wait.",
     "links": [
       {
-        "label": "Sun-Times: un-guardable, fade vs Jaylon Johnson",
-        "url": "https://chicago.suntimes.com/bears/2026/08/18/bears-training-camp-report-no-15-can-anybody-cover-te-colston-loveland-this-season"
+        "label": "Listed as starter on depth chart",
+        "url": "https://www.cbssports.com/fantasy/football/news/bears-colston-loveland-listed-as-starter-on-depth-chart/"
       },
       {
-        "label": "Bears.com: sponge, Year-2 TE1",
-        "url": "https://www.chicagobears.com/news/he-s-just-a-sponge-right-now-how-colston-loveland-is-evolving-ahead-of-year-2"
+        "label": "Loveland on working with Kmet",
+        "url": "https://bearswire.usatoday.com/story/sports/nfl/bears/2026/09/04/bears-colston-loveland-cole-kmet-relationship/91588218007/"
       },
       {
-        "label": "FOX 32: Loveland RZ TD vs Bengals joint",
-        "url": "https://www.fox32chicago.com/sports/top-performers-chicago-bears-joint-practice-bengals"
+        "label": "Kmet co-starter, Loveland receiving 1",
+        "url": "https://www.cbssports.com/fantasy/football/news/bears-cole-kmet-listed-as-co-starter-entering-year-7/"
       }
     ]
   },
   "12526": {
-    "as_of": "2026-08-30",
+    "as_of": "2026-09-07",
     "heat": "fire",
-    "lead": "Panthers WR1 this year with Young. Coker is healthy; Legette is around him, not taking the job. Contested TD vs the Jags joint Aug. 19 after a slow start; two grabs for 25 in Friday's Jags preseason. OROY: 70-1,014-7 on 122 targets. I'd take him in the 3rd; this ESPN room has him 35.",
-    "nearby": "Vs Garrett Wilson (FP 37): take Tet for the cleaner WR1 share with Young; take Wilson if you want Geno's floor. Vs Emeka Egbuka (FP 42): take Tet \u2014 healthy Year-2 WR1; Egbuka still has the toe and a Week 1 hope.",
+    "lead": "Panthers WR1 this year with Young. Canales (Sep 2) will use him more in the slot \u2014 40.9% of preseason snaps inside after 15.3% as a rookie \u2014 and Brazzell (LCL) is already season-ending IR, so Coker and Legette are around him, not taking the job. OROY: 70-1,014-7. I'd take him in the 3rd; this ESPN room has him 34.",
+    "depth": "McMillan is the focal X; Coker is the healthy WR2; Legette is coming off the late-August ankle boot. Brazzell is done for 2026.",
+    "notes": [
+      "Healthy into Week 1. Contested TD in the Aug. 19 Jags joint; two grabs for 25 in the Jags preseason look. Bigger/stronger per Canales \u2014 more slot is the Year-2 plan, not a demotion.",
+      "FP 41 / ESPN 34 / WR20. Public still treats him as a mid-WR2; the slot bump and Brazzell IR keep the Young volume on him."
+    ],
+    "nearby": "Vs Garrett Wilson (FP 38) take Tet for the cleaner Young WR1 share; Wilson if you want Geno's floor. Vs Emeka Egbuka (FP 42) take Tet \u2014 healthy Year-2 WR1; Egbuka still has the toe and a Week 1 hope.",
     "links": [
       {
-        "label": "Panthers.com: contested TD vs Jags joint",
-        "url": "https://www.panthers.com/news/play-of-the-day-tetairoa-mcmillan-makes-the-hard-catch-look-easy"
+        "label": "CBS: Canales \u2014 more slot work (Sep 2)",
+        "url": "https://www.cbssports.com/fantasy/football/news/panthers-tetairoa-mcmillan-in-line-for-more-slot-work-in-2026/"
       },
       {
-        "label": "The State: Young-TMac after the slow start",
-        "url": "https://www.thestate.com/sports/nfl/article316902486.html"
+        "label": "ESPN: stronger, more versatile with Young",
+        "url": "https://www.espn.com/nfl/story/_/id/49827673/carolina-panthers-tetairoa-mcmillan-says-stronger-more-versatile-too-nfl-fantasy-wide-receiver"
       },
       {
-        "label": "RotoWire: two grabs for 25 vs Jaguars",
-        "url": "https://www.rotowire.com/football/headlines/tetairoa-mcmillan-news-two-grabs-against-jags-on-friday-634380"
+        "label": "Panthers.com: Brazzell season-ending LCL",
+        "url": "https://www.panthers.com/news/rookie-wide-receiver-chris-brazzell-to-miss-the-entire-2026-season"
       }
     ]
   },
   "8137": {
-    "as_of": "2026-08-30",
+    "as_of": "2026-09-07",
     "heat": "neutral",
-    "lead": "Cowboys WR2 this year with Dak \u2014 Lamb is the other 1,000-yard guy. Schottenheimer wants him moved around (slot, isolated) after the $27.3 million tag year; no long-term until after Week 18. Closed Oxnard healthy; Dak said he's done everything expected. Starters sat the Saints finale. 93-1,429-9 last year. I'd take him in the 3rd; this ESPN room has him 28.",
-    "nearby": "Vs Nico Collins (FP 19): take Nico \u2014 locked WR1 with Stroud; Pickens is Dak's 2 next to Lamb. Vs Chris Olave (FP 24): take Olave for the cleaner WR1 share with Tyson out; take Pickens if you want Dak's ceiling and will live with Lamb.",
+    "lead": "Cowboys WR2 this year with Dak \u2014 Lamb is the other 1,000-yard guy. Playing the $27.3 million franchise tag after the July 15 long-term window closed; no extension talks until after Week 18. Closed Oxnard healthy and dialed-in per Schottenheimer; 93-1,429-9 last year. I'd take him in the 3rd; this ESPN room has him 28.",
+    "notes": [
+      "Jerry/Stephen: no trade plans; can re-tag ~$32.8M in 2027. Schottenheimer wants him moved around (slot, isolated) after the tag year."
+    ],
+    "nearby": "Vs Nico Collins (FP 19): take Nico \u2014 locked WR1 with Stroud; Pickens is Dak's 2 next to Lamb. Vs Chris Olave (FP 23): take Olave for the cleaner WR1 share with Tyson on IR; take Pickens if you want Dak's ceiling and will live with Lamb.",
     "links": [
       {
-        "label": "Cowboys.com: blazing camp, on the tag",
+        "label": "Cowboys.com: tag year, no long-term until 2027",
+        "url": "https://www.dallascowboys.com/news/deadline-passes-for-george-pickens-to-receive-long-term-deal-in-2026"
+      },
+      {
+        "label": "Cowboys.com: blazing Oxnard camp",
         "url": "https://www.dallascowboys.com/news/george-pickens-blazing-hot-start-in-camp-channeling-mamba-mentality"
       },
       {
-        "label": "Dak: done everything expected leaving Oxnard",
-        "url": "https://dallassportsjournal.com/dak-prescott-george-pickens-dallas-cowboys-training-camp/"
-      },
-      {
-        "label": "SI: Schottenheimer wants him moved around",
-        "url": "https://www.si.com/nfl/cowboys/onsi/dallas-cowboys-new-plan-deploying-george-pickens-2026-nfl-season"
+        "label": "ESPN: OK with tag at minicamp",
+        "url": "https://www.espn.com/nfl/story/_/id/49086294/ok-franchise-tag-george-pickens-cowboys-minicamp"
       }
     ]
   },
   "4034": {
-    "as_of": "2026-08-30",
-    "heat": "fire",
-    "lead": "49ers lead back this year when the tightness plan holds. Shanahan sat him 15 days after Aug. 8, called it tightness, then McCaffrey said Sunday the sit was part of the plan from the jump and he feels fresh after about seven team reps. Jordan James and the rookie are the 2s, not a committee if he plays Week 1 in Melbourne. He is 30 after 413 touches last year. I'd take him in the 1st if Gibbs and Bijan are gone; this ESPN room has him 7.",
+    "as_of": "2026-09-07",
+    "heat": "ice",
+    "lead": "49ers lead back this year when the tightness plan holds. Shanahan sat him 15 days after Aug. 8, McCaffrey said the sit was part of the plan, then Monday in Melbourne he did side work while media were in \u2014 Barrows flagged a possible all-season pitch count. Jordan James and the rookie are the 2s, not a committee if he plays Thursday vs the Rams. He is 30 after 413 touches last year. I'd take him in the 1st if Gibbs and Bijan are gone; this ESPN room has him 7.",
     "notes": [
-      "Back in team drills Sunday (Aug. 23) after the 15-day sit. Shanahan had already said it was not a hold-in. Kittle also came off PUP the same day."
+      "Maiocco/Barrows Sep. 7: CMC on hand in Melbourne, not in early drills; Kittle was practicing. Thursday opener vs Rams \u2014 watch Tuesday/Wednesday participation."
     ],
-    "nearby": "Vs Bijan Robinson (FP 2): take CMC only if you want the receiving floor and will live with age; take Bijan for the cleaner camp and younger feature. Vs Jonathan Taylor (FP 8): take CMC in half-PPR for the pass-game work; take Taylor if you want the healthier August and ESPN's 5 slot.",
+    "nearby": "Vs Bijan Robinson (FP 2): take CMC only if you want the receiving floor and will live with age/ramp; take Bijan for the cleaner camp and younger feature with Tua locked. Vs Jonathan Taylor (FP 8): take CMC in half-PPR for the pass-game work if he is full-go Thursday; take Taylor if you want the healthier August and ESPN's 5 slot.",
     "links": [
       {
-        "label": "CMC returns: sit was 'part of the plan'",
-        "url": "https://www.nytimes.com/athletic/7533959/2026/08/23/49ers-christian-mccaffrey-injury-preseason/"
+        "label": "CMC sits early Melbourne drills Monday",
+        "url": "https://www.49erswebzone.com/articles/203021-49ers-practice-melbourne-other-injury/"
       },
       {
-        "label": "Tightness sit over, Week 1 ramp on",
-        "url": "https://www.nbcsports.com/fantasy/football/player-news/2026-08-23/mccaffrey-tightness-returns-to-practice-sunday"
+        "label": "CMC returns Aug. 23: sit was 'part of the plan'",
+        "url": "https://www.nytimes.com/athletic/7533959/2026/08/23/49ers-christian-mccaffrey-injury-preseason/"
       }
     ]
   },
   "12514": {
-    "as_of": "2026-08-30",
+    "as_of": "2026-09-07",
     "heat": "ice",
-    "lead": "Buccaneers Z this year now that Evans is in San Francisco. Godwin is the healthy veteran and McMillan (knee) is still day-to-day, so the vacant Evans targets are Egbuka's when the toe clears. Bowles said this weekend he is hopeful for Week 1 at Cincinnati; Egbuka still had not been back in team drills as of Tuesday. I'd take him in the 4th as a WR2 if the toe is just August rest; this ESPN room has him 39.",
+    "lead": "Buccaneers Z this year now that Evans is in San Francisco. Godwin is the healthy veteran and Jalen McMillan (knee) is still day-to-day, so the vacant Evans targets are Egbuka's when the toe clears \u2014 Rapoport (Sep 5) has him back at practice this week, Week 1 at Cincinnati still in play. I'd take him in the 4th as a WR2 if he practices; this ESPN room has him 37.",
     "notes": [
-      "Sprained toe Aug. 12 in the Jets joint. Specialist called it stable. Sat the preseason finale. Rookie year: 63-938-6, then a dead second half."
+      "Sprained toe mid-August in the Jets joint; sidelined ~a month. Specialist called it stable. Rookie year: 63-938-6 on 127 targets, then a dead second half.",
+      "If Egbuka and McMillan both sit Week 1, Bowles said Godwin, Ted Hurst III, and Tez Johnson open it. FP 42 / ESPN 37 / WR21 \u2014 Questionable (undisclosed/toe) on the board."
     ],
-    "nearby": "Vs McMillan (FP 38) Egbuka is the vacated-Evans WR1 path when healthy; McMillan is the other Bucs name still on a knee. Vs McLaurin (FP 47) McLaurin is the safer Daniels volume; Egbuka is the Year-2 leap if the toe clears.",
+    "nearby": "Vs Tetairoa McMillan (FP 41) Tet is the healthy Year-2 WR1; Egbuka is the vacated-Evans leap if the toe clears. Vs Davante Adams (FP 46) Adams is the safer Stafford WR2; Egbuka is the Year-2 dart with the Week 1 question.",
     "links": [
       {
-        "label": "ESPN: Bowles day-to-day, week-to-week",
-        "url": "https://www.espn.com/nfl/story/_/id/49640322/buccaneers-wrs-egbuka-mcmillan-day-day-ahead-week-1"
+        "label": "DraftSharks: Rapoport \u2014 practice this week (Sep 5)",
+        "url": "https://www.draftsharks.com/fantasy-football-news/82471/emeka-egbuka-expected-back-at-practice-next-week-keeping-week-1-in-play"
       },
       {
-        "label": "CBS: still sidelined Tuesday (Aug 25)",
-        "url": "https://www.cbssports.com/fantasy/football/news/buccaneers-emeka-egbuka-remains-sidelined-by-toe-issue/"
+        "label": "Pewter Report: Bowles day-by-day (Sep 2)",
+        "url": "https://www.pewterreport.com/rueben-bain-jr-emeka-egbuka-bucs-injury/"
       },
       {
-        "label": "NBC: Bowles hopeful for Week 1",
-        "url": "https://www.nbcsports.com/fantasy/football/player-news/2026-08-29/bowles-hopeful-emeka-egbuka-ready-for-week-1"
+        "label": "RotoBaller: Bowles still cautious on Week 1",
+        "url": "https://www.rotoballer.com/player-news/todd-bowles-remains-cautious-regarding-emeka-egbukas-week-1-status/1921944"
       }
     ]
   },
@@ -732,37 +792,52 @@
     ]
   },
   "7569": {
-    "as_of": "2026-08-30",
-    "heat": "neutral",
-    "lead": "Texans WR1 this year with Stroud. Higgins, Dell, and Noel are the other bodies, not taking the job; Montgomery is the new back. Minicamp sit was rest, not an injury \u2014 joint-practice tape with Stroud has been clean. I'd take him in the 2nd; this ESPN room has him 23.",
-    "nearby": "Vs Drake London (FP 15): take Nico if you want Stroud over an uncalled Falcons QB; take London for the cleaner WR1 share if Tua/Penix still feeds him. Vs George Pickens (FP 23): take Nico \u2014 locked WR1 with Stroud; Pickens is Dak's 2 next to Lamb.",
+    "as_of": "2026-09-07",
+    "heat": "fire",
+    "lead": "Texans WR1 this year with Stroud. Higgins tore his ACL in the Raiders joint (season over); Dell opens on IR (knee) with a return designation; Noel (hamstring) and Boutte (trade from NE) are the other bodies, not taking the job. Montgomery is the new back. I'd take him in the 2nd; this ESPN room has him 23.",
+    "depth": "Hutchinson, Noel, Boutte, Wayne fighting for WR2/3. Dell IR to start; Higgins out for 2026.",
+    "notes": [
+      "Sep 3\u20134: Collins clear No. 1; Higgins season-ending knee prompted Boutte trade; Dell on IR (designation to return) at least four games. Career-high 120 targets last year (71-1,117-6).",
+      "FP 19 / ESPN 23 / WR9. Vacated targets from Higgins/Dell bump the floor."
+    ],
+    "nearby": "Vs Drake London (FP 15): take Nico \u2014 Stroud WR1 with Higgins/Dell out; take London if you prefer the just-named Tua volume. Vs George Pickens (FP 22): take Nico \u2014 locked WR1 with Stroud; Pickens is Dak's 2 next to Lamb.",
     "links": [
       {
-        "label": "Stroud-Collins at Panthers joint",
-        "url": "https://www.houstontexans.com/news/harris-hits-texans-offense-closes-2026-training-camp-with-a-statement-day-at-panthers-joint-practice"
+        "label": "Collins WR1; depth chart uncertain (Higgins/Dell out)",
+        "url": "https://www.cbssports.com/fantasy/football/news/texans-nico-collins-depth-chart-uncertain-behind-him/"
       },
       {
-        "label": "Minicamp sit was rest, not injury",
-        "url": "https://www.nfl.com/news/texans-wr-nico-collins-clarifies-why-he-was-limited-during-offseason-workouts"
+        "label": "Higgins ACL / Boutte trade context",
+        "url": "https://www.usatoday.com/story/sports/nfl/texans/2026/08/19/jayden-higgins-acl-injury-houston-texans/91371112007/"
+      },
+      {
+        "label": "Collins stock up after Higgins ruled out",
+        "url": "https://www.rotoballer.com/player-news/nico-collins-a-fantasy-riser-as-large-target-share-continues-to-increase/1923157"
       }
     ]
   },
   "9224": {
-    "as_of": "2026-08-30",
-    "heat": "neutral",
-    "lead": "Bengals lead back this year with Burrow. Perine is still the veteran 1B on pass downs and some goal line \u2014 he took a Dexter Lawrence shot Monday and came back, so this is not a committee flip. 232-1,019-6 plus 69-437-5 last year. I'd take him at the 1/2 turn; this ESPN room has him 13.",
+    "as_of": "2026-09-07",
+    "heat": "fire",
+    "lead": "Bengals lead back this year with Burrow. Perine is still the veteran 1B on pass downs and some goal line \u2014 he took a Dexter Lawrence shot Aug. 24 and came back, so this is not a committee flip. Burrow called him a close second to Ja'Marr for touches in camp. 232-1,019-6 plus 69-437-5 last year. I'd take him at the 1/2 turn; this ESPN room has him 13.",
+    "depth": "Unofficial chart: Brown, Perine, Tahj Brooks. Perine is the 1B, not a split.",
     "notes": [
-      "Perine needed a trainer after the Lawrence hit Aug. 24, then returned the same practice. Unofficial chart remains Brown, Perine, Tahj Brooks."
+      "Sep 4 CBS: Perine listed No. 2 behind Brown. Burrow in late July: close second to Chase for touches because of how explosive he is. Contract year after no extension.",
+      "FP 12 / ESPN 13 / RB6. Three-down volume in a Burrow offense is the buy."
     ],
-    "nearby": "Vs James Cook (FP 10): take Cook for the cleaner feature in Buffalo; take Brown if you want the Burrow receiving work in half-PPR. Vs Saquon Barkley (FP 14): take Brown \u2014 younger, three-down usage with Burrow; Saquon is coming off 280-1,140-7 with Bigsby/Shipley eating more.",
+    "nearby": "Vs James Cook (FP 9): take Cook for the cleaner Buffalo feature; take Brown if you want the Burrow receiving work in half-PPR. Vs Saquon Barkley (FP 14): take Brown \u2014 younger, three-down with Burrow; Saquon is coming off 280-1,140-7 with Bigsby/Shipley eating more.",
     "links": [
       {
-        "label": "Perine hit, back at practice",
+        "label": "Burrow on Brown usage / ESPN outlook",
+        "url": "https://www.espn.ph/nfl/story/_/id/49818803/cincinnati-bengals-chase-brown-outlook-2026"
+      },
+      {
+        "label": "Perine Dexter Lawrence hit, back at practice",
         "url": "https://www.cincinnati.com/story/sports/nfl/bengals/2026/08/24/samaje-perine-dexter-lawrence-hit-bengals-practice/91449001007/"
       },
       {
-        "label": "53 projection: Brown, Perine, Brooks",
-        "url": "https://www.cincinnati.com/story/sports/nfl/bengals/2026/08/29/final-53-man-roster-projection-for-bengals/91518429007/"
+        "label": "Perine listed No. 2 behind Brown",
+        "url": "https://www.cbssports.com/fantasy/football/news/bengals-samaje-perine-backing-up-brown/"
       }
     ]
   },
@@ -821,21 +896,27 @@
     ]
   },
   "8151": {
-    "as_of": "2026-08-30",
-    "heat": "ice",
-    "lead": "Chiefs lead back this year. Reid held him Tuesday and Wednesday \u2014 shoe swelling on the ankle \u2014 and said he's going to be OK; he was not going to play Friday vs Seattle anyway. Demercado is the listed 2; Johnson (5th) ate 35 snaps vs the Rams. Mahomes is still not cleared for Sept. 14. I'd take him in the 2nd; this ESPN room has him 25, so this is the discount vs FP 17.",
+    "as_of": "2026-09-07",
+    "heat": "fire",
+    "lead": "Chiefs lead back this year \u2014 three-down. Reid held him late August for shoe swelling on the ankle and said he's going to be OK; he was a full participant Sep 2. Demercado was waived; Emmett Johnson (5th) is the listed 2, Brashard Smith the gadget. Mahomes is practicing but still not fully game-cleared for Sep 14 vs Denver. I'd take him in the 2nd; this ESPN room has him 25, so this is the discount vs FP 18.",
+    "depth": "Walker, then Emmett Johnson; Brashard Smith gadget/KR. No Demercado.",
     "notes": [
-      "Reid Aug. 26: shoe caused ankle swelling, 'he's going to be OK.' Mahomes has practiced all camp; doctors have not cleared him for a game. Fields is the Week 1 fallback."
+      "Sep 1\u20132: Athletic/NBC \u2014 Chiefs view Walker as three-down after waiving Demercado; full practice Wed Sep 2 (Sweeney). Mahomes still needs medical clearance for Week 1; Fields is the fallback.",
+      "FP 18 / ESPN 25 / RB9. ESPN is soft if Mahomes plays and Walker eats all three downs."
     ],
-    "nearby": "Vs De'Von Achane (FP 16): take Achane for the locked three-down job with a healthy camp; take Walker if you want the Chiefs lead at ESPN 25. Vs Omarion Hampton (FP 20): take Hampton if you want the healthier August; take Walker if Mahomes plays and you like the Reid feature.",
+    "nearby": "Vs De'Von Achane (FP 16): take Achane for the locked three-down job with a clean camp; take Walker if you want the Chiefs lead at ESPN 25. Vs Omarion Hampton (FP 20): take Hampton if you want the healthier August and McDaniel lead; take Walker if Mahomes plays and you like the Reid feature.",
     "links": [
       {
-        "label": "Reid: shoe swelling, Walker will be fine",
-        "url": "https://www.newsweek.com/sports/nfl/andy-reid-gives-encouraging-injury-update-on-kenneth-walker-iii-12372150"
+        "label": "Chiefs view Walker as three-down; Demercado waived",
+        "url": "https://www.nbcsports.com/fantasy/football/player-news/2026-09-01/chiefs-view-kenneth-walker-as-three-down-back"
       },
       {
-        "label": "Mahomes Week 1 still uncalled",
-        "url": "https://www.kctv5.com/2026/08/24/andy-reid-says-mahomes-doing-great-playing-status-week-1-remains-undecided/"
+        "label": "Walker full practice Sep 2",
+        "url": "https://www.rotoballer.com/player-news/kenneth-walker-a-full-participant-at-wednesdays-practice/1921955"
+      },
+      {
+        "label": "Reid: shoe swelling, will be fine",
+        "url": "https://www.nbcsports.com/fantasy/football/player-news/2026-08-26/reid-kenneth-walker-ankle-will-be-fine"
       }
     ]
   },
@@ -860,25 +941,25 @@
     ]
   },
   "8144": {
-    "as_of": "2026-08-30",
-    "heat": "ice",
-    "lead": "Saints WR1 this year with Shough. Tyson (hamstring, ~2 months) is out to start, so this is not a split of the targets. Landed hard on his back Tuesday on a deep ball \u2014 Moore said wind knocked out, no tests; back at practice Wednesday. 100-1,163-9 last year. I'd take him in the 2nd; this ESPN room has him 24.",
+    "as_of": "2026-09-07",
+    "heat": "fire",
+    "lead": "Saints WR1 this year with Shough. Tyson (hamstring) hit IR Aug. 30 \u2014 earliest Week 5 vs Minnesota \u2014 so this is not a split of the targets; Vele is the presumed 2. Sat the three-game preseason slate healthy after August practice exits (wind knocked out, heat); 100-1,163-9 last year. I'd take him in the 2nd; this ESPN room has him 24.",
     "notes": [
-      "Four-year, $132 million extension already done. Kamara (MCL) is out at least a month, so Shough's passing volume is even more Olave."
+      "Four-year, $132 million extension already done. Kamara (MCL) still not practicing into September, so early-season passing volume stays Olave-heavy."
     ],
-    "nearby": "Vs George Pickens (FP 23): take Olave for the WR1 share; take Pickens if you want Dak over Shough. Vs Malik Nabers (FP 26): take Olave \u2014 practicing, Tyson out; Nabers just shed the red jersey after the ACL.",
+    "nearby": "Vs George Pickens (FP 22): take Olave for the WR1 share with Tyson on IR; take Pickens if you want Dak over Shough. Vs Malik Nabers (FP 26): take Olave \u2014 locked Week 1 WR1; Nabers is still noncommittal on the ACL for Dallas.",
     "links": [
       {
-        "label": "NOLA: Olave scare, Shough sharp",
-        "url": "https://www.nola.com/sports/saints/saints-camp-a-chris-olave-scare-and-a-sharp-tyler-shough/article_a5b2a312-8129-443f-b5b9-a22a99384aa1.html"
+        "label": "NOLA: Tyson IR, earliest Week 5",
+        "url": "https://www.nola.com/sports/saints/saints-place-no-8-pick-jordyn-tyson-on-ir-to-start-season/article_65cdbaa8-33fb-43b4-b883-4f1ff686858c.html"
       },
       {
-        "label": "CBS: back at practice Wednesday",
-        "url": "https://www.cbssports.com/fantasy/football/news/saints-chris-olave-back-at-practice-wednesday-634920/"
+        "label": "CBS: no preseason action, healthy into opener",
+        "url": "https://www.cbssports.com/fantasy/football/news/saints-chris-olave-no-action-in-preseason/"
       },
       {
-        "label": "Newsweek: Moore \u2014 wind knocked out, no tests",
-        "url": "https://www.newsweek.com/sports/nfl/saints-kellen-moore-gives-positive-update-on-chris-olave-12366941"
+        "label": "ESPN UK: Saints fantasy \u2014 Olave the reliable WR",
+        "url": "https://www.espn.co.uk/nfl/story/_/id/49820565/nfl-fantasy-outlook-new-orleans-saints-2026-expect-heavy-running-back-usage"
       }
     ]
   },
@@ -918,61 +999,73 @@
     ]
   },
   "11635": {
-    "as_of": "2026-08-30",
-    "heat": "fire",
-    "lead": "Chargers WR1 this year under McDaniel with Herbert. Johnston is the deep 2; Keenan is gone. Three snaps Thursday vs the Rams \u2014 Herbert's 65-yard TD went to Johnston on the second series, then starters sat. 66-789-6 last year after the 82-1,149-7 rookie year. I'd take him in the 4th; this ESPN room has him 41.",
-    "nearby": "Vs Jaylen Waddle (FP 35): take Ladd for Herbert and the cleaner WR1; take Waddle if you want Nix's new speed at a similar cost. Vs Garrett Wilson (FP 37): take Ladd \u2014 Herbert is locked; Wilson has Geno and Hall's groin thinning the other mouth.",
+    "as_of": "2026-09-07",
+    "heat": "neutral",
+    "lead": "Chargers WR1 this year under McDaniel with Herbert. Johnston is the deep 2; Keenan is gone. Three snaps Thursday vs the Rams \u2014 Herbert's 65-yard TD went to Johnston on the second series, then starters sat. Named a team captain entering Week 1 vs Arizona. I'd take him in the 4th as a WR2; this ESPN room has him 39.",
+    "notes": [
+      "Popper: McDaniel offense to flow through McConkey as the move piece. Spring hamstring cleared before camp; active for Week 1."
+    ],
+    "nearby": "Vs Jaylen Waddle (FP 36): take Waddle for the clearer Nix WR1; take McConkey if you want Herbert's target share in McDaniel's quick game. Vs Garrett Wilson (FP 38): take Wilson for Geno volume as the Jets' WR1; take McConkey if you prefer the Chargers' scheme fit.",
     "links": [
       {
-        "label": "CBS: three snaps vs the Rams, no box-score line",
+        "label": "Popper: pass game flows through McConkey",
+        "url": "https://www.nbcsports.com/fantasy/football/player-news/2026-08-02/popper-bolts-pass-game-to-flow-through-mcconkey"
+      },
+      {
+        "label": "Three snaps vs Rams finale",
         "url": "https://www.cbssports.com/fantasy/football/news/chargers-ladd-mcconkey-plays-three-snaps-vs-rams/"
       },
       {
-        "label": "Chargers.com: Herbert 65-yard TD to Johnston, starters sat",
-        "url": "https://www.chargers.com/news/rams-game-recap-preseason-2016"
-      },
-      {
-        "label": "Newsweek: McConkey super excited about McDaniel",
-        "url": "https://www.newsweek.com/sports/nfl/chargers-wr-ladd-mcconkey-super-excited-about-mike-mcdaniel-offense-12294821"
+        "label": "McConkey named team captain",
+        "url": "https://www.chargers.com/video/ladd-mcconkey-press-conference-week-0-wednesday-2026"
       }
     ]
   },
   "4866": {
-    "as_of": "2026-08-30",
+    "as_of": "2026-09-07",
     "heat": "neutral",
-    "lead": "Eagles lead back this year with Hurts. Bigsby is the power 2; Shipley is the pass-down/returner \u2014 Mannion wants those snaps so 2024's 345 carries do not repeat (280-1,140-7 last year). Ankle check Aug. 13 did not stick. I'd take him in the 2nd; this ESPN room has him 15.",
+    "lead": "Eagles lead back this year with Hurts. Bigsby is the power 2; Shipley is the pass-down/returner \u2014 Mannion wants those snaps so 2024's 345 carries do not repeat (280-1,140-7 last year). Ankle check in camp did not stick; Eagles have no injuries listed for Week 1. I'd take him in the 2nd; this ESPN room has him 15.",
+    "depth": "Bigsby locked RB2 (rested final two preseason games); Shipley the 3/returner.",
+    "notes": [
+      "Sep 3 CBS: Bigsby 10 preseason snaps, then rested Weeks 2\u20133 \u2014 firm grip on RB2. NFL.com Week 1: Eagles no injuries reported. Age-29 mileage is why Mannion wants Bigsby involved.",
+      "FP 14 / ESPN 15 / RB7. Still an RB1 if the touches stay in the 20s."
+    ],
     "nearby": "Vs Chase Brown (FP 12): take Brown for the Burrow receiving work at a similar cost; take Saquon if you still want the Eagles' goal-line job. Vs De'Von Achane (FP 16): take Saquon for the locked Hurts offense; Achane is the Dolphins feature with Malik Willis.",
     "links": [
       {
-        "label": "Barkley on the 2026 ramp",
-        "url": "https://www.philadelphiaeagles.com/news/saquon-barkley-explains-his-mindset-for-the-2026-season"
+        "label": "Bigsby rested, locked as RB2",
+        "url": "https://www.cbssports.com/fantasy/football/news/eagles-tank-bigsby-plays-10-preseason-snaps/"
       },
       {
-        "label": "Bigsby listed 2, Shipley the returner",
-        "url": "https://theeagleswire.usatoday.com/story/sports/nfl/eagles/2026/08/26/eagles-depth-chart-jobs-still-available-roster-cuts-2026/91450441007/"
+        "label": "Week 1: Eagles no injuries reported",
+        "url": "https://www.nfl.com/injuries/league/2026/reg1"
+      },
+      {
+        "label": "Mannion workload / Bigsby as changeup",
+        "url": "https://theeagleswire.usatoday.com/story/sports/nfl/eagles/2026/07/08/eagles-30-most-important-players-2026-tank-bigsby/90737923007/"
       }
     ]
   },
   "8146": {
-    "as_of": "2026-08-30",
-    "heat": "neutral",
-    "lead": "Jets WR1 this year with Geno. Stomach bug sat him Aug. 17 \u2014 back Tuesday, then a sliding 10-yard conversion from Geno on the Steelers opening TD drive. Hall's groin thins the other mouth. Three 1,000-yard seasons in his three healthy years; 7 games last year after the knee. I'd take him in the 3rd; this ESPN room has him 29 so he may go earlier.",
+    "as_of": "2026-09-07",
+    "heat": "fire",
+    "lead": "Jets WR1 this year with Geno. Stomach bug sat him Aug. 17 \u2014 back the next day, then a sliding conversion from Geno on the Steelers opening TD drive in preseason. Hall's groin thins the other mouth; Cooper and Mitchell are around him, not taking the job. Three 1,000-yard seasons before the 2025 knee. I'd take him in the 3rd as a WR2; this ESPN room has him 29.",
     "notes": [
-      "Source still lists questionable/illness; Glenn called it a stomach bug, not an injury, and he has practiced and played since. Four-year, $130 million from July 2025."
+      "RotoBaller Sep. 3: clean summer after the knee that ended 2025 at seven games; Geno connection showed in camp (five-for-five stretch Aug. 7)."
     ],
-    "nearby": "Vs Ladd McConkey (FP 36): take Ladd for Herbert and McDaniel; take Wilson if you want the proven WR1 and will live with Geno. Vs Tetairoa McMillan (FP 38): take Wilson for Geno's floor; take Tet for the Year-2 WR1 share with Young.",
+    "nearby": "Vs Ladd McConkey (FP 37): take Wilson for the locked Jets WR1 volume with Geno; take McConkey if you prefer McDaniel's scheme. Vs Tetairoa McMillan (FP 41): take Wilson \u2014 proven target hog when healthy; McMillan is the Year-2 Panthers WR1 bet.",
     "links": [
       {
-        "label": "Yahoo: stomach bug Monday, not an injury",
-        "url": "https://sports.yahoo.com/articles/jets-notes-garrett-wilson-dealing-151430766.html"
+        "label": "Stock rebounds after healthy summer",
+        "url": "https://www.rotoballer.com/player-news/garrett-wilsons-stock-rebounds-after-healthy-summer/1922697"
       },
       {
-        "label": "Jets.com: Geno finds Wilson on third down vs Pittsburgh",
-        "url": "https://www.newyorkjets.com/news/geno-smith-perfect-leading-jets-offense-preseason-steelers-08-21-2026"
+        "label": "Illness sit Aug. 17, back next day",
+        "url": "https://www.newyorkjets.com/news/jets-training-camp-practice-report-breece-hall-injury-08-17-2026"
       },
       {
-        "label": "RotoBaller: returned Tuesday",
-        "url": "https://www.rotoballer.com/player-news/garrett-wilson-returns-from-illness-on-tuesday/1911255"
+        "label": "Jets prep for Titans Week 1",
+        "url": "https://www.newyorkjets.com/news/jets-shift-attention-to-tennessee-titans-09-06-2026"
       }
     ]
   },
@@ -1032,25 +1125,25 @@
     ]
   },
   "8155": {
-    "as_of": "2026-08-30",
+    "as_of": "2026-09-07",
     "heat": "ice",
-    "lead": "Jets lead back this year when the groin lets him \u2014 they paid him three years, $43.5 million. Allen is the 1A/1B fill-in Glenn named, not a takeover; Davis (knee) is also targeting Week 1. Groin strain Aug. 17, out 2\u20133 weeks; side-field agility Monday (running, cutting), Glenn still says Week 1 at TEN. I'd take him in the 3rd only if you can live with a ramp; this ESPN room has him 30.",
+    "lead": "Jets lead back this year when the groin lets him \u2014 they paid him three years, $43.5 million. Allen is the 1A/1B fill-in Glenn named while Hall sat mid-August; Davis (knee) is also targeting Week 1. Groin/thigh strain Aug. 17, 2\u20133 week window \u2014 Jets site Sep. 3 still expects him ready vs Tennessee. I'd take him in the 3rd as an RB2; this ESPN room has him 30.",
     "notes": [
-      "Source lists thigh; Glenn and the MRI called it a groin strain. Non-contact, went down untouched after a catch. I searched r/fantasyfootball this week; no standalone thread loaded."
+      "Glenn: ready for the regular season after MRI. Bell/Jets.com Sep. 3: expected back for Titans; spotted running on a side field without issues last week. Workload vs Allen to watch if he is managed early."
     ],
-    "nearby": "Vs Javonte Williams (FP 33): take Javonte for the cleaner camp; take Hall if you want the receiving three-down profile and will bet the groin. Vs Jeremiyah Love (FP 41): take Hall \u2014 closer to Week 1; Love still has not practiced after the high ankle.",
+    "nearby": "Vs Javonte Williams (FP 32): take Javonte for the healthy locked lead; take Hall if you want the Jets' volume and buy the Week 1 clearance. Vs Jeremiyah Love (FP 39): take Hall \u2014 clearer Week 1 path; Love is ~50-50 on the high ankle.",
     "links": [
       {
-        "label": "JetNation: side-field work Monday, looks good",
-        "url": "https://www.jetnation.com/2026/08/25/breece-hall-looking-good-as-jets-target-week-1-return/"
+        "label": "Expected back for Week 1",
+        "url": "https://www.cbssports.com/fantasy/football/news/jets-breece-hall-expected-back-for-week-1/"
       },
       {
-        "label": "PFT: Glenn \u2014 on track for Week 1 vs TEN",
-        "url": "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/aaron-glenn-breece-hall-kenyon-sadiq-on-track-for-week-1"
+        "label": "NFL.com: groin, ready vs Titans",
+        "url": "https://www.nfl.com/news/breece-hall-groin-expected-to-be-ready-for-jets-week-1-game-vs-titans"
       },
       {
-        "label": "ESPN: 2\u20133 weeks, expected Week 1",
-        "url": "https://www.espn.com/nfl/story/_/id/49649065/jets-rb-hall-expected-miss-2-3-weeks-ready-opener"
+        "label": "Glenn: 2\u20133 weeks, ready for opener",
+        "url": "https://www.espn.co.uk/nfl/story/_/id/49649065/jets-rb-hall-expected-miss-2-3-weeks-ready-opener"
       }
     ]
   },
@@ -1078,24 +1171,24 @@
     ]
   },
   "10229": {
-    "as_of": "2026-08-30",
+    "as_of": "2026-09-07",
     "heat": "ice",
-    "lead": "Chiefs WR1 this year if Mahomes plays. Worthy and Kelce still eat; Fields is the Week 1 fallback \u2014 Reid still has not cleared Mahomes for Sept. 14. Ten snaps, no targets Friday vs Seattle (first game action since the December concussion). May knee cleanup is behind him. I'd take him in the 3rd, not the 2nd; this ESPN room has him 27 so he may go earlier.",
+    "lead": "Chiefs WR1 this year if Mahomes plays. Worthy and Kelce still eat; Fields is the Week 1 fallback \u2014 NFL.com Sep. 2 said Mahomes appears on track for Monday Night vs Denver, but Reid still has not issued a hard clearance. Ten snaps, no targets Friday vs Seattle (first game action since the December concussion); May knee cleanup is behind him. I'd take him in the 3rd, not the 2nd; this ESPN room has him 27 so he may go earlier.",
     "notes": [
-      "Reid Aug. 24: day by day, probably not cleared enough for preseason. Mahomes has practiced all camp and said the plan is Week 1. Rice is not expected to face extra NFL discipline on the legal file."
+      "Rice not expected to face extra NFL discipline on the legal file. Career ~8.2 targets/game when available \u2014 the alpha underneath if Mahomes suits up."
     ],
-    "nearby": "Vs DeVonta Smith (FP 28): take DeVonta for the locked Hurts WR1; take Rice if you think Mahomes plays and you want the Chiefs alpha. Vs Zay Flowers (FP 30): take Rice for the target share if Mahomes is cleared; Flowers missed two practices this week as caution.",
+    "nearby": "Vs Zay Flowers (FP 29): take Flowers for the locked Lamar WR1; take Rice if you think Mahomes is cleared Monday and you want the Chiefs target hog. Vs Tee Higgins (FP 33): take Rice for the WR1 share if Mahomes plays; take Higgins if you want Burrow's WR2 without the QB question.",
     "links": [
       {
-        "label": "CBS: 10 snaps, no targets in the Seahawks finale",
+        "label": "NFL.com: Mahomes on track Week 1 vs Broncos",
+        "url": "https://www.nfl.com/news/chiefs-qb-patrick-mahomes-appears-on-track-to-start-week-1-vs-broncos"
+      },
+      {
+        "label": "CBS: 10 snaps, no targets in Seahawks finale",
         "url": "https://www.cbssports.com/fantasy/football/news/chiefs-rashee-rice-logs-10-snaps-in-preseason-finale/"
       },
       {
-        "label": "CBS: Mahomes Week 1 still uncalled; Fields fallback",
-        "url": "https://www.cbssports.com/nfl/news/patrick-mahomes-status-week-1-chiefs-qb/"
-      },
-      {
-        "label": "PFT: Reid \u2014 no predictions on the opener",
+        "label": "PFT: Reid \u2014 no predictions on opener (Aug 24)",
         "url": "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/andy-reid-no-predictions-on-patrick-mahomes-for-season-opener"
       }
     ]
@@ -1132,84 +1225,98 @@
     ]
   },
   "5859": {
-    "as_of": "2026-08-30",
-    "heat": "neutral",
-    "lead": "Patriots WR1 this year with Maye. Doubs is the WR2; Douglas is the slot. Dislocated thumb Aug. 3, played through it, and was still scoring in the red zone Monday. I'd take him in the 2nd; this ESPN room has him 19, so he can fall.",
-    "nearby": "Vs Justin Jefferson (FP 11): take Jefferson for the true WR1 share; take A.J. if you want Maye's camp tape at a discount. Vs Drake London (FP 15): take A.J. \u2014 Maye is locked; London still does not have a named Week 1 QB.",
+    "as_of": "2026-09-07",
+    "heat": "fire",
+    "lead": "Patriots WR1 this year with Maye. Doubs is the WR2; Douglas is the slot. Dislocated thumb Aug. 3, played through it, and was still scoring in the red zone that week \u2014 he is not on the Week 1 injury report vs Seattle. I'd take him in the 2nd; this ESPN room has him 19, so he can fall.",
+    "depth": "Doubs the outside 2; Douglas the slot. Boutte was traded to Houston after Higgins' ACL.",
+    "notes": [
+      "Sep 6\u20137 Patriots injury report: Henderson (ankle), Barmore (knee), Ben Brown (knee) DNPs \u2014 A.J. not listed. Thumb has been a non-issue since early August.",
+      "FP 13 / ESPN 19 / WR7. ESPN is a round soft on a locked Maye WR1."
+    ],
+    "nearby": "Vs Justin Jefferson (FP 11): take Jefferson for the true WR1 share; take A.J. if you want Maye's camp tape at a discount. Vs Drake London (FP 15): take A.J. \u2014 Maye is locked; London just got Tua named Week 1 on Sep 7.",
     "links": [
       {
         "label": "Thumb dislocation, played through it",
-        "url": "https://www.espn.com/nfl/story/_/id/49522190/wr-aj-brown-shakes-dislocated-thumb-patriots-camp"
+        "url": "https://www.cbssports.com/fantasy/football/news/patriots-a-j-brown-works-through-thumb-issue/"
       },
       {
-        "label": "Maye-Brown deep-ball camp tape",
-        "url": "https://www.patriots.com/news/day-17-blogservations-maye-and-brown-find-their-deep-connection"
+        "label": "Week 1 injury report: Brown not listed",
+        "url": "https://patriotswire.usatoday.com/story/sports/nfl/patriots/2026/09/06/patriots-sunday-injury-report-seahawks/91645345007/"
       },
       {
-        "label": "Red-zone score Aug. 24",
-        "url": "https://www.patspulpit.com/new-england-patriots-training-camp/134487/patriots-training-camp-recap-injuries-continue-to-pile-up"
+        "label": "Full participant after thumb",
+        "url": "https://www.4for4.com/news/patriots-wr-aj-brown-full-wednesday-practice-participant-after-thumb-dislocation"
       }
     ]
   },
   "12519": {
-    "as_of": "2026-08-30",
+    "as_of": "2026-09-07",
     "heat": "fire",
-    "lead": "Bears WR2 this year next to Odunze now that Moore is in Buffalo. Groin on Aug. 8 sat him the rest of the preseason; Johnson after Saturday's Titans game: he looks 100% to me. I'd take him in the 5th\u20136th as a WR3; this ESPN room has him 66 so he may last.",
+    "lead": "Bears WR2 this year next to Odunze now that Moore is in Buffalo. Groin on Aug. 8 sat him the rest of the preseason; Johnson said he looks 100%, and Burden practiced routes the week of Sep 1 \u2014 Week 1 at Carolina is the plan. I'd take him in the 5th\u20136th as a WR3; this ESPN room has him 60 so he may last.",
     "notes": [
-      "Resumed limited practice Wednesday, ran routes in Titans pregame, did not play. Rookie line: 47-652-2. Raymond is the slot; the starting 11 is Odunze/Burden when both are up."
+      "Rookie line: 47-652-2 on 60 targets. Loveland and Odunze still eat; this is WR2/flex volume in Johnson's offense, not a locked alpha.",
+      "FP 47 / ESPN 60 / WR23. Questionable (lower body) on some boards \u2014 the practice ramp is the story, not a new sit."
     ],
-    "nearby": "Vs Adams (FP 48) Adams is the safer Stafford WR2; Burden is the cheaper Year-2 leap. Vs Jameson Williams (FP 51) Jameson is the finished Lions WR2; Burden is the ESPN-66 value if the groin is really gone.",
+    "nearby": "Vs Davante Adams (FP 46) Adams is the safer Stafford WR2; Burden is the cheaper Year-2 leap. Vs Terry McLaurin (FP 48) McLaurin is the safer Daniels WR1; Burden is the ESPN-60 value if the groin is really gone.",
     "links": [
       {
-        "label": "Sun-Times: Johnson \u2014 looks 100% (Aug 29)",
-        "url": "https://chicago.suntimes.com/bears/2026/08/29/bears-titans-final-score-luther-burden-looks-100-percent-wide-receiver-groin-preseason-game-saturday"
+        "label": "CBS: Burden practicing Tuesday (Sep 1)",
+        "url": "https://www.cbssports.com/fantasy/football/news/bears-luther-burden-practicing-tuesday/"
       },
       {
-        "label": "Bears Wire: Johnson on Burden",
+        "label": "Bears Wire: Johnson \u2014 looks 100% (Aug 29)",
         "url": "https://bearswire.usatoday.com/story/sports/nfl/bears/2026/08/29/bears-ben-johnson-luther-burden-injury-update/91533590007/"
       },
       {
-        "label": "CBS: ran routes Saturday, sat the game",
-        "url": "https://www.cbssports.com/fantasy/football/news/bears-luther-burden-runs-routes-saturday/"
+        "label": "Bears Wire: running routes at practice (Sep 1)",
+        "url": "https://bearswire.usatoday.com/story/sports/nfl/bears/2026/09/01/bears-luther-burden-running-routes-practice/91568946007/"
       }
     ]
   },
   "11584": {
-    "as_of": "2026-08-30",
+    "as_of": "2026-09-07",
     "heat": "neutral",
-    "lead": "Buccaneers lead back this year. Gainwell is the new 1B \u2014 Irving took the first three totes (3-14) vs the Chiefs on Aug. 22, then Gainwell entered \u2014 so this is a lead, not a 50/50. Shoulder surgery last December; Bowles opened camp with full speed, no restrictor. I'd take him in the 5th as an RB2; this ESPN room has him 51.",
+    "lead": "Buccaneers lead back this year. Gainwell is the new 1B \u2014 Irving took the first three totes (3-14) vs the Chiefs on Aug. 22, then Gainwell entered \u2014 and the Sep 3 53 still lists Irving/Gainwell/Tucker, so this is a lead, not a 50/50. I'd take him in the 5th as an RB2; this ESPN room has him 49.",
     "notes": [
-      "Missed seven games in 2025. White is gone. Tucker is the short-yardage name. No this-week sit."
+      "Missed seven games in 2025. White is gone. Tucker is the short-yardage/goal-line name. Gainwell's $14M deal is third-down/change-of-pace, not a committee crown.",
+      "FP 50 / ESPN 49 / RB19. Low-end RB2 with pass-catching floor if Gainwell does not steal early downs."
     ],
-    "nearby": "Vs Skattebo (FP 53) Bucky is the cleaner health story; Skattebo is the Giants lead with more mouths. Vs Judkins (FP 56) Judkins is the Browns volume if the nagging sit is over; Bucky is the pass-catching Bucs 1.",
+    "nearby": "Vs D'Andre Swift (FP 45) Swift has the Monangai vacancy and the 1,000-yard tape; Bucky is the Bucs lead with Gainwell as 1B. Vs Travis Etienne (FP 44) Etienne has the clearer Kamara-out path; Bucky is the pass-catching Bucs 1.",
     "links": [
+      {
+        "label": "CBS: Gainwell in the Irving/Tucker mix (Sep 3)",
+        "url": "https://www.cbssports.com/fantasy/football/news/buccaneers-kenny-gainwell-part-of-rb-mix-with-irving-and-tucker/"
+      },
+      {
+        "label": "NBC: first 3 totes, then Gainwell (Aug 22)",
+        "url": "https://www.nbcsports.com/fantasy/football/player-news/2026-08-22/irving-takes-first-3-totes-before-gainwell-enters"
+      },
       {
         "label": "Buccaneers.com: full-go from camp Day 1",
         "url": "https://www.buccaneers.com/news/bucky-irving-full-go-feeling-stronger-from-adversity"
-      },
-      {
-        "label": "NBC: first 3 totes, then Gainwell",
-        "url": "https://www.nbcsports.com/fantasy/football/player-news/2026-08-22/irving-takes-first-3-totes-before-gainwell-enters"
       }
     ]
   },
   "8150": {
-    "as_of": "2026-08-30",
-    "heat": "neutral",
-    "lead": "Rams lead back this year with Stafford. Corum is the 1B after they combined for 1,998 rush yards and 19 scores \u2014 not a committee flip, but not a 70-snap job either. Sat Thursday's Chargers finale with the other starters; McVay never plays him in August. Third straight 1,000-yard year: 259-1,252-10. I'd take him in the 3rd as an RB2; this ESPN room has him 34.",
-    "nearby": "Vs Ashton Jeanty (FP 22): take Jeanty if the ankle is just August; take Kyren if you need a locked Week 1 McVay back. Vs Javonte Williams (FP 33): take Javonte for the cleaner lead in Dallas; take Kyren if you want Stafford's offense and will live with Corum.",
+    "as_of": "2026-09-07",
+    "heat": "ice",
+    "lead": "Rams lead back this year with Stafford \u2014 still listed RB1 on the Week 1 chart, but Atkins and Graziano both flag a closer Corum timeshare after last year's post-bye split. Corum is the 1B eating early downs, not a flip of the job yet; Kyren keeps the goal line and pass protection. I'd take him in the 3rd as an RB2; this ESPN room has him 33.",
+    "notes": [
+      "Graziano Sep. 2: Rams plan more Corum carries, near 50-50, with Williams still nominally the lead to open; Corum could become 1A if pass pro closes. 259-1,252-10 rush plus 36-281-3 rec in 2025."
+    ],
+    "nearby": "Vs Ashton Jeanty (FP 24): take Jeanty if you want a cleaner feature; take Kyren for Stafford's offense and the goal-line edge over Corum. Vs Javonte Williams (FP 32): take Javonte for the clearer Dallas lead after Blue/Mafah cuts; take Kyren if you prefer L.A.'s scoring environment and will live with Corum.",
     "links": [
       {
-        "label": "Rams Wire: Corum \u2014 1A/1B, my brother",
-        "url": "https://theramswire.usatoday.com/story/sports/nfl/rams/2026/08/08/rams-blake-corum-kyren-williams-bond-training-camp/91217403007/"
+        "label": "Atkins: Kyren-Corum timeshare",
+        "url": "https://www.cbssports.com/fantasy/football/news/rams-kyren-williams-expected-to-be-part-of-rb-timeshare/"
       },
       {
-        "label": "SI: Kyren a roster lock, sat the Chargers finale",
-        "url": "https://www.si.com/nfl/rams/onsi/rams-roster-where-every-player-stands-preseason-finale"
+        "label": "Graziano: Corum could overtake",
+        "url": "https://theramswire.usatoday.com/story/sports/nfl/rams/2026/09/02/nfl-insider-says-blake-corum-could-overtake-kyren-williams-for-rams/91575717007/"
       },
       {
-        "label": "Rams.com: honed in on being a running back",
-        "url": "https://www.therams.com/news/rams-running-back-kyren-williams-offseason-training-2026"
+        "label": "Rams Week 1 depth: Kyren, Corum",
+        "url": "https://www.si.com/nfl/rams/onsi/rams-week-1-depth-chart-breakdown"
       }
     ]
   },
@@ -1249,25 +1356,25 @@
     ]
   },
   "9997": {
-    "as_of": "2026-08-30",
-    "heat": "ice",
-    "lead": "Ravens WR1 this year with Lamar. Bateman and Andrews still eat; Lane is the camp dart, not a split of the job. Missed Tuesday-Wednesday Commanders joints \u2014 Minter: nothing major, Week 1 health versus today health; expected Week 1 vs Indy. Four-year, $140 million. 86-1,211-5 last year. I'd take him in the 3rd\u20134th; this ESPN room has him 38 so he can fall.",
+    "as_of": "2026-09-07",
+    "heat": "neutral",
+    "lead": "Ravens WR1 this year with Lamar. Bateman and Andrews still eat; Lane is the camp dart, not a split of the job. Missed from the Vikings joints (Aug. 19\u201320) into early September on a minor issue \u2014 Minter: Week 1 health versus today health \u2014 then returned to practice Sep. 3 with full expectation for Week 1 vs Indy. I'd take him in the 3rd\u20134th; this ESPN room has him 36 so he can fall.",
     "notes": [
-      "Early-August left-quad contusion is closed. Unspecified this week; he worked off to the side at the joint and sat Friday's finale with the other starters."
+      "Early-August left-quad contusion is closed. Last year: top-10 target share (~28%) and elite YPRR under the prior staff; new OC Declan Doyle."
     ],
-    "nearby": "Vs Rashee Rice (FP 29): take Rice if Mahomes plays; take Flowers if you want the locked Lamar WR1 at a cheaper ESPN slot. Vs Tee Higgins (FP 32): take Flowers for the WR1 share; take Higgins if you want Burrow's WR2 at ESPN 44.",
+    "nearby": "Vs DeVonta Smith (FP 27): take Smith \u2014 locked Hurts WR1 after Brown left; take Flowers if you want Lamar's alpha at a cheaper ESPN slot. Vs Rashee Rice (FP 30): take Flowers for the healthier QB situation; take Rice if you think Mahomes plays and you want the Chiefs alpha.",
     "links": [
       {
-        "label": "Ravens Wire: Minter \u2014 nothing major, Week 1 health",
-        "url": "https://ravenswire.usatoday.com/story/sports/nfl/ravens/2026/08/27/ravens-zay-flowers-zion-young-injury-update-week-1/91462490007/"
+        "label": "Ravens.com: Flowers back at practice (Sep 3)",
+        "url": "https://www.baltimoreravens.com/news/zay-flowers-returns-ravens-practice-wide-receiver-injury"
       },
       {
-        "label": "CBS: held out for precautionary reasons, Week 1 expected",
-        "url": "https://www.cbssports.com/fantasy/football/news/ravens-zay-flowers-expected-to-play-week-1/"
+        "label": "CBS: full practice next week, Week 1 expected",
+        "url": "https://www.cbssports.com/fantasy/football/news/ravens-zay-flowers-set-to-fully-practice-next-week/"
       },
       {
-        "label": "PFN: two joints missed, still trending Week 1",
-        "url": "https://www.profootballnetwork.com/what-happened-zay-flowers-latest-ravens-injury-week-1-2026-august-2026/"
+        "label": "DraftSharks: returns, opener reaffirmed (Sep 3)",
+        "url": "https://www.draftsharks.com/fantasy-football-news/82459/zay-flowers-returns-to-practice-reaffirming-his-opener-availability"
       }
     ]
   },
@@ -1388,38 +1495,38 @@
     ]
   },
   "7543": {
-    "as_of": "2026-08-30",
+    "as_of": "2026-09-07",
     "heat": "fire",
-    "lead": "Saints lead back this year. Kamara (MCL sprain, Aug 18 vs Dallas) is out at least a month per Schefter, so this is Etienne's job into September, not a split. Miller, Neal, and Estime have all been dinged behind him. I'd take him in the 4th as an RB2; this ESPN room has him 40.",
+    "lead": "Saints lead back this year. Kamara (MCL sprain, Aug 18) was not placed on IR at cutdowns, but he has not practiced into September and Moore still will not lock Week 1 at Detroit \u2014 Schefter's month timeline still holds, so this is Etienne's job into September, not a split. I'd take him in the 4th as an RB2; this ESPN room has him 38.",
     "notes": [
-      "March deal was four years, about $52 million (more than $12 million per year in the first three). He already had most of the first-team early-down work before Kamara went down. Sat the Rams preseason as starter rest; Miller led the exhibition snaps.",
-      "Last year in Jacksonville: 260-1,107-7 rush and 36-292-6 receiving in 17."
+      "March deal ~four years, ~$52M. First-team early-down work all camp before Kamara went down. Last year in Jacksonville: 260-1,107-7 rush and 36-292-6 receiving in 17.",
+      "FP 44 / ESPN 38 / RB17. Not-on-IR keeps a Kamara Week 2\u20133 return path open; until he practices, treat Etienne as the three-down 1."
     ],
-    "nearby": "Vs Jacobs (FP 43) take Etienne \u2014 clearer August path, no charges. Vs Swift (FP 46) both have a backup sitting; Etienne's vacancy is a month of Kamara, Swift's is week-to-week Monangai.",
+    "nearby": "Vs Jeremiyah Love (FP 39) Love is the 3rd-overall lead with the high ankle; Etienne has the clearer September path with Kamara still out. Vs D'Andre Swift (FP 45) both have a backup sitting; Etienne's vacancy is still a month of Kamara, Swift's is week-to-week Monangai.",
     "links": [
       {
-        "label": "ESPN/Schefter: Kamara \u22651 month MCL",
-        "url": "https://www.espn.com/nfl/story/_/id/49658952/source-saints-rb-kamara-least-month-mcl-sprain"
+        "label": "NBC: Kamara still not practicing (Sep 1)",
+        "url": "https://www.nbcsports.com/fantasy/football/player-news/2026-09-01/kamara-not-practicing-on-tuesday"
       },
       {
-        "label": "CBS: heavier early-season role",
-        "url": "https://www.cbssports.com/fantasy/football/news/saints-travis-etienne-could-see-larger-role-with-kamara-sidelined/"
+        "label": "Saints Wire: Moore \u2014 no Week 1 lock (Sep 2)",
+        "url": "https://saintswire.usatoday.com/story/sports/nfl/saints/2026/09/02/saints-alvin-kamara-cameron-jordan-injury-update-week-1/91575124007/"
       },
       {
-        "label": "Saints.com: starters sat vs Rams",
-        "url": "https://www.neworleanssaints.com/news/2026-nfl-preseason-week-2-los-angeles-rams-vs-new-orleans-saints-game-notes"
+        "label": "CBS: Kamara still sidelined Thursday",
+        "url": "https://www.cbssports.com/fantasy/football/news/saints-alvin-kamara-remains-sidelined-at-practice-636173/"
       }
     ]
   },
   "5850": {
     "as_of": "2026-08-30",
     "heat": "ice",
-    "lead": "Packers lead back this year when he is eligible. Lloyd took the August 1s while the groin sat him; Jacobs is back in team reps and looked fresh Monday. The story this week is the Aug. 27 battery and criminal-damage charges \u2014 LaFleur fully anticipates him on the roster and will not guarantee Week 1 at Minnesota. I'd take him in the 4th\u20135th only if you can live with a Week 1 question; this ESPN room has him 31.",
+    "lead": "Packers lead back this year when he is eligible. Lloyd took the August 1s while the groin sat him; Jacobs is back in team reps and looked fresh Monday. The story this week is the Aug. 27 battery and criminal-damage charges \u2014 LaFleur fully anticipates him on the roster and will not guarantee Week 1 at Minnesota. Half-PPR ECR just dumped him from 43 this morning to 113 (RB40). I would not spend a 4th on that. Lloyd is the handcuff if you already have him.",
     "notes": [
       "Groin kept him out of every preseason snap. Court date Nov. 17; NFL has not ruled. Last year: 929 rushing yards and 13 rushing TDs in 15 starts.",
-      "Public half-PPR ranks dropped him into the 40s this week; Lloyd is the handcuff if you take Jacobs."
+      "Public half-PPR ECR: 43 at 8:51 AM CT, 113 as of 5:04 PM CT. ESPN room rank is still 58. Lloyd jumped 146 to 86."
     ],
-    "nearby": "Vs Love (FP 41) Love is the 3rd-overall lead with the high ankle; Jacobs has the proven Packers job plus the charges. Vs Etienne (FP 44) take Etienne \u2014 Kamara is out a month and there is no legal cloud.",
+    "nearby": "Vs Love (FP 120) Love is the 3rd-overall lead with the high ankle; Jacobs has the proven Packers job plus the charges and a 70-spot ECR dump. Vs Etienne (FP 43) take Etienne \u2014 Kamara is out a month and there is no legal cloud.",
     "links": [
       {
         "label": "Cheesehead TV: team reps, groin return (Aug 24)",
@@ -1436,25 +1543,25 @@
     ]
   },
   "7526": {
-    "as_of": "2026-08-30",
+    "as_of": "2026-09-07",
     "heat": "fire",
-    "lead": "Broncos 17 this year with Nix. Sutton is the other starter, not ahead of him. Left-leg strain Aug. 5; Payton called him 100% after a 35-yard catch-and-run vs Green Bay (pitch-count, about a dozen snaps). Sat Friday's Vikings finale with the other starters. I'd take him in the 4th; this ESPN room has him 46 so he can fall.",
+    "lead": "Broncos WR1 this year with Nix. Sutton is the other starter, not ahead of him after the March trade. Left-leg strain Aug. 5; Payton called him 100% after a 35-yard catch-and-run vs Green Bay (pitch-count, about a dozen snaps) and he has been full since. I'd take him in the 4th as a WR2; this ESPN room has him 44.",
     "notes": [
-      "Source still lists questionable/undisclosed; the hamstring sit is closed per Payton. March trade from Miami. Last year in Miami: 64-910-6."
+      "Payton after Packers preseason: back to 100%, infectious. DraftSharks Week 1 practice board lists full/full/full and active \u2014 opener Monday night at Kansas City."
     ],
-    "nearby": "Vs Tee Higgins (FP 32): take Higgins for the locked Burrow WR2; take Waddle if you want the cheaper ESPN slot and Nix. Vs Ladd McConkey (FP 36): take Ladd for Herbert and McDaniel; take Waddle if you want the speed 17 next to Sutton.",
+    "nearby": "Vs Tee Higgins (FP 33): take Higgins for Burrow's proven WR2 volume if the heel clears; take Waddle for the healthier Nix WR1 role. Vs Ladd McConkey (FP 37): take Waddle for the clearer alpha after Sutton; take McConkey if you prefer Herbert under McDaniel.",
     "links": [
       {
-        "label": "Broncos Wire: Payton \u2014 back to 100% after 35-yarder",
-        "url": "https://broncoswire.usatoday.com/story/sports/nfl/broncos/2026/08/24/fantasy-football-jaylen-waddle-impressed-in-broncos-debut/91434673007/"
-      },
-      {
-        "label": "Gazette: 35-yard catch-and-run vs Packers",
+        "label": "Payton: Waddle back to 100% after 35-yarder",
         "url": "https://www.denvergazette.com/2026/08/21/jaylen-waddle-breaks-loose-for-huge-gain-in-broncos-preseason-debut/"
       },
       {
-        "label": "Gazette: starters sat the Vikings finale",
-        "url": "https://gazette.com/2026/08/28/jarrett-stidham-sam-ehlinger-lead-broncos-to-34-6-rout-of-vikings-in-preseason-finale/"
+        "label": "CBS: big gain in team debut",
+        "url": "https://www.cbssports.com/fantasy/football/news/broncos-jaylen-waddle-big-gain-in-team-debut/"
+      },
+      {
+        "label": "Returned to practice Aug. 17",
+        "url": "https://www.nbcsports.com/fantasy/football/player-news/2026-08-17/jaylen-waddle-back-practicing-on-monday"
       }
     ]
   },
@@ -1588,25 +1695,26 @@
     ]
   },
   "6790": {
-    "as_of": "2026-08-30",
+    "as_of": "2026-09-07",
     "heat": "fire",
-    "lead": "Bears starter this year. Monangai (hyperextended right knee, Aug 16) is week-to-week \u2014 Johnson would not lock Week 1 vs Carolina \u2014 so this is more Swift, not a 50/50. Roschon and Ahmed take the backup reps until Monangai is back. I'd take him in the 4th\u20135th as an RB2; this ESPN room has him 48.",
+    "lead": "Bears starter this year. Monangai (hyperextended right knee, Aug 16) is still week-to-week \u2014 Johnson has not locked Week 1 vs Carolina, and Swift said Sep 5 he is running but nobody is rushing him \u2014 so this is more Swift, not a 50/50. I'd take him in the 4th\u20135th as an RB2; this ESPN room has him 46.",
     "notes": [
-      "Last year: 16 starts, 223-1,087-9 and 34-299-1. Healthy this camp. Fowler had Monangai out multiple weeks; that is the 2026 volume bump, not a new committee win."
+      "Swift's midsection scare last week was a cramp per Schefter \u2014 Week 1 is clean. Last year: 16 starts, 223-1,087-9 and 34-299-1.",
+      "FP 45 / ESPN 46 / RB18. Even when Monangai returns, Swift is the 1; the vacancy is the early-season bump."
     ],
-    "nearby": "Vs Etienne (FP 44) take Etienne if both are there \u2014 Kamara is a month, Monangai is week-to-week. Vs Skattebo (FP 53) Swift has the 1,000-yard tape and the vacancy; Skattebo is the Giants lead with Tracy/Harris/Singletary still on the next line.",
+    "nearby": "Vs Travis Etienne (FP 44) take Etienne if both are there \u2014 Kamara is a month, Monangai is week-to-week. Vs Bucky Irving (FP 50) Swift has the 1,000-yard tape and the Monangai vacancy; Bucky is the Bucs lead with Gainwell as 1B.",
     "links": [
       {
-        "label": "ESPN/Fowler: Monangai multiple weeks",
-        "url": "https://abc7chicago.com/post/bears-rb-kyle-monangai-knee-expected-miss-multiple-weeks-source-says/19694796/"
+        "label": "Bears Wire: Swift on Monangai running (Sep 5)",
+        "url": "https://bearswire.usatoday.com/story/sports/nfl/bears/2026/09/05/bears-dandre-swift-updates-kyle-monangai-injury/91592101007/"
       },
       {
-        "label": "Yahoo: Johnson \u2014 week to week",
-        "url": "https://sports.yahoo.com/articles/rb-kyle-monangai-week-week-211900568.html"
+        "label": "SI: Week 1 injury board \u2014 Monangai week-to-week",
+        "url": "https://www.si.com/nfl/bears/onsi/kyle-monangai-luther-burden-d-andre-swift-and-more-bears-injury-updates-entering-week-1"
       },
       {
-        "label": "SI: Swift volume if Monangai sits",
-        "url": "https://www.si.com/nfl/bears/onsi/chicago-bears-official-injury-update-kyle-monangai"
+        "label": "RotoBaller: Swift cramp, Week 1 expected",
+        "url": "https://www.rotoballer.com/will-dandre-swift-play-in-week-1-fantasy-football-injury-update-2026/1922903"
       }
     ]
   },
@@ -1796,21 +1904,26 @@
     ]
   },
   "5927": {
-    "as_of": "2026-08-30",
+    "as_of": "2026-09-07",
     "heat": "neutral",
-    "lead": "Commanders WR1 this year with Daniels. Diggs is the new paid 2 on a one-year deal, and McLaurin himself called them complementary \u2014 this is a split of the targets, not McLaurin taking the room. I'd take him in the 5th as a WR2; this ESPN room has him 52.",
+    "lead": "Commanders WR1 this year with Daniels. Diggs is the new paid 2 on a one-year deal, and the initial 53 kept seven receivers with McLaurin/Diggs as the clear top pair \u2014 this is a split of the targets, not McLaurin taking the room. I'd take him in the 5th as a WR2; this ESPN room has him 50.",
     "notes": [
-      "Healthy. Tuesday he backed the Diggs signing and the grit-and-passion line from another NFL coach. Daniels is healthy after last year's elbow; the OL (Tunsil triceps) is the offense's actual problem, not McLaurin's role."
+      "Healthy. Quad limited him to 10 games and 582 yards in 2025; Daniels also missed time. Blough has floated a 10-target ambition \u2014 Diggs makes that a ceiling, not a lock.",
+      "FP 48 / ESPN 50 / WR24. Safer every-week WR2 than the Year-2 darts around him."
     ],
-    "nearby": "Vs Egbuka (FP 42) Egbuka is the vacated-Evans leap if the toe clears; McLaurin is the safer Daniels WR1. Vs Adams (FP 48) Adams has Stafford and a quieter camp; McLaurin has Diggs eating.",
+    "nearby": "Vs Luther Burden (FP 47) McLaurin is the safer Daniels WR1; Burden is the cheaper Year-2 Bears dart. Vs Davante Adams (FP 46) Adams has Stafford and the hotter camp; McLaurin has Diggs eating.",
     "links": [
       {
-        "label": "Commanders Wire: McLaurin on Diggs (Aug 26)",
-        "url": "https://commanderswire.usatoday.com/story/sports/nfl/commanders/2026/08/26/mclaurin-thinks-signing-diggs-was-good-move-for-commanders/91467819007/"
+        "label": "Fantasy Footballers: WR room on the 53 (Sep 3)",
+        "url": "https://www.thefantasyfootballers.com/news/636170/terry-mclaurin-teams-wr-room-comes-into-focus/"
       },
       {
-        "label": "AP: Diggs as the WR2 opposite McLaurin",
-        "url": "https://apnews.com/article/stefon-diggs-commanders-practice-2c0e04069b33a35c1e16284f527c7d55"
+        "label": "SI: McLaurin WR1, Diggs WR2 after cuts",
+        "url": "https://www.si.com/nfl/commanders/onsi/washington-commanders-projected-depth-chart-week-1-starters-rotations-2026"
+      },
+      {
+        "label": "RotoBaller: top-10 upside if healthy",
+        "url": "https://www.rotoballer.com/player-news/terry-mclaurin-has-clear-top-10-upside-if-injury-bug-stays-away/1920932"
       }
     ]
   },
@@ -1918,48 +2031,48 @@
     ]
   },
   "6801": {
-    "as_of": "2026-08-30",
-    "heat": "neutral",
-    "lead": "Bengals WR2 this year with Burrow. Chase is the WR1 \u2014 left-knee hyperextension Tuesday, sat Wednesday in a sleeve; Higgins was already on a rest day from team drills and stayed off. Meyers and Young ate the 1s, not taking Higgins' job. Starters sit Friday vs Philly. 59-846-11 last year. I'd take him in the 4th; this ESPN room has him 44 so he can fall.",
+    "as_of": "2026-09-07",
+    "heat": "ice",
+    "lead": "Bengals WR2 this year with Burrow. Chase is the WR1 \u2014 left-knee hyperextension Aug. 25; Higgins has a heel contusion, and Taylor said both would be limited early September but expects them for Week 1 vs Tampa. Meyers and Young are depth, not taking his job. I'd take him in the 4th as a WR2; this ESPN room has him 42.",
     "notes": [
-      "Four-year, $115 million through 2028. Chase called it a tweak and said if he had a game tomorrow he'd play \u2014 no structural report from the team."
+      "Taylor Sep. 1: heel contusion limits Higgins this week; same limited bucket as Chase. AtoZ Sep. 7: both still on track for the Bucs opener with game-week practice to watch."
     ],
-    "nearby": "Vs Zay Flowers (FP 30): take Flowers for the WR1 share; take Higgins if you want Burrow volume at ESPN 44. Vs Jaylen Waddle (FP 35): take Higgins for the locked Burrow WR2; take Waddle if you want Nix's new 17 at a similar cost.",
+    "nearby": "Vs Rashee Rice (FP 30): take Rice if you want the Chiefs' volume without the heel sit; take Higgins for Burrow's WR2 ceiling once cleared. Vs Jaylen Waddle (FP 36): take Higgins for proven Burrow red-zone work; take Waddle if you prefer Nix's WR1 role after Payton's 100% stamp.",
     "links": [
       {
-        "label": "Bengals.com: Higgins rest day, Meyers/Young on the 1s",
-        "url": "https://www.bengals.com/news/training-camp-report-jamarr-chase-andrei-iosivas-dohnte-meyers-bengals-wrs-depth-on-display"
+        "label": "Higgins heel contusion, expects Week 1",
+        "url": "https://www.rotoballer.com/player-news/tee-higgins-dealing-with-minor-heel-contusion/1921306"
       },
       {
-        "label": "Bengals.com: Chase out Wednesday, Higgins rest days",
-        "url": "https://www.bengals.com/news/training-camp-report-final-break-2026-demetrius-knight-barrett-carter"
+        "label": "Taylor: Chase and Higgins limited",
+        "url": "https://www.thesportsanimal.com/2026/09/01/bengals-wrs-jamarr-chase-knee-tee-higgins-heel-limited-this-week/"
       },
       {
-        "label": "Local 12: Higgins took his pads off after Chase went down",
-        "url": "https://local12.com/sports/bengals/jamarr-chase-avoids-serious-injury-scare-as-bengals-training-camp-nears-end"
+        "label": "Sep. 7 injury board entering Week 1",
+        "url": "https://atozsports.com/nfl/cincinnati-bengals-news/bengals-injury-update-jamarr-chase-tee-higgins-week-1/"
       }
     ]
   },
   "3198": {
-    "as_of": "2026-08-30",
+    "as_of": "2026-09-07",
     "heat": "neutral",
-    "lead": "Ravens lead back this year. Hill is the veteran 1B on pass downs, not a split of the job \u2014 Mitchell left for the Chargers in March. Sat Friday's Commanders finale with the other 33 resters; Randall (5th) and Ali ate the exhibition work. He is 32 after 307-1,595-16 last year. I'd take him at the 2/3 turn; this ESPN room has him 16 so he may go earlier.",
+    "lead": "Ravens lead back this year. Hill is the veteran 1B on pass downs, not a split of the job \u2014 Mitchell left for the Chargers in March, and fifth-rounder Randall hit IR (designated to return) on Aug. 30 so Ali is the 3. Sat the Commanders finale with the other starters; 32 after 307-1,595-16 last year. I'd take him at the 2/3 turn; this ESPN room has him 16 so he may go earlier.",
     "notes": [
-      "Minter's rest list, not an injury. DeCosta waited until pick 174 (Randall) to add to the room. New OC Declan Doyle."
+      "FantasyFootballers Sep 1: Hill/Ali are the familiar complements; Randall earliest return Oct. 11 at Atlanta. New OC Declan Doyle; Linderbaum left for Vegas."
     ],
-    "nearby": "Vs Omarion Hampton (FP 20): take Hampton for the receiving work in half-PPR; Henry is the older feature if you want pure rushing volume. Vs Ashton Jeanty (FP 22): take Henry \u2014 healthier August, locked Ravens volume; Jeanty's low-ankle is still a Week 1 question.",
+    "nearby": "Vs Omarion Hampton (FP 20): take Hampton for the receiving work in half-PPR; Henry is the older feature if you want pure rushing volume. Vs Ashton Jeanty (FP 24): take Henry \u2014 healthier September, locked Ravens volume; Jeanty's low-ankle is still a Week 1 question.",
     "links": [
       {
-        "label": "NFL.com: 307-1,595-16, Hill/Ali/Randall behind him",
-        "url": "https://www.nfl.com/news/derrick-henry-embracing-ravens-new-era-under-jesse-minter-change-can-be-good"
+        "label": "FantasyFootballers: Hill/Ali behind Henry (Sep 1)",
+        "url": "https://www.thefantasyfootballers.com/news/635837/derrick-henry-joined-by-familiar-complements-in-backfield/"
       },
       {
-        "label": "Banner: Randall/Ali in the Commanders finale",
-        "url": "https://www.thebanner.com/sports/ravens-nfl/ravens-commanders-what-we-learned-TAM5IPDAUNHLVMCXSEOWMMKOKM/"
+        "label": "CBS: Randall IR, designated to return",
+        "url": "https://www.cbssports.com/fantasy/football/news/ravens-adam-randall-placed-on-ir-designated-to-return/"
       },
       {
-        "label": "ESPN: Ravens camp tracker, year 11",
-        "url": "https://www.espn.com/nfl/story/_/id/49434567/baltimore-ravens-training-camp-2026-intel-updates"
+        "label": "Banner: 53 chart \u2014 Henry, Hill, Ali",
+        "url": "https://www.thebanner.com/sports/ravens-nfl/ravens-53-man-roster-depth-chart-ethan-burke-joe-fagnano-7SFZT2EBR5FK7MFCTZC3LVEFZQ/"
       }
     ]
   },
@@ -2104,21 +2217,25 @@
     ]
   },
   "7525": {
-    "as_of": "2026-08-30",
+    "as_of": "2026-09-07",
     "heat": "fire",
-    "lead": "Eagles WR1 this year with Hurts after Brown left. Wicks is the 2; Lemon (hamstring, 20th overall) is the slot \u2014 first time Smith and Lemon were both full Monday since Aug. 3. Hamstring ate about two weeks of camp; now full, expected to sit Friday vs Cincinnati. 77-1,008-4 last year next to Brown. I'd take him in the 3rd; this ESPN room has him 36 so he can fall.",
+    "lead": "Eagles WR1 this year with Hurts after Brown left for New England. Wicks is the 2; Lemon (hamstring, 20th overall) is the slot \u2014 both Smith and Lemon were full Aug. 24 for the first time since Aug. 3. Hamstring ate about two weeks of camp; sat the preseason slate with the starters, trending full for Week 1 vs Washington after 77-1,008-4 next to Brown. I'd take him in the 3rd; this ESPN room has him 35 so he can fall.",
     "notes": [
-      "Eagles Wire: trio trending full-strength for Week 1 vs Washington. Goedert is still the other volume name."
+      "Goedert is still the other volume name. Depth chart projections: Smith / Wicks / Lemon as the Week 1 trio."
     ],
-    "nearby": "Vs Malik Nabers (FP 26): take Smith if you need a cleaner Week 1; take Nabers for the younger hog if the ACL holds. Vs Rashee Rice (FP 29): take Smith \u2014 Hurts is locked; Rice is Mahomes' WR1 if the knee and Mahomes both clear.",
+    "nearby": "Vs Malik Nabers (FP 26): take Smith if you need a cleaner Week 1; take Nabers for the younger hog if the ACL holds. Vs Zay Flowers (FP 29): take Smith \u2014 Hurts is locked and Brown is gone; Flowers just returned from a two-week sit Sep. 3.",
     "links": [
+      {
+        "label": "RotoWire: no preseason action, WR1 after Brown trade",
+        "url": "https://www.rotowire.com/football/headlines/devonta-smith-news-logs-no-preseason-action-636273"
+      },
       {
         "label": "Eagles Wire: Smith, Wicks, Lemon full for Week 1",
         "url": "https://theeagleswire.usatoday.com/story/sports/nfl/eagles/2026/08/24/eagles-smith-wicks-lemon-commanders-season-opener/91450300007/"
       },
       {
-        "label": "CBS: full participant Monday",
-        "url": "https://www.cbssports.com/fantasy/football/news/eagles-devonta-smith-full-participant-monday/"
+        "label": "RotoBaller: undisputed No. 1 (Sep 3)",
+        "url": "https://www.rotoballer.com/player-news/devonta-smith-primed-for-breakout-as-undisputed-no-1/1922973"
       }
     ]
   },
@@ -2144,22 +2261,25 @@
     "depth": "Wright is the chart backup and the Week 1 fill-in if the hip flares again. This is rest-and-return, not a new tight end committee."
   },
   "7588": {
-    "as_of": "2026-08-30",
-    "heat": "neutral",
-    "lead": "Cowboys lead back this year on the three-year, $24 million. Blue (shoulder) is the receiving 2; Mafah started the Saints finale with Javonte sat \u2014 not a split of the job. 252-1,201-11 last year. Schottenheimer still wants a 1-2 punch so last year's late fade doesn't repeat. I'd take him in the 3rd; this ESPN room has him 32.",
-    "nearby": "Vs Kyren Williams (FP 31): take Javonte for the cleaner lead; take Kyren if you want the Rams' offense and will live with Corum. Vs Breece Hall (FP 34): take Javonte \u2014 healthier August; Hall is still on a groin with only side-field work this week.",
+    "as_of": "2026-09-07",
+    "heat": "fire",
+    "lead": "Cowboys lead back this year on the three-year, $24 million. Dallas waived Blue, Mafah, and Abanikanda at cutdown \u2014 Malik Davis and waiver claim Demercado are the 2s, not a split of the job. Sat the preseason with the other 1s after 252-1,201-11 last year. I'd take him in the 3rd as an RB2; this ESPN room has him 31.",
+    "notes": [
+      "Archer/CBS Sep. 1: locked atop the chart after Blue/Mafah/Abanikanda cuts; Davis remains the primary backup, Demercado the new depth."
+    ],
+    "nearby": "Vs Kyren Williams (FP 31): take Javonte for the cleaner feature after Dallas cleared the room; take Kyren if you want Stafford's offense and will live with Corum. Vs Breece Hall (FP 34): take Javonte for the healthy camp; take Hall if you buy the Week 1 groin clearance and Geno's run game.",
     "links": [
       {
-        "label": "Cowboys.com: sat the Saints finale; Mafah started",
-        "url": "https://www.dallascowboys.com/news/updates-offseason-2026"
+        "label": "Locked atop depth chart after cuts",
+        "url": "https://www.cbssports.com/fantasy/football/news/cowboys-javonte-williams-locked-atop-depth-chart-after-cuts/"
       },
       {
-        "label": "Cowboys.com: 1,201-11, $24 million, camp",
-        "url": "https://www.dallascowboys.com/news/javonte-williams-cowboys-offense-has-hit-the-ground-running-early-in-training-camp"
+        "label": "Three-year, $24M extension",
+        "url": "https://www.nfl.com/news/cowboys-rb-javonte-williams-agree-to-terms-on-three-year-24-million-contract-extension"
       },
       {
-        "label": "Dallas News: keep running the way he's running",
-        "url": "https://www.dallasnews.com/sports/cowboys/article/javonte-williams-dallas-cowboys-emmitt-smith-22319891.php"
+        "label": "Depth: Williams, Davis, Demercado",
+        "url": "https://fanrecap.com/dallas-cowboys/cowboys-depth-chart-just-raised-new-questions-before-week-1--z542y"
       }
     ]
   },
@@ -2316,25 +2436,26 @@
     ]
   },
   "2133": {
-    "as_of": "2026-08-30",
-    "heat": "fire",
-    "lead": "Rams WR2 this year next to Nacua \u2014 and the camp WR1 while Nacua's psoas has kept him out of team work. Atkins called him virtually uncoverable in the Cowboys and Saints joints; Stafford chemistry is the story of August. He is 33. I'd take him in the 4th as a WR2; this ESPN room has him 45.",
+    "as_of": "2026-09-07",
+    "heat": "neutral",
+    "lead": "Rams WR2 this year next to Nacua. Atkins called him virtually uncoverable in the Cowboys and Saints joints, and Stafford chemistry is the story of August \u2014 McVay (Sep 6) expects Nacua for Thursday's Melbourne opener, so this is a finished duo, not a Nacua sit. I'd take him in the 4th as a WR2; this ESPN room has him 43.",
     "notes": [
-      "Led the NFL with 14 TD catches in 14 games last year, then a late soft-tissue sit. McVay is managing the workload. Nacua is day-to-day, not ruled out of the Sept. 10 Melbourne opener."
+      "Led the NFL with 14 TD catches in 14 games last year, then a late soft-tissue sit. McVay is managing the workload. Unofficial chart lists Adams as the X, Nacua as the Z/slot.",
+      "FP 46 / ESPN 43 / WR22. Camp hype stays; the Week 1 Nacua return caps the temporary WR1 spike."
     ],
-    "nearby": "Vs McLaurin (FP 47) Adams has the hotter camp and the Nacua sit; McLaurin is the safer every-week WR2. Vs Burden (FP 49) Adams is the finished Stafford target; Burden is the Year-2 Bears dart if Johnson's 100% holds.",
+    "nearby": "Vs Emeka Egbuka (FP 42) Adams is the safer Stafford WR2; Egbuka is the vacated-Evans leap if the toe clears. Vs Luther Burden (FP 47) Adams is the finished Stafford target; Burden is the Year-2 Bears dart if Johnson's 100% holds.",
     "links": [
+      {
+        "label": "Rams Wire: Nacua expected Week 1 (Sep 6)",
+        "url": "https://theramswire.usatoday.com/story/sports/nfl/rams/2026/09/06/rams-puka-nacua-alaric-jackson-week-1-play-suspension/91644541007/"
+      },
       {
         "label": "Rams Wire: uncoverable in joints (Aug 25)",
         "url": "https://theramswire.usatoday.com/story/sports/nfl/rams/2026/08/25/rams-davante-adams-joint-practice-receiver/91456307007/"
       },
       {
-        "label": "Rams.com: Stafford-Adams vs Saints",
-        "url": "https://www.therams.com/news/10-observations-from-rams-joint-practice-with-saints-matthew-stafford-davante-adams-terrance-ferguson-nate-landman-kobie-turner"
-      },
-      {
-        "label": "Rams.com: Nacua psoas, smart with him",
-        "url": "https://www.therams.com/news/rams-puka-nacua-injury-update-cowboys-joint-practice-psoas"
+        "label": "NBC: Atkins \u2014 uncoverable vs Cowboys/Saints",
+        "url": "https://www.nbcsports.com/fantasy/football/player-news/2026-08-25/adams-uncoverable-in-joint-practices"
       }
     ]
   },
