@@ -642,7 +642,7 @@ import { boardCellPos, boardName, lastName } from "./lib/board-label.js?v=dstcel
   async function refreshBaked() {
     try {
       const [bj, rj] = await Promise.all([
-        fetch("data/briefs.json?v=rd907c", { cache: "no-store" }).then((r) => (r.ok ? r.json() : null)).catch(() => null),
+        fetch("data/briefs.json?v=rd907d", { cache: "no-store" }).then((r) => (r.ok ? r.json() : null)).catch(() => null),
         fetch("data/recs.json?v=rd830", { cache: "no-store" }).then((r) => (r.ok ? r.json() : null)).catch(() => null),
       ]);
       if (bj && typeof bj === "object" && !Array.isArray(bj)) state.briefs = bj;
@@ -2056,7 +2056,7 @@ import { boardCellPos, boardName, lastName } from "./lib/board-label.js?v=dstcel
     const [pj, dj, bj, rj] = await Promise.all([
       fetch("data/players.json?v=rd840", { cache: "no-store" }).then((r) => r.json()),
       fetch("data/draft.json?v=rd840", { cache: "no-store" }).then((r) => r.json()),
-      fetch("data/briefs.json?v=rd907c", { cache: "no-store" })
+      fetch("data/briefs.json?v=rd907d", { cache: "no-store" })
         .then((r) => (r.ok ? r.json() : {}))
         .catch(() => ({})),
       fetch("data/recs.json?v=rd830", { cache: "no-store" })

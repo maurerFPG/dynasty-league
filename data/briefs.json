@@ -11018,166 +11018,364 @@
   "HOU": {
     "as_of": "2026-09-07",
     "heat": "neutral",
-    "lead": "Texans D/ST sits atop half-PPR DST ECR \u2014 Anderson/Hunter edges and a unit that forces turnovers under Ryans. Weeks 1\u20133: vs BUF (off. #6), vs CIN (off. #2), at IND (off. #17) \u2014 tough open. Offense ranks: Footballguys 2026 projected offensive fantasy points (Clayton Gray)."
+    "lead": "Half-PPR DST1 for a reason. Will Anderson Jr. and Danielle Hunter still anchor the edges (50 sacks across their first two seasons together), with Derek Stingley Jr. and Kamari Lassiter locking the secondary. Houston added Reed Blankenship and rotational edge Jadeveon Clowney, plus DT Kayden McDonald \u2014 this is a set-and-forget unit, not a streamer.",
+    "schedule": [
+      "W1: vs BUF \u2014 opp offense ~#6",
+      "W2: vs CIN \u2014 opp offense ~#2",
+      "W3: at IND \u2014 opp offense ~#17"
+    ],
+    "schedule_note": "Offense ranks: Footballguys 2026 projected offensive fantasy points (Clayton Gray)."
   },
   "DEN": {
     "as_of": "2026-09-07",
     "heat": "neutral",
-    "lead": "Broncos D/ST remain an elite front \u2014 Payton's squad feasts when the offense stays on schedule. Weeks 1\u20133: at KC (off. #9), vs JAX (off. #12), vs LAR (off. #1) \u2014 brutal open. Offense ranks: Footballguys 2026 projected offensive fantasy points (Clayton Gray)."
+    "lead": "Broncos D/ST stay elite behind Vance Joseph's pressure scheme. Zach Allen and Nik Bonitto lead the rush, Pat Surtain II is still the league's best cover corner, and Talanoa Hufanga sets the tone at safety. Nearly the whole starting D is back \u2014 weekly starter even when the offense slate is choppy.",
+    "schedule": [
+      "W1: at KC \u2014 opp offense ~#9",
+      "W2: vs JAX \u2014 opp offense ~#12",
+      "W3: vs LAR \u2014 opp offense ~#1"
+    ],
+    "schedule_note": "Offense ranks: Footballguys 2026 projected offensive fantasy points (Clayton Gray)."
   },
   "LAR": {
     "as_of": "2026-09-07",
-    "heat": "neutral",
-    "lead": "Rams D/ST with Garrett leading the front; more stream-up than set-and-forget, but the pressure volume is real. Weeks 1\u20133: vs SF (Melbourne) (off. #5), vs NYG (off. #21), at DEN (off. #11) \u2014 mixed open. Offense ranks: Footballguys 2026 projected offensive fantasy points (Clayton Gray)."
+    "heat": "fire",
+    "lead": "Life after Aaron Donald's 2024 retirement looked like Kobie Turner, Braden Fiske, and Byron Young carrying the front \u2014 then L.A. flipped Jared Verse to Cleveland for Myles Garrett in June, and Donald unretired Aug. 30 on a one-year deal. Trent McDuffie and Jaylen Watson remake the secondary. Donald's Week 1 snap count vs SF in Melbourne is still a watch, but the ceiling is DST1 territory when the front is healthy. Set-and-forget if you draft them; don't stream them away.",
+    "schedule": [
+      "W1: vs SF (Melbourne) \u2014 opp offense ~#5",
+      "W2: vs NYG \u2014 opp offense ~#21",
+      "W3: at DEN \u2014 opp offense ~#11"
+    ],
+    "schedule_note": "Offense ranks: Footballguys 2026 projected offensive fantasy points (Clayton Gray)."
   },
   "SEA": {
     "as_of": "2026-09-07",
     "heat": "neutral",
-    "lead": "Seahawks D/ST \u2014 defending champs with a ball-hawking secondary; usable weekly even without a soft slate. Weeks 1\u20133: vs NE (off. #7), at ARI (off. #26), at WSH (off. #25) \u2014 mostly soft open. Offense ranks: Footballguys 2026 projected offensive fantasy points (Clayton Gray)."
+    "lead": "Defending champs under Mike Macdonald. Devon Witherspoon, Leonard Williams, DeMarcus Lawrence, and Ernest Jones IV are still the spine; Nick Emmanwori is the young difference-maker. Free agency cost Boye Mafe, Riq Woolen, and Coby Bryant, so depth is thinner \u2014 still a weekly start, just not quite as plug-and-play as Houston.",
+    "schedule": [
+      "W1: vs NE \u2014 opp offense ~#7",
+      "W2: at ARI \u2014 opp offense ~#26",
+      "W3: at WSH \u2014 opp offense ~#25"
+    ],
+    "schedule_note": "Offense ranks: Footballguys 2026 projected offensive fantasy points (Clayton Gray)."
   },
   "JAX": {
     "as_of": "2026-09-07",
     "heat": "neutral",
-    "lead": "Jaguars D/ST climbed half-PPR boards on front-seven juice; the early slate is the buy window. Weeks 1\u20133: vs CLE (off. #31), at DEN (off. #11), vs NE (off. #7) \u2014 mixed open. Offense ranks: Footballguys 2026 projected offensive fantasy points (Clayton Gray)."
+    "lead": "Josh Hines-Allen and Travon Walker headline the front seven with Foyesade Oluokun and Arik Armstead. Travis Hunter's bigger defensive role is the 2026 swing factor after a turnover-driven fantasy year. More stream-with-a-plan than locked DST1 \u2014 soft early weeks help the buy case.",
+    "schedule": [
+      "W1: vs CLE \u2014 opp offense ~#31",
+      "W2: at DEN \u2014 opp offense ~#11",
+      "W3: vs NE \u2014 opp offense ~#7"
+    ],
+    "schedule_note": "Offense ranks: Footballguys 2026 projected offensive fantasy points (Clayton Gray)."
   },
   "PHI": {
     "as_of": "2026-09-07",
     "heat": "neutral",
-    "lead": "Eagles D/ST still generate pressure up front; more boom/bust than Houston/Denver but startable in the right weeks. Weeks 1\u20133: vs WSH (off. #25), at TEN (off. #28), at CHI (off. #10) \u2014 mostly soft open. Offense ranks: Footballguys 2026 projected offensive fantasy points (Clayton Gray)."
+    "lead": "Fangio's room still runs through Jalen Carter inside and Zack Baun at linebacker. Philly added Jonathan Greenard and Riq Woolen after losing Reed Blankenship and others \u2014 pressure should tick up, but it's still more boom/bust than Houston/Denver. Startable weekly with a soft open.",
+    "schedule": [
+      "W1: vs WSH \u2014 opp offense ~#25",
+      "W2: at TEN \u2014 opp offense ~#28",
+      "W3: at CHI \u2014 opp offense ~#10"
+    ],
+    "schedule_note": "Offense ranks: Footballguys 2026 projected offensive fantasy points (Clayton Gray)."
   },
   "NE": {
     "as_of": "2026-09-07",
     "heat": "neutral",
-    "lead": "Patriots D/ST climbed the board on scheme and takeaways; the early slate decides weekly vs stream. Weeks 1\u20133: at SEA (off. #20), vs PIT (off. #23), at JAX (off. #12) \u2014 mostly soft open. Offense ranks: Footballguys 2026 projected offensive fantasy points (Clayton Gray)."
+    "lead": "Christian Gonzalez anchors the secondary; Dre'Mont Jones and Kevin Byard were the big offseason adds to the front and back end, with second-rounder Gabe Jacas in the edge mix. Last year's top-10 finish rode turnovers and a soft slate \u2014 treat them as a high-end streamer until the new pieces prove it against a harder 2026 schedule.",
+    "schedule": [
+      "W1: at SEA \u2014 opp offense ~#20",
+      "W2: vs PIT \u2014 opp offense ~#23",
+      "W3: at JAX \u2014 opp offense ~#12"
+    ],
+    "schedule_note": "Offense ranks: Footballguys 2026 projected offensive fantasy points (Clayton Gray)."
   },
   "PIT": {
     "as_of": "2026-09-07",
     "heat": "neutral",
-    "lead": "Steelers D/ST \u2014 classic Pittsburgh front that spikes sacks; need the offense to keep games in range. Weeks 1\u20133: vs ATL (off. #22), at NE (off. #7), vs CIN (off. #2) \u2014 tough open. Offense ranks: Footballguys 2026 projected offensive fantasy points (Clayton Gray)."
+    "lead": "T.J. Watt is still the engine; Alex Highsmith and the Steelers front generate the sack spikes that make Pittsburgh a classic stream-up unit. Aging core and post-Tomlin questions keep them out of the locked-DST1 tier \u2014 draft for the boom weeks, not every-week blind starts.",
+    "schedule": [
+      "W1: vs ATL \u2014 opp offense ~#22",
+      "W2: at NE \u2014 opp offense ~#7",
+      "W3: vs CIN \u2014 opp offense ~#2"
+    ],
+    "schedule_note": "Offense ranks: Footballguys 2026 projected offensive fantasy points (Clayton Gray)."
   },
   "espn--16034": {
     "as_of": "2026-09-07",
     "heat": "neutral",
-    "lead": "Texans D/ST sits atop half-PPR DST ECR \u2014 Anderson/Hunter edges and a unit that forces turnovers under Ryans. Weeks 1\u20133: vs BUF (off. #6), vs CIN (off. #2), at IND (off. #17) \u2014 tough open. Offense ranks: Footballguys 2026 projected offensive fantasy points (Clayton Gray)."
+    "lead": "Half-PPR DST1 for a reason. Will Anderson Jr. and Danielle Hunter still anchor the edges (50 sacks across their first two seasons together), with Derek Stingley Jr. and Kamari Lassiter locking the secondary. Houston added Reed Blankenship and rotational edge Jadeveon Clowney, plus DT Kayden McDonald \u2014 this is a set-and-forget unit, not a streamer.",
+    "schedule": [
+      "W1: vs BUF \u2014 opp offense ~#6",
+      "W2: vs CIN \u2014 opp offense ~#2",
+      "W3: at IND \u2014 opp offense ~#17"
+    ],
+    "schedule_note": "Offense ranks: Footballguys 2026 projected offensive fantasy points (Clayton Gray)."
   },
   "espn--16007": {
     "as_of": "2026-09-07",
     "heat": "neutral",
-    "lead": "Broncos D/ST remain an elite front \u2014 Payton's squad feasts when the offense stays on schedule. Weeks 1\u20133: at KC (off. #9), vs JAX (off. #12), vs LAR (off. #1) \u2014 brutal open. Offense ranks: Footballguys 2026 projected offensive fantasy points (Clayton Gray)."
+    "lead": "Broncos D/ST stay elite behind Vance Joseph's pressure scheme. Zach Allen and Nik Bonitto lead the rush, Pat Surtain II is still the league's best cover corner, and Talanoa Hufanga sets the tone at safety. Nearly the whole starting D is back \u2014 weekly starter even when the offense slate is choppy.",
+    "schedule": [
+      "W1: at KC \u2014 opp offense ~#9",
+      "W2: vs JAX \u2014 opp offense ~#12",
+      "W3: vs LAR \u2014 opp offense ~#1"
+    ],
+    "schedule_note": "Offense ranks: Footballguys 2026 projected offensive fantasy points (Clayton Gray)."
   },
   "espn--16014": {
     "as_of": "2026-09-07",
-    "heat": "neutral",
-    "lead": "Rams D/ST with Garrett leading the front; more stream-up than set-and-forget, but the pressure volume is real. Weeks 1\u20133: vs SF (Melbourne) (off. #5), vs NYG (off. #21), at DEN (off. #11) \u2014 mixed open. Offense ranks: Footballguys 2026 projected offensive fantasy points (Clayton Gray)."
+    "heat": "fire",
+    "lead": "Life after Aaron Donald's 2024 retirement looked like Kobie Turner, Braden Fiske, and Byron Young carrying the front \u2014 then L.A. flipped Jared Verse to Cleveland for Myles Garrett in June, and Donald unretired Aug. 30 on a one-year deal. Trent McDuffie and Jaylen Watson remake the secondary. Donald's Week 1 snap count vs SF in Melbourne is still a watch, but the ceiling is DST1 territory when the front is healthy. Set-and-forget if you draft them; don't stream them away.",
+    "schedule": [
+      "W1: vs SF (Melbourne) \u2014 opp offense ~#5",
+      "W2: vs NYG \u2014 opp offense ~#21",
+      "W3: at DEN \u2014 opp offense ~#11"
+    ],
+    "schedule_note": "Offense ranks: Footballguys 2026 projected offensive fantasy points (Clayton Gray)."
   },
   "espn--16026": {
     "as_of": "2026-09-07",
     "heat": "neutral",
-    "lead": "Seahawks D/ST \u2014 defending champs with a ball-hawking secondary; usable weekly even without a soft slate. Weeks 1\u20133: vs NE (off. #7), at ARI (off. #26), at WSH (off. #25) \u2014 mostly soft open. Offense ranks: Footballguys 2026 projected offensive fantasy points (Clayton Gray)."
+    "lead": "Defending champs under Mike Macdonald. Devon Witherspoon, Leonard Williams, DeMarcus Lawrence, and Ernest Jones IV are still the spine; Nick Emmanwori is the young difference-maker. Free agency cost Boye Mafe, Riq Woolen, and Coby Bryant, so depth is thinner \u2014 still a weekly start, just not quite as plug-and-play as Houston.",
+    "schedule": [
+      "W1: vs NE \u2014 opp offense ~#7",
+      "W2: at ARI \u2014 opp offense ~#26",
+      "W3: at WSH \u2014 opp offense ~#25"
+    ],
+    "schedule_note": "Offense ranks: Footballguys 2026 projected offensive fantasy points (Clayton Gray)."
   },
   "espn--16030": {
     "as_of": "2026-09-07",
     "heat": "neutral",
-    "lead": "Jaguars D/ST climbed half-PPR boards on front-seven juice; the early slate is the buy window. Weeks 1\u20133: vs CLE (off. #31), at DEN (off. #11), vs NE (off. #7) \u2014 mixed open. Offense ranks: Footballguys 2026 projected offensive fantasy points (Clayton Gray)."
+    "lead": "Josh Hines-Allen and Travon Walker headline the front seven with Foyesade Oluokun and Arik Armstead. Travis Hunter's bigger defensive role is the 2026 swing factor after a turnover-driven fantasy year. More stream-with-a-plan than locked DST1 \u2014 soft early weeks help the buy case.",
+    "schedule": [
+      "W1: vs CLE \u2014 opp offense ~#31",
+      "W2: at DEN \u2014 opp offense ~#11",
+      "W3: vs NE \u2014 opp offense ~#7"
+    ],
+    "schedule_note": "Offense ranks: Footballguys 2026 projected offensive fantasy points (Clayton Gray)."
   },
   "espn--16021": {
     "as_of": "2026-09-07",
     "heat": "neutral",
-    "lead": "Eagles D/ST still generate pressure up front; more boom/bust than Houston/Denver but startable in the right weeks. Weeks 1\u20133: vs WSH (off. #25), at TEN (off. #28), at CHI (off. #10) \u2014 mostly soft open. Offense ranks: Footballguys 2026 projected offensive fantasy points (Clayton Gray)."
+    "lead": "Fangio's room still runs through Jalen Carter inside and Zack Baun at linebacker. Philly added Jonathan Greenard and Riq Woolen after losing Reed Blankenship and others \u2014 pressure should tick up, but it's still more boom/bust than Houston/Denver. Startable weekly with a soft open.",
+    "schedule": [
+      "W1: vs WSH \u2014 opp offense ~#25",
+      "W2: at TEN \u2014 opp offense ~#28",
+      "W3: at CHI \u2014 opp offense ~#10"
+    ],
+    "schedule_note": "Offense ranks: Footballguys 2026 projected offensive fantasy points (Clayton Gray)."
   },
   "espn--16017": {
     "as_of": "2026-09-07",
     "heat": "neutral",
-    "lead": "Patriots D/ST climbed the board on scheme and takeaways; the early slate decides weekly vs stream. Weeks 1\u20133: at SEA (off. #20), vs PIT (off. #23), at JAX (off. #12) \u2014 mostly soft open. Offense ranks: Footballguys 2026 projected offensive fantasy points (Clayton Gray)."
+    "lead": "Christian Gonzalez anchors the secondary; Dre'Mont Jones and Kevin Byard were the big offseason adds to the front and back end, with second-rounder Gabe Jacas in the edge mix. Last year's top-10 finish rode turnovers and a soft slate \u2014 treat them as a high-end streamer until the new pieces prove it against a harder 2026 schedule.",
+    "schedule": [
+      "W1: at SEA \u2014 opp offense ~#20",
+      "W2: vs PIT \u2014 opp offense ~#23",
+      "W3: at JAX \u2014 opp offense ~#12"
+    ],
+    "schedule_note": "Offense ranks: Footballguys 2026 projected offensive fantasy points (Clayton Gray)."
   },
   "espn--16023": {
     "as_of": "2026-09-07",
     "heat": "neutral",
-    "lead": "Steelers D/ST \u2014 classic Pittsburgh front that spikes sacks; need the offense to keep games in range. Weeks 1\u20133: vs ATL (off. #22), at NE (off. #7), vs CIN (off. #2) \u2014 tough open. Offense ranks: Footballguys 2026 projected offensive fantasy points (Clayton Gray)."
+    "lead": "T.J. Watt is still the engine; Alex Highsmith and the Steelers front generate the sack spikes that make Pittsburgh a classic stream-up unit. Aging core and post-Tomlin questions keep them out of the locked-DST1 tier \u2014 draft for the boom weeks, not every-week blind starts.",
+    "schedule": [
+      "W1: vs ATL \u2014 opp offense ~#22",
+      "W2: at NE \u2014 opp offense ~#7",
+      "W3: vs CIN \u2014 opp offense ~#2"
+    ],
+    "schedule_note": "Offense ranks: Footballguys 2026 projected offensive fantasy points (Clayton Gray)."
   },
   "espn--16033": {
     "as_of": "2026-09-07",
     "heat": "neutral",
-    "lead": "Ravens D/ST still flash takeaways behind a physical front; schedule swings the weekly rank hard. Weeks 1\u20133: at IND (off. #17), vs NO (off. #24), vs DAL (Rio) (off. #4) \u2014 mixed open. Offense ranks: Footballguys 2026 projected offensive fantasy points (Clayton Gray)."
+    "lead": "Ravens spent big to fix a soft pass rush \u2014 Trey Hendrickson and Calais Campbell join Nnamdi Madubuike up front under a new coordinator look (Anthony Weaver / Jesse Minter fingerprint). Takeaway upside is still there; schedule swings the weekly rank hard, so stream with the slate.",
+    "schedule": [
+      "W1: at IND \u2014 opp offense ~#17",
+      "W2: vs NO \u2014 opp offense ~#24",
+      "W3: vs DAL (Rio) \u2014 opp offense ~#4"
+    ],
+    "schedule_note": "Offense ranks: Footballguys 2026 projected offensive fantasy points (Clayton Gray)."
   },
   "BAL": {
     "as_of": "2026-09-07",
     "heat": "neutral",
-    "lead": "Ravens D/ST still flash takeaways behind a physical front; schedule swings the weekly rank hard. Weeks 1\u20133: at IND (off. #17), vs NO (off. #24), vs DAL (Rio) (off. #4) \u2014 mixed open. Offense ranks: Footballguys 2026 projected offensive fantasy points (Clayton Gray)."
+    "lead": "Ravens spent big to fix a soft pass rush \u2014 Trey Hendrickson and Calais Campbell join Nnamdi Madubuike up front under a new coordinator look (Anthony Weaver / Jesse Minter fingerprint). Takeaway upside is still there; schedule swings the weekly rank hard, so stream with the slate.",
+    "schedule": [
+      "W1: at IND \u2014 opp offense ~#17",
+      "W2: vs NO \u2014 opp offense ~#24",
+      "W3: vs DAL (Rio) \u2014 opp offense ~#4"
+    ],
+    "schedule_note": "Offense ranks: Footballguys 2026 projected offensive fantasy points (Clayton Gray)."
   },
   "espn--16016": {
     "as_of": "2026-09-07",
     "heat": "neutral",
-    "lead": "Vikings D/ST lean on the secondary and home dome games; stream with a plan, not a blind start. Weeks 1\u20133: vs GB (off. #15), at CHI (off. #10), at TB (off. #16) \u2014 mixed open. Offense ranks: Footballguys 2026 projected offensive fantasy points (Clayton Gray)."
+    "lead": "Vikings D/ST lean on the secondary and home-dome games more than a true elite front. Useful as a planned stream, not a set-and-forget \u2014 the early GB/CHI/TB stretch is mixed enough that you want a backup plan.",
+    "schedule": [
+      "W1: vs GB \u2014 opp offense ~#15",
+      "W2: at CHI \u2014 opp offense ~#10",
+      "W3: at TB \u2014 opp offense ~#16"
+    ],
+    "schedule_note": "Offense ranks: Footballguys 2026 projected offensive fantasy points (Clayton Gray)."
   },
   "MIN": {
     "as_of": "2026-09-07",
     "heat": "neutral",
-    "lead": "Vikings D/ST lean on the secondary and home dome games; stream with a plan, not a blind start. Weeks 1\u20133: vs GB (off. #15), at CHI (off. #10), at TB (off. #16) \u2014 mixed open. Offense ranks: Footballguys 2026 projected offensive fantasy points (Clayton Gray)."
+    "lead": "Vikings D/ST lean on the secondary and home-dome games more than a true elite front. Useful as a planned stream, not a set-and-forget \u2014 the early GB/CHI/TB stretch is mixed enough that you want a backup plan.",
+    "schedule": [
+      "W1: vs GB \u2014 opp offense ~#15",
+      "W2: at CHI \u2014 opp offense ~#10",
+      "W3: at TB \u2014 opp offense ~#16"
+    ],
+    "schedule_note": "Offense ranks: Footballguys 2026 projected offensive fantasy points (Clayton Gray)."
   },
   "espn--16024": {
     "as_of": "2026-09-07",
-    "heat": "neutral",
-    "lead": "Chargers D/ST get pass-rush juice when healthy; the early ARI/LV look is why they're in the top 12. Weeks 1\u20133: vs ARI (off. #26), vs LV (off. #27), at BUF (off. #6) \u2014 mostly soft open. Offense ranks: Footballguys 2026 projected offensive fantasy points (Clayton Gray)."
+    "heat": "fire",
+    "lead": "Chargers ranked top-10 in yards/play and EPA/drive a year ago and still generate takeaways. Khalil Mack / Joey Bosa-era juice is thinner, but the unit profiles as a matchup play with a very soft ARI/LV open. Strong stream to start; decide on weekly after Buffalo in Week 3.",
+    "schedule": [
+      "W1: vs ARI \u2014 opp offense ~#26",
+      "W2: vs LV \u2014 opp offense ~#27",
+      "W3: at BUF \u2014 opp offense ~#6"
+    ],
+    "schedule_note": "Offense ranks: Footballguys 2026 projected offensive fantasy points (Clayton Gray)."
   },
   "LAC": {
     "as_of": "2026-09-07",
-    "heat": "neutral",
-    "lead": "Chargers D/ST get pass-rush juice when healthy; the early ARI/LV look is why they're in the top 12. Weeks 1\u20133: vs ARI (off. #26), vs LV (off. #27), at BUF (off. #6) \u2014 mostly soft open. Offense ranks: Footballguys 2026 projected offensive fantasy points (Clayton Gray)."
+    "heat": "fire",
+    "lead": "Chargers ranked top-10 in yards/play and EPA/drive a year ago and still generate takeaways. Khalil Mack / Joey Bosa-era juice is thinner, but the unit profiles as a matchup play with a very soft ARI/LV open. Strong stream to start; decide on weekly after Buffalo in Week 3.",
+    "schedule": [
+      "W1: vs ARI \u2014 opp offense ~#26",
+      "W2: vs LV \u2014 opp offense ~#27",
+      "W3: at BUF \u2014 opp offense ~#6"
+    ],
+    "schedule_note": "Offense ranks: Footballguys 2026 projected offensive fantasy points (Clayton Gray)."
   },
   "espn--16012": {
     "as_of": "2026-09-07",
     "heat": "neutral",
-    "lead": "Chiefs D/ST are more complementary than elite \u2014 stream when games stay one-score. Weeks 1\u20133: vs DEN (off. #11), vs IND (off. #17), at MIA (off. #32) \u2014 mostly soft open. Offense ranks: Footballguys 2026 projected offensive fantasy points (Clayton Gray)."
+    "lead": "Chiefs D/ST lost Trent McDuffie in the Rams deal and profile as complementary \u2014 they spike when games stay one-score and Mahomes keeps them ahead. Soft MIA in Week 3 is the early dart; otherwise stream, don't lock.",
+    "schedule": [
+      "W1: vs DEN \u2014 opp offense ~#11",
+      "W2: vs IND \u2014 opp offense ~#17",
+      "W3: at MIA \u2014 opp offense ~#32"
+    ],
+    "schedule_note": "Offense ranks: Footballguys 2026 projected offensive fantasy points (Clayton Gray)."
   },
   "KC": {
     "as_of": "2026-09-07",
     "heat": "neutral",
-    "lead": "Chiefs D/ST are more complementary than elite \u2014 stream when games stay one-score. Weeks 1\u20133: vs DEN (off. #11), vs IND (off. #17), at MIA (off. #32) \u2014 mostly soft open. Offense ranks: Footballguys 2026 projected offensive fantasy points (Clayton Gray)."
+    "lead": "Chiefs D/ST lost Trent McDuffie in the Rams deal and profile as complementary \u2014 they spike when games stay one-score and Mahomes keeps them ahead. Soft MIA in Week 3 is the early dart; otherwise stream, don't lock.",
+    "schedule": [
+      "W1: vs DEN \u2014 opp offense ~#11",
+      "W2: vs IND \u2014 opp offense ~#17",
+      "W3: at MIA \u2014 opp offense ~#32"
+    ],
+    "schedule_note": "Offense ranks: Footballguys 2026 projected offensive fantasy points (Clayton Gray)."
   },
   "espn--16009": {
     "as_of": "2026-09-07",
-    "heat": "neutral",
-    "lead": "Packers D/ST are a matchup play; better as a stream than a locked DST1. Weeks 1\u20133: at MIN (off. #19), at NYJ (off. #30), vs ATL (off. #22) \u2014 mostly soft open. Offense ranks: Footballguys 2026 projected offensive fantasy points (Clayton Gray)."
+    "heat": "ice",
+    "lead": "Packers D/ST took a hit with Micah Parsons' availability cloud \u2014 sack rate cratered without him last year. Rashan Gary and the front seven can still generate a boom week, but this is a matchup stream only until the edge picture clears.",
+    "schedule": [
+      "W1: at MIN \u2014 opp offense ~#19",
+      "W2: at NYJ \u2014 opp offense ~#30",
+      "W3: vs ATL \u2014 opp offense ~#22"
+    ],
+    "schedule_note": "Offense ranks: Footballguys 2026 projected offensive fantasy points (Clayton Gray)."
   },
   "GB": {
     "as_of": "2026-09-07",
-    "heat": "neutral",
-    "lead": "Packers D/ST are a matchup play; better as a stream than a locked DST1. Weeks 1\u20133: at MIN (off. #19), at NYJ (off. #30), vs ATL (off. #22) \u2014 mostly soft open. Offense ranks: Footballguys 2026 projected offensive fantasy points (Clayton Gray)."
+    "heat": "ice",
+    "lead": "Packers D/ST took a hit with Micah Parsons' availability cloud \u2014 sack rate cratered without him last year. Rashan Gary and the front seven can still generate a boom week, but this is a matchup stream only until the edge picture clears.",
+    "schedule": [
+      "W1: at MIN \u2014 opp offense ~#19",
+      "W2: at NYJ \u2014 opp offense ~#30",
+      "W3: vs ATL \u2014 opp offense ~#22"
+    ],
+    "schedule_note": "Offense ranks: Footballguys 2026 projected offensive fantasy points (Clayton Gray)."
   },
   "espn--16002": {
     "as_of": "2026-09-07",
     "heat": "neutral",
-    "lead": "Bills D/ST spike in high-variance games; early slate is choppy with DET/LAC after Houston. Weeks 1\u20133: at HOU (off. #18), vs DET (off. #3), vs LAC (off. #8) \u2014 tough open. Offense ranks: Footballguys 2026 projected offensive fantasy points (Clayton Gray)."
+    "lead": "Bills overhauled the defensive staff and room (Jim Leonhard among the adds). High-variance unit that spikes in chaotic games \u2014 early slate is choppy (HOU, then DET/LAC), so don't draft them as a locked every-week starter.",
+    "schedule": [
+      "W1: at HOU \u2014 opp offense ~#18",
+      "W2: vs DET \u2014 opp offense ~#3",
+      "W3: vs LAC \u2014 opp offense ~#8"
+    ],
+    "schedule_note": "Offense ranks: Footballguys 2026 projected offensive fantasy points (Clayton Gray)."
   },
   "BUF": {
     "as_of": "2026-09-07",
     "heat": "neutral",
-    "lead": "Bills D/ST spike in high-variance games; early slate is choppy with DET/LAC after Houston. Weeks 1\u20133: at HOU (off. #18), vs DET (off. #3), vs LAC (off. #8) \u2014 tough open. Offense ranks: Footballguys 2026 projected offensive fantasy points (Clayton Gray)."
+    "lead": "Bills overhauled the defensive staff and room (Jim Leonhard among the adds). High-variance unit that spikes in chaotic games \u2014 early slate is choppy (HOU, then DET/LAC), so don't draft them as a locked every-week starter.",
+    "schedule": [
+      "W1: at HOU \u2014 opp offense ~#18",
+      "W2: vs DET \u2014 opp offense ~#3",
+      "W3: vs LAC \u2014 opp offense ~#8"
+    ],
+    "schedule_note": "Offense ranks: Footballguys 2026 projected offensive fantasy points (Clayton Gray)."
   },
   "espn--16008": {
     "as_of": "2026-09-07",
     "heat": "neutral",
-    "lead": "Lions D/ST ride an explosive offense's short fields; boom weeks when opponents turn it over. Weeks 1\u20133: vs NO (off. #24), at BUF (off. #6), vs NYJ (off. #30) \u2014 mostly soft open. Offense ranks: Footballguys 2026 projected offensive fantasy points (Clayton Gray)."
+    "lead": "Lions D/ST ride Aidan Hutchinson and short fields from an explosive offense. Boom weeks show up when opponents turn it over; secondary health is the swing factor. Prefer as a stream behind a locked DST1, not your only defense.",
+    "schedule": [
+      "W1: vs NO \u2014 opp offense ~#24",
+      "W2: at BUF \u2014 opp offense ~#6",
+      "W3: vs NYJ \u2014 opp offense ~#30"
+    ],
+    "schedule_note": "Offense ranks: Footballguys 2026 projected offensive fantasy points (Clayton Gray)."
   },
   "DET": {
     "as_of": "2026-09-07",
     "heat": "neutral",
-    "lead": "Lions D/ST ride an explosive offense's short fields; boom weeks when opponents turn it over. Weeks 1\u20133: vs NO (off. #24), at BUF (off. #6), vs NYJ (off. #30) \u2014 mostly soft open. Offense ranks: Footballguys 2026 projected offensive fantasy points (Clayton Gray)."
+    "lead": "Lions D/ST ride Aidan Hutchinson and short fields from an explosive offense. Boom weeks show up when opponents turn it over; secondary health is the swing factor. Prefer as a stream behind a locked DST1, not your only defense.",
+    "schedule": [
+      "W1: vs NO \u2014 opp offense ~#24",
+      "W2: at BUF \u2014 opp offense ~#6",
+      "W3: vs NYJ \u2014 opp offense ~#30"
+    ],
+    "schedule_note": "Offense ranks: Footballguys 2026 projected offensive fantasy points (Clayton Gray)."
   },
   "espn--16005": {
     "as_of": "2026-09-07",
-    "heat": "neutral",
-    "lead": "Browns D/ST are a deep stream \u2014 Myles and co. can sack, but the offense keeps them on the field too long. Weeks 1\u20133: at JAX (off. #12), at TB (off. #16), vs CAR (off. #29) \u2014 mostly soft open. Offense ranks: Footballguys 2026 projected offensive fantasy points (Clayton Gray)."
+    "heat": "ice",
+    "lead": "Myles Garrett is gone \u2014 Cleveland flipped him to L.A. for Jared Verse plus picks. Verse is the new edge headliner next to whatever's left of the Dawg Pound front. Pass-rush talent remains, but losing a two-time DPOY is a real downgrade; deep stream only.",
+    "schedule": [
+      "W1: at JAX \u2014 opp offense ~#12",
+      "W2: at TB \u2014 opp offense ~#16",
+      "W3: vs CAR \u2014 opp offense ~#29"
+    ],
+    "schedule_note": "Offense ranks: Footballguys 2026 projected offensive fantasy points (Clayton Gray)."
   },
   "CLE": {
     "as_of": "2026-09-07",
-    "heat": "neutral",
-    "lead": "Browns D/ST are a deep stream \u2014 Myles and co. can sack, but the offense keeps them on the field too long. Weeks 1\u20133: at JAX (off. #12), at TB (off. #16), vs CAR (off. #29) \u2014 mostly soft open. Offense ranks: Footballguys 2026 projected offensive fantasy points (Clayton Gray)."
+    "heat": "ice",
+    "lead": "Myles Garrett is gone \u2014 Cleveland flipped him to L.A. for Jared Verse plus picks. Verse is the new edge headliner next to whatever's left of the Dawg Pound front. Pass-rush talent remains, but losing a two-time DPOY is a real downgrade; deep stream only.",
+    "schedule": [
+      "W1: at JAX \u2014 opp offense ~#12",
+      "W2: at TB \u2014 opp offense ~#16",
+      "W3: vs CAR \u2014 opp offense ~#29"
+    ],
+    "schedule_note": "Offense ranks: Footballguys 2026 projected offensive fantasy points (Clayton Gray)."
   },
   "JAC": {
     "as_of": "2026-09-07",
     "heat": "neutral",
-    "lead": "Jaguars D/ST climbed half-PPR boards on front-seven juice; the early slate is the buy window. Weeks 1\u20133: vs CLE (off. #31), at DEN (off. #11), vs NE (off. #7) \u2014 mixed open. Offense ranks: Footballguys 2026 projected offensive fantasy points (Clayton Gray)."
+    "lead": "Josh Hines-Allen and Travon Walker headline the front seven with Foyesade Oluokun and Arik Armstead. Travis Hunter's bigger defensive role is the 2026 swing factor after a turnover-driven fantasy year. More stream-with-a-plan than locked DST1 \u2014 soft early weeks help the buy case.",
+    "schedule": [
+      "W1: vs CLE \u2014 opp offense ~#31",
+      "W2: at DEN \u2014 opp offense ~#11",
+      "W3: vs NE \u2014 opp offense ~#7"
+    ],
+    "schedule_note": "Offense ranks: Footballguys 2026 projected offensive fantasy points (Clayton Gray)."
   }
 }
