@@ -7,7 +7,7 @@
   "rob_team": "Maurer Hour",
   "rob_owner": "Rob Maurer",
   "teams": 10,
-  "rounds": 16,
+  "rounds": 17,
   "type": "snake",
   "reversal_round": null,
   "start_time_ct": null,
@@ -27,7 +27,7 @@
     "IR": 1
   },
   "divisions": 1,
-  "order_note": "10-team snake. Rob = slot 8 for mocks and Monday. Other slots placeholders until ESPN order is known.",
+  "order_note": "10-team snake, 17 rounds (IDP filler). Rob = slot 8 for mocks and Monday. Other slots placeholders until ESPN order is known.",
   "picks_api": "/api/picks",
   "draft_api": "data/espn_draft_status.json",
   "slots": [
