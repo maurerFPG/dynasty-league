@@ -1,6 +1,7 @@
 /* Redraft — remaining-name glance. No pick recommender. */
 import { boardCellPos, boardName, lastName } from "./lib/board-label.js?v=dstcell1";
 import { isDefPos, scheduleBlockHtml } from "./lib/card-brief.js?v=dstcard1";
+import { heatFromBrief, rookieChipInfo } from "./lib/player-marks.js?v=dstcard2";
 
 (() => {
   const TARGETS_KEY = "nasty-draft-hq-targets-v1";
@@ -332,13 +333,18 @@ import { isDefPos, scheduleBlockHtml } from "./lib/card-brief.js?v=dstcard1";
       p.gem = !!(state.briefs[String(p.id)] && state.briefs[String(p.id)].gem === true);
     });
   }
+  function applyHeat() {
+    (state.players || []).forEach((p) => {
+      const b = state.briefs && state.briefs[String(p.id)];
+      const { hot, cold } = heatFromBrief(b && b.heat);
+      p.hot = hot;
+      p.cold = cold;
+    });
+  }
   function rookieChip(p) {
-    if (!p.is_rookie) return "";
-    const rnd = Number(p.nfl_draft_round);
-    const known = Number.isFinite(rnd) && rnd > 0;
-    const lab = known ? "R" + rnd : "UDFA";
-    const title = known ? `2026 rookie · NFL draft round ${rnd}` : "2026 rookie · undrafted free agent";
-    return `<span class="rchip" title="${esc(title)}">${esc(lab)}</span>`;
+    const info = rookieChipInfo(p);
+    if (!info) return "";
+    return `<span class="rchip" title="${esc(info.title)}">${esc(info.lab)}</span>`;
   }
   function rookieCell(p) {
     return rookieChip(p) || `<span class="rchip empty" aria-hidden="true"></span>`;
@@ -651,6 +657,7 @@ import { isDefPos, scheduleBlockHtml } from "./lib/card-brief.js?v=dstcard1";
       if (rj && typeof rj === "object") state.recs = rj;
     } catch (e) { /* ignore */ }
     applyGems();
+    applyHeat();
   }
 
   function renderLists() {
@@ -2072,6 +2079,7 @@ import { isDefPos, scheduleBlockHtml } from "./lib/card-brief.js?v=dstcard1";
     state.match = pj.match || {};
     state.briefs = bj && typeof bj === "object" && !Array.isArray(bj) ? bj : {};
     applyGems();
+    applyHeat();
     if (rj && typeof rj === "object") state.recs = rj;
     state.draft = ensureDraft(dj);
     state.draftStatus = dj.status || "pre-draft";
