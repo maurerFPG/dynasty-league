@@ -1,7 +1,7 @@
 /* Redraft — remaining-name glance. No pick recommender. */
 import { boardCellPos, boardName, lastName } from "./lib/board-label.js?v=dstcell1";
-import { isDefPos, scheduleBlockHtml } from "./lib/card-brief.js?v=dstcard1";
-import { heatFromBrief, rookieChipInfo } from "./lib/player-marks.js?v=dstcard2";
+import { isDefPos, scheduleBlockHtml } from "./lib/card-brief.js?v=rd907e";
+import { heatFromBrief, rookieChipInfo } from "./lib/player-marks.js?v=rd907e";
 
 (() => {
   const TARGETS_KEY = "nasty-draft-hq-targets-v1";
@@ -650,7 +650,7 @@ import { heatFromBrief, rookieChipInfo } from "./lib/player-marks.js?v=dstcard2"
   async function refreshBaked() {
     try {
       const [bj, rj] = await Promise.all([
-        fetch("data/briefs.json?v=rd907d", { cache: "no-store" }).then((r) => (r.ok ? r.json() : null)).catch(() => null),
+        fetch("data/briefs.json?v=rd907e", { cache: "no-store" }).then((r) => (r.ok ? r.json() : null)).catch(() => null),
         fetch("data/recs.json?v=rd830", { cache: "no-store" }).then((r) => (r.ok ? r.json() : null)).catch(() => null),
       ]);
       if (bj && typeof bj === "object" && !Array.isArray(bj)) state.briefs = bj;
@@ -2066,7 +2066,7 @@ import { heatFromBrief, rookieChipInfo } from "./lib/player-marks.js?v=dstcard2"
     const [pj, dj, bj, rj] = await Promise.all([
       fetch("data/players.json?v=rd840", { cache: "no-store" }).then((r) => r.json()),
       fetch("data/draft.json?v=rd840", { cache: "no-store" }).then((r) => r.json()),
-      fetch("data/briefs.json?v=rd907d", { cache: "no-store" })
+      fetch("data/briefs.json?v=rd907e", { cache: "no-store" })
         .then((r) => (r.ok ? r.json() : {}))
         .catch(() => ({})),
       fetch("data/recs.json?v=rd830", { cache: "no-store" })
