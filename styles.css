@@ -1117,6 +1117,15 @@ body.resizing-h { cursor: ns-resize; user-select: none; }
   display: block;
   background: rgba(255, 255, 255, 0.05);
 }
+.card-idrow .logo,
+.card-idrow .logo.ph,
+.card-idrow .card-team-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  object-fit: contain;
+  background: rgba(255, 255, 255, 0.05);
+}
 .card-id {
   min-width: 0;
   container-type: inline-size;
@@ -1421,6 +1430,24 @@ body.resizing-h { cursor: ns-resize; user-select: none; }
   font-size: 13px;
   font-weight: 400;
   line-height: 1.45;
+}
+.sched-list {
+  margin: 8px 0 0;
+  padding: 0 0 0 1.15em;
+  color: var(--text);
+  font-size: 13px;
+  line-height: 1.4;
+  list-style: disc;
+}
+.sched-list li {
+  margin: 0 0 3px;
+}
+.sched-list li:last-child { margin-bottom: 0; }
+.sched-note {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.35;
 }
 .baked .note {
   margin: 0 0 8px;

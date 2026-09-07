@@ -1,5 +1,6 @@
 /* Redraft — remaining-name glance. No pick recommender. */
 import { boardCellPos, boardName, lastName } from "./lib/board-label.js?v=dstcell1";
+import { isDefPos, scheduleBlockHtml } from "./lib/card-brief.js?v=dstcard1";
 
 (() => {
   const TARGETS_KEY = "nasty-draft-hq-targets-v1";
@@ -308,10 +309,11 @@ import { boardCellPos, boardName, lastName } from "./lib/board-label.js?v=dstcel
     if (!team || team === "FA") return null;
     return `https://sleepercdn.com/images/team_logos/nfl/${String(team).toLowerCase()}.png`;
   }
-  function logoHtml(team) {
+  function logoHtml(team, extraClass) {
     const url = teamLogoUrl(team);
-    if (!url) return `<span class="logo ph" aria-hidden="true"></span>`;
-    return `<img class="logo" src="${esc(url)}" alt="" loading="lazy" decoding="async" onerror="this.style.display='none'" />`;
+    const cls = ["logo", extraClass].filter(Boolean).join(" ");
+    if (!url) return `<span class="${cls} ph" aria-hidden="true"></span>`;
+    return `<img class="${cls}" src="${esc(url)}" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.classList.add('ph');this.removeAttribute('src')" />`;
   }
   function headshotHtml(id) {
     if (!id) return `<span class="headshot ph" aria-hidden="true"></span>`;
@@ -926,8 +928,9 @@ import { boardCellPos, boardName, lastName } from "./lib/board-label.js?v=dstcel
   function bakedBriefHtml(b, subject) {
     const notes = Array.isArray(b.notes) ? b.notes.filter(Boolean) : [];
     const links = Array.isArray(b.links) ? b.links.filter((l) => l && l.url) : [];
-    const lead = b.lead
-      ? `<div class="baked-block"><div class="kicker">Outlook</div><p class="lead">${esc(b.lead)}</p></div>`
+    const sched = scheduleBlockHtml(b, esc);
+    const lead = b.lead || sched
+      ? `<div class="baked-block"><div class="kicker">Outlook</div>${b.lead ? `<p class="lead">${esc(b.lead)}</p>` : ""}${sched}</div>`
       : "";
     const board = b.draft
       ? `<div class="baked-block"><div class="kicker">Board</div><p class="note">${esc(b.draft)}</p></div>`
@@ -1297,7 +1300,7 @@ import { boardCellPos, boardName, lastName } from "./lib/board-label.js?v=dstcel
       <div class="card-layout">
         <div class="card-left">
           <div class="card-idrow">
-            ${headshotHtml(p.id)}
+            ${isDefPos(p.pos) ? logoHtml(p.team, "card-team-logo") : headshotHtml(p.id)}
             <div class="card-id">
               <div class="who"><span class="${p.is_rookie ? "rookie" : ""}" title="${esc(p.name)}">${esc(cardName(p))}</span>${heatMark(p)}${rookieChip(p)}</div>
               <div class="meta"><span class="c-pos ${esc(p.pos || "")}">${esc(p.pos || "")}</span> · ${esc(p.team || "FA")}${age}${exp}</div>
