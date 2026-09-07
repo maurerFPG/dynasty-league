@@ -4,7 +4,7 @@
   "league_url": "",
   "platform": "espn",
   "rob_slot": 8,
-  "rob_team": "Maurer Hour",
+  "rob_team": "Rob",
   "rob_owner": "Rob Maurer",
   "teams": 10,
   "rounds": 17,
@@ -27,68 +27,68 @@
     "IR": 1
   },
   "divisions": 1,
-  "order_note": "10-team snake, 17 rounds (IDP filler). Rob = slot 8 for mocks and Monday. Other slots placeholders until ESPN order is known.",
+  "order_note": "10-team snake, 17 rounds (IDP filler). Draft order set from ESPN: Luke, Brad, Ben, Cole, Cody, Aaron, Matt, Rob, Ryan, Josh. Rob = slot 8.",
   "picks_api": "/api/picks",
   "draft_api": "data/espn_draft_status.json",
   "slots": [
     {
       "slot": 1,
-      "display": "Team 1",
-      "short": "T1",
+      "display": "Luke",
+      "short": "Luke",
       "is_rob": false
     },
     {
       "slot": 2,
-      "display": "Team 2",
-      "short": "T2",
+      "display": "Brad",
+      "short": "Brad",
       "is_rob": false
     },
     {
       "slot": 3,
-      "display": "Team 3",
-      "short": "T3",
+      "display": "Ben",
+      "short": "Ben",
       "is_rob": false
     },
     {
       "slot": 4,
-      "display": "Team 4",
-      "short": "T4",
+      "display": "Cole",
+      "short": "Cole",
       "is_rob": false
     },
     {
       "slot": 5,
-      "display": "Team 5",
-      "short": "T5",
+      "display": "Cody",
+      "short": "Cody",
       "is_rob": false
     },
     {
       "slot": 6,
-      "display": "Team 6",
-      "short": "T6",
+      "display": "Aaron",
+      "short": "Aaron",
       "is_rob": false
     },
     {
       "slot": 7,
-      "display": "Team 7",
-      "short": "T7",
+      "display": "Matt",
+      "short": "Matt",
       "is_rob": false
     },
     {
       "slot": 8,
-      "display": "Maurer Hour",
-      "short": "MAURER",
+      "display": "Rob",
+      "short": "Rob",
       "is_rob": true
     },
     {
       "slot": 9,
-      "display": "Team 9",
-      "short": "T9",
+      "display": "Ryan",
+      "short": "Ryan",
       "is_rob": false
     },
     {
       "slot": 10,
-      "display": "Team 10",
-      "short": "T10",
+      "display": "Josh",
+      "short": "Josh",
       "is_rob": false
     }
   ]
